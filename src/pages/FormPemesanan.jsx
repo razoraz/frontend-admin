@@ -65,7 +65,7 @@ function FormPemesanan() {
       showModal('error', 'Akses Ditolak', 'QR Code tidak valid atau token kosong!');
       return;
     }
-    fetch(`http://localhost:5000/api/meja/form-pemesanan?token=${token}`)
+    fetch(`https://backend-production-8cf7.up.railway.app/api/meja/form-pemesanan?token=${token}`)
       .then((res) => {
         if (!res.ok) throw new Error('Token invalid');
         return res.json();
