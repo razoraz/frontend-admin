@@ -27,13 +27,13 @@ function FormPemesanan() {
     setModal({ isOpen: true, type, title, message });
   };
   const closeModal = () => {
-  setModal({ ...modal, isOpen: false });
+    setModal({ ...modal, isOpen: false });
 
-  // Jika error terkait akses / token
-  if (modal.title === 'Akses Ditolak') {
-    navigate('/scanner'); // arahkan ke halaman scanner
-  }
-};
+    // Jika error terkait akses / token
+    if (modal.title === 'Akses Ditolak') {
+      navigate('/scanner'); // arahkan ke halaman scanner
+    }
+  };
 
   // State form
   const [formData, setFormData] = useState({
@@ -55,6 +55,8 @@ function FormPemesanan() {
       showModal('error', 'Data Tidak Lengkap', 'Data yang anda isi tidak sesuai. Silahkan periksa kembali.');
       return;
     }
+    sessionStorage.removeItem('cartPemesanan');
+    sessionStorage.removeItem('konteksPemesanan');
     sessionStorage.setItem('formPemesanan', JSON.stringify(formData));
     navigate('/pemesanan-menu');
   };
@@ -127,7 +129,7 @@ function FormPemesanan() {
       {/* Footer */}
       <FooterPage />
       {/* Modal hanya error */}
-      <Modal isOpen={modal.isOpen} type="error" title={modal.title} message={modal.message} onClose={closeModal}/>
+      <Modal isOpen={modal.isOpen} type="error" title={modal.title} message={modal.message} onClose={closeModal} />
     </>
   );
 }
