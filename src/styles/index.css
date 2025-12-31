@@ -1,0 +1,46 @@
+/* CSS GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Source Serif 4', serif;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* body scroll smooth */
+html {
+  scroll-behavior: smooth;
+  background: #111;
+  color: #fff;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Fade On Scroll */
+.fade-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-section.hide {
+  opacity: 0;
+  transform: translateY(20px);
+}
+

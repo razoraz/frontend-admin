@@ -1,0 +1,158 @@
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding-bottom: 50px;
+  color: #fff; /* default text putih, selaras global */
+}
+
+/* FILTER BOX */
+.filterBox {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(17, 17, 17, 0.95); /* lebih gelap mirip global */
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  border: 1px solid #ffd700; /* border neon */
+  box-shadow: 0px 3px 8px rgba(255, 246, 21, 0.2);
+}
+
+.filterBox label {
+  font-weight: 600;
+  color: #ffd700;
+}
+
+.filterBox select,
+.filterBox input[type='date'] {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ffd700;
+  background: #111; /* sama dengan body global */
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.filterBox select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,<svg fill='white' height='12' viewBox='0 0 20 20' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 7l3 3 3-3z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 14px) center;
+  padding-right: 40px;
+}
+/* Hover filterBox select & date */
+.filterBox select:hover,
+.filterBox input[type='date']:hover {
+  border-color: #fff615;
+  background-color: #1a1a1a;
+  box-shadow: 0 0 8px #ffd700; /* efek neon */
+  transition: all 0.3s ease; /* smooth transition */
+}
+
+/* Fokus juga biar interaktif */
+.filterBox select:focus,
+.filterBox input[type='date']:focus {
+  border-color: #fff615;
+  background-color: #1a1a1a;
+  box-shadow: 0 0 12px #ffd700;
+  outline: none;
+}
+
+.filterGroup label{
+  margin-right: 8px;
+}
+
+/* ACTION BAR */
+.actionBar {
+  display: flex;
+  align-items: center;
+}
+
+/* Kalau tombol di dalam actionBar */
+.actionBar .tabelBtn {
+  margin: 0; /* reset margin default */
+}
+/* LOAD BUTTON */
+.loadButton {
+  padding: 8px 16px;
+  background-color: #ffd700;
+  color: #111; /* hitam biar kontras */
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.loadButton:hover {
+  background-color: #fff615;
+}
+
+/* LOADING & ERROR */
+.loading,
+.error {
+  text-align: center;
+  font-size: 16px;
+  margin: 30px 0;
+}
+
+.loading {
+  color: #ffd700;
+}
+.error {
+  color: #ff4c4c;
+}
+
+/* CHART WRAPPER */
+.chartWrapper {
+  width: 100%;
+  padding: 20px;
+  background: rgba(17, 17, 17, 0.95); /* mirip body global */
+  border-radius: 14px;
+  box-shadow: 0px 4px 18px rgba(255, 246, 21, 0.3);
+  margin-top: 10px;
+}
+
+/* CHART BAR COLORS */
+.chartWrapper .chartjs-render-monitor {
+  background-color: transparent;
+}
+
+/* BUTTON TABEL */
+.tabelBtn {
+  margin-top: 10px;
+  margin-left: 20px;
+  padding: 10px 18px;
+  background-color: #ffd700; /* neon kuning, lebih kontras */
+  color: #111; /* teks hitam biar kontras dengan kuning */
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.25s;
+}
+
+.tabelBtn:hover {
+  background-color: #fff615; /* kuning lebih terang saat hover */
+  color: #111;
+}
+
+
+/* Responsiveness */
+@media screen and (max-width: 960px) {
+  .filterBox {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sectionTitle {
+    font-size: 20px;
+  }
+}

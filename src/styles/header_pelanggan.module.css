@@ -1,0 +1,242 @@
+/* 🌌 Navbar Section */
+.navbar {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  background-color: #0d0d0d;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(255, 246, 21, 0.2);
+}
+
+/* 🎥 Video Background */
+.bgVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(0.5) contrast(1.1) saturate(1.2);
+}
+
+/* Overlay gelap */
+.navbar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.85));
+  z-index: 2;
+}
+
+/* ✨ Motivasi Tengah ✨ */
+.motivasiTengah {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  text-align: center;
+  color: #fff615;
+  padding: 20px;
+  backdrop-filter: blur(3px);
+  text-shadow: 0 0 25px rgba(255, 246, 21, 0.3);
+  animation: fadeInText 2.5s ease-in-out forwards;
+}
+
+.motivasiTengah h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  animation: glowPulse 3s infinite alternate;
+}
+
+.motivasiTengah p {
+  font-size: 1.2rem;
+  color: #f8f8f8;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-top: 5px;
+  opacity: 0.9;
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 10px #fff615, 0 0 20px #fff615;
+  }
+  to {
+    text-shadow: 0 0 30px #fff615, 0 0 50px #fff615;
+  }
+}
+
+/* 🌒 Navbar Content (atas) */
+.navContent {
+  position: fixed;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  width: 100%;
+  height: 90px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), transparent);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in-out;
+}
+
+.navLogo img {
+  height: 90px;
+  transition: 0.3s;
+  filter: brightness(0.9);
+}
+
+/* 🖤 Navbar Links */
+.navbarNav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding-right: 48px;
+}
+
+.navbarNav li {
+  margin: 0 16px;
+  font-weight: 700;
+  font-size: 15px;
+  position: relative;
+}
+
+.navbarNav a {
+  padding: 10px;
+  color: #e9e9e9;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.navbarNav li:hover a {
+  color: #fff615;
+}
+
+/* 🔶 Underline efek neon */
+.navbarNav li:not(:has(.btnNavbar))::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #fff615;
+  transition: 0.3s;
+}
+.navbarNav li:hover::after {
+  width: 50%;
+  margin: auto;
+}
+
+/* 🟨 Tombol Pesan */
+.btnNavbar {
+  padding: 10px 20px;
+  background-color: #fff615;
+  color: #000 !important;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+.btnNavbar:hover {
+  background-color: #fffa9f;
+  transform: scale(1.05);
+}
+
+/* Menu Icon (mobile) */
+.menuIcon {
+  font-size: 30px;
+  display: none;
+  cursor: pointer;
+  color: #fff615;
+  transition: color 0.3s ease;
+}
+.menuIcon:hover {
+  color: #fffa9f;
+}
+
+/* ✅ Responsif */
+@media (max-width: 992px) {
+  .motivasiTengah h1 {
+    font-size: 2.4rem;
+  }
+  .motivasiTengah p {
+    font-size: 1rem;
+  }
+  .navContent {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 55vh;
+  }
+  .navContent {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 1rem;
+  }
+  .navLogo {
+    align-self: center;
+    margin-bottom: 10px;
+  }
+  .navbarNav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px 40px;
+    width: 100%;
+  }
+  .show {
+    display: flex !important;
+  }
+  .navbarNav li {
+    padding: 10px 0;
+    text-align: center;
+  }
+  .menuIcon {
+    display: flex;
+    position: absolute;
+    top: 1.2rem;
+    right: 1.8rem;
+  }
+  .motivasiTengah h1 {
+    font-size: 1.8rem;
+  }
+  .motivasiTengah p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    height: 50vh;
+  }
+  .motivasiTengah h1 {
+    font-size: 1.5rem;
+  }
+  .motivasiTengah p {
+    font-size: 0.85rem;
+  }
+}

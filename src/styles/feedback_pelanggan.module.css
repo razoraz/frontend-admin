@@ -1,0 +1,159 @@
+/* 🌙 Container utama */
+.feedbackContainer {
+  padding: 60px 20px;
+  text-align: center;
+  min-height: 100vh;
+}
+
+/* ✨ Judul */
+.feedbackTitle {
+  font-size: 2rem;
+  margin-bottom: 35px;
+  color: #fff615;
+  text-shadow: 0 0 10px rgba(255, 246, 21, 0.4);
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+/* 📦 Daftar feedback */
+.feedbackList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* 🗨️ Card feedback */
+.feedbackCard {
+  background: rgba(25, 25, 25, 0.85);
+  border: 1px solid rgba(255, 246, 21, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(255, 246, 21, 0.08);
+  width: 320px;
+  padding: 20px;
+  text-align: center;
+  color: #f2f2f2;
+  transition: all 0.3s ease;
+}
+
+.feedbackCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 18px rgba(255, 246, 21, 0.2);
+}
+
+/* ⭐ Rating */
+.stars {
+  margin-top: 6px;
+}
+
+.star {
+  font-size: 20px;
+  color: #aaa;
+}
+
+.starFilled {
+  color: gold;
+}
+
+/* 🖼 Gambar */
+.feedbackImageWrapper {
+  width: 100%;
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.feedbackImage {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.noImage {
+  width: 100%;
+  padding: 40px 0;
+  text-align: center;
+  color: #bbb;
+  font-style: italic;
+  border: 1px dashed #444;
+  border-radius: 12px;
+}
+
+/* 💬 Komentar */
+.feedbackComment {
+  font-style: italic;
+  margin: 10px 0;
+  color: #d9d9d9;
+  line-height: 1.5;
+}
+
+/* 📅 Tanggal */
+.feedbackDate {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+/* 🔽 Filter */
+.filterRating label {
+  margin-right: 10px;
+}
+
+.filterRating {
+  margin: 10px 0 20px;
+  text-align: center;
+}
+
+.dropdownRating {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #1a1a1a;
+  color: white;
+}
+
+/* 🔘 Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  gap: 8px;
+}
+
+.pageBtn {
+  padding: 8px 14px;
+  border: none;
+  background: #333;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.pageBtn:hover {
+  background: #555;
+}
+
+.active {
+  background: #cf8f2e !important;
+  color: black !important;
+  font-weight: bold;
+}
+
+/* 📱 Responsif */
+@media (max-width: 992px) {
+  .feedbackCard {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedbackTitle {
+    font-size: 1.6rem;
+  }
+  .feedbackCard {
+    padding: 16px;
+  }
+}

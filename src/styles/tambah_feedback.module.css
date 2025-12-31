@@ -1,0 +1,195 @@
+/* =========================
+   🌙 Halaman Feedback
+   ========================= */
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+/* CARD UTAMA */
+.card {
+  background: #1a1a1a;
+  padding: 35px;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 550px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  color: #f5f5f5;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Judul */
+.title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #fff615;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #cfcfcf;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+  line-height: 1.4;
+}
+
+/* =========================
+   ⭐ RATING BINTANG
+   ========================= */
+.rating {
+  margin: 10px 0 15px;
+}
+
+.star {
+  font-size: 2.3rem;
+  cursor: pointer;
+  color: #555;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.star:hover {
+  transform: scale(1.2);
+  color: #ffd900;
+}
+
+.active {
+  color: #ffd900;
+}
+
+/* =========================
+   INPUT & FORM
+   ========================= */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;              /* DIPERKECIL */
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left !important;
+  margin-bottom: 8px;     /* DIPERKECIL */
+}
+
+.label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-bottom: 5px;
+}
+
+/* Input Email */
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: #111;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.2s;
+}
+
+.input:focus {
+  border-color: #fff615;
+}
+
+/* Textarea */
+.textarea {
+  width: 100%;
+  height: 130px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: #111;
+  color: #fff;
+  resize: none;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.2s;
+}
+
+.textarea:focus {
+  border-color: #fff615;
+}
+
+/* =========================
+   UPLOAD GAMBAR
+   ========================= */
+.fileInput {
+  width: 100%;              /* AGAR LURUS */
+  padding: 12px 14px;       /* SAMA DENGAN INPUT LAIN */
+  border: 1px solid #333;
+  border-radius: 10px;
+  background: #111;
+  color: #ddd;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.fileInput:hover {
+  border-color: #fff615;
+}
+
+/* Preview Box */
+.previewBox {
+  margin-top: 10px;
+  background: #000;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #333;
+}
+
+.previewImage {
+  width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+
+/* =========================
+   BUTTON SUBMIT
+   ========================= */
+.submitBtn {
+  background: #fff615;
+  color: #000;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submitBtn:hover {
+  background: #e6e600;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   Animasi
+   ========================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .card {
+    padding: 25px;
+  }
+  .star {
+    font-size: 2rem;
+  }
+}

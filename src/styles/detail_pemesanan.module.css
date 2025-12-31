@@ -1,0 +1,271 @@
+/* WRAPPER */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #141414;
+  border-radius: 14px;
+  color: #eaeaea;
+  border: 1px solid #2b2b2b;
+  box-shadow: 0 0 18px #ffd63355;
+}
+
+/* LOADING */
+.loading {
+  text-align: center;
+  margin-top: 50px;
+  color: #ffd633;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* BACK BUTTON */
+.backBtn {
+  background: transparent;
+  border: none;
+  color: #ffd633;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.backBtn:hover {
+  color: #fff;
+  transform: translateX(-3px);
+}
+
+/* TITLE */
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffd633;
+  margin-top: 5px;
+  text-align: center;
+  text-shadow: 0 0 8px #ffd63366;
+}
+
+/* LINE */
+.line {
+  height: 3px;
+  background: linear-gradient(to right, #ffd633, #ffea96);
+  margin: 20px 0 35px;
+  border-radius: 4px;
+}
+
+/* INFO BOX */
+.infoBox {
+  background: #1b1b1b;
+  padding: 25px;
+  border-radius: 14px;
+  border: 1px solid #2a2a2a;
+  margin-bottom: 40px;
+  box-shadow: 0 0 14px #ffd63350;
+}
+
+.infoRow {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  padding: 10px 0;
+  font-size: 16px;
+  border-bottom: 1px solid #333;
+}
+
+.infoRow:last-child {
+  border-bottom: none;
+}
+
+.label {
+  font-weight: 700;
+  color: #ffdd55;
+  position: relative;
+  padding-right: 15px;
+}
+
+.label::after {
+  content: ':';
+  position: absolute;
+  right: 0;
+}
+
+.value {
+  margin-left: 10px;
+  color: #e6e6e6;
+  font-weight: 500;
+}
+
+/* SUBTITLE */
+.subtitle {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #ffd633;
+  text-shadow: 0 0 6px #ffd63366;
+}
+
+/* TABLE */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #161616;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #333;
+  box-shadow: 0 0 12px #ffd63344;
+}
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto; /* RESPONSIVE MAGIC */
+}
+
+.table thead {
+  background: #ffd633;
+  color: #000;
+}
+
+.table th,
+.table td {
+  padding: 14px 16px;
+  font-size: 15px;
+}
+
+.table td {
+  text-align: center;
+}
+
+.table tbody tr:nth-child(even) {
+  background: #1e1e1e;
+}
+
+.table tbody tr:hover {
+  background: #2a2a2a;
+  transition: 0.2s;
+}
+
+/* ACTION BUTTONS */
+.actionRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* BUTTONS */
+.deleteBtn,
+.editBtn {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.deleteBtn {
+  background: #d63031;
+  color: white;
+}
+
+.deleteBtn:hover {
+  background: #b42323;
+  box-shadow: 0 0 10px #b4232388;
+  transform: translateY(-2px);
+}
+
+.editBtn {
+  background: #008cff;
+  color: white;
+}
+
+.editBtn:hover {
+  background: #006fd1;
+  box-shadow: 0 0 10px #006fd188;
+  transform: translateY(-2px);
+}
+
+/* ======================================================
+      RESPONSIVE SECTION
+====================================================== */
+
+/* --- Tablet (max-width: 768px) --- */
+@media (max-width: 768px) {
+  .container {
+    padding: 22px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .infoRow {
+    grid-template-columns: 160px 1fr;
+    font-size: 15px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+}
+
+/* --- Mobile (max-width: 600px) --- */
+@media (max-width: 600px) {
+  .container {
+    padding: 18px;
+  }
+
+  .infoRow {
+    grid-template-columns: 1fr; /* jadi 1 kolom */
+    gap: 4px;
+    padding: 12px 0;
+  }
+
+  .label {
+    padding: 0;
+  }
+
+  .label::after {
+    display: none; /* hilangkan titik 2 */
+  }
+
+  .value {
+    margin-left: 0;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .actionRow {
+    flex-direction: column;
+  }
+
+  .deleteBtn,
+  .editBtn {
+    width: 100%;
+  }
+  .table td,
+  .table th {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* --- Mobile kecil (max-width: 420px) --- */
+@media (max-width: 420px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .infoBox {
+    padding: 18px;
+  }
+}

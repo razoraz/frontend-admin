@@ -1,0 +1,188 @@
+/* Style untuk header */
+/* Navbar */
+.navbar {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+
+/* Navbar Content */
+.navContent {
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  width: 100%;
+  height: 90px;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(5px);
+  border-bottom: 2px solid #fff615;
+}
+.navLogo img {
+  height: 90px;
+}
+.navbarNav ul {
+  padding-right: 48px;
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+.navbarNav li {
+  margin: 0 16px;
+  font-weight: 700;
+  font-size: 15px;
+  position: relative;
+}
+.navbarNav a {
+  padding: 10px;
+  color: #f5f5f5;
+  display: inline-block;
+}
+.btnLogout {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fff615;
+  color: #000000 !important;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none !important;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+/* Hover effect Navbar */
+.btnLogout:hover {
+  background-color: #ffd633;
+  transition: 0.3s ease;
+  color: #000000 !important;
+}
+.navbarNav li:hover a {
+  color: #fff615;
+}
+.navbarNav li:not(:has(.btnLogout))::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #fff615;
+  transition: 0.3s;
+}
+.navbarNav li:hover::after {
+  width: 50%;
+  margin: auto;
+}
+
+/* Menu Icon Navbar */
+.menuIcon {
+  font-size: 28px;
+  display: none;
+  cursor: pointer;
+  color: #fff615;
+}
+.show {
+  display: block;
+}
+.materialIconsOutlined {
+  margin-right: 10px;
+}
+
+/* Section nav title */
+.navbarTitle {
+  position: relative;
+  text-align: center;
+  margin-top: 60px;
+  padding: 50px;
+  z-index: 2;
+}
+.navbarTitle h1 {
+  font-size: 50px;
+  font-weight: 500;
+  color: #fff615;
+}
+
+/* Garis */
+.decorativeLine {
+  width: 80%;
+  max-width: 400px;
+  height: 7px;
+  background-color: #fff615;
+  margin: 10px auto 0;
+}
+
+/* Media Query */
+@media screen and (max-width: 768px) {
+  .navContent {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 1rem;
+  }
+  .navLogo {
+    align-self: center;
+    margin-bottom: 10px;
+  }
+  .navbarNav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .navbarNav ul.show {
+    display: flex;
+  }
+  .navbarNav li {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .navbar .navbarNav {
+    width: 100%;
+  }
+  .menuIcon {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1.5rem 10%;
+  }
+  .menuIcon:hover {
+    color: #ffd633;
+  }
+  .navbar .navbarNav ul {
+    display: none;
+  }
+  .navbar .navbarNav ul.show {
+    display: flex;
+    flex-direction: column;
+  }
+  .navbarTitle h1 {
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .decorativeLine {
+    max-width: 700px;
+    width: 100%;
+    height: 5px;
+  }
+  .navbarTitle h1 {
+    font-size: 40px;
+  }
+  .sectionTitle {
+    font-size: 20px;
+  }
+  .navbar {
+    height: 30vh;
+  }
+}

@@ -1,0 +1,101 @@
+/* Form Card Gelap */
+.formCard {
+  width: 500px;
+  max-width: 90%;
+  min-height: 400px;
+  margin: 60px auto;
+  background: #1a1a1a; /* gelap tapi tidak hitam pekat */
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 4px solid #fff615; /* aksen neon header */
+}
+
+/* Judul Form */
+.formTitle {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #fff615; /* kuning neon header */
+  text-shadow: 0 0 5px rgba(255,246,21,0.7);
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Label */
+.form label {
+  font-weight: 600;
+  color: #eee; /* teks terang supaya kontras */
+}
+
+/* Input dan textarea */
+.form input,
+.form textarea,
+.form input[type="file"] {
+  padding: 12px 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #333; /* garis gelap supaya elegan */
+  outline: none;
+  background-color: #222; /* gelap tapi beda sama background */
+  color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form input:focus,
+.form textarea:focus,
+.form input[type="file"]:focus {
+  border-color: #fff615;
+  box-shadow: 0 0 8px rgba(255, 246, 21, 0.7);
+  background-color: #333;
+}
+
+.form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Button */
+.saveBtn {
+  padding: 14px 25px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: #fff615; /* neon untuk aksen tombol */
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.saveBtn:hover {
+  background-color: #ffd633;
+  transform: translateY(-2px);
+}
+
+/* Responsif */
+@media screen and (max-width: 600px) {
+  .formCard {
+    width: 90%;
+    min-height: 400px;
+    padding: 25px;
+  }
+
+  .formTitle {
+    font-size: 24px;
+  }
+}

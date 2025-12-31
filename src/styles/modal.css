@@ -1,0 +1,98 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  background: #000;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 320px;
+  border: 1px solid #fff615;
+  box-shadow: 0 0 15px rgba(255, 246, 21, 0.6);
+  color: #fff;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.modal p {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+/* Tombol tunggal (OK) */
+.ok-btn {
+  margin-top: 30px;
+  padding: 10px 20px;
+  border: none;
+  background: #fff615;
+  color: #000;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ok-btn:hover {
+  background: #ffffff;
+  transform: scale(1.05);
+}
+
+/* ===================== */
+/* 🔘 Tombol Batal & Hapus*/
+/* ===================== */
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+.cancel-btn,
+.confirm-btn {
+  min-width: 120px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+/* Tombol batal */
+.cancel-btn {
+  background-color: #ff0000;
+  color: #000;
+}
+
+.cancel-btn:hover {
+  background-color: #cc0000;
+  transform: scale(1.05);
+}
+
+/* Tombol konfirmasi */
+.confirm-btn {
+  background-color: #fff615;
+  color: #000;
+}
+
+.confirm-btn:hover {
+  background-color: #ffd633;
+  transform: scale(1.05);
+}

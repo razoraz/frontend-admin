@@ -1,0 +1,584 @@
+/*Style Reservasi*/
+
+/* Garis */
+.decorativeLine2 {
+  background-color: #fff615;
+  margin-left: 40px;
+  margin-bottom: 50px;
+  width: 100px;
+  height: 7px;
+}
+
+/* Konten */
+.container {
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0 10px;
+  color: #fff615;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Tabel dengan Grid Lines */
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  margin-bottom: 30px;
+  border: 2px solid #fff615;
+}
+
+.tableContainer table {
+  min-width: 100%;
+  width: 100%;
+  border-collapse: collapse;
+  background: #1a1a1a;
+  color: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #fff615;
+}
+
+/* Header Tabel dengan Grid Lines */
+.tableContainer thead {
+  background: linear-gradient(90deg, #fff615 0%, #ffd633 100%);
+}
+
+.tableContainer th {
+  color: #000;
+  font-weight: bold;
+  padding: 16px 12px;
+  text-align: center;
+  border: 2px solid #111 !important;
+  border-bottom: 3px solid #111 !important;
+  position: relative;
+}
+
+.tableContainer th:first-child {
+  border-left: 2px solid #111 !important;
+}
+
+.tableContainer th:last-child {
+  border-right: 2px solid #111 !important;
+}
+
+/* Grid Lines untuk Sel Tabel */
+.tableContainer td {
+  padding: 14px 12px;
+  text-align: center;
+  border: 2px solid #333 !important;
+  vertical-align: middle;
+  transition: all 0.3s ease;
+}
+
+.tableContainer tr:last-child td {
+  border-bottom: 2px solid #333 !important;
+}
+
+/* Hover effect */
+.tableContainer tbody tr:hover td {
+  background-color: rgba(255, 246, 21, 0.1);
+  border-color: #fff615 !important;
+}
+
+/* Striped rows */
+.tableContainer tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.tableContainer tbody tr:nth-child(even):hover td {
+  background-color: rgba(255, 246, 21, 0.15);
+  border-color: #ffd633 !important;
+}
+
+/* Efek khusus untuk sudut tabel */
+.tableContainer thead th:first-child {
+  border-top-left-radius: 6px;
+}
+
+.tableContainer thead th:last-child {
+  border-top-right-radius: 6px;
+}
+
+.tableContainer tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 6px;
+}
+
+.tableContainer tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 6px;
+}
+
+/* Tombol Grafik */
+.grafikBtn {
+  background: linear-gradient(135deg, #fff615 0%, #ffd633 100%);
+  color: #000;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(255, 246, 21, 0.3);
+}
+
+.grafikBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 246, 21, 0.4);
+  background: linear-gradient(135deg, #ffd633 0%, #fff615 100%);
+}
+
+/* Action bar */
+.actionBar {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0 20px;
+}
+
+/* Button aksi */
+.actionColumn {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 5px 0;
+}
+
+.actionColumn button {
+  min-width: 100px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.actionColumn button i {
+  font-size: 0.9rem;
+}
+
+.detailBtn {
+  background: linear-gradient(135deg, #009C63 0%, #00c480 100%);
+  color: white;
+  border-color: #007b4f !important;
+  box-shadow: 0 2px 8px rgba(0, 156, 99, 0.3);
+}
+
+.detailBtn:hover {
+  background: linear-gradient(135deg, #008553 0%, #00b374 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 156, 99, 0.4);
+  border-color: #00c480 !important;
+}
+
+.ubahBtn {
+  background: linear-gradient(135deg, #2196f3 0%, #4dabf7 100%);
+  color: white;
+  border-color: #1976d2 !important;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+}
+
+.ubahBtn:hover {
+  background: linear-gradient(135deg, #1976d2 0%, #339af0 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+  border-color: #4dabf7 !important;
+}
+
+.deleteBtn {
+  background: linear-gradient(135deg, #f44336 0%, #ff6b6b 100%);
+  color: white;
+  border-color: #d32f2f !important;
+  box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+}
+
+.deleteBtn:hover {
+  background: linear-gradient(135deg, #d32f2f 0%, #ff5252 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.4);
+  border-color: #ff6b6b !important;
+}
+.downloadBtn {
+  background: linear-gradient(135deg, #6A1B9A 0%, #8E24AA 100%);
+  color: white;
+  border-color: #4A148C !important;
+  box-shadow: 0 2px 8px rgba(106, 27, 154, 0.3);
+}
+
+.downloadBtn:hover {
+  background: linear-gradient(135deg, #4A148C 0%, #7B1FA2 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(106, 27, 154, 0.4);
+  border-color: #8E24AA !important;
+}
+
+
+/* Status Badges */
+.statusChip {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.status-menunggu_pembayaran {
+  background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%);
+  color: white;
+  border-color: #ff9800 !important;
+}
+
+.status-dikonfirmasi {
+  background: linear-gradient(135deg, #2196f3 0%, #4dabf7 100%);
+  color: white;
+  border-color: #2196f3 !important;
+}
+
+.status-selesai {
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+  color: white;
+  border-color: #4caf50 !important;
+}
+
+.status-dibatalkan {
+  background: linear-gradient(135deg, #f44336 0%, #ff6b6b 100%);
+  color: white;
+  border-color: #f44336 !important;
+}
+
+.status-belum_bayar {
+  background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%);
+  color: white;
+  border-color: #ff9800 !important;
+}
+
+.status-sudah_bayar {
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+  color: white;
+  border-color: #4caf50 !important;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 2px solid #fff615;
+}
+
+.pagination button {
+  background: linear-gradient(135deg, #fff615 0%, #ffd633 100%);
+  color: #000;
+  border: 2px solid #ffd633;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(255, 246, 21, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 246, 21, 0.4);
+  border-color: #fff615;
+}
+
+.pagination button:disabled {
+  background: #333;
+  color: #666;
+  border-color: #444;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.pagination span {
+  color: #fff615;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 8px 16px;
+  border: 1px solid #fff615;
+  border-radius: 6px;
+  background: rgba(255, 246, 21, 0.1);
+  min-width: 180px;
+  text-align: center;
+}
+
+.pagination select {
+  background: #1a1a1a;
+  color: #fff615;
+  border: 2px solid #fff615;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.pagination select:hover {
+  background: #222;
+  box-shadow: 0 0 10px rgba(255, 246, 21, 0.3);
+}
+/* Search Container */
+.searchContainer {
+  margin: 20px 0 30px 0;
+}
+
+.searchWrapper {
+  position: relative;
+  max-width: 500px;
+  margin-bottom: 10px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff615;
+  font-size: 1rem;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 45px 12px 45px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #fff615;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 15px rgba(255, 246, 21, 0.3);
+  border-color: #ffd633;
+}
+
+.searchInput::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.clearSearchBtn {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+.clearSearchBtn:hover {
+  color: #fff615;
+}
+
+.searchInfo {
+  color: #fff615;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 0;
+}
+
+/* No Data Styling */
+.noData {
+  text-align: center;
+  padding: 60px 20px !important;
+  border: none !important;
+}
+
+.noDataContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.noDataContent i {
+  font-size: 3rem;
+  color: #fff615;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.noDataContent p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.clearFilterBtn {
+  background: linear-gradient(135deg, #fff615 0%, #ffd633 100%);
+  color: #000;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.clearFilterBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 246, 21, 0.4);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .searchWrapper {
+    max-width: 100%;
+  }
+  
+  .searchInfo {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .searchInput {
+    padding: 10px 40px 10px 40px;
+    font-size: 0.9rem;
+  }
+  
+  .searchInfo {
+    font-size: 0.85rem;
+  }
+  
+  .noDataContent i {
+    font-size: 2.5rem;
+  }
+  
+  .noDataContent p {
+    font-size: 1rem;
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+  
+  .sectionTitle {
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .decorativeLine2 {
+    margin: 0 auto 30px;
+  }
+  
+  .actionBar {
+    justify-content: center;
+  }
+  
+  .actionColumn {
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .actionColumn button {
+    width: 100%;
+    max-width: 180px;
+  }
+  
+  .pagination {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+  }
+  
+  .pagination span {
+    order: 1;
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  .pagination button {
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .pagination select {
+    order: 4;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sectionTitle {
+    font-size: 18px;
+  }
+  
+  .tableContainer {
+    padding: 10px;
+    border-width: 1px;
+  }
+  
+  .tableContainer table {
+    border-width: 1px;
+  }
+  
+  .tableContainer th,
+  .tableContainer td {
+    padding: 10px 8px;
+    font-size: 0.9rem;
+    border-width: 1px !important;
+  }
+  
+  .grafikBtn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .pagination {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-width: 1px;
+  }
+  
+  .pagination button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}

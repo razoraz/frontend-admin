@@ -1,0 +1,130 @@
+/* =====================================================
+   🧾 MODE PDF — FULL HITAM PUTIH (THERMAL STYLE)
+   ===================================================== */
+/* DEFAULT (WEB) */
+.logoColor {
+  display: block;
+}
+
+.logoBlack {
+  display: none;
+}
+
+/* STRUK CONTAINER */
+.strukPage {
+  width: 58mm;
+  padding: 8px;
+  margin: 0 auto;
+  border-radius: 0;
+  background: white !important;
+  color: black !important;
+}
+
+/* BRAND */
+.strukBrand {
+  text-align: center;
+  border-bottom: 1px dashed black;
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+}
+
+.strukTitle {
+  font-size: 13px;
+  font-weight: bold;
+  color: black !important;
+}
+
+.logoColor {
+  display: none !important;
+}
+
+.logoBlack {
+  display: block !important;
+  width: 45px;
+  margin: 6px auto;
+}
+
+/* 🔥 LOGO JADI HITAM PUTIH */
+.strukLogo {
+  width: 45px;
+  margin: 6px auto;
+  display: block;
+}
+
+/* INFO TOKO */
+.strukBrandInfo {
+  font-size: 9px;
+  line-height: 1.3;
+  color: black !important;
+  margin: 2px 0;
+}
+
+/* INFO PEMESANAN */
+.strukRow {
+  display: grid;
+  grid-template-columns: 75px 8px 1fr; /* label | : | value */
+  padding: 8px 0;
+  border: none;
+}
+
+.strukLabel,
+.strukValue,
+.strukColon {
+  font-size: 9px;
+  color: black !important;
+}
+
+/* TABEL MENU */
+.strukTable {
+  width: 100%;
+  margin-top: 6px;
+}
+
+.strukTable th {
+  font-size: 9px;
+  padding: 3px;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+.strukTable td {
+  font-size: 9px;
+  padding: 3px;
+  border-bottom: 1px dotted black;
+  text-align: center;
+}
+
+/* TOTAL */
+.strukTotal {
+  font-size: 10px;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 6px;
+}
+
+/* GARIS PUTUS */
+.strukSeparator {
+  border-bottom: 1px dashed black;
+  margin: 6px 0;
+}
+
+/* MODE PRINT */
+.strukTitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: black !important;
+  margin-bottom: 4px;
+}
+
+.strukPaid {
+  color: #2e7d32;
+}
+
+.strukUnpaid {
+  color: #c62828;
+}
+
+.strukStatusText {
+  font-weight: 700;
+  text-transform: uppercase;
+}

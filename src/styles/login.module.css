@@ -1,0 +1,214 @@
+/* Style Login */
+/* Konten */
+.centerWrapper {
+  height: 100vh;
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginCard {
+  display: flex;
+  background-color: #000000;
+  border-radius: 12px;
+  border: 1px solid #fff615;
+  box-shadow: 0 0 20px rgba(255, 246, 21, 0.7);
+  overflow: hidden;
+  width: 800px;
+  height: 450px;
+  max-width: 95%;
+}
+
+/* Kiri: Video */
+.videoSide {
+  flex: 1;
+  position: relative;
+}
+.previewVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Kanan: Form */
+.formSide {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.loginHeader {
+  text-align: center;
+  margin-top: -20px;
+}
+.loginHeader img {
+  max-width: 120px;
+  margin-bottom: 10px;
+}
+.inputGroup {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inputGroup label {
+  width: 80%;
+  font-weight: 400;
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #fff615;
+}
+.inputGroup input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid #ffffff;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+  background-color: transparent;
+}
+.inputGroup input:focus {
+  border-color: #fff615;
+  box-shadow: 0 0 5px rgba(255, 246, 21, 0.6);
+}
+.inputWrapper {
+  position: relative;
+  width: 80%;
+}
+.inputWrapper input {
+  width: 100%;
+  padding: 10px 40px 10px 10px;
+  border-radius: 15px;
+  border: 1px solid #ffffff;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+  background-color: transparent;
+}
+.inputWrapper input:focus {
+  border-color: #fff615;
+  box-shadow: 0 0 5px rgba(255, 246, 21, 0.6);
+}
+.togglePassword {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  color: #999;
+  cursor: pointer;
+}
+input[type='password']::-ms-reveal,
+input[type='password']::-ms-clear {
+  display: none;
+}
+
+.errorText {
+  display: none;
+}
+
+
+/*  Css Link Action */
+.actions {
+  margin-top: -5px;
+  margin-bottom: 40px;
+}
+.actions .link {
+  display: inline-block;
+  margin-left: 11%;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 300;
+  text-decoration: none;
+}
+.actions .link:hover {
+  text-decoration: underline;
+}
+
+/* Tombol */
+.loginButton {
+  width: 40%;
+  margin: 0 auto;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  background: #fff615;
+  color: #000000;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.loginButton:hover {
+  background-color: #ffffff;
+  transform: scale(1.03);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .centerWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .loginCard {
+    flex-direction: column;
+    width: 90%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 12px;
+  }
+  .videoSide {
+    display: none;
+  }
+  .formSide {
+    width: 100%;
+    padding: 25px;
+  }
+  .loginHeader img {
+    max-width: 110px;
+  }
+  .loginButton {
+    width: 65%;
+    font-size: 15px;
+  }
+}
+
+/* Saat di HP */
+@media (max-width: 480px) {
+  .centerWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .loginCard {
+    flex-direction: column;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 12px;
+  }
+  .videoSide {
+    display: none;
+  }
+  .formSide {
+    width: 100%;
+    padding: 20px;
+  }
+  .loginHeader img {
+    max-width: 100px;
+  }
+  .loginButton {
+    width: 70%;
+    font-size: 14px;
+  }
+}

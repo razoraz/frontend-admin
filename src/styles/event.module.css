@@ -1,0 +1,168 @@
+
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  text-align: center;
+}
+/* ================= LOADING ================= */
+.loading {
+  color: #fff615;
+  text-align: center;
+  margin-top: 180px;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+/* ================= EMPTY STATE ================= */
+.emptyState {
+  text-align: center;
+  color: #eaeaea;
+}
+
+.emptyState h2 {
+  color: #fff615;
+  font-size: 38px;
+  margin-bottom: 14px;
+  text-shadow: 0 0 18px rgba(255, 246, 21, 0.55);
+}
+
+.emptyState p {
+  opacity: 0.85;
+  margin-bottom: 34px;
+  font-size: 16px;
+}
+
+.emptyState button {
+  background: linear-gradient(135deg, #fff615, #ffe600);
+  color: #000;
+  padding: 14px 38px;
+  border-radius: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.emptyState button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(255, 246, 21, 0.45);
+}
+
+/* ================= SECTION ================= */
+.eventSection {
+  max-width: 920px;
+  margin: auto;
+}
+
+/* ================= EVENT PROMO CARD ================= */
+.eventPromo {
+  max-width: 720px;
+  margin: auto;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 246, 21, 0.18),
+    rgba(255, 246, 21, 0.05)
+  );
+  border: 1px solid rgba(255, 246, 21, 0.45);
+  border-radius: 26px;
+  padding: 36px;
+  text-align: center;
+  box-shadow:
+    0 0 30px rgba(255, 246, 21, 0.35),
+    inset 0 0 18px rgba(255, 246, 21, 0.06);
+  backdrop-filter: blur(6px);
+  transition: transform 0.35s ease;
+}
+
+.eventPromo:hover {
+  transform: translateY(-5px);
+}
+
+/* ================= TITLE ================= */
+.eventTitle {
+  color: #fff615;
+  font-size: 28px;
+  margin-bottom: 6px;
+  text-shadow: 0 0 14px rgba(255, 246, 21, 0.6);
+}
+
+/* ================= DATE ================= */
+.eventDate {
+  font-size: 14px;
+  margin-bottom: 18px;
+  color: rgba(255, 246, 21, 0.85);
+  letter-spacing: 0.5px;
+}
+
+/* ================= MEDIA ================= */
+.eventMedia {
+  max-width: 540px;
+  margin: 0 auto 20px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.eventMedia img,
+.eventMedia video {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 2px solid rgba(255, 246, 21, 0.4);
+  transition: transform 0.4s ease;
+}
+
+.eventMedia img:hover,
+.eventMedia video:hover {
+  transform: scale(1.04);
+}
+
+/* ================= DESC ================= */
+.eventDesc {
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: #f1f1f1;
+  opacity: 0.95;
+  margin-bottom: 26px;
+}
+
+/* ================= ACTION ================= */
+.action {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.action button {
+  padding: 12px 30px;
+  border-radius: 14px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  font-size: 14.5px;
+  transition: all 0.3s ease;
+}
+
+/* UBAH */
+.action button:first-child {
+  background: linear-gradient(135deg, #fff615, #ffe600);
+  color: #000;
+}
+
+.action button:first-child:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(255, 246, 21, 0.45);
+}
+
+/* HAPUS */
+.delete {
+  background: linear-gradient(135deg, #ff4d4d, #ff1f1f);
+  color: #fff;
+}
+
+.delete:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(255, 77, 77, 0.45);
+}

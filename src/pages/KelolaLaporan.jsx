@@ -1,0 +1,58 @@
+import axios from 'axios';
+import styles from '../styles/kelola_laporan.module.css';
+import HeaderPage from '../components/component-html/HeaderPage';
+import FooterPage from '../components/component-html/FooterPage';
+import useBlockBack from '../hooks/BlockBack';
+
+const ranges = [' Harian', 'Mingguan', 'Bulanan', 'Tahunan'];
+
+function LaporanPage() {
+  useBlockBack();
+  const downloadLaporan = async (tipe, range) => {
+    try {
+      const response = await axios.get(`http://localhost:5000/api/laporan/${tipe}/${range}`, {
+        responseType: 'blob', // penting biar bisa download file
+      });
+
+      // Buat blob dan link untuk download
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', `laporan_${tipe}_${range}.xlsx`);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    } catch (err) {
+      console.error('Gagal download laporan:', err);
+      alert('Gagal download laporan!');
+    }
+  };
+
+  return (
+    <div>
+      <HeaderPage title="KELOLA LAPORAN" />
+      <div className={styles.container}>
+        <section className={styles.section}>
+          <h2>Laporan Pemesanan</h2>
+          {ranges.map((range) => (
+            <button key={`pemesanan-${range}`} className={styles.downloadBtn} onClick={() => downloadLaporan('pemesanan', range)}>
+              Download {range}
+            </button>
+          ))}
+        </section>
+
+        <section className={styles.section}>
+          <h2>Laporan Reservasi</h2>
+          {ranges.map((range) => (
+            <button key={`reservasi-${range}`} className={styles.downloadBtn} onClick={() => downloadLaporan('reservasi', range)}>
+              Download {range}
+            </button>
+          ))}
+        </section>
+      </div>
+      <FooterPage />
+    </div>
+  );
+}
+
+export default LaporanPage;

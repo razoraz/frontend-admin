@@ -1,0 +1,125 @@
+.container {
+  background-color: #1a1a1a;
+  max-width: 1100px;
+  margin: 60px auto 130px;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(255, 230, 0, 0.08);
+}
+
+.title {
+  text-align: center;
+  color: #ffe600;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+}
+
+/* List Metode */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #2a2a2a;
+  padding: 15px 18px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.option:hover {
+  background-color: #3a3a3a;
+}
+
+.option input[type='radio'] {
+  width: 20px;
+  height: 20px;
+}
+
+.option span {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Tombol Bayar */
+.btnBayar {
+  margin-top: 35px;
+  width: 100%;
+  padding: 14px;
+  background-color: #ffe600;
+  color: black;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btnBayar:hover {
+  background-color: #fff59d;
+}
+/* ===== Footer Sticky Bayar ===== */
+.checkoutBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #181818;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 25px;
+  border-top: 1px solid #ffe600;
+  z-index: 9999;
+}
+
+.totalInfo h3 {
+  margin: 0;
+  color: #ffe600;
+  font-weight: 700;
+}
+
+.payBtn {
+  padding: 12px 30px;
+  background-color: #ffe600;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.payBtn:hover {
+  background-color: #fff59d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    margin: 30px 10px;
+    padding: 20px;
+  }
+
+  .option span {
+    font-size: 1rem;
+  }
+
+  .btnBayar {
+    font-size: 1rem;
+    padding: 12px;
+  }
+  .checkoutBar {
+    padding: 15px 20px;
+  }
+
+  .payBtn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

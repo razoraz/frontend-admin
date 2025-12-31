@@ -1,0 +1,223 @@
+/* ===============================
+   BERANDA ADMIN - REFINED UI
+   Tema: Dark Coffee Dashboard
+================================ */
+
+.container {
+  padding: 30px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ===== SECTION WRAPPER ===== */
+.activitySection,
+.quickActionSection,
+.statusSection {
+  background: linear-gradient(180deg, #1c1c1c, #141414);
+  border-radius: 20px;
+  padding: 28px 30px;
+  margin: 0 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+/* ===== SECTION HEADER ===== */
+.sectionTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffd633;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.decorativeLine2 {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #fff615, transparent);
+  margin: 12px 0 26px;
+  border-radius: 10px;
+}
+
+/* ===== NOTIFIKASI ===== */
+.notificationBox {
+  margin: 0 40px;
+  background: linear-gradient(180deg, #1f1f1f, #141414);
+  border-radius: 18px;
+  padding: 20px 24px;
+  box-shadow: 0 0 30px rgba(255, 246, 21, 0.25);
+}
+
+.notificationHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff615;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.badge {
+  background-color: #f44336;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: white;
+}
+
+.notificationItems {
+  list-style: none;
+  margin-top: 16px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.notificationItems li {
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+/* Status notif */
+.danger {
+  background: rgba(244, 67, 54, 0.12);
+  border-left: 5px solid #f44336;
+}
+
+.warning {
+  background: rgba(255, 214, 51, 0.12);
+  border-left: 5px solid #ffd633;
+}
+
+.info {
+  background: rgba(0, 180, 255, 0.12);
+  border-left: 5px solid #00b4ff;
+}
+
+/* ===== AKTIVITAS ===== */
+.activityHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.activityDate {
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* ===== CARD ===== */
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: linear-gradient(180deg, #202020, #161616);
+  border-radius: 18px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: inset 0 0 0 1px #2b2b2b;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(255, 246, 21, 0.25);
+}
+
+.card h3 {
+  font-size: 16px;
+  color: #eee;
+}
+
+.card .value {
+  font-size: 34px;
+  margin: 12px 0;
+  color: #ffd633;
+}
+
+.cardSub {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.menuList {
+  padding-left: 0;
+  margin-top: 12px;
+}
+
+.menuList li {
+  list-style: none;
+  padding: 6px 0;
+  font-size: 14px;
+  color: #ffd633;
+}
+
+/* ===== QUICK ACTION ===== */
+.quickActionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 20px;
+}
+
+.quickActionCard {
+  background: linear-gradient(180deg, #1f1f1f, #151515);
+  border-radius: 18px;
+  padding: 24px 10px;
+  border: 1px solid #2d2d2d;
+  color: #ffd633;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.quickActionCard span {
+  font-size: 13px;
+  color: #ccc;
+}
+
+.quickActionCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(255, 246, 21, 0.35);
+}
+
+/* ===== STATUS ===== */
+.statusList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.statusItem {
+  background: linear-gradient(180deg, #1f1f1f, #151515);
+  border-radius: 14px;
+  padding: 16px 18px;
+  font-size: 14px;
+  color: #ddd;
+  box-shadow: inset 0 0 0 1px #2c2c2c;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .activitySection,
+  .quickActionSection,
+  .statusSection,
+  .notificationBox {
+    margin: 0 10px;
+    padding: 20px;
+  }
+
+  .activityHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
