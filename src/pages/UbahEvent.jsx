@@ -24,7 +24,7 @@ function UbahEvent() {
   useEffect(() => {
     const fetchEvent = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/event/${id_event}`);
+        const res = await axios.get(`https://backend-production-8cf7.up.railway.app/api/event/${id_event}`);
         const data = res.data;
 
         setJudul(data.judul);
@@ -53,7 +53,7 @@ function UbahEvent() {
         formData.append('gambar_lama', gambarLama);
       }
 
-      await axios.put(`http://localhost:5000/api/event/${id_event}`, formData, {
+      await axios.put(`https://backend-production-8cf7.up.railway.app/api/event/${id_event}`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
 
