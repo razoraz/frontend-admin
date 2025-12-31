@@ -17,7 +17,7 @@ function KelolaEvent() {
 
   const fetchEvent = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/event');
+      const res = await axios.get('https://backend-production-8cf7.up.railway.app/api/event');
       setEvent(res.data.length > 0 ? res.data[0] : null);
     } catch (err) {
       console.error(err);
@@ -34,7 +34,7 @@ function KelolaEvent() {
     if (!event) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/event/${event.id_event}`);
+      await axios.delete(`https://backend-production-8cf7.up.railway.app/api/event/${event.id_event}`);
       setEvent(null);
       setModalOpen(false);      // tutup modal question
       setModalSuccessOpen(true); // buka modal success
@@ -79,10 +79,10 @@ function KelolaEvent() {
 
               <div className={styles.eventMedia}>
                 {isVideo(event.gambar_event) ? (
-                  <video src={`http://localhost:5000/uploads/event/${event.gambar_event}`} controls />
+                  <video src={`https://backend-production-8cf7.up.railway.app/uploads/event/${event.gambar_event}`} controls />
                 ) : (
                   <img
-                    src={`http://localhost:5000/uploads/event/${event.gambar_event}`}
+                    src={`https://backend-production-8cf7.up.railway.app/uploads/event/${event.gambar_event}`}
                     alt={event.judul}
                   />
                 )}
