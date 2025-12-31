@@ -18,7 +18,7 @@ const MenungguPembayaranKasir = () => {
     const fetchPemesanan = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/pemesanan/detail/${id_pemesanan}`
+          `https://backend-production-8cf7.up.railway.app/api/pemesanan/detail/${id_pemesanan}`
         );
         setPemesanan(res.data);
 
