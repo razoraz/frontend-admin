@@ -15,7 +15,7 @@ const Struk = () => {
     document.title = 'Struk Pemesanan';
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/pemesanan/detail/${id_pemesanan}`);
+        const res = await axios.get(`https://backend-production-8cf7.up.railway.app/api/pemesanan/detail/${id_pemesanan}`);
         setPemesanan(res.data);
       } catch (err) {
         console.error(err);
