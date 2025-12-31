@@ -57,7 +57,7 @@ function KelolaPemesanan() {
     document.title = 'Kelola Pemesanan - Basecamp Kopi';
     // Fetch data
     axios
-      .get('http://localhost:5000/api/pemesanan/list-pemesanan')
+      .get('https://backend-production-8cf7.up.railway.app/api/pemesanan/list-pemesanan')
       .then((res) => {
         setPemesanan(res.data);
         setFilteredData(res.data);
@@ -129,7 +129,7 @@ function KelolaPemesanan() {
         message: 'Apakah Anda yakin ingin menghapus pemesanan ini?',
         onConfirm: async () => {
           try {
-            await axios.delete(`http://localhost:5000/api/pemesanan/delete-pemesanan/${id_pemesanan}`);
+            await axios.delete(`https://backend-production-8cf7.up.railway.app/api/pemesanan/delete-pemesanan/${id_pemesanan}`);
 
             setModal((prev) => ({ ...prev, isOpen: false }));
             setTimeout(() => {
@@ -162,7 +162,7 @@ function KelolaPemesanan() {
   );
   const handleDownloadStruk = async (id_pemesanan) => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/pemesanan/detail/${id_pemesanan}`);
+      const res = await axios.get(`https://backend-production-8cf7.up.railway.app/api/pemesanan/detail/${id_pemesanan}`);
 
       setSelectedPemesanan(res.data);
 
