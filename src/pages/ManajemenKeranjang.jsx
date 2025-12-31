@@ -29,7 +29,7 @@ const Keranjang = () => {
   // Ambil menu dari backend
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/menu/menu')
+      .get('https://backend-production-8cf7.up.railway.app/api/menu/menu')
       .then((res) => setMenuData(res.data))
       .catch((err) => console.error(err));
   }, []);
@@ -179,7 +179,7 @@ const Keranjang = () => {
 
   const total = keranjang.reduce((acc, item) => acc + item.harga * item.qty, 0);
 
-  const getImageUrl = (filename) => `http://localhost:5000/uploads/${filename}`;
+  const getImageUrl = (filename) => `https://backend-production-8cf7.up.railway.app/uploads/${filename}`;
 
   return (
     <div className={styles.page}>
