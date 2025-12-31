@@ -30,7 +30,7 @@ function FormReservasi() {
   useEffect(() => {
     document.title = 'Reservasi Meja - Basecamp Kopi';
 
-    fetch('http://localhost:5000/api/meja')
+    fetch('https://backend-production-8cf7.up.railway.app/api/meja')
       .then(res => res.json())
       .then(data => setMejaList(data))
       .catch(() => {
