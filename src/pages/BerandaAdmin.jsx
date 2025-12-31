@@ -36,8 +36,8 @@ function Beranda() {
     const fetchData = async () => {
       try {
         const [summaryRes, notifRes] = await Promise.all([
-          axios.get('http://localhost:5000/api/beranda/summary'),
-          axios.get('http://localhost:5000/api/beranda/notifications'),
+          axios.get('https://backend-production-8cf7.up.railway.app/api/beranda/summary'),
+          axios.get('https://backend-production-8cf7.up.railway.app/api/beranda/notifications'),
         ]);
 
         setSummary(summaryRes.data);
