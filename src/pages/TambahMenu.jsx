@@ -46,7 +46,7 @@ function TambahMenu() {
   useEffect(() => {
     const fetchKategori = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/menu/kategori');
+        const res = await fetch('https://backend-production-8cf7.up.railway.app/api/menu/kategori');
         const data = await res.json();
         setKategoriList(data);
       } catch (error) {
@@ -62,7 +62,7 @@ function TambahMenu() {
     for (const key in formData) data.append(key, formData[key]);
 
     try {
-      const res = await fetch('http://localhost:5000/api/menu/tambah', {
+      const res = await fetch('https://backend-production-8cf7.up.railway.app/api/menu/tambah', {
         method: 'POST',
         body: data,
       });
