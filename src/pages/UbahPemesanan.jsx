@@ -36,7 +36,7 @@ function UbahPemesanan() {
   // GET data existing
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/pemesanan/detail-pemesanan/${id_pemesanan}`)
+      .get(`https://backend-production-8cf7.up.railway.app/api/pemesanan/detail-pemesanan/${id_pemesanan}`)
       .then((res) => {
         const p = res.data.pemesanan;
         setItems(res.data.items);
@@ -68,7 +68,7 @@ function UbahPemesanan() {
 
   const handleConfirmUpdate = async () => {
     try {
-      await axios.put(`http://localhost:5000/api/pemesanan/update-pemesanan/${id_pemesanan}`, form);
+      await axios.put(`https://backend-production-8cf7.up.railway.app/api/pemesanan/update-pemesanan/${id_pemesanan}`, form);
 
       // Modal success
       setModalType('success');
