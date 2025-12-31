@@ -31,7 +31,7 @@ function DetailReservasi() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/reservasi/detail-reservasi/${id_reservasi}`)
+      .get(`https://backend-production-8cf7.up.railway.app/api/reservasi/detail-reservasi/${id_reservasi}`)
       .then((res) => {
         setData(res.data.reservasi);
         setItems(res.data.items);
@@ -78,7 +78,7 @@ function DetailReservasi() {
   // 🚮 FUNGSI PROSES DELETE
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/reservasi/delete-reservasi/${id_reservasi}`);
+      await axios.delete(`https://backend-production-8cf7.up.railway.app/api/reservasi/delete-reservasi/${id_reservasi}`);
 
       // Tutup modal pertanyaan
       setModal({ open: false });
