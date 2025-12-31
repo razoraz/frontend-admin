@@ -23,7 +23,7 @@ function TambahEvent() {
   useEffect(() => {
     const cekEvent = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/event');
+        const res = await axios.get('https://backend-production-8cf7.up.railway.app/api/event');
 
         if (Array.isArray(res.data) && res.data.length > 0) {
           setEventExist(true);
@@ -51,7 +51,7 @@ function TambahEvent() {
       formData.append('deskripsi', deskripsi);
       formData.append('gambar_event', gambar);
 
-      await axios.post('http://localhost:5000/api/event', formData, {
+      await axios.post('https://backend-production-8cf7.up.railway.app/api/event', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
 
