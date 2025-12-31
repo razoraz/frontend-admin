@@ -31,7 +31,7 @@ function DetailPemesanan() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/pemesanan/detail-pemesanan/${id_pemesanan}`)
+      .get(`https://backend-production-8cf7.up.railway.app/api/pemesanan/detail-pemesanan/${id_pemesanan}`)
       .then((res) => {
         setData(res.data.pemesanan);
         setItems(res.data.items);
@@ -55,7 +55,7 @@ function DetailPemesanan() {
   // 🚮 FUNGSI PROSES DELETE
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/pemesanan/delete-pemesanan/${id_pemesanan}`);
+      await axios.delete(`https://backend-production-8cf7.up.railway.app/api/pemesanan/delete-pemesanan/${id_pemesanan}`);
 
       // Tutup modal pertanyaan
       setModal({ open: false });
