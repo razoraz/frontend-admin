@@ -39,11 +39,11 @@ function GrafikPemesanan() {
       let url = '';
 
       if (mode === 'harian') {
-        url = `http://localhost:5000/api/statistik/harian-pemesanan?start=${startDate}&end=${endDate}`;
+        url = `https://backend-production-8cf7.up.railway.app/api/statistik/harian-pemesanan?start=${startDate}&end=${endDate}`;
       } else if (mode === 'bulanan') {
-        url = `http://localhost:5000/api/statistik/bulanan-pemesanan?year=${year}`;
+        url = `https://backend-production-8cf7.up.railway.app/api/statistik/bulanan-pemesanan?year=${year}`;
       } else {
-        url = `http://localhost:5000/api/statistik/tahunan-pemesanan`;
+        url = `https://backend-production-8cf7.up.railway.app/api/statistik/tahunan-pemesanan`;
       }
 
       const res = await axios.get(url);
