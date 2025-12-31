@@ -64,7 +64,7 @@ const TambahFeedback = ({ idPemesanan: propId }) => {
       formData.append('pesan', pesan);
       if (image) formData.append('image', image);
 
-      await axios.post('http://localhost:5000/api/feedback/tambah-feedback', formData, { headers: { 'Content-Type': 'multipart/form-data' } });
+      await axios.post('https://backend-production-8cf7.up.railway.app/api/feedback/tambah-feedback', formData, { headers: { 'Content-Type': 'multipart/form-data' } });
 
       // Reset form
       setRating(0);
