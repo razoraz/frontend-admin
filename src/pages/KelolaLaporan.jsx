@@ -10,7 +10,7 @@ function LaporanPage() {
   useBlockBack();
   const downloadLaporan = async (tipe, range) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/laporan/${tipe}/${range}`, {
+      const response = await axios.get(`https://backend-production-8cf7.up.railway.app/api/laporan/${tipe}/${range}`, {
         responseType: 'blob', // penting biar bisa download file
       });
 
