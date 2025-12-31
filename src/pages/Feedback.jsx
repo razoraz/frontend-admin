@@ -29,7 +29,7 @@ function FeedbackPage() {
   useEffect(() => {
     const fetchFeedback = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/feedback');
+        const res = await fetch('https://backend-production-8cf7.up.railway.app/api/feedback');
         const json = await res.json();
         setFeedbacks(json.data);
       } catch (error) {
@@ -112,7 +112,7 @@ function FeedbackPage() {
         <div className={styles.feedbackImageWrapper}>
           {gambar_feedback ? (
             <img
-              src={gambar_feedback.startsWith('http') ? gambar_feedback : `http://localhost:5000/uploads/feedback/${gambar_feedback}`}
+              src={gambar_feedback.startsWith('http') ? gambar_feedback : `https://backend-production-8cf7.up.railway.app/uploads/feedback/${gambar_feedback}`}
               alt="Feedback Gambar"
               className={styles.feedbackImage}
             />
