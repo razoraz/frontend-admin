@@ -48,7 +48,7 @@ function NewPasswordForm({ onError, onSuccess }) {
 
     try {
       setLoading(true);
-      const res = await fetch('http://localhost:5000/api/auth/reset-password/reset', {
+      const res = await fetch('https://backend-production-8cf7.up.railway.app/api/auth/reset-password/reset', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
