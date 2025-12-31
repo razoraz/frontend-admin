@@ -19,7 +19,7 @@ const MetodePembayaran = () => {
   // Ambil menu dari backend
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/menu/menu')
+      .get('https://backend-production-8cf7.up.railway.app/api/menu/menu')
       .then((res) => setMenuData(res.data))
       .catch((err) => console.error(err));
   }, []);
@@ -47,7 +47,7 @@ const MetodePembayaran = () => {
   // Ambil metode pembayaran
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/pemesanan/metode-pembayaran')
+      .get('https://backend-production-8cf7.up.railway.app/api/pemesanan/metode-pembayaran')
       .then((res) => {
         if (res.data.success) {
           setMetodeList(res.data.data);
@@ -83,7 +83,7 @@ const MetodePembayaran = () => {
     const total = keranjang.reduce((acc, item) => acc + item.harga * item.qty, 0);
 
     // Tentukan endpoint & payload
-    const endpoint = reservasi ? 'http://localhost:5000/api/reservasi/add-reservasi' : 'http://localhost:5000/api/pemesanan/add-pemesanan';
+    const endpoint = reservasi ? 'https://backend-production-8cf7.up.railway.app/api/reservasi/add-reservasi' : 'https://backend-production-8cf7.up.railway.app/api/pemesanan/add-pemesanan';
 
     const payload = reservasi
       ? {
