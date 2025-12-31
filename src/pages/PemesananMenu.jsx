@@ -161,12 +161,12 @@ function PemesananPelanggan() {
   // ======================
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/menu/menu')
+      .get('https://backend-production-8cf7.up.railway.app/api/menu/menu')
       .then((res) => setMenu(res.data))
       .catch((err) => console.error('Gagal ambil menu:', err));
   }, []);
 
-  const getImageUrl = (filename) => `http://localhost:5000/uploads/${filename}`;
+  const getImageUrl = (filename) => `https://backend-production-8cf7.up.railway.app/uploads/${filename}`;
 
   const addToCart = (id) => setCart((prev) => ({ ...prev, [id]: 1 }));
 
