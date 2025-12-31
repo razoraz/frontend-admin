@@ -30,8 +30,8 @@ function HeaderPagePelanggan({ bg_video, title, subtitle }) {
 
         <div className={styles.navContent}>
           <div className={styles.navLogo}>
-            <Link to="/">
-              <img src="../../../public/logo_kafe/Logo.PNG" alt="Logo Kafe" />
+            <Link to="/Beranda-Pelanggan">
+              <img src="/logo_kafe/Logo.PNG" alt="Logo Kafe" />
             </Link>
           </div>
 
