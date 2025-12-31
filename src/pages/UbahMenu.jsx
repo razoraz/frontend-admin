@@ -46,9 +46,9 @@ function UbahMenu() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const kategoriRes = await axios.get('http://localhost:5000/api/menu/kategori');
+        const kategoriRes = await axios.get('https://backend-production-8cf7.up.railway.app/api/menu/kategori');
         setKategoriList(kategoriRes.data);
-        const menuRes = await axios.get(`http://localhost:5000/api/menu/menu/${id}`);
+        const menuRes = await axios.get(`https://backend-production-8cf7.up.railway.app/api/menu/menu/${id}`);
         setMenu(menuRes.data);
       } catch (error) {
         console.error('Gagal ambil data:', error);
@@ -83,7 +83,7 @@ function UbahMenu() {
       const formData = new FormData();
       for (const key in menu) formData.append(key, menu[key]);
       if (gambarBaru) formData.append('gambar_menu', gambarBaru);
-      await axios.put(`http://localhost:5000/api/menu/menu/${id}`, formData, {
+      await axios.put(`https://backend-production-8cf7.up.railway.app/api/menu/menu/${id}`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       // Modal success
