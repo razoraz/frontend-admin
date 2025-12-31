@@ -38,7 +38,7 @@ function UbahReservasi() {
   // GET data existing
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/reservasi/detail-reservasi/${id_reservasi}`)
+      .get(`https://backend-production-8cf7.up.railway.app/api/reservasi/detail-reservasi/${id_reservasi}`)
       .then((res) => {
         const r = res.data.reservasi;
 
@@ -79,7 +79,7 @@ function UbahReservasi() {
 
   const handleConfirmUpdate = async () => {
     try {
-      await axios.put(`http://localhost:5000/api/reservasi/update-reservasi/${id_reservasi}`, form);
+      await axios.put(`https://backend-production-8cf7.up.railway.app/api/reservasi/update-reservasi/${id_reservasi}`, form);
 
       // Modal success
       setModalType('success');
