@@ -32,12 +32,12 @@ function KelolaMenu() {
   useEffect(() => {
     document.title = 'Kelola Menu - Basecamp Kopi';
     axios
-      .get('http://localhost:5000/api/menu/menu')
+      .get('https://backend-production-8cf7.up.railway.app/api/menu/menu')
       .then((res) => setMenu(res.data))
       .catch((err) => console.error('Gagal ambil menu:', err));
   }, []);
 
-  const getImageUrl = (filename) => `http://localhost:5000/uploads/${filename}`;
+  const getImageUrl = (filename) => `https://backend-production-8cf7.up.railway.app/uploads/${filename}`;
 
   // Saat klik tombol hapus
   const handleDelete = (id) => {
@@ -51,7 +51,7 @@ function KelolaMenu() {
   // Saat user menekan hapus pada modal
   const confirmDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/menu/menu/${deleteId}`);
+      await axios.delete(`https://backend-production-8cf7.up.railway.app/api/menu/menu/${deleteId}`);
       setMenu((prev) => prev.filter((item) => item.id_menu !== deleteId));
       setModalType('success');
       setModalTitle('Berhasil Dihapus');
