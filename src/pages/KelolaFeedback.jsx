@@ -28,7 +28,7 @@ function KelolaFeedback() {
     document.title = 'Kelola Feedback - Basecamp Kopi';
 
     axios
-      .get('http://localhost:5000/api/feedback')
+      .get('https://backend-production-8cf7.up.railway.app/api/feedback')
       .then((res) => {
         setFeedbackList(res.data.data);
         setFilteredData(res.data.data);
@@ -66,7 +66,7 @@ function KelolaFeedback() {
         message: 'Apakah Anda yakin ingin menghapus feedback ini?',
         onConfirm: async () => {
           try {
-            await axios.delete(`http://localhost:5000/api/feedback/${id_feedback}`);
+            await axios.delete(`https://backend-production-8cf7.up.railway.app/api/feedback/${id_feedback}`);
 
             const updated = feedbackList.filter((item) => item.id_feedback !== id_feedback);
             setFeedbackList(updated);
@@ -108,7 +108,7 @@ function KelolaFeedback() {
       },
       {
         Header: 'Gambar',
-        Cell: ({ row }) => (row.original.gambar_feedback ? <img src={`http://localhost:5000/uploads/feedback/${row.original.gambar_feedback}`} alt="Feedback" width="50" height="50" style={{ borderRadius: 8 }} /> : '—'),
+        Cell: ({ row }) => (row.original.gambar_feedback ? <img src={`https://backend-production-8cf7.up.railway.app/uploads/feedback/${row.original.gambar_feedback}`} alt="Feedback" width="50" height="50" style={{ borderRadius: 8 }} /> : '—'),
       },
       {
         Header: 'Email',
