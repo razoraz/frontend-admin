@@ -38,11 +38,11 @@ function GrafikReservasi() {
       let url = '';
 
       if (mode === 'harian') {
-        url = `http://localhost:5000/api/statistik/harian-reservasi?start=${startDate}&end=${endDate}`;
+        url = `https://backend-production-8cf7.up.railway.app/api/statistik/harian-reservasi?start=${startDate}&end=${endDate}`;
       } else if (mode === 'bulanan') {
-        url = `http://localhost:5000/api/statistik/bulanan-reservasi?year=${year}`;
+        url = `https://backend-production-8cf7.up.railway.app/api/statistik/bulanan-reservasi?year=${year}`;
       } else {
-        url = `http://localhost:5000/api/statistik/tahunan-reservasi`;
+        url = `https://backend-production-8cf7.up.railway.app/api/statistik/tahunan-reservasi`;
       }
 
       const res = await axios.get(url);
