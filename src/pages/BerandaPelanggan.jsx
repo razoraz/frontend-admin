@@ -31,19 +31,19 @@ function BerandaPage() {
 
     // Menu Terlaris
     axios
-      .get('http://localhost:5000/api/beranda-pelanggan/menu-terlaris')
+      .get('https://backend-production-8cf7.up.railway.app/api/beranda-pelanggan/menu-terlaris')
       .then((res) => setMenuTerlaris(res.data))
       .catch((err) => console.error('Menu terlaris error:', err));
 
     // Event / Promo
     axios
-      .get('http://localhost:5000/api/beranda-pelanggan/event')
+      .get('https://backend-production-8cf7.up.railway.app/api/beranda-pelanggan/event')
       .then((res) => setEvent(res.data))
       .catch((err) => console.error('Event error:', err));
 
     // Feedback
     axios
-      .get('http://localhost:5000/api/beranda-pelanggan/feedback')
+      .get('https://backend-production-8cf7.up.railway.app/api/beranda-pelanggan/feedback')
       .then((res) => setFeedback(res.data))
       .catch((err) => console.error('Feedback error:', err));
   }, []);
@@ -80,7 +80,7 @@ function BerandaPage() {
             {menuTerlaris.length > 0 ? (
               menuTerlaris.map((menu) => (
                 <div key={menu.id_menu} className={styles.menuCard}>
-                  <img src={`http://localhost:5000/uploads/${menu.gambar_menu}`} alt={menu.nama_menu} />
+                  <img src={`https://backend-production-8cf7.up.railway.app/uploads/${menu.gambar_menu}`} alt={menu.nama_menu} />
                   <h4>{menu.nama_menu}</h4>
                   <span>⭐ Terlaris</span>
                 </div>
@@ -99,7 +99,7 @@ function BerandaPage() {
               feedback.map((fb, index) => (
                 <div key={index} className={styles.feedbackCard}>
                   <p>"{fb.feedback}"</p>
-                  <img src={`http://localhost:5000/uploads/feedback/${fb.gambar_feedback}`} alt={fb.nama_pelanggan} />
+                  <img src={`https://backend-production-8cf7.up.railway.app/uploads/feedback/${fb.gambar_feedback}`} alt={fb.nama_pelanggan} />
                   <strong>{fb.nama_pelanggan}</strong>
                   <span>⭐ {fb.rating}/5</span>
                 </div>
@@ -117,7 +117,7 @@ function BerandaPage() {
             <p>{event.deskripsi}</p>
 
             <img
-              src={`http://localhost:5000/uploads/event/${event.gambar_event}`}
+              src={`https://backend-production-8cf7.up.railway.app/uploads/event/${event.gambar_event}`}
               alt={event.judul}
               style={{
                 marginTop: '20px',
