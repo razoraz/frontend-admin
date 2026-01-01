@@ -11,6 +11,7 @@ const MenungguPembayaranKasir = () => {
   const navigate = useNavigate();
 
   const [pemesanan, setPemesanan] = useState(null);
+  const [id_reservasi, setIdReservasi] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
   // Fetch & polling status pembayaran
@@ -21,6 +22,12 @@ const MenungguPembayaranKasir = () => {
           `https://backend-production-8cf7.up.railway.app/api/pemesanan/detail/${id_pemesanan}`
         );
         setPemesanan(res.data);
+
+        // ⭐ CEK APAKAH ADA id_reservasi
+        if (res.data.reservasi && res.data.reservasi.id_reservasi) {
+          setIdReservasi(res.data.reservasi.id_reservasi);
+          console.log('📋 Pemesanan dari reservasi:', res.data.reservasi.id_reservasi);
+        }
 
         // ✅ Jika sudah bayar → munculkan modal
         if (res.data.status_pembayaran === 'sudah_bayar') {
@@ -41,7 +48,17 @@ const MenungguPembayaranKasir = () => {
 
   const handleModalClose = () => {
     setShowModal(false);
-    navigate(`/struk/${id_pemesanan}`);
+    
+    // ⭐ LOGIKA NAVIGASI BERDASARKAN RESERVASI
+    if (id_reservasi) {
+      // Jika ada reservasi, redirect ke struk dengan id_reservasi
+      navigate(`/struk/${id_reservasi}`);
+      console.log(`🔀 Redirect ke struk reservasi: ${id_reservasi}`);
+    } else {
+      // Jika tidak ada reservasi, tetap pakai id_pemesanan
+      navigate(`/struk/${id_pemesanan}`);
+      console.log(`🔀 Redirect ke struk pemesanan: ${id_pemesanan}`);
+    }
   };
 
   if (!pemesanan) {
@@ -51,6 +68,9 @@ const MenungguPembayaranKasir = () => {
       </div>
     );
   }
+
+  // ⭐ Tampilkan info tambahan jika dari reservasi
+  const isReservasi = id_reservasi !== null;
 
   return (
     <div>
@@ -74,15 +94,33 @@ const MenungguPembayaranKasir = () => {
               <span>Nama Pelanggan</span>
               <strong>{pemesanan.nama_pelanggan}</strong>
             </div>
+            
             <div>
               <span>Pemesanan Order</span>
               <strong>#{pemesanan.id_pemesanan}</strong>
             </div>
+
+            {/* ⭐ TAMPILKAN INFO RESERVASI JIKA ADA */}
+            {isReservasi && (
+              <div className={styles.reservasiInfo}>
+                <span>Reservasi ID</span>
+                <strong>#{id_reservasi}</strong>
+              </div>
+            )}
+
             <div>
               <span>Total Harga</span>
               <strong>Rp {Number(pemesanan.total_harga).toLocaleString()}</strong>
             </div>
           </div>
+
+          {/* ⭐ PESAN KHUSUS UNTUK RESERVASI */}
+          {isReservasi && (
+            <div className={styles.reservasiNote}>
+              <p>📅 Pemesanan ini terkait dengan reservasi Anda.</p>
+              <p>Struk akan menampilkan detail reservasi.</p>
+            </div>
+          )}
 
           <p className={styles.note}>
             🛎️ Nikmati kopi sambil menunggu kasir memproses pembayaran Anda.
@@ -97,7 +135,11 @@ const MenungguPembayaranKasir = () => {
         isOpen={showModal}
         onClose={handleModalClose}
         title="Pembayaran Berhasil"
-        message="Pembayaran Anda telah dikonfirmasi oleh kasir. Struk siap ditampilkan."
+        message={
+          isReservasi 
+            ? "Pembayaran reservasi Anda telah dikonfirmasi oleh kasir. Struk siap ditampilkan."
+            : "Pembayaran Anda telah dikonfirmasi oleh kasir. Struk siap ditampilkan."
+        }
         type="success"
       />
     </div>
