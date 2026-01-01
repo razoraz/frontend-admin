@@ -125,12 +125,40 @@
   background-color: #2a2a2a;
 }
 
-/* ===== TOTAL ===== */
-.total {
+/* Total Section dengan styling lebih baik */
+.totalSection {
   text-align: right;
-  font-size: 1.2rem;
+  padding: 20px;
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  border-radius: 10px;
+  border-top: 2px solid #fff615;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.totalLabel {
+  font-size: 1.3rem;
   font-weight: 600;
-  margin-bottom: 25px;
+  color: #cccccc;
+}
+
+.totalValue {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff615;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.totalNote {
+  font-size: 0.9rem;
+  color: #00ff88;
+  font-style: italic;
+  margin-top: 10px;
 }
 
 /* ===== ACTION BUTTONS ===== */
@@ -148,7 +176,6 @@
   padding: 30px;
 }
 
-.downloadBtn,
 .actionBtn {
   color: #000;
   padding: 14px 10px;
@@ -162,13 +189,9 @@
   transition: 0.3s ease;
   font-size: 1rem;
 }
-
-.downloadBtn {
-  background-color: #ffb800;
-}
-
-.dowloadBtn:hover {
-  background-color: #e6b800;
+/* Action Button dengan Icon */
+.actions button.actionBtn i {
+  margin-right: 8px;
 }
 
 /* kedua tombol beda warna */
@@ -386,10 +409,6 @@
   margin-bottom: 4px;
 }
 
-
-
-
-
 /* MOBILE */
 @media (max-width: 768px) {
   .page {
@@ -403,9 +422,43 @@
     gap: 20px;
   }
 
-  .downloadBtn,
   .actions button.actionBtn {
     width: 100%; /* full width mobile */
     font-size: 1rem;
+  }
+  .adminSection {
+    padding: 12px;
+    margin: 15px 0;
+  }
+
+  .adminInfo {
+    flex-direction: column;
+  }
+
+  .adminBadge {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .adminLabel {
+    min-width: auto;
+    font-size: 0.9rem;
+  }
+
+  .totalSection {
+    padding: 15px;
+  }
+
+  .totalLabel {
+    font-size: 1.1rem;
+  }
+
+  .totalValue {
+    font-size: 1.5rem;
+  }
+
+  .totalNote {
+    font-size: 0.8rem;
   }
 }
