@@ -91,6 +91,8 @@ const Struk = () => {
           </div>
         </div>
         <div className={styles.separator}></div>
+        {pemesanan.email_admin ? pemesanan.email_admin.split('@')[0] : '-'}
+        <div className={styles.separator}></div>
 
         {/* ================= INFO RESERVASI (OPSIONAL) ================= */}
         {pemesanan.reservasi && (
