@@ -31,6 +31,9 @@ function UbahPemesanan() {
 
   useEffect(() => {
     document.title = 'Ubah Pemesanan - Basecamp Kopi';
+    const adminData = JSON.parse(sessionStorage.getItem('adminData'));
+    console.log('Admin Data dari Storage:', adminData);
+    console.log('Admin ID:', adminData?.id_admin);
   }, []);
 
   // GET data existing
