@@ -98,12 +98,6 @@ const StrukPrint = ({ pemesanan }) => {
                     {formatAdminName(pemesanan.email_admin)}
                   </span>
                 </div>
-                {pemesanan.kode_admin && (
-                  <div className={styles.strukAdminRow}>
-                    <span className={styles.strukAdminLabel}>Kode:</span>
-                    <span className={styles.strukAdminCode}>{pemesanan.kode_admin}</span>
-                  </div>
-                )}
               </div>
             </div>
             <div className={styles.strukSeparator}></div>
