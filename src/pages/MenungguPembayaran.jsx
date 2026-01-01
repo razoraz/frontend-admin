@@ -114,14 +114,6 @@ const MenungguPembayaranKasir = () => {
             </div>
           </div>
 
-          {/* ⭐ PESAN KHUSUS UNTUK RESERVASI */}
-          {isReservasi && (
-            <div className={styles.reservasiNote}>
-              <p>📅 Pemesanan ini terkait dengan reservasi Anda.</p>
-              <p>Struk akan menampilkan detail reservasi.</p>
-            </div>
-          )}
-
           <p className={styles.note}>
             🛎️ Nikmati kopi sambil menunggu kasir memproses pembayaran Anda.
           </p>
