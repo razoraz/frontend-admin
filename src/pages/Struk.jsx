@@ -158,7 +158,6 @@ const Struk = () => {
 
         {/* ================= TABEL MENU ================= */}
         <div className={styles.sectionHeader}>
-          <i className="fas fa-utensils"></i>
           <h3 className={styles.sectionTitle}>Detail Pesanan</h3>
         </div>
         
