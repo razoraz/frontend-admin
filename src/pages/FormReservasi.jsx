@@ -103,16 +103,17 @@ function FormReservasi() {
                 <label>No WhatsApp</label>
                 <input type="tel" name="nomor_whatsapp" value={formData.nomor_whatsapp} onChange={handleChange} placeholder="08xxxxxxxxxx" />
               </div>
-
               <div className={styles.inputGroup}>
                 <label>No Meja</label>
                 <select name="no_meja" value={formData.no_meja} onChange={handleChange}>
                   <option value="">-- Pilih Meja --</option>
-                  {mejaList.map((meja) => (
-                    <option key={meja.id_meja} value={meja.no_meja}>
-                      {meja.no_meja} - {meja.kapasitas} Orang
-                    </option>
-                  ))}
+                  {mejaList
+                    .filter((meja) => meja.status_meja === 'tersedia' || meja.status_meja === 'dipesan') // ✅ filter meja
+                    .map((meja) => (
+                      <option key={meja.id_meja} value={meja.no_meja}>
+                        {meja.no_meja} - {meja.kapasitas} Orang ({meja.status_meja})
+                      </option>
+                    ))}
                 </select>
               </div>
 
