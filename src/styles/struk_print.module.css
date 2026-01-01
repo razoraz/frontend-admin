@@ -1,6 +1,85 @@
 /* =====================================================
    🧾 MODE PDF — FULL HITAM PUTIH (THERMAL STYLE)
    ===================================================== */
+
+/* SECTION TITLE */
+.strukSectionTitle {
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  margin: 4px 0 6px 0;
+  border-bottom: 1px solid black;
+  padding-bottom: 3px;
+}
+
+/* ADMIN SECTION */
+.strukAdminSection {
+  margin: 6px 0;
+  padding: 4px;
+  border: 1px solid black;
+  border-left: 3px solid black;
+}
+
+.strukAdminHeader {
+  text-align: center;
+  margin-bottom: 4px;
+  padding-bottom: 2px;
+  border-bottom: 1px dashed black;
+}
+
+.strukAdminTitle {
+  font-size: 9px;
+  font-weight: bold;
+  color: black !important;
+}
+
+.strukAdminInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.strukAdminRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 4px;
+}
+
+.strukAdminLabel {
+  font-size: 8px;
+  font-weight: 500;
+  color: black !important;
+  min-width: 25px;
+}
+
+.strukAdminValue {
+  font-size: 9px;
+  font-weight: bold;
+  color: black !important;
+  text-align: right;
+  flex-grow: 1;
+}
+
+.strukAdminCode {
+  font-size: 9px;
+  font-weight: bold;
+  color: black !important;
+  font-family: 'Courier New', monospace;
+  text-align: right;
+  flex-grow: 1;
+}
+
+/* FOOTER */
+.strukFooter {
+  font-size: 8px;
+  text-align: center;
+  margin-top: 8px;
+  padding-top: 4px;
+  border-top: 1px dashed black;
+  font-style: italic;
+  color: black !important;
+}
+
 /* DEFAULT (WEB) */
 .logoColor {
   display: block;
@@ -63,7 +142,7 @@
 .strukRow {
   display: grid;
   grid-template-columns: 75px 8px 1fr; /* label | : | value */
-  padding: 8px 0;
+  padding: 3px 0;
   border: none;
 }
 
@@ -108,23 +187,58 @@
   margin: 6px 0;
 }
 
-/* MODE PRINT */
-.strukTitle {
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: black !important;
-  margin-bottom: 4px;
-}
-
-.strukPaid {
-  color: #2e7d32;
-}
-
-.strukUnpaid {
-  color: #c62828;
-}
-
+/* STATUS */
 .strukStatusText {
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.strukPaid {
+  color: #2e7d32 !important;
+}
+
+.strukUnpaid {
+  color: #c62828 !important;
+}
+
+/* PRINT MODE OPTIMIZATION */
+@media print {
+  .strukPage {
+    width: 58mm !important;
+    max-width: 58mm !important;
+    margin: 0 !important;
+    padding: 4px !important;
+    font-size: 9px !important;
+  }
+
+  .strukRow {
+    grid-template-columns: 70px 5px 1fr;
+    padding: 2px 0;
+  }
+
+  .strukLabel,
+  .strukValue,
+  .strukColon {
+    font-size: 8px !important;
+  }
+
+  .strukTable th,
+  .strukTable td {
+    font-size: 8px !important;
+    padding: 2px;
+  }
+
+  .strukTotal {
+    font-size: 9px !important;
+  }
+
+  .strukAdminLabel,
+  .strukAdminValue,
+  .strukAdminCode {
+    font-size: 8px !important;
+  }
+
+  .strukFooter {
+    font-size: 7px !important;
+  }
 }
