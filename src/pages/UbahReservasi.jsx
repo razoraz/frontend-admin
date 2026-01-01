@@ -79,7 +79,21 @@ function UbahReservasi() {
 
   const handleConfirmUpdate = async () => {
     try {
-      await axios.put(`https://backend-production-8cf7.up.railway.app/api/reservasi/update-reservasi/${id_reservasi}`, form);
+       // ⭐ AMBIL DATA ADMIN DARI SESSIONSTORAGE
+    const adminData = JSON.parse(sessionStorage.getItem('adminData'));
+    const id_admin = adminData?.id_admin;
+    
+    console.log('🔍 Admin yang login:', adminData);
+    console.log('📝 id_admin yang akan dikirim:', id_admin);
+
+    // ⭐ TAMBAHKAN id_admin KE FORM DATA
+    const formData = {
+      ...form,
+      id_admin: id_admin  // ⭐ INI YANG DITAMBAHKAN
+    };
+
+    console.log('📤 Data yang dikirim ke backend:', formData);
+      await axios.put(`https://backend-production-8cf7.up.railway.app/api/reservasi/update-reservasi/${id_reservasi}`, formData);
 
       // Modal success
       setModalType('success');
