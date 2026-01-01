@@ -60,14 +60,6 @@
   flex-grow: 1;
 }
 
-.strukAdminCode {
-  font-size: 9px;
-  font-weight: bold;
-  color: black !important;
-  font-family: 'Courier New', monospace;
-  text-align: right;
-  flex-grow: 1;
-}
 
 /* FOOTER */
 .strukFooter {
@@ -126,6 +118,7 @@
 /* 🔥 LOGO JADI HITAM PUTIH */
 .strukLogo {
   width: 45px;
+  margin-top: -10px;
   margin: 6px auto;
   display: block;
 }
