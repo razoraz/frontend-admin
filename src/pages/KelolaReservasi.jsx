@@ -97,6 +97,8 @@ function KelolaReservasi() {
     switch (status) {
       case 'menunggu_pembayaran':
         return 'Menunggu Pembayaran';
+      case 'menunggu_konfirmasi':
+        return 'Menunggu Konfirmasi';
       case 'dikonfirmasi':
         return 'Dikonfirmasi';
       case 'selesai':
