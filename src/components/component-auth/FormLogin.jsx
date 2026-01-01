@@ -54,9 +54,9 @@ function LoginForm({ error, setError, onSuccess, onError }) {
       sessionStorage.setItem(
         'adminData',
         JSON.stringify({
-          id_admin: data.id_admin, 
-          email: data.email, 
-          kode_admin: data.kode_admin,
+          id_admin: data.id_admin, // Sekarang sudah ada nilainya
+          email: data.email, // Dari backend
+          kode_admin: data.kode_admin, // Dari backend
         })
       );
       if (onSuccess) {
