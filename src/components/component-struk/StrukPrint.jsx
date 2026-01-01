@@ -4,12 +4,20 @@ const StrukPrint = ({ pemesanan }) => {
   if (!pemesanan) return null;
 
   const isPaid = pemesanan.status_pembayaran === 'sudah_bayar';
+  const hasAdmin = !!pemesanan.email_admin || !!pemesanan.kode_admin;
 
   const formatStatusPembayaran = (status) => {
     if (status === 'sudah_bayar') return 'Sudah Bayar';
     if (status === 'belum_bayar') return 'Belum Bayar';
     if (status === 'dibatalkan') return 'Dibatalkan';
     return status;
+  };
+
+  // Format nama admin dari email
+  const formatAdminName = (email) => {
+    if (!email) return '-';
+    const username = email.split('@')[0];
+    return username.charAt(0).toUpperCase() + username.slice(1);
   };
 
   return (
@@ -43,7 +51,9 @@ const StrukPrint = ({ pemesanan }) => {
         <div className={styles.strukRow}>
           <span className={styles.strukLabel}>Tanggal Bayar</span>
           <span className={styles.strukColon}>:</span>
-          <span className={styles.strukValue}>{pemesanan.waktu_bayar ? new Date(pemesanan.waktu_bayar).toLocaleDateString() : '-'}</span>
+          <span className={styles.strukValue}>
+            {pemesanan.waktu_bayar ? new Date(pemesanan.waktu_bayar).toLocaleDateString() : '-'}
+          </span>
         </div>
 
         <div className={styles.strukRow}>
@@ -68,33 +78,66 @@ const StrukPrint = ({ pemesanan }) => {
         <div className={`${styles.strukRow} ${styles.strukStatusRow}`}>
           <span className={styles.strukLabel}>Status Pembayaran</span>
           <span className={styles.strukColon}>:</span>
-          <span className={`${styles.strukStatusText} ${isPaid ? styles.strukPaid : styles.strukUnpaid}`}>{formatStatusPembayaran(pemesanan.status_pembayaran)}</span>
+          <span className={`${styles.strukStatusText} ${isPaid ? styles.strukPaid : styles.strukUnpaid}`}>
+            {formatStatusPembayaran(pemesanan.status_pembayaran)}
+          </span>
         </div>
-      </div>
 
-      <div className={styles.strukSeparator}></div>
+        {/* =============== INFO ADMIN =============== */}
+        {hasAdmin && (
+          <>
+            <div className={styles.strukSeparator}></div>
+            <div className={styles.strukAdminSection}>
+              <div className={styles.strukAdminHeader}>
+                <span className={styles.strukAdminTitle}>Dikonfirmasi Oleh</span>
+              </div>
+              <div className={styles.strukAdminInfo}>
+                <div className={styles.strukAdminRow}>
+                  <span className={styles.strukAdminLabel}>Admin:</span>
+                  <span className={styles.strukAdminValue}>
+                    {formatAdminName(pemesanan.email_admin)}
+                  </span>
+                </div>
+                {pemesanan.kode_admin && (
+                  <div className={styles.strukAdminRow}>
+                    <span className={styles.strukAdminLabel}>Kode:</span>
+                    <span className={styles.strukAdminCode}>{pemesanan.kode_admin}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className={styles.strukSeparator}></div>
+          </>
+        )}
+      </div>
 
       {/* RESERVASI */}
       {pemesanan.reservasi && (
         <>
-          <h3 className={styles.strukTitle}>Informasi Reservasi</h3>
+          <div className={styles.strukSeparator}></div>
+          <div className={styles.strukSectionTitle}>Informasi Reservasi</div>
+          
+          <div className={styles.strukInfo}>
+            <div className={styles.strukRow}>
+              <span className={styles.strukLabel}>Tanggal Reservasi</span>
+              <span className={styles.strukColon}>:</span>
+              <span className={styles.strukValue}>
+                {new Date(pemesanan.reservasi.tanggal_reservasi).toLocaleDateString('id-ID')}
+              </span>
+            </div>
 
-          <div className={styles.strukRow}>
-            <span className={styles.strukLabel}>Tanggal Reservasi</span>
-            <span className={styles.strukColon}>:</span>
-            <span className={styles.strukValue}>{new Date(pemesanan.reservasi.tanggal_reservasi).toLocaleDateString('id-ID')}</span>
+            <div className={styles.strukRow}>
+              <span className={styles.strukLabel}>Jam Reservasi</span>
+              <span className={styles.strukColon}>:</span>
+              <span className={styles.strukValue}>{pemesanan.reservasi.jam_reservasi}</span>
+            </div>
           </div>
-
-          <div className={styles.strukRow}>
-            <span className={styles.strukLabel}>Jam Reservasi</span>
-            <span className={styles.strukColon}>:</span>
-            <span className={styles.strukValue}>{pemesanan.reservasi.jam_reservasi}</span>
-          </div>
-
           <div className={styles.strukSeparator}></div>
         </>
       )}
+
       {/* TABEL */}
+      <div className={styles.strukSectionTitle}>Detail Pesanan</div>
       <table className={styles.strukTable}>
         <thead>
           <tr>
@@ -120,6 +163,11 @@ const StrukPrint = ({ pemesanan }) => {
 
       <div className={styles.strukTotal}>
         <strong>Total:</strong> Rp {pemesanan.total_harga.toLocaleString()}
+      </div>
+
+      {/* FOOTER */}
+      <div className={styles.strukFooter}>
+        Terima kasih telah berkunjung ke Basecamp Kopi!
       </div>
     </div>
   );
