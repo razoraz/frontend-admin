@@ -51,6 +51,14 @@ function LoginForm({ error, setError, onSuccess, onError }) {
 
       // Modal Success Login
       sessionStorage.setItem('token', data.token);
+      sessionStorage.setItem(
+        'adminData',
+        JSON.stringify({
+          id_admin: data.id_admin, 
+          email: data.email, 
+          kode_admin: data.kode_admin,
+        })
+      );
       if (onSuccess) {
         onSuccess({
           title: 'Login Berhasil',
