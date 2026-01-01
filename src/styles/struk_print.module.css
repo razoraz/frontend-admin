@@ -60,7 +60,6 @@
   flex-grow: 1;
 }
 
-
 /* FOOTER */
 .strukFooter {
   font-size: 8px;
@@ -103,6 +102,7 @@
   font-size: 13px;
   font-weight: bold;
   color: black !important;
+  margin-bottom: 2px;
 }
 
 .logoColor {
@@ -112,14 +112,13 @@
 .logoBlack {
   display: block !important;
   width: 45px;
-  margin: 6px auto;
+  margin: 2px auto 4px auto;
 }
 
 /* 🔥 LOGO JADI HITAM PUTIH */
 .strukLogo {
   width: 45px;
-  margin-top: -10px;
-  margin: 6px auto;
+  margin: 2px auto 4px auto;
   display: block;
 }
 
