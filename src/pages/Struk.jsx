@@ -27,6 +27,8 @@ const Struk = () => {
   if (!pemesanan) return <div className={styles.loading}>Loading...</div>;
 
   const isPaid = pemesanan.status_pembayaran === 'sudah_bayar';
+  const hasAdmin = !!pemesanan.email_admin || !!pemesanan.kode_admin;
+  
   const formatStatusPembayaran = (status) => {
     if (status === 'sudah_bayar') return 'Sudah Bayar';
     if (status === 'belum_bayar') return 'Belum Bayar';
@@ -34,9 +36,21 @@ const Struk = () => {
     return status;
   };
 
+  // Format nama admin dari email
+  const formatAdminName = (email) => {
+    if (!email) return '-';
+    const username = email.split('@')[0];
+    // Capitalize first letter
+    return username.charAt(0).toUpperCase() + username.slice(1);
+  };
+
   return (
     <div>
-      <HeaderPagePelanggan title="Nikmati Harimu dengan Secangkir Kebahagiaan" subtitle="Rasakan cita rasa kopi yang menemani langkahmu" bg_video="/background_video/navVideo.mp4" />
+      <HeaderPagePelanggan 
+        title="Nikmati Harimu dengan Secangkir Kebahagiaan" 
+        subtitle="Rasakan cita rasa kopi yang menemani langkahmu" 
+        bg_video="/background_video/navVideo.mp4" 
+      />
 
       {/* Wrapping konten struk */}
       <div id="strukContent" className={styles.page}>
@@ -51,6 +65,8 @@ const Struk = () => {
           <p className={styles.brandInfo}>Telp: 0812-3456-7890</p>
           <p className={styles.brandInfo}>IG: @basecampkopi</p>
         </div>
+
+        <div className={styles.separator}></div>
 
         {/* ================= INFO UTAMA ================ */}
         <div className={styles.info}>
@@ -87,25 +103,47 @@ const Struk = () => {
           <div className={`${styles.row} ${styles.statusRow}`}>
             <span className={styles.label}>Status Pembayaran</span>
             <span className={styles.colon}>:</span>
-            <span className={`${styles.statusText} ${isPaid ? styles.paid : styles.unpaid}`}>{formatStatusPembayaran(pemesanan.status_pembayaran)}</span>
+            <span className={`${styles.statusText} ${isPaid ? styles.paid : styles.unpaid}`}>
+              {formatStatusPembayaran(pemesanan.status_pembayaran)}
+            </span>
           </div>
+
+          {/* =============== INFO ADMIN =============== */}
+          {hasAdmin && (
+            <div className={styles.adminSection}>
+              <div className={styles.adminHeader}>
+                <i className="fas fa-user-tie"></i>
+                <span>Dikonfirmasi Oleh</span>
+              </div>
+              <div className={styles.adminInfo}>
+                <div className={styles.adminBadge}>
+                  <span className={styles.adminLabel}>Admin:</span>
+                  <span className={styles.adminName}>
+                    {formatAdminName(pemesanan.email_admin)}
+                  </span>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
-        <div className={styles.separator}></div>
-        {pemesanan.email_admin ? pemesanan.email_admin.split('@')[0] : '-'}
+
         <div className={styles.separator}></div>
 
         {/* ================= INFO RESERVASI (OPSIONAL) ================= */}
         {pemesanan.reservasi && (
           <>
-            <div className={styles.separator}></div>
+            <div className={styles.sectionHeader}>
+              <i className="fas fa-calendar-check"></i>
+              <h3 className={styles.sectionTitle}>Informasi Reservasi</h3>
+            </div>
 
             <div className={styles.info}>
-              <h3 className={styles.sectionTitle}>Informasi Reservasi</h3>
-
               <div className={styles.row}>
                 <span className={styles.label}>Tanggal Reservasi</span>
                 <span className={styles.colon}>:</span>
-                <span className={styles.value}>{new Date(pemesanan.reservasi.tanggal_reservasi).toLocaleDateString('id-ID')}</span>
+                <span className={styles.value}>
+                  {new Date(pemesanan.reservasi.tanggal_reservasi).toLocaleDateString('id-ID')}
+                </span>
               </div>
 
               <div className={styles.row}>
@@ -114,11 +152,16 @@ const Struk = () => {
                 <span className={styles.value}>{pemesanan.reservasi.jam_reservasi}</span>
               </div>
             </div>
+            <div className={styles.separator}></div>
           </>
         )}
-        <div className={styles.separator}></div>
 
         {/* ================= TABEL MENU ================= */}
+        <div className={styles.sectionHeader}>
+          <i className="fas fa-utensils"></i>
+          <h3 className={styles.sectionTitle}>Detail Pesanan</h3>
+        </div>
+        
         <table className={styles.table}>
           <thead>
             <tr>
@@ -142,17 +185,24 @@ const Struk = () => {
         <div className={styles.separator}></div>
 
         {/* ================= TOTAL ================= */}
-        <div className={styles.total}>
-          <p>
-            <strong>Total:</strong> Rp {pemesanan.total_harga.toLocaleString()}
-          </p>
+        <div className={styles.totalSection}>
+          <div className={styles.totalRow}>
+            <span className={styles.totalLabel}>Total:</span>
+            <span className={styles.totalValue}>Rp {pemesanan.total_harga.toLocaleString()}</span>
+          </div>
+          <div className={styles.totalNote}>
+            Terima kasih telah berkunjung ke Basecamp Kopi!
+          </div>
         </div>
       </div>
 
       {/* ================= AKSI ================= */}
       <div className={styles.actions}>
-        <button className={styles.actionBtn} onClick={() => navigate(`/tambah-feedback/${id_pemesanan}`)}>
-          Tambah Feedback
+        <button 
+          className={styles.actionBtn} 
+          onClick={() => navigate(`/tambah-feedback/${id_pemesanan}`)}
+        >
+          <i className="fas fa-comment-alt"></i> Tambah Feedback
         </button>
       </div>
 
