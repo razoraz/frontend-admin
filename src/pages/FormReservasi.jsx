@@ -111,7 +111,7 @@ function FormReservasi() {
                     .filter((meja) => meja.status_meja === 'tersedia' || meja.status_meja === 'dipesan') // ✅ filter meja
                     .map((meja) => (
                       <option key={meja.id_meja} value={meja.no_meja}>
-                        {meja.no_meja} - {meja.kapasitas} Orang ({meja.status_meja})
+                        Meja {meja.no_meja} - {meja.kapasitas} Orang
                       </option>
                     ))}
                 </select>
