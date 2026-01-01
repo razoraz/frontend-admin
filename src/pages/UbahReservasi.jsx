@@ -174,6 +174,7 @@ function UbahReservasi() {
             <label>Status Reservasi</label>
             <select name="status_reservasi" value={form.status_reservasi} onChange={handleChange}>
               <option value="menunggu_pembayaran">Menunggu Pembayaran</option>
+              <option value="menunggu_konfirmasi">Menunggu Konfirmasi</option>
               <option value="dikonfirmasi">Dikonfirmasi</option>
               <option value="selesai">Selesai</option>
               <option value="dibatalkan">Dibatalkan</option>
