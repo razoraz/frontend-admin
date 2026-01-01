@@ -86,7 +86,7 @@ const MenungguPembayaranKasir = () => {
 
           <h1 className={styles.title}>Menunggu Pembayaran</h1>
           <p className={styles.subtitle}>
-            Tunjukkan ID pemesanan Anda kepada kasir untuk menyelesaikan pembayaran
+            Tunjukkan ID pemesanan atau reservasi Anda kepada kasir untuk menyelesaikan pembayaran
           </p>
 
           <div className={styles.infoBox}>
