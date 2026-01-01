@@ -66,29 +66,48 @@ function UbahPemesanan() {
     setModalOpen(true);
   };
 
-  const handleConfirmUpdate = async () => {
-    try {
-      await axios.put(`https://backend-production-8cf7.up.railway.app/api/pemesanan/update-pemesanan/${id_pemesanan}`, form);
+// Di UbahPemesanan.jsx - PERBAIKI handleConfirmUpdate
+const handleConfirmUpdate = async () => {
+  try {
+    // ⭐ AMBIL DATA ADMIN DARI SESSIONSTORAGE
+    const adminData = JSON.parse(sessionStorage.getItem('adminData'));
+    const id_admin = adminData?.id_admin;
+    
+    console.log('🔍 Admin yang login:', adminData);
+    console.log('📝 id_admin yang akan dikirim:', id_admin);
 
-      // Modal success
-      setModalType('success');
-      setModalTitle('Berhasil!');
-      setModalMessage('Pemesanan berhasil diperbarui.');
-      setOnConfirmAction(() => () => {
-        setModalOpen(false);
-        navigate('/pemesanan'); // ← redirect setelah klik Oke
-      });
-      setModalOpen(true);
-    } catch (err) {
-      console.error(err);
-      // Modal error
-      setModalType('error');
-      setModalTitle('Gagal!');
-      setModalMessage('Terjadi kesalahan saat menyimpan pemesanan.');
-      setOnConfirmAction(() => () => setModalOpen(false));
-      setModalOpen(true);
-    }
-  };
+    // ⭐ TAMBAHKAN id_admin KE FORM DATA
+    const formData = {
+      ...form,
+      id_admin: id_admin  // ⭐ INI YANG DITAMBAHKAN
+    };
+
+    console.log('📤 Data yang dikirim ke backend:', formData);
+
+    await axios.put(
+      `https://backend-production-8cf7.up.railway.app/api/pemesanan/update-pemesanan/${id_pemesanan}`,
+      formData
+    );
+
+    // Modal success
+    setModalType('success');
+    setModalTitle('Berhasil!');
+    setModalMessage('Pemesanan berhasil diperbarui.');
+    setOnConfirmAction(() => () => {
+      setModalOpen(false);
+      navigate('/pemesanan');
+    });
+    setModalOpen(true);
+  } catch (err) {
+    console.error(err);
+    // Modal error
+    setModalType('error');
+    setModalTitle('Gagal!');
+    setModalMessage('Terjadi kesalahan saat menyimpan pemesanan.');
+    setOnConfirmAction(() => () => setModalOpen(false));
+    setModalOpen(true);
+  }
+};
 
   const handleCloseModal = () => {
     if (modalType === 'success') navigate('/pemesanan');
