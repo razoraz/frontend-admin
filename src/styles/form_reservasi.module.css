@@ -116,20 +116,52 @@
 
 /* TOMBOL */
 .reservasiButton {
-  margin-top: 1rem;
-  background: #fff615;
-  color: black;
+  background-color: #fff615;
+  color: #000;
   border: none;
   padding: 14px;
+  width: 100%;
   border-radius: 10px;
   font-weight: 700;
+  font-size: 1.05rem;
   cursor: pointer;
-  transition: .3s;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 20px rgba(255, 246, 21, 0.3);
+  position: relative;
+  overflow: hidden;
 }
-
+.reservasiButton::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,246,21,0.4),
+    transparent
+  );
+  animation: shine 2.5s infinite;
+}
+@keyframes shine {
+  0% { transform: translateX(-130%); }
+  100% { transform: translateX(130%); }
+}
 .reservasiButton:hover {
-  background: #fffa8b;
-  box-shadow: 0 0 30px rgba(255,246,21,.5);
+  background-color: #fffa8b;
+  transform: scale(1.03);
+  box-shadow: 0 0 35px rgba(255, 246, 21, 0.5);
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* RESPONSIVE */
