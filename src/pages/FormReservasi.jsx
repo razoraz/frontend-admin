@@ -96,12 +96,13 @@ function FormReservasi() {
             <form onSubmit={handleSubmit}>
               <div className={styles.inputGroup}>
                 <label>Nama Lengkap</label>
-                <input type="text" name="nama_pelanggan" value={formData.nama_pelanggan} onChange={handleChange} />
+                <input type="text" name="nama_pelanggan" value={formData.nama_pelanggan} onChange={handleChange}
+                placeholder="Masukkan nama lengkap Anda" />
               </div>
 
               <div className={styles.inputGroup}>
                 <label>No WhatsApp</label>
-                <input type="tel" name="nomor_whatsapp" value={formData.nomor_whatsapp} onChange={handleChange} placeholder="08xxxxxxxxxx" />
+                <input type="tel" name="nomor_whatsapp" value={formData.nomor_whatsapp} onChange={handleChange} placeholder="Masukkan nomor WhatsApp Anda - Contoh: 628123456789" />
               </div>
               <div className={styles.inputGroup}>
                 <label>No Meja</label>
