@@ -194,6 +194,7 @@
   font-weight: 700;
   color: #ffd633;
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .eventDesc {
@@ -203,6 +204,7 @@
   max-height: 60px;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: center;
 }
 
 /* ===============================
