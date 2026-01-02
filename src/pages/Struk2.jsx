@@ -170,7 +170,6 @@ const Struk = () => {
           </p>
         </div>
       </div>
-
       {/* ================= AKSI ================= */}
       <div className={styles.actions}>
         <button className={styles.downloadBtn} onClick={handleDownloadPDF}>
