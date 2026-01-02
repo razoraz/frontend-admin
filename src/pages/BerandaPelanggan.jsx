@@ -67,8 +67,12 @@ function BerandaPage() {
           <p>Pilih menu favoritmu dan nikmati suasana Basecamp Kopi</p>
 
           <div className={styles.actionButtons}>
-            <button className={styles.primaryBtn} onClick={() => navigate('/scanner')}>Pesan Sekarang</button>
-            <button className={styles.secondaryBtn} onClick={() => navigate('/form-reservasi')}>Reservasi Sekarang</button>
+            <button className={styles.primaryBtn} onClick={() => navigate('/scanner')}>
+              Pesan Sekarang
+            </button>
+            <button className={styles.secondaryBtn} onClick={() => navigate('/form-reservasi')}>
+              Reservasi Sekarang
+            </button>
           </div>
         </section>
 
@@ -113,18 +117,13 @@ function BerandaPage() {
         {/* Promo / Event */}
         {event && (
           <section className={styles.promoSection}>
-            <h3>🎁 {event.judul}</h3>
-            <p>{event.deskripsi}</p>
-
-            <img
-              src={`https://backend-production-8cf7.up.railway.app/uploads/event/${event.gambar_event}`}
-              alt={event.judul}
-              style={{
-                marginTop: '20px',
-                maxWidth: '100%',
-                borderRadius: '14px',
-              }}
-            />
+            <div className={styles.eventHero} style={{ backgroundImage: `url(https://backend-production-8cf7.up.railway.app/uploads/event/${event.gambar_event})` }}>
+              <div className={styles.eventOverlay}>
+                <h3 className={styles.eventTitle}>{event.judul}</h3>
+                <p className={styles.eventDesc}>{event.deskripsi}</p>
+                <div className={styles.eventGoldLine}></div>
+              </div>
+            </div>
           </section>
         )}
       </main>
