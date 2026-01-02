@@ -115,17 +115,30 @@ function BerandaPage() {
         </section>
 
         {/* Promo / Event */}
-        {event && (
-          <section className={styles.promoSection}>
-            <div className={styles.eventHero} style={{ backgroundImage: `url(https://backend-production-8cf7.up.railway.app/uploads/event/${event.gambar_event})` }}>
-              <div className={styles.eventOverlay}>
-                <h3 className={styles.eventTitle}>{event.judul}</h3>
-                <p className={styles.eventDesc}>{event.deskripsi}</p>
-                <div className={styles.eventGoldLine}></div>
+        {/* ======================
+    EVENT / PROMO
+====================== */}
+        <section className={styles.eventSection}>
+          <h3 className={styles.sectionTitle}>🎁 Event & Promo</h3>
+
+          {event && (
+            <div className={styles.eventGrid}>
+              <div className={styles.eventCard}>
+                <div className={styles.eventImageWrapper}>
+                  <img src={`https://backend-production-8cf7.up.railway.app/uploads/event/${event.gambar_event}`} alt={event.judul} className={styles.eventImage} />
+                  <div className={styles.eventBadge}>Promo</div>
+                </div>
+                <div className={styles.eventContent}>
+                  <h4 className={styles.eventTitle}>{event.judul}</h4>
+                  <p className={styles.eventDesc}>{event.deskripsi}</p>
+                  <span className={styles.eventDate}>📅 {new Date(event.tanggal_event).toLocaleDateString('id-ID')}</span>
+                </div>
               </div>
             </div>
-          </section>
-        )}
+          )}
+
+          {!event && <p style={{ textAlign: 'center', opacity: 0.6, marginTop: 30 }}>Belum ada event atau promo tersedia</p>}
+        </section>
       </main>
 
       {/* Footer */}
