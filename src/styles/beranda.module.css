@@ -83,18 +83,35 @@
 
 /* Status notif */
 .danger {
-  background: rgba(244, 67, 54, 0.12);
-  border-left: 5px solid #f44336;
+  background: linear-gradient(90deg, rgba(255, 80, 80, 0.18), rgba(28, 28, 28, 0.85));
+  border-left: 5px solid #ff6b6b;
+  color: #ffdede;
 }
 
 .warning {
-  background: rgba(255, 214, 51, 0.12);
+  background: linear-gradient(90deg, rgba(255, 214, 51, 0.22), rgba(28, 28, 28, 0.85));
   border-left: 5px solid #ffd633;
+  color: #fff2b0;
 }
 
 .info {
-  background: rgba(0, 180, 255, 0.12);
-  border-left: 5px solid #00b4ff;
+  background: linear-gradient(90deg, rgba(0, 180, 255, 0.2), rgba(28, 28, 28, 0.85));
+  border-left: 5px solid #3dc2ff;
+  color: #cfefff;
+}
+
+.feedback {
+  background: linear-gradient(90deg, rgba(80, 200, 120, 0.18), rgba(28, 28, 28, 0.85));
+  border-left: 5px solid #4cd787;
+  color: #d8ffe8;
+}
+.notificationItems li {
+  transition: all 0.25s ease;
+}
+
+.notificationItems li:hover {
+  transform: translateX(6px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
 }
 
 /* ===== AKTIVITAS ===== */
