@@ -31,23 +31,25 @@ function Beranda() {
     if (!token) navigate('/login', { replace: true });
   }, [navigate]);
 
-  // Fetch data dari backend
+  const fetchData = async () => {
+    try {
+      const [summaryRes, notifRes] = await Promise.all([axios.get('https://backend-production-8cf7.up.railway.app/api/beranda/summary'), axios.get('https://backend-production-8cf7.up.railway.app/api/beranda/notifications')]);
+
+      setSummary(summaryRes.data);
+      setNotifications(notifRes.data);
+    } catch (error) {
+      console.error('Error fetch beranda:', error);
+    }
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [summaryRes, notifRes] = await Promise.all([
-          axios.get('https://backend-production-8cf7.up.railway.app/api/beranda/summary'),
-          axios.get('https://backend-production-8cf7.up.railway.app/api/beranda/notifications'),
-        ]);
+    fetchData(); // load awal
 
-        setSummary(summaryRes.data);
-        setNotifications(notifRes.data);
-      } catch (err) {
-        console.error('Error fetch beranda:', err);
-      }
-    };
+    const interval = setInterval(() => {
+      fetchData();
+    }, 60000); // 1 menit
 
-    fetchData();
+    return () => clearInterval(interval);
   }, []);
 
   if (!summary) return <div style={{ color: '#fff615', padding: 40 }}>Loading beranda...</div>;
@@ -69,16 +71,7 @@ function Beranda() {
           ) : (
             <ul className={styles.notificationItems}>
               {notifications.map((notif, i) => (
-                <li
-                  key={i}
-                  className={
-                    notif.tipe === 'menu'
-                      ? styles.warning
-                      : notif.tipe === 'reservasi'
-                      ? styles.info
-                      : styles.danger
-                  }
-                >
+                <li key={i} className={notif.tipe === 'menu' ? styles.warning : notif.tipe === 'reservasi' ? styles.info : notif.tipe === 'feedback' ? styles.feedback : styles.danger}>
                   {notif.pesan}
                 </li>
               ))}
@@ -115,9 +108,7 @@ function Beranda() {
 
             <div className={styles.card}>
               <h3>💵 Pendapatan</h3>
-              <p className={styles.value}>
-                Rp {summary.pendapatan.hari_ini.toLocaleString('id-ID')}
-              </p>
+              <p className={styles.value}>Rp {summary.pendapatan.hari_ini.toLocaleString('id-ID')}</p>
               <span className={styles.cardSub}>
                 {summary.pendapatan.selisih >= 0 ? '+' : ''}
                 Rp {summary.pendapatan.selisih.toLocaleString('id-ID')}
