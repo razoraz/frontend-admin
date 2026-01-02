@@ -89,7 +89,6 @@
   background: #3a3a3a;
 }
 
-
 /* Card menu */
 .menuCategory {
   margin-top: 40px;
@@ -104,13 +103,20 @@
 .menuCard {
   display: flex;
   align-items: stretch;
-  padding: 15px;
-  margin-bottom: 15px;
-  background: #1a1a1a;
-  border-radius: 12px;
-  overflow: hidden;
-  gap: 15px;
+  padding: 16px;
+  background: linear-gradient(145deg, #1a1a1a, #222);
+  border-radius: 16px;
+  gap: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
 }
+
+.menuCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6);
+}
+
 .menuInfo {
   display: flex;
   flex: 1;
@@ -125,27 +131,39 @@
   word-break: break-word;
 }
 .menuDesc {
-  margin-top: 20px;
-  margin-bottom: 20px;
   font-size: 14px;
-  color: #ccc;
-  word-break: break-word;
+  color: #cfcfcf;
+  line-height: 1.6;
+  margin: 12px 0;
+  opacity: 0.9;
 }
+
 .menuImageContainer {
   flex-shrink: 0;
   text-align: center;
 }
 .menuImage {
-  margin-top: 12px;
   width: 120px;
   height: 120px;
   object-fit: cover;
-  border-radius: 10px;
-  display: block;
+  border-radius: 14px;
+  box-shadow: 0 0 12px rgba(255, 246, 21, 0.25);
+  transition: transform 0.3s ease;
 }
+
+.menuCard:hover .menuImage {
+  transform: scale(1.05);
+}
+
 .menuPrice {
+  margin-top: auto;
+  font-size: 16px;
+  font-weight: bold;
   color: #ffd633;
-  margin-top: 10px;
+  background: rgba(255, 214, 51, 0.1);
+  padding: 6px 12px;
+  border-radius: 999px;
+  display: inline-block;
 }
 
 /* ============================== */
@@ -190,32 +208,31 @@
 
 /* Card Menu tidak tersedia */
 .unavailable {
-  background: rgba(255, 50, 50, 0.15); /* merah lembut */
-  border: 1px solid #ff4d4d;
-  filter: grayscale(0.3);
-  opacity: 0.8;
-  position: relative;
-  transition: all 0.3s ease;
+  opacity: 0.6;
+  filter: grayscale(0.7);
 }
-.unavailable:hover {
-  transform: scale(1.02);
-  opacity: 1;
+
+.unavailable::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 16px;
 }
 
 /* Badge “HABIS” */
 .badgeHabis {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  background: rgba(255, 0, 0, 0.85);
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(135deg, #ff3b3b, #c40000);
   color: #fff;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: bold;
-  padding: 3px 8px;
-  border-radius: 4px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  z-index: 10;
+  padding: 5px 10px;
+  border-radius: 999px;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
 }
 
 /* Responsive media queries */
@@ -249,13 +266,29 @@
     margin-top: 10px;
     width: 100%;
   }
+  .menuInfo h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff615;
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+  }
 }
 
 @media (max-width: 480px) {
   .menuCard {
     flex-direction: column;
+    align-items: center;
     text-align: center;
-    min-height: 100%;
+  }
+
+  .menuImage {
+    width: 100%;
+    max-height: 200px;
+  }
+
+  .menuPrice {
+    margin-top: 12px;
   }
   .menuInfo {
     flex: 1;
