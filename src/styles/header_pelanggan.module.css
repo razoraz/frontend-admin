@@ -159,16 +159,18 @@
   transform: scale(1.05);
 }
 
-/* Menu Icon (mobile) */
+/* Menu Icon Navbar */
 .menuIcon {
-  font-size: 30px;
+  font-size: 28px;
   display: none;
   cursor: pointer;
   color: #fff615;
-  transition: color 0.3s ease;
 }
-.menuIcon:hover {
-  color: #fffa9f;
+.show {
+  display: block;
+}
+.materialIconsOutlined {
+  margin-right: 10px;
 }
 
 /* ✅ Responsif */
@@ -215,11 +217,15 @@
     padding: 10px 0;
     text-align: center;
   }
-  .menuIcon {
+ .menuIcon {
     display: flex;
     position: absolute;
-    top: 1.2rem;
-    right: 1.8rem;
+    top: 0;
+    right: 0;
+    margin: 1.5rem 10%;
+  }
+  .menuIcon:hover {
+    color: #ffd633;
   }
   .motivasiTengah h1 {
     font-size: 1.8rem;
