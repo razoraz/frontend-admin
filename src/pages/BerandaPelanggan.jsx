@@ -131,7 +131,6 @@ function BerandaPage() {
                 <div className={styles.eventContent}>
                   <h4 className={styles.eventTitle}>{event.judul}</h4>
                   <p className={styles.eventDesc}>{event.deskripsi}</p>
-                  <span className={styles.eventDate}>📅 {new Date(event.tanggal_event).toLocaleDateString('id-ID')}</span>
                 </div>
               </div>
             </div>
