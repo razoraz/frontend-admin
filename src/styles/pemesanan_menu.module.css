@@ -318,60 +318,6 @@
     box-shadow: 0 4px 12px rgba(255, 71, 87, 0.6);
   }
 }
-
-/* Responsif untuk berbagai ukuran layar */
-@media (max-width: 768px) {
-  .floatingCart {
-    bottom: 20px;
-    padding: 14px 20px;
-    min-width: 250px;
-    font-size: 0.9rem;
-    border-radius: 14px;
-    margin: 0 16px;
-    width: calc(100% - 32px);
-    max-width: 400px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .floatingCart:hover {
-    transform: translateX(-50%) translateY(-3px);
-  }
-
-  .floatingCart span {
-    font-size: 0.9rem;
-    flex: 1;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .floatingCart {
-    bottom: 16px;
-    padding: 12px 16px;
-    min-width: auto;
-    width: calc(100% - 32px);
-    max-width: none;
-    border-radius: 12px;
-  }
-
-  .floatingCart span {
-    font-size: 0.85rem;
-  }
-
-  .floatingCart::before {
-    font-size: 1rem;
-  }
-}
-
-/* Untuk tablet landscape */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .floatingCart {
-    min-width: 300px;
-    padding: 15px 24px;
-  }
-}
-
 /* Efek transisi saat muncul/hilang */
 .floatingCart-enter {
   animation: floatIn 0.4s ease forwards;
@@ -424,6 +370,50 @@
   margin-top: 4px;
 }
 
+/* Responsif untuk berbagai ukuran layar */
+@media (max-width: 768px) {
+  .floatingCart {
+    bottom: 20px;
+    padding: 14px 20px;
+    min-width: 250px;
+    font-size: 0.9rem;
+    border-radius: 14px;
+    margin: 0 16px;
+    width: calc(100% - 32px);
+    max-width: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .floatingCart:hover {
+    transform: translateX(-50%) translateY(-3px);
+  }
+
+  .floatingCart span {
+    font-size: 0.9rem;
+    flex: 1;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .floatingCart {
+    bottom: 16px;
+    padding: 12px 16px;
+    min-width: auto;
+    width: calc(100% - 32px);
+    max-width: none;
+    border-radius: 12px;
+  }
+
+  .floatingCart span {
+    font-size: 0.85rem;
+  }
+
+  .floatingCart::before {
+    font-size: 1rem;
+  }
+}
 /* Responsif */
 @media (max-width: 768px) {
   .menuCardContainer {
