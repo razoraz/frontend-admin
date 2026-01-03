@@ -1,7 +1,7 @@
 import MenuCategory from './MenuCategory2';
 import styles from '../../styles/menu_pelanggan.module.css';
 
-function MenuList({ filteredMenu, getImageUrl }) {
+function MenuList({ filteredMenu}) {
   // Mengelompokkan menu berdasarkan kategori
   const menusByCategory = filteredMenu.reduce((acc, item) => {
     const cat = item.nama_kategori || 'Lainnya';
@@ -38,7 +38,6 @@ function MenuList({ filteredMenu, getImageUrl }) {
             title={cat}
             icon={kategoriIcons[cat] || '🥤'}
             items={menusByCategory[cat]}
-            getImageUrl={getImageUrl}
           />
         )
       )}
