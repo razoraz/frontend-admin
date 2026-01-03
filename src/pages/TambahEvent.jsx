@@ -89,11 +89,12 @@ function TambahEvent() {
             required
           />
 
-          <label>Gambar / Video Event</label>
+          <label>Gambar Event</label>
           <input
             type="file"
-            accept="image/*,video/*"
+            accept="image/*"
             onChange={(e) => setGambar(e.target.files[0])}
+            placeholder="Pilih gambar event format jpg, jpeg, png."
             required
           />
 
