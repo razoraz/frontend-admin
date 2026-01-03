@@ -222,7 +222,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/daftar-menu" element={<DaftarMenu />} />
         <Route path="/metode-pembayaran" element={<MetodePembayaran />} />
         <Route path="/menunggu-pembayaran/:id_pemesanan" element={<MenungguPembayaran />} />
-        <Route path="/struk/:id_pemesanan" element={<Struk />} />
+        <Route path="/struk/pemesanan/:id_pemesanan" element={<Struk />} />
+        <Route path="/struk/reservasi/:id_reservasi" element={<Struk />} />
         <Route path="/tambah-feedback/:id_pemesanan" element={<TambahFeedback />} />
         <Route path="/keranjang-reservasi" element={<KeranjangReservasi />} />
         <Route path="/tentang-kami" element={<TentangKamiPage />} />
