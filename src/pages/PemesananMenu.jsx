@@ -227,7 +227,7 @@ function PemesananPelanggan() {
         <Link to={tujuanKeranjang} className={styles.floatingCart}>
           <div className={styles.totalItems}>{totalItem}</div>
           <span>
-            {totalItem} Item — Rp {totalHarga.toLocaleString()}
+            {totalHarga.toLocaleString()}
           </span>
         </Link>
       )}
