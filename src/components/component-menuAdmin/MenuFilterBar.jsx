@@ -1,16 +1,23 @@
-// Component Filter Bar Menu
-// Import Style
 import styles from '../../styles/menu.module.css';
 
-// Main Function MenuFilterBar
-function MenuFilterBar({ kategori, setKategori, search, setSearch, onAdd }) {
+function MenuFilterBar({ menu, kategori, setKategori, search, setSearch, onAdd }) {
+  // Ambil semua kategori dari data menu
+  let kategoriList = Array.from(new Set(menu.map((m) => m.nama_kategori))).filter(Boolean);
+
+  // Pastikan "Makanan" selalu di atas
+  kategoriList.sort((a, b) => {
+    if (a.toLowerCase() === 'makanan') return -1;
+    if (b.toLowerCase() === 'makanan') return 1;
+    return a.localeCompare(b); // sisanya urut abjad
+  });
+
   return (
     <div className={styles.menuHeader}>
       <select className={styles.menuFilter} value={kategori} onChange={(e) => setKategori(e.target.value)}>
         <option value="">Semua Kategori</option>
-        <option value="makanan">Makanan</option>
-        <option value="minuman">Minuman</option>
-        <option value="snack">Snack</option>
+        {kategoriList.map((cat) => (
+          <option key={cat} value={cat.toLowerCase()}>{cat}</option>
+        ))}
       </select>
 
       <div className={styles.searchContainer}>
