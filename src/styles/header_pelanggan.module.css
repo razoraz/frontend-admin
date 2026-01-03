@@ -132,17 +132,17 @@
 }
 
 /* 🔶 Underline efek neon */
-.navbarNav li:not(:has(.btnNavbar))::after {
+.navbarNav li::after {
   content: '';
   display: block;
   width: 0;
   height: 3px;
   background: #fff615;
   transition: 0.3s;
+  margin: auto;
 }
 .navbarNav li:hover::after {
   width: 50%;
-  margin: auto;
 }
 
 /* 🟨 Tombol Pesan */
@@ -169,27 +169,27 @@
 .show {
   display: block;
 }
-.materialIconsOutlined {
-  margin-right: 10px;
+
+/* Dropdown effect untuk mobile */
+.navbarNav ul.show {
+  display: flex !important;
+  flex-direction: column;
+  background: rgba(0,0,0,0.95);
+  border-radius: 10px;
+  padding: 20px;
+  position: absolute;
+  top: 90px;
+  width: 100%;
+  left: 0;
+  animation: fadeInDropdown 0.25s ease-out forwards;
+}
+@keyframes fadeInDropdown {
+  from { opacity: 0; transform: translateY(-10px);}
+  to { opacity: 1; transform: translateY(0);}
 }
 
 /* ✅ Responsif */
-@media (max-width: 992px) {
-  .motivasiTengah h1 {
-    font-size: 2.4rem;
-  }
-  .motivasiTengah p {
-    font-size: 1rem;
-  }
-  .navContent {
-    padding: 1rem 2rem;
-  }
-}
-
 @media (max-width: 768px) {
-  .navbar {
-    height: 55vh;
-  }
   .navContent {
     flex-direction: column;
     align-items: flex-start;
@@ -202,43 +202,25 @@
   }
   .navbarNav ul {
     display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.9);
-    padding: 20px 40px;
     width: 100%;
   }
-  .show {
-    display: flex !important;
-  }
-  .navbarNav li {
-    padding: 10px 0;
-    text-align: center;
-  }
- .menuIcon {
+  .menuIcon {
     display: flex;
     position: absolute;
     top: 0;
     right: 0;
     margin: 1.5rem 10%;
   }
-  .menuIcon:hover {
-    color: #ffd633;
+  .navbarNav li {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
   }
-  .motivasiTengah h1 {
-    font-size: 1.8rem;
-  }
-  .motivasiTengah p {
-    font-size: 0.9rem;
+  .navbarNav li::after {
+    display: none;
   }
 }
-
 @media (max-width: 480px) {
-  .navbar {
-    height: 50vh;
-  }
   .motivasiTengah h1 {
     font-size: 1.5rem;
   }
