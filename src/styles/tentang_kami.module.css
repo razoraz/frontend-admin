@@ -1,0 +1,368 @@
+/* ================================
+   TENTANG KAMI - DARK COFFEE THEME
+================================ */
+
+.pageWrapper {
+  background-color: #0a0a0a;
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+/* ================================
+   HERO SECTION
+================================ */
+.hero {
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url('/images/coffee-background.jpg') center/cover no-repeat;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #f5f5f5;
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+.highlight {
+  color: #8b6b4f;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.9) 75%);
+  z-index: 1;
+}
+
+/* ================================
+   COMMON
+================================ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #f5f5f5;
+}
+
+.accent {
+  color: #6f4e37;
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: #aaa;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ================================
+   PHILOSOPHY
+================================ */
+.philosophy {
+  padding: 80px 0;
+  background: linear-gradient(180deg, #0a0a0a 0%, #151515 100%);
+}
+
+.philosophyCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.philosophyCard {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 18px;
+  padding: 40px 30px;
+  text-align: center;
+  border: 1px solid rgba(111, 78, 55, 0.25);
+  transition: all 0.3s ease;
+}
+
+.philosophyCard:hover {
+  transform: translateY(-8px);
+  background: rgba(111, 78, 55, 0.15);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.cardIcon {
+  font-size: 3rem;
+  color: #8b6b4f;
+  margin-bottom: 1.5rem;
+}
+
+.philosophyCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #8b6b4f;
+}
+
+.philosophyCard p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* ================================
+   JOURNEY / TIMELINE
+================================ */
+.journey {
+  padding: 80px 0;
+  background-color: #0a0a0a;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, #6f4e37, transparent);
+  transform: translateX(-50%);
+}
+
+.timelineItem {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.timelineYear {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #6f4e37;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.timelineContent {
+  width: 45%;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  border-left: 3px solid #6f4e37;
+}
+
+.timelineContent h3 {
+  color: #8b6b4f;
+  margin-bottom: 10px;
+}
+
+.timelineContent p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.timelineItem:nth-child(even) .timelineContent {
+  margin-left: auto;
+  border-left: none;
+  border-right: 3px solid #6f4e37;
+}
+
+/* ================================
+   VALUES
+================================ */
+.values {
+  padding: 80px 0;
+  background: linear-gradient(180deg, #151515 0%, #0a0a0a 100%);
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.valueItem {
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.valueItem:hover {
+  background: rgba(111, 78, 55, 0.12);
+  transform: scale(1.05);
+}
+
+.valueIcon {
+  font-size: 2.5rem;
+  color: #8b6b4f;
+  margin-bottom: 20px;
+}
+
+.valueItem h4 {
+  margin-bottom: 10px;
+}
+
+.valueItem p {
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   CTA
+================================ */
+.ctaSection {
+  padding: 100px 0;
+  text-align: center;
+  background: radial-gradient(circle at center, rgba(111, 78, 55, 0.15), transparent 70%);
+}
+
+.ctaTitle {
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.ctaText {
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  padding: 14px 36px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.primaryBtn {
+  background: linear-gradient(45deg, #6f4e37, #4b3621);
+  color: #fff;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.secondaryBtn {
+  border: 2px solid #8b6b4f;
+  color: #8b6b4f;
+}
+
+.secondaryBtn:hover {
+  background: rgba(111, 78, 55, 0.15);
+}
+
+/* ================================
+   ANIMATION
+================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .timeline::before {
+    left: 30px;
+  }
+
+  .timelineItem {
+    flex-direction: column;
+    padding-left: 60px;
+  }
+
+  .timelineYear {
+    left: 0;
+    transform: none;
+  }
+
+  .timelineContent {
+    width: 100%;
+    margin-top: 20px;
+    border-left: 3px solid #6f4e37;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 400px;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .philosophyCards,
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+}
