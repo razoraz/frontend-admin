@@ -37,8 +37,6 @@ function KelolaMenu() {
       .catch((err) => console.error('Gagal ambil menu:', err));
   }, []);
 
-  const getImageUrl = (filename) => `https://backend-production-8cf7.up.railway.app/uploads/${filename}`;
-
   // Saat klik tombol hapus
   const handleDelete = (id) => {
     setDeleteId(id);
@@ -91,9 +89,8 @@ function KelolaMenu() {
 
         {/* List Menu */}
         <MenuList
-          filteredMenu={filteredMenu} // semua menu sudah difilter berdasarkan search/kategori
+          filteredMenu={filteredMenu}
           onDelete={handleDelete}
-          getImageUrl={getImageUrl}
         />
 
         {/* Modal */}
