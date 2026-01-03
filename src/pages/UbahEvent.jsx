@@ -83,10 +83,10 @@ function UbahEvent() {
           }}
         >
           <label>Judul Event</label>
-          <input type="text" value={judul} onChange={(e) => setJudul(e.target.value)} required />
+          <input type="text" value={judul} onChange={(e) => setJudul(e.target.value)} placeholder="Masukkan judul event" required />
 
-          <label>Gambar / Video Event</label>
-          <input type="file" accept="image/*,video/*" onChange={(e) => setGambar(e.target.files[0])} />
+          <label>Gambar Event</label>
+          <input type="file" accept="image/*" placeholder="Masukkan gambar event dengan format jpg, png, atau jpeg" onChange={(e) => setGambar(e.target.files[0])} />
 
           {gambarLama && (
             <div className={styles.currentImage}>
@@ -95,7 +95,7 @@ function UbahEvent() {
           )}
 
           <label>Deskripsi</label>
-          <textarea value={deskripsi} onChange={(e) => setDeskripsi(e.target.value)} />
+          <textarea value={deskripsi} onChange={(e) => setDeskripsi(e.target.value)} placeholder="Masukkan deskripsi event" />
 
           <button type="submit" className={styles.saveBtn}>
             Simpan
