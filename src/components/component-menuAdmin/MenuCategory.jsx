@@ -6,7 +6,7 @@ import MenuCard from './MenuCard';
 import styles from '../../styles/menu.module.css';
 
 // Main Function MenuCategory
-function MenuCategory({ title, icon, items, onDelete, getImageUrl }) {
+function MenuCategory({ title, icon, items, onDelete}) {
   if (!items || items.length === 0) return null;
 
   return (
@@ -23,7 +23,7 @@ function MenuCategory({ title, icon, items, onDelete, getImageUrl }) {
             name={item.nama_menu}
             desc={item.deskripsi}
             price={`Rp ${parseInt(item.harga).toLocaleString('id-ID')}`}
-            image={getImageUrl(item.gambar_menu)}
+            image={item.gambar_menu}
             status={item.status_tersedia}
             onDelete={onDelete}
           />
