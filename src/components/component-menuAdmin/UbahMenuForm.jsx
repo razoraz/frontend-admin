@@ -16,14 +16,12 @@ function UbahMenuForm({ menu, setMenu, kategoriList, setGambarBaru, onSubmit }) 
       <Link to="/menu" className={styles.btnBack}>
         <i className="fas fa-arrow-left"></i> Kembali
       </Link>
-
       {/* Form Group */}
       {/* Nama Menu */}
       <div className={styles.formGroup}>
         <label htmlFor="nama_menu">Nama Menu</label>
         <input type="text" id="nama_menu" name="nama_menu" value={menu.nama_menu} onChange={handleChange} />
       </div>
-
       {/* Kategori Menu */}
       <div className={styles.formGroup}>
         <label htmlFor="id_kategori">Kategori Menu</label>
@@ -36,7 +34,6 @@ function UbahMenuForm({ menu, setMenu, kategoriList, setGambarBaru, onSubmit }) 
           ))}
         </select>
       </div>
-
       {/* Harga Menu */}
       <div className={styles.formGroup}>
         <label htmlFor="harga">Harga</label>
@@ -54,24 +51,22 @@ function UbahMenuForm({ menu, setMenu, kategoriList, setGambarBaru, onSubmit }) 
           min="0"
         />
       </div>
-
       {/* Gambar Menu */}
+      // Di dalam form, ubah bagian gambar:
       <div className={styles.formGroup}>
         <label htmlFor="gambar_menu">Gambar Menu</label>
         <input type="file" id="gambar_menu" accept="image/*" onChange={handleFileChange} />
         {menu.gambar_menu && (
-          <p style={{ fontSize: '14px', marginTop: '5px' }}>
-            Gambar saat ini: <b>{menu.gambar_menu}</b>
-          </p>
+          <div className={styles.currentImage}>
+            Gambar saat ini: <span className={styles.filename}>{menu.gambar_menu}</span>
+          </div>
         )}
       </div>
-
       {/* Deskripsi Menu */}
       <div className={styles.formGroup}>
         <label htmlFor="deskripsi">Deskripsi</label>
         <textarea id="deskripsi" name="deskripsi" value={menu.deskripsi} onChange={handleChange}></textarea>
       </div>
-
       {/* Status Menu */}
       <div className={styles.formGroup}>
         <label htmlFor="status_tersedia">Status Menu</label>
@@ -81,7 +76,6 @@ function UbahMenuForm({ menu, setMenu, kategoriList, setGambarBaru, onSubmit }) 
           <option value="habis">Habis</option>
         </select>
       </div>
-
       {/* Tombol Simpan */}
       <div className={styles.formButtons}>
         <button type="submit" className={styles.btnSubmit}>
