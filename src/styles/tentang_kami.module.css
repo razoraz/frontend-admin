@@ -15,8 +15,7 @@
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-              url('/images/coffee-background.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/coffee-background.jpg') center/cover no-repeat;
 }
 
 .heroContent {
@@ -32,7 +31,6 @@
   font-weight: 800;
   margin-bottom: 1rem;
   background: linear-gradient(45deg, #ffd633, #ffaa00);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 5px 15px rgba(255, 214, 51, 0.2);
 }
@@ -55,7 +53,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.9) 70%);
+  background: radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.9) 70%);
   z-index: 1;
 }
 
@@ -294,7 +292,8 @@
   z-index: 2;
 }
 
-.primaryBtn, .secondaryBtn {
+.primaryBtn,
+.secondaryBtn {
   padding: 15px 35px;
   border-radius: 30px;
   font-weight: 600;
@@ -339,7 +338,8 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
     opacity: 0.5;
   }
@@ -354,47 +354,48 @@
   .heroTitle {
     font-size: 2.5rem;
   }
-  
+
   .heroSubtitle {
     font-size: 1rem;
   }
-  
+
   .sectionTitle {
     font-size: 2rem;
   }
-  
+
   .timeline::before {
     left: 30px;
   }
-  
+
   .timelineItem {
     flex-direction: column;
     align-items: flex-start;
     padding-left: 60px;
   }
-  
+
   .timelineYear {
     left: 0;
     transform: none;
   }
-  
+
   .timelineContent {
     width: 100%;
     margin: 20px 0 0 0;
   }
-  
+
   .timelineItem:nth-child(even) .timelineContent {
     margin-left: 0;
     border-left: 3px solid #ffd633;
     border-right: none;
   }
-  
+
   .ctaButtons {
     flex-direction: column;
     align-items: center;
   }
-  
-  .primaryBtn, .secondaryBtn {
+
+  .primaryBtn,
+  .secondaryBtn {
     width: 100%;
     max-width: 300px;
     text-align: center;
@@ -405,15 +406,15 @@
   .philosophyCards {
     grid-template-columns: 1fr;
   }
-  
+
   .valuesGrid {
     grid-template-columns: 1fr;
   }
-  
+
   .hero {
     height: 400px;
   }
-  
+
   .heroTitle {
     font-size: 2rem;
   }
