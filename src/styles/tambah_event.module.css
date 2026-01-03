@@ -69,6 +69,23 @@
   resize: vertical;
 }
 
+.currentImage {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #aaa;
+}
+
+.filename {
+  display: inline-block;
+  max-width: 300px; /* Sesuaikan dengan lebar form */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #ffd633;
+  font-weight: bold;
+  vertical-align: bottom;
+}
+
 /* Button */
 .saveBtn {
   padding: 14px 25px;
