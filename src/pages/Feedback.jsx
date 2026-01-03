@@ -45,11 +45,11 @@ function FeedbackPage() {
   const filteredFeedbacks = (() => {
     switch (filterRating) {
       case 'low': // ≤ 3
-        return feedbacks.filter(f => f.rating <= 3);
+        return feedbacks.filter((f) => f.rating <= 3);
       case 'mid': // 4–5
-        return feedbacks.filter(f => f.rating >= 4);
+        return feedbacks.filter((f) => f.rating >= 4);
       case 'five': // hanya 5
-        return feedbacks.filter(f => f.rating === 5);
+        return feedbacks.filter((f) => f.rating === 5);
       default:
         return feedbacks;
     }
@@ -65,7 +65,7 @@ function FeedbackPage() {
   useEffect(() => setCurrentPage(1), [filterRating]);
 
   // Format tanggal
-  const formatTanggalIndoLengkap = tanggal => {
+  const formatTanggalIndoLengkap = (tanggal) => {
     const date = new Date(tanggal);
     const hari = date.toLocaleDateString('id-ID', { weekday: 'long' });
     const tanggalIndo = date.toLocaleDateString('id-ID', {
@@ -79,12 +79,8 @@ function FeedbackPage() {
   // Pagination Component
   const Pagination = () => (
     <div className={styles.pagination}>
-      {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-        <button
-          key={page}
-          onClick={() => setCurrentPage(page)}
-          className={`${styles.pageBtn} ${currentPage === page ? styles.active : ''}`}
-        >
+      {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+        <button key={page} onClick={() => setCurrentPage(page)} className={`${styles.pageBtn} ${currentPage === page ? styles.active : ''}`}>
           {page}
         </button>
       ))}
@@ -109,22 +105,10 @@ function FeedbackPage() {
           </div>
         </div>
 
-        <div className={styles.feedbackImageWrapper}>
-          {gambar_feedback ? (
-            <img
-              src={gambar_feedback.startsWith('http') ? gambar_feedback : `https://backend-production-8cf7.up.railway.app/uploads/feedback/${gambar_feedback}`}
-              alt="Feedback Gambar"
-              className={styles.feedbackImage}
-            />
-          ) : (
-            <div className={styles.noImage}>Tidak ada gambar</div>
-          )}
-        </div>
+        <div className={styles.feedbackImageWrapper}>{gambar_feedback ? <img src={gambar_feedback} alt="Feedback" className={styles.feedbackImage} loading="lazy" /> : <div className={styles.noImage}>Tidak ada gambar</div>}</div>
 
         <p className={styles.feedbackComment}>"{feedback}"</p>
-        <small className={styles.feedbackDate}>
-          {tanggal_feedback ? formatTanggalIndoLengkap(tanggal_feedback) : '—'}
-        </small>
+        <small className={styles.feedbackDate}>{tanggal_feedback ? formatTanggalIndoLengkap(tanggal_feedback) : '—'}</small>
       </div>
     );
   };
@@ -132,11 +116,7 @@ function FeedbackPage() {
   return (
     <div>
       {/* Navbar */}
-      <HeaderPagePelanggan
-        title="Nikmati Harimu dengan Secangkir Kebahagiaan"
-        subtitle="Rasakan cita rasa kopi yang menemani langkahmu"
-        bg_video="../../public/background_video/navVideo.mp4"
-      />
+      <HeaderPagePelanggan title="Nikmati Harimu dengan Secangkir Kebahagiaan" subtitle="Rasakan cita rasa kopi yang menemani langkahmu" bg_video="../../public/background_video/navVideo.mp4" />
 
       {/* Konten Feedback */}
       <section className={styles.feedbackContainer}>
@@ -145,11 +125,7 @@ function FeedbackPage() {
         {/* Dropdown Filter */}
         <div className={styles.filterRating}>
           <label>Filter Rating:</label>
-          <select
-            value={filterRating}
-            onChange={e => setFilterRating(e.target.value)}
-            className={styles.dropdownRating}
-          >
+          <select value={filterRating} onChange={(e) => setFilterRating(e.target.value)} className={styles.dropdownRating}>
             <option value="all">Semua Rating</option>
             <option value="low">Rating ≤ 3</option>
             <option value="mid">Rating 4–5</option>
@@ -160,11 +136,7 @@ function FeedbackPage() {
         {loading ? (
           <p className="loading-text">Memuat feedback...</p>
         ) : (
-          <div className={styles.feedbackList}>
-            {currentFeedbacks.length > 0
-              ? currentFeedbacks.map((fb, i) => <FeedbackCard key={i} {...fb} />)
-              : <p className="no-feedback">Tidak ada feedback.</p>}
-          </div>
+          <div className={styles.feedbackList}>{currentFeedbacks.length > 0 ? currentFeedbacks.map((fb, i) => <FeedbackCard key={i} {...fb} />) : <p className="no-feedback">Tidak ada feedback.</p>}</div>
         )}
 
         {/* Pagination */}
