@@ -23,7 +23,7 @@ function DaftarMenu() {
 
   // Ambil data menu dari server
   useEffect(() => {
-    document.title = 'Kelola Menu - Basecamp Kopi';
+    document.title = 'Daftar Menu - Basecamp Kopi';
     axios
       .get('https://backend-production-8cf7.up.railway.app/api/menu/menu')
       .then((res) => setMenu(res.data))
