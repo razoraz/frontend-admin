@@ -80,7 +80,14 @@ function KelolaMenu() {
       {/* Main Content */}
       <main className={styles.container}>
         {/* Filter Menu */}
-        <MenuFilterBar kategori={kategori} setKategori={setKategori} search={search} setSearch={setSearch} onAdd={() => navigate('/tambah-menu')} />
+        <MenuFilterBar
+          menu={menu} // semua menu di state
+          kategori={kategori}
+          setKategori={setKategori}
+          search={search}
+          setSearch={setSearch}
+          onAdd={() => navigate('/tambah-menu')}
+        />
 
         {/* List Menu */}
         <MenuList
