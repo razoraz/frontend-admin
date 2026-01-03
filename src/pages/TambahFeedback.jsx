@@ -115,8 +115,8 @@ const TambahFeedback = ({ idPemesanan: propId }) => {
 
             {/* Upload */}
             <div className={styles.formGroup}>
-              <label className={styles.label}>Upload Gambar (Opsional)</label>
-              <input type="file" accept="image/*" className={styles.fileInput} onChange={handleImageUpload} />
+              <label className={styles.label}>Upload Gambar</label>
+              <input type="file" accept="image/*" className={styles.fileInput} placeholder="Upload gambar feedback dengan format .jpg, .jpeg, .png" onChange={handleImageUpload} />
               {preview && (
                 <div className={styles.previewBox}>
                   <img src={preview} className={styles.previewImage} alt="preview" />
