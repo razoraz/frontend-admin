@@ -79,10 +79,10 @@ function KelolaEvent() {
 
               <div className={styles.eventMedia}>
                 {isVideo(event.gambar_event) ? (
-                  <video src={`https://backend-production-8cf7.up.railway.app/uploads/event/${event.gambar_event}`} controls />
+                  <video src={event.gambar_event} controls />
                 ) : (
                   <img
-                    src={`https://backend-production-8cf7.up.railway.app/uploads/event/${event.gambar_event}`}
+                    src={event.gambar_event}
                     alt={event.judul}
                   />
                 )}
