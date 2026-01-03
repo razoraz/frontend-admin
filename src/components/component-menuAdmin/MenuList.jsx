@@ -1,7 +1,7 @@
 import MenuCategory from './MenuCategory';
 import styles from '../../styles/menu.module.css';
 
-function MenuList({ filteredMenu, onDelete, getImageUrl }) {
+function MenuList({ filteredMenu, onDelete}) {
   // Mengelompokkan menu berdasarkan kategori
   const menusByCategory = filteredMenu.reduce((acc, item) => {
     const cat = item.nama_kategori || 'Lainnya';
@@ -39,7 +39,6 @@ function MenuList({ filteredMenu, onDelete, getImageUrl }) {
             icon={kategoriIcons[cat] || '🥤'}
             items={menusByCategory[cat]}
             onDelete={onDelete}
-            getImageUrl={getImageUrl}
           />
         )
       )}
