@@ -72,16 +72,34 @@ function MenuCategory({ title, icon, items, getImageUrl, cart, addToCart, update
 // ======================
 // Component MenuList
 // ======================
-function MenuList({ filter, makanan, minuman, snack, filteredMenu, getImageUrl, cart, addToCart, updateQty }) {
+function MenuList({ filteredMenu, getImageUrl, cart, addToCart, updateQty }) {
+  const menusByCategory = filteredMenu.reduce((acc, item) => {
+    const cat = item.nama_kategori || 'Lainnya';
+    if (!acc[cat]) acc[cat] = [];
+    acc[cat].push(item);
+    return acc;
+  }, {});
+  const categories = Object.keys(menusByCategory);
   const noData = filteredMenu.length === 0;
+  const kategoriIcons = {
+    Makanan: '🥗',
+    Minuman: '🥤',
+    Snack: '🍩',
+    Dessert: '🍰',
+    Promo: '🔥',
+  };
+  // Pastikan "Makanan" paling atas
+  categories.sort((a, b) => {
+    if (a.toLowerCase() === 'makanan') return -1; // makanan dulu
+    if (b.toLowerCase() === 'makanan') return 1;
+    return 0; // kategori lain urut sesuai munculnya
+  });
 
   return (
     <div>
-      {(filter === '' || filter === 'makanan') && makanan.length > 0 && <MenuCategory title="Makanan" icon="🥗" items={makanan} getImageUrl={getImageUrl} cart={cart} addToCart={addToCart} updateQty={updateQty} />}
-
-      {(filter === '' || filter === 'minuman') && minuman.length > 0 && <MenuCategory title="Minuman" icon="🥤" items={minuman} getImageUrl={getImageUrl} cart={cart} addToCart={addToCart} updateQty={updateQty} />}
-
-      {(filter === '' || filter === 'snack') && snack.length > 0 && <MenuCategory title="Snack" icon="🍩" items={snack} getImageUrl={getImageUrl} cart={cart} addToCart={addToCart} updateQty={updateQty} />}
+      {categories.map(
+        (cat) => menusByCategory[cat].length > 0 && <MenuCategory key={cat} title={cat} icon={kategoriIcons[cat] || '🥤'} items={menusByCategory[cat]} getImageUrl={getImageUrl} cart={cart} addToCart={addToCart} updateQty={updateQty} />
+      )}
 
       {noData && (
         <div className={styles.emptyContainer}>
@@ -189,9 +207,13 @@ function PemesananPelanggan() {
     return cocokKategori && cocokSearch;
   });
 
-  const makanan = filteredMenu.filter((i) => i.nama_kategori?.toLowerCase() === 'makanan');
-  const minuman = filteredMenu.filter((i) => i.nama_kategori?.toLowerCase() === 'minuman');
-  const snack = filteredMenu.filter((i) => i.nama_kategori?.toLowerCase() === 'snack');
+  const kategoriList = Array.from(new Set(menu.map((item) => item.nama_kategori).filter(Boolean)));
+
+  kategoriList.sort((a, b) => {
+    if (a.toLowerCase() === 'makanan') return -1;
+    if (b.toLowerCase() === 'makanan') return 1;
+    return a.localeCompare(b);
+  });
 
   const totalItem = Object.values(cart).reduce((a, b) => a + b, 0);
   const totalHarga = Object.entries(cart).reduce((sum, [id, qty]) => {
@@ -205,11 +227,13 @@ function PemesananPelanggan() {
 
       <main className={styles.container}>
         <div className={styles.menuHeader}>
-          <select className={styles.menuFilter} onChange={(e) => setFilter(e.target.value)}>
+          <select className={styles.menuFilter} value={filter} onChange={(e) => setFilter(e.target.value)}>
             <option value="">Semua Kategori</option>
-            <option value="makanan">Makanan</option>
-            <option value="minuman">Minuman</option>
-            <option value="snack">Snack</option>
+            {kategoriList.map((kat) => (
+              <option key={kat} value={kat.toLowerCase()}>
+                {kat}
+              </option>
+            ))}
           </select>
 
           <div className={styles.searchContainer}>
@@ -220,7 +244,7 @@ function PemesananPelanggan() {
           </div>
         </div>
 
-        <MenuList filter={filter} makanan={makanan} minuman={minuman} snack={snack} filteredMenu={filteredMenu} getImageUrl={getImageUrl} cart={cart} addToCart={addToCart} updateQty={updateQty} />
+        <MenuList filteredMenu={filteredMenu} getImageUrl={getImageUrl} cart={cart} addToCart={addToCart} updateQty={updateQty} />
       </main>
 
       {totalItem > 0 && (
