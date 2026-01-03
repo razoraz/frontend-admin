@@ -144,12 +144,16 @@
 
 /* 🟨 Tombol Pesan */
 .btnNavbar {
+  cursor: pointer;
+  display: inline-block;
   padding: 10px 20px;
   background-color: #fff615;
-  color: #000 !important;
+  color: #000000 !important;
   border-radius: 10px;
   font-weight: bold;
+  text-decoration: none !important;
   transition: background-color 0.3s ease, transform 0.2s;
+  border: none;
 }
 .btnNavbar:hover {
   background-color: #fffa9f;
