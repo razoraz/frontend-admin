@@ -81,7 +81,6 @@ function KelolaMenu() {
       <main className={styles.container}>
         {/* Filter Menu */}
         <MenuFilterBar
-
           kategori={kategori}
           setKategori={setKategori}
           search={search}
