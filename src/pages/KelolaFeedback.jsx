@@ -108,8 +108,9 @@ function KelolaFeedback() {
       },
       {
         Header: 'Gambar',
-        Cell: ({ row }) => (row.original.gambar_feedback ? <img src={`https://backend-production-8cf7.up.railway.app/uploads/feedback/${row.original.gambar_feedback}`} alt="Feedback" width="50" height="50" style={{ borderRadius: 8 }} /> : '—'),
+        Cell: ({ row }) => (row.original.gambar_feedback ? <img src={row.original.gambar_feedback} alt="Feedback" width="50" height="50" style={{ borderRadius: 8, objectFit: 'cover' }} /> : '—'),
       },
+
       {
         Header: 'Email',
         accessor: 'email',
