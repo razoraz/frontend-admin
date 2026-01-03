@@ -227,8 +227,7 @@
   min-width: 280px;
   cursor: pointer;
   z-index: 1000;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  animation: floatIn 0.5s ease forwards, gentlePulse 3s ease-in-out infinite;
+  animation: floatIn 0.5s ease forwards gentleBounce 2s infinite ease-in-out;
 }
 
 .floatingCart:hover {
@@ -239,7 +238,7 @@
 
 .floatingCart:active {
   transform: translateX(-50%) translateY(-4px);
-  box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4), 0 0 0 2px rgba(255, 255, 255, 0.1), inset 0 1px 3px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), inset 0 1px 3px rgba(255, 255, 255, 0.12);
   transition: all 0.1s ease;
 }
 
