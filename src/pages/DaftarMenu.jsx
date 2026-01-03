@@ -40,11 +40,6 @@ function DaftarMenu() {
     return cocokKategori && cocokSearch;
   });
 
-  // Mengelompokkan menu berdasarkan kategori
-  const makanan = filteredMenu.filter((i) => i.nama_kategori?.toLowerCase() === 'makanan');
-  const minuman = filteredMenu.filter((i) => i.nama_kategori?.toLowerCase() === 'minuman');
-  const snack = filteredMenu.filter((i) => i.nama_kategori?.toLowerCase() === 'snack');
-
   return (
     <div>
       {/* Navbar */}
@@ -53,10 +48,16 @@ function DaftarMenu() {
       {/* Main Content */}
       <main className={styles.container}>
         {/* Filter Menu */}
-        <MenuFilterBar kategori={kategori} setKategori={setKategori} search={search} setSearch={setSearch} />
+        <MenuFilterBar
+          menu={menu} // semua menu di state
+          kategori={kategori}
+          setKategori={setKategori}
+          search={search}
+          setSearch={setSearch}
+        />
 
         {/* List Menu */}
-        <MenuList kategori={kategori} makanan={makanan} minuman={minuman} snack={snack} filteredMenu={filteredMenu} getImageUrl={getImageUrl} />
+        <MenuList filteredMenu={filteredMenu} getImageUrl={getImageUrl} />
       </main>
 
       {/* Footer */}
