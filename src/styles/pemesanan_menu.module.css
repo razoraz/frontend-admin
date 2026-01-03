@@ -207,43 +207,206 @@
   filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9));
 }
 
-/* Floating cart */
+/* Floating cart - Updated */
 .floatingCart {
   position: fixed;
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #fff615;
+  background: linear-gradient(135deg, #ffd633 0%, #ffcc00 100%);
   color: #000;
   font-weight: bold;
-  padding: 12px 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  padding: 16px 28px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(255, 214, 51, 0.4), 0 0 0 2px rgba(255, 255, 255, 0.1), inset 0 2px 4px rgba(255, 255, 255, 0.4);
   cursor: pointer;
   display: flex;
+  align-items: center;
+  gap: 12px;
   z-index: 1000;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  min-width: 280px;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: floatIn 0.5s ease forwards, pulse 2s infinite 1s;
 }
-.floatingCart.show {
+
+.floatingCart:hover {
+  transform: translateX(-50%) translateY(-4px);
+  box-shadow: 0 12px 30px rgba(255, 214, 51, 0.6), 0 0 0 2px rgba(255, 255, 255, 0.2), inset 0 2px 8px rgba(255, 255, 255, 0.6);
+  background: linear-gradient(135deg, #ffe066 0%, #ffd633 100%);
+}
+
+.floatingCart:active {
+  transform: translateX(-50%) translateY(-2px);
+  transition: transform 0.1s;
+}
+
+/* Icon cart di dalam floating button */
+.floatingCart::before {
+  content: '🛒';
+  font-size: 1.2rem;
+  animation: bounce 1s infinite alternate;
+}
+
+.floatingCart span {
+  font-size: 1rem;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.3px;
+}
+
+/* Badge untuk jumlah item yang lebih menonjol */
+.cartBadge {
+  background: #ff4757;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: floatIn 0.4s ease forwards;
-}
-.floatingCart:hover {
-  transform: translateX(-50%) scale(1.1);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+  font-size: 0.8rem;
+  font-weight: bold;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  box-shadow: 0 2px 8px rgba(255, 71, 87, 0.4);
+  animation: badgePulse 1.5s infinite;
 }
 
+/* Animasi */
 @keyframes floatIn {
   from {
-    transform: translate(-50%, 50px);
+    transform: translate(-50%, 100px);
     opacity: 0;
   }
   to {
     transform: translate(-50%, 0);
     opacity: 1;
   }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 6px 20px rgba(255, 214, 51, 0.4), 0 0 0 2px rgba(255, 255, 255, 0.1), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 6px 25px rgba(255, 214, 51, 0.6), 0 0 0 3px rgba(255, 255, 255, 0.15), inset 0 2px 6px rgba(255, 255, 255, 0.5);
+  }
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes badgePulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 2px 8px rgba(255, 71, 87, 0.4);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(255, 71, 87, 0.6);
+  }
+}
+
+/* Responsif untuk berbagai ukuran layar */
+@media (max-width: 768px) {
+  .floatingCart {
+    bottom: 20px;
+    padding: 14px 20px;
+    min-width: 250px;
+    font-size: 0.9rem;
+    border-radius: 14px;
+    margin: 0 16px;
+    width: calc(100% - 32px);
+    max-width: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .floatingCart:hover {
+    transform: translateX(-50%) translateY(-3px);
+  }
+
+  .floatingCart span {
+    font-size: 0.9rem;
+    flex: 1;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .floatingCart {
+    bottom: 16px;
+    padding: 12px 16px;
+    min-width: auto;
+    width: calc(100% - 32px);
+    max-width: none;
+    border-radius: 12px;
+  }
+
+  .floatingCart span {
+    font-size: 0.85rem;
+  }
+
+  .floatingCart::before {
+    font-size: 1rem;
+  }
+}
+
+/* Untuk tablet landscape */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .floatingCart {
+    min-width: 300px;
+    padding: 15px 24px;
+  }
+}
+
+/* Efek transisi saat muncul/hilang */
+.floatingCart-enter {
+  animation: floatIn 0.4s ease forwards;
+}
+
+.floatingCart-exit {
+  animation: floatOut 0.3s ease forwards;
+}
+
+@keyframes floatOut {
+  from {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, 100px);
+    opacity: 0;
+  }
+}
+
+/* Tambahan untuk jumlah item yang menonjol */
+.totalItems {
+  background: #ff4757;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-right: 8px;
+  box-shadow: 0 2px 8px rgba(255, 71, 87, 0.4);
+  animation: badgePulse 1.5s infinite;
 }
 
 .habisCard {
@@ -260,8 +423,6 @@
   font-weight: bold;
   margin-top: 4px;
 }
-
-
 
 /* Responsif */
 @media (max-width: 768px) {
