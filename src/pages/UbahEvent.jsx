@@ -90,7 +90,7 @@ function UbahEvent() {
 
           {gambarLama && (
             <div className={styles.currentImage}>
-              Media saat ini: <span className={styles.filename}>{gambarLama}</span>
+              Gambar saat ini: <span className={styles.filename}>{gambarLama}</span>
             </div>
           )}
 
