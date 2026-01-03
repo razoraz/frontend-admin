@@ -30,9 +30,7 @@ function DaftarMenu() {
       .catch((err) => console.error('Gagal ambil menu:', err));
   }, []);
 
-  const getImageUrl = (filename) => `https://backend-production-8cf7.up.railway.app/uploads/${filename}`;
 
- 
   // Filter menu berdasarkan kategori dan pencarian
   const filteredMenu = menu.filter((item) => {
     const cocokKategori = kategori === '' || item.nama_kategori?.toLowerCase() === kategori.toLowerCase();
@@ -57,7 +55,7 @@ function DaftarMenu() {
         />
 
         {/* List Menu */}
-        <MenuList filteredMenu={filteredMenu} getImageUrl={getImageUrl} />
+        <MenuList filteredMenu={filteredMenu}/>
       </main>
 
       {/* Footer */}
