@@ -15,7 +15,7 @@ import styles from '../styles/pemesanan_menu.module.css';
 // ======================
 // Component MenuCategory
 // ======================
-function MenuCategory({ title, icon, items, getImageUrl, cart, addToCart, updateQty }) {
+function MenuCategory({ title, icon, items, cart, addToCart, updateQty }) {
   if (!items || items.length === 0) return null;
 
   return (
@@ -32,7 +32,7 @@ function MenuCategory({ title, icon, items, getImageUrl, cart, addToCart, update
           return (
             <div className={`${styles.menuCard} ${isHabis ? styles.habisCard : ''}`} key={item.id_menu}>
               <div className={styles.menuImageContainer}>
-                <img src={getImageUrl(item.gambar_menu)} alt={item.nama_menu} className={`${styles.menuImage} ${isHabis ? styles.habisImage : ''}`} />
+                <img src={item.gambar_menu} alt={item.nama_menu} className={`${styles.menuImage} ${isHabis ? styles.habisImage : ''}`} />
               </div>
 
               <div className={styles.decorativeLine}></div>
@@ -72,7 +72,7 @@ function MenuCategory({ title, icon, items, getImageUrl, cart, addToCart, update
 // ======================
 // Component MenuList
 // ======================
-function MenuList({ filteredMenu, getImageUrl, cart, addToCart, updateQty }) {
+function MenuList({ filteredMenu, cart, addToCart, updateQty }) {
   const menusByCategory = filteredMenu.reduce((acc, item) => {
     const cat = item.nama_kategori || 'Lainnya';
     if (!acc[cat]) acc[cat] = [];
@@ -98,7 +98,7 @@ function MenuList({ filteredMenu, getImageUrl, cart, addToCart, updateQty }) {
   return (
     <div>
       {categories.map(
-        (cat) => menusByCategory[cat].length > 0 && <MenuCategory key={cat} title={cat} icon={kategoriIcons[cat] || '🥤'} items={menusByCategory[cat]} getImageUrl={getImageUrl} cart={cart} addToCart={addToCart} updateQty={updateQty} />
+        (cat) => menusByCategory[cat].length > 0 && <MenuCategory key={cat} title={cat} icon={kategoriIcons[cat] || '🥤'} items={menusByCategory[cat]} cart={cart} addToCart={addToCart} updateQty={updateQty} />
       )}
 
       {noData && (
@@ -184,8 +184,6 @@ function PemesananPelanggan() {
       .catch((err) => console.error('Gagal ambil menu:', err));
   }, []);
 
-  const getImageUrl = (filename) => `https://backend-production-8cf7.up.railway.app/uploads/${filename}`;
-
   const addToCart = (id) => setCart((prev) => ({ ...prev, [id]: 1 }));
 
   const updateQty = (id, newQty) => {
@@ -244,7 +242,7 @@ function PemesananPelanggan() {
           </div>
         </div>
 
-        <MenuList filteredMenu={filteredMenu} getImageUrl={getImageUrl} cart={cart} addToCart={addToCart} updateQty={updateQty} />
+        <MenuList filteredMenu={filteredMenu} cart={cart} addToCart={addToCart} updateQty={updateQty} />
       </main>
 
       {totalItem > 0 && (
