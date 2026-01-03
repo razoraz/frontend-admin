@@ -54,11 +54,11 @@ function UbahEvent() {
       }
 
       await axios.put(`https://backend-production-8cf7.up.railway.app/api/event/${id_event}`, formData, {
-        headers: { 'Content-Type': 'multipart/form-data' }
+        headers: { 'Content-Type': 'multipart/form-data' },
       });
 
       setModalQuestionOpen(false); // tutup modal question
-      setModalSuccessOpen(true);    // buka modal success
+      setModalSuccessOpen(true); // buka modal success
     } catch (err) {
       console.error(err);
       alert('Gagal update event');
@@ -83,31 +83,19 @@ function UbahEvent() {
           }}
         >
           <label>Judul Event</label>
-          <input
-            type="text"
-            value={judul}
-            onChange={(e) => setJudul(e.target.value)}
-            required
-          />
+          <input type="text" value={judul} onChange={(e) => setJudul(e.target.value)} required />
 
           <label>Gambar / Video Event</label>
-          <input
-            type="file"
-            accept="image/*,video/*"
-            onChange={(e) => setGambar(e.target.files[0])}
-          />
+          <input type="file" accept="image/*,video/*" onChange={(e) => setGambar(e.target.files[0])} />
 
           {gambarLama && (
-            <p style={{ fontSize: 13, opacity: 0.8 }}>
-              Media saat ini: {gambarLama}
-            </p>
+            <div className={styles.currentImage}>
+              Media saat ini: <span className={styles.filename}>{gambarLama}</span>
+            </div>
           )}
 
           <label>Deskripsi</label>
-          <textarea
-            value={deskripsi}
-            onChange={(e) => setDeskripsi(e.target.value)}
-          />
+          <textarea value={deskripsi} onChange={(e) => setDeskripsi(e.target.value)} />
 
           <button type="submit" className={styles.saveBtn}>
             Simpan
