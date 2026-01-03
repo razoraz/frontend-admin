@@ -1,10 +1,14 @@
-import React from 'react';
+import { useEffect } from 'react';
 import HeaderPagePelanggan from '../components/component-html/HeaderPagePelanggan';
 import FooterPage from '../components/component-html/FooterPage';
 import styles from '../styles/tentang_kami.module.css';
 import { FaCoffee, FaHeart, FaUsers, FaAward, FaMugHot, FaLeaf } from 'react-icons/fa';
 
 function TentangKamiPage() {
+    useEffect(() => {
+    document.title = 'Tentang Kami - Basecamp Kopi';
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className={styles.pageWrapper}>
       <HeaderPagePelanggan 
