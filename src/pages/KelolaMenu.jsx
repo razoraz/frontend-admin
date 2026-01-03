@@ -72,11 +72,6 @@ function KelolaMenu() {
     return cocokKategori && cocokSearch;
   });
 
-  // Mengelompokkan menu berdasarkan kategori
-  const makanan = filteredMenu.filter((i) => i.nama_kategori?.toLowerCase() === 'makanan');
-  const minuman = filteredMenu.filter((i) => i.nama_kategori?.toLowerCase() === 'minuman');
-  const snack = filteredMenu.filter((i) => i.nama_kategori?.toLowerCase() === 'snack');
-
   return (
     <div>
       {/* Header */}
@@ -88,7 +83,11 @@ function KelolaMenu() {
         <MenuFilterBar kategori={kategori} setKategori={setKategori} search={search} setSearch={setSearch} onAdd={() => navigate('/tambah-menu')} />
 
         {/* List Menu */}
-        <MenuList kategori={kategori} makanan={makanan} minuman={minuman} snack={snack} filteredMenu={filteredMenu} onDelete={handleDelete} getImageUrl={getImageUrl} />
+        <MenuList
+          filteredMenu={filteredMenu} // semua menu sudah difilter berdasarkan search/kategori
+          onDelete={handleDelete}
+          getImageUrl={getImageUrl}
+        />
 
         {/* Modal */}
         <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} onConfirm={confirmDelete} title={modalTitle} message={modalMessage} type={modalType} confirmLabel="Hapus" cancelLabel="Batal" />
