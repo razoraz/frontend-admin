@@ -207,153 +207,213 @@
   filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9));
 }
 
-/* Floating cart - Updated */
+/* Floating cart - Updated dengan warna lebih pas dan efek bounce */
 .floatingCart {
   position: fixed;
   bottom: 30px;
   left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, #ffd633 0%, #ffcc00 100%);
+  transform: translateX(-50%) translateY(0);
+  background: linear-gradient(135deg, #ffcc00 0%, #ffaa00 100%);
   color: #000;
   font-weight: bold;
   padding: 16px 28px;
   border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(255, 214, 51, 0.4), 0 0 0 2px rgba(255, 255, 255, 0.1), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 8px 25px rgba(255, 204, 0, 0.5),
+    0 0 0 2px rgba(255, 255, 255, 0.15),
+    inset 0 2px 4px rgba(255, 255, 255, 0.5);
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 12px;
   z-index: 1000;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   text-decoration: none;
   min-width: 280px;
   justify-content: center;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  animation: floatIn 0.5s ease forwards, pulse 2s infinite 1s;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  animation: floatIn 0.5s ease forwards, gentlePulse 3s ease-in-out infinite;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .floatingCart:hover {
-  transform: translateX(-50%) translateY(-4px);
-  box-shadow: 0 12px 30px rgba(255, 214, 51, 0.6), 0 0 0 2px rgba(255, 255, 255, 0.2), inset 0 2px 8px rgba(255, 255, 255, 0.6);
-  background: linear-gradient(135deg, #ffe066 0%, #ffd633 100%);
+  transform: translateX(-50%) translateY(-8px);
+  box-shadow: 
+    0 15px 35px rgba(255, 204, 0, 0.7),
+    0 0 0 3px rgba(255, 255, 255, 0.2),
+    inset 0 2px 8px rgba(255, 255, 255, 0.7);
+  background: linear-gradient(135deg, #ffd633 0%, #ffbb00 100%);
+  animation: bounceEffect 0.6s ease;
 }
 
 .floatingCart:active {
-  transform: translateX(-50%) translateY(-2px);
-  transition: transform 0.1s;
+  transform: translateX(-50%) translateY(-4px);
+  box-shadow: 
+    0 5px 15px rgba(255, 204, 0, 0.4),
+    0 0 0 2px rgba(255, 255, 255, 0.1),
+    inset 0 1px 3px rgba(255, 255, 255, 0.4);
+  transition: all 0.1s ease;
 }
 
-/* Icon cart di dalam floating button */
+/* Icon cart dengan efek bounce saat hover */
 .floatingCart::before {
   content: '🛒';
-  font-size: 1.2rem;
-  animation: bounce 1s infinite alternate;
+  font-size: 1.3rem;
+  animation: gentleBounce 2s infinite ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+.floatingCart:hover::before {
+  animation: fastBounce 0.5s ease;
+  transform: scale(1.2);
 }
 
 .floatingCart span {
   font-size: 1rem;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
   letter-spacing: 0.3px;
+  font-weight: 700;
+  transition: all 0.3s ease;
 }
 
-/* Badge untuk jumlah item yang lebih menonjol */
-.cartBadge {
-  background: #ff4757;
+.floatingCart:hover span {
+  transform: translateX(2px);
+}
+
+/* Badge untuk jumlah item */
+.totalItems {
+  background: linear-gradient(135deg, #ff4757 0%, #ff2e43 100%);
   color: white;
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.8rem;
-  font-weight: bold;
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  box-shadow: 0 2px 8px rgba(255, 71, 87, 0.4);
-  animation: badgePulse 1.5s infinite;
+  font-size: 0.85rem;
+  font-weight: 900;
+  margin-right: 8px;
+  box-shadow: 
+    0 3px 10px rgba(255, 71, 87, 0.5),
+    0 0 0 2px rgba(255, 255, 255, 0.2);
+  animation: badgePulse 1.8s infinite ease-in-out;
+  transform-origin: center;
+  transition: all 0.3s ease;
 }
 
-/* Animasi */
+.floatingCart:hover .totalItems {
+  animation: badgeBounce 0.6s ease;
+  transform: scale(1.15);
+}
+
+/* Animasi baru untuk bounce effect */
+@keyframes bounceEffect {
+  0%, 100% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-12px);
+  }
+}
+
+@keyframes gentleBounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.05);
+  }
+}
+
+@keyframes fastBounce {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-5px) scale(1.1);
+  }
+  50% {
+    transform: translateY(0) scale(1.2);
+  }
+  75% {
+    transform: translateY(-3px) scale(1.15);
+  }
+  100% {
+    transform: translateY(0) scale(1.2);
+  }
+}
+
+@keyframes gentlePulse {
+  0%, 100% {
+    box-shadow: 
+      0 8px 25px rgba(255, 204, 0, 0.5),
+      0 0 0 2px rgba(255, 255, 255, 0.15),
+      inset 0 2px 4px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 
+      0 8px 30px rgba(255, 204, 0, 0.7),
+      0 0 0 3px rgba(255, 255, 255, 0.2),
+      inset 0 2px 6px rgba(255, 255, 255, 0.6);
+  }
+}
+
 @keyframes floatIn {
   from {
-    transform: translate(-50%, 100px);
+    transform: translateX(-50%) translateY(100px);
     opacity: 0;
   }
   to {
-    transform: translate(-50%, 0);
+    transform: translateX(-50%) translateY(0);
     opacity: 1;
-  }
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    box-shadow: 0 6px 20px rgba(255, 214, 51, 0.4), 0 0 0 2px rgba(255, 255, 255, 0.1), inset 0 2px 4px rgba(255, 255, 255, 0.4);
-  }
-  50% {
-    box-shadow: 0 6px 25px rgba(255, 214, 51, 0.6), 0 0 0 3px rgba(255, 255, 255, 0.15), inset 0 2px 6px rgba(255, 255, 255, 0.5);
-  }
-}
-
-@keyframes bounce {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-3px);
   }
 }
 
 @keyframes badgePulse {
-  0%,
-  100% {
+  0%, 100% {
     transform: scale(1);
-    box-shadow: 0 2px 8px rgba(255, 71, 87, 0.4);
+    box-shadow: 
+      0 3px 10px rgba(255, 71, 87, 0.5),
+      0 0 0 2px rgba(255, 255, 255, 0.2);
   }
   50% {
     transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(255, 71, 87, 0.6);
+    box-shadow: 
+      0 5px 15px rgba(255, 71, 87, 0.7),
+      0 0 0 3px rgba(255, 255, 255, 0.3);
   }
 }
-/* Efek transisi saat muncul/hilang */
-.floatingCart-enter {
-  animation: floatIn 0.4s ease forwards;
-}
 
-.floatingCart-exit {
-  animation: floatOut 0.3s ease forwards;
+@keyframes badgeBounce {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.3);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  70% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1.15);
+  }
 }
 
 @keyframes floatOut {
   from {
-    transform: translate(-50%, 0);
+    transform: translateX(-50%) translateY(0);
     opacity: 1;
   }
   to {
-    transform: translate(-50%, 100px);
+    transform: translateX(-50%) translateY(100px);
     opacity: 0;
   }
 }
 
-/* Tambahan untuk jumlah item yang menonjol */
-.totalItems {
-  background: #ff4757;
-  color: white;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  font-weight: bold;
-  margin-right: 8px;
-  box-shadow: 0 2px 8px rgba(255, 71, 87, 0.4);
-  animation: badgePulse 1.5s infinite;
-}
 
 .habisCard {
   opacity: 0.5;
