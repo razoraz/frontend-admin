@@ -1,29 +1,42 @@
-// Component List Menu
-// Import Component
 import MenuCategory from './MenuCategory';
-
-// Import Style
 import styles from '../../styles/menu.module.css';
 
-// Main Function MenuList
-function MenuList({ kategori, makanan, minuman, snack, filteredMenu, onDelete, getImageUrl }) {
+function MenuList({ filteredMenu, onDelete, getImageUrl }) {
+  // Mengelompokkan menu berdasarkan kategori
+  const menusByCategory = filteredMenu.reduce((acc, item) => {
+    const cat = item.nama_kategori || 'Lainnya';
+    if (!acc[cat]) acc[cat] = [];
+    acc[cat].push(item);
+    return acc;
+  }, {});
+
+  const categories = Object.keys(menusByCategory);
   const noData = filteredMenu.length === 0;
+
+  // Opsional: mapping kategori ke icon
+  const kategoriIcons = {
+    Makanan: '🥗',
+    Minuman: '🥤',
+    Snack: '🍩',
+    Dessert: '🍰',
+    Promo: '🔥',
+  };
 
   return (
     <div>
-      {(kategori === '' || kategori === 'makanan') && makanan.length > 0 && (
-        <MenuCategory title="Makanan" icon="🥗" items={makanan} onDelete={onDelete} getImageUrl={getImageUrl} />
+      {categories.map((cat) =>
+        menusByCategory[cat].length > 0 && (
+          <MenuCategory
+            key={cat}
+            title={cat}
+            icon={kategoriIcons[cat] || '🍽️'}
+            items={menusByCategory[cat]}
+            onDelete={onDelete}
+            getImageUrl={getImageUrl}
+          />
+        )
       )}
 
-      {(kategori === '' || kategori === 'minuman') && minuman.length > 0 && (
-        <MenuCategory title="Minuman" icon="🥤" items={minuman} onDelete={onDelete} getImageUrl={getImageUrl} />
-      )}
-
-      {(kategori === '' || kategori === 'snack') && snack.length > 0 && (
-        <MenuCategory title="Snack" icon="🍩" items={snack} onDelete={onDelete} getImageUrl={getImageUrl} />
-      )}
-
-      {/* Tampilan jika tidak ada menu */}
       {noData && (
         <div className={styles.emptyContainer}>
           <img
