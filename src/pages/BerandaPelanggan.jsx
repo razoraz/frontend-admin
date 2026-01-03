@@ -84,7 +84,7 @@ function BerandaPage() {
             {menuTerlaris.length > 0 ? (
               menuTerlaris.map((menu) => (
                 <div key={menu.id_menu} className={styles.menuCard}>
-                  <img src={`https://backend-production-8cf7.up.railway.app/uploads/${menu.gambar_menu}`} alt={menu.nama_menu} />
+                  <img src={menu.gambar_menu} alt={menu.nama_menu} />
                   <h4>{menu.nama_menu}</h4>
                   <span>⭐ Terlaris</span>
                 </div>
@@ -103,7 +103,7 @@ function BerandaPage() {
               feedback.map((fb, index) => (
                 <div key={index} className={styles.feedbackCard}>
                   <p>"{fb.feedback}"</p>
-                  <img src={`https://backend-production-8cf7.up.railway.app/uploads/feedback/${fb.gambar_feedback}`} alt={fb.nama_pelanggan} />
+                  <img src={fb.gambar_feedback} alt={fb.nama_pelanggan} />
                   <strong>{fb.nama_pelanggan}</strong>
                   <span>⭐ {fb.rating}/5</span>
                 </div>
@@ -125,7 +125,7 @@ function BerandaPage() {
             <div className={styles.eventGrid}>
               <div className={styles.eventCard}>
                 <div className={styles.eventImageWrapper}>
-                  <img src={`https://backend-production-8cf7.up.railway.app/uploads/event/${event.gambar_event}`} alt={event.judul} className={styles.eventImage} />
+                  <img src={event.gambar_event} alt={event.judul} className={styles.eventImage} />
                   <div className={styles.eventBadge}>Promo</div>
                 </div>
                 <div className={styles.eventContent}>
