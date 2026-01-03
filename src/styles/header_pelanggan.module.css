@@ -265,6 +265,11 @@
     height: 0 !important;
     color: #f5f5f5 !important;
   }
+  .btnNavbar {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+  }
   .motivasiTengah h1 {
     font-size: 1.8rem;
   }
