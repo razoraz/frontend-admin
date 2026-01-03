@@ -54,7 +54,7 @@ function UbahMenuForm({ menu, setMenu, kategoriList, setGambarBaru, onSubmit }) 
       {/* Gambar Menu */}
       <div className={styles.formGroup}>
         <label htmlFor="gambar_menu">Gambar Menu</label>
-        <input type="file" id="gambar_menu" accept="image/*" onChange={handleFileChange} />
+        <input type="file" id="gambar_menu" placeholder="Masukkan gambar menu dengan format .jpg, .jpeg, .png" accept="image/*" onChange={handleFileChange} />
         {menu.gambar_menu && (
           <div className={styles.currentImage}>
             Gambar saat ini: <span className={styles.filename}>{menu.gambar_menu}</span>
