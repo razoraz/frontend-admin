@@ -70,7 +70,7 @@ function TambahMenuForm({ formData, setFormData, kategoriList, onSubmit }) {
       {/* Gambar Menu */}
       <div className={styles.formGroup}>
         <label htmlFor="gambar_menu">Gambar Menu</label>
-        <input type="file" id="gambar_menu" name="gambar_menu" accept="image/*" onChange={handleChange} />
+        <input type="file" id="gambar_menu" name="gambar_menu" accept="image/*" placeholder="Masukkan gambar menu dengan format .jpg, .jpeg, .png" onChange={handleChange} />
       </div>
 
       {/* Deskripsi Menu */}
