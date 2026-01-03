@@ -179,8 +179,6 @@ const Keranjang = () => {
 
   const total = keranjang.reduce((acc, item) => acc + item.harga * item.qty, 0);
 
-  const getImageUrl = (filename) => `https://backend-production-8cf7.up.railway.app/uploads/${filename}`;
-
   return (
     <div className={styles.page}>
       <HeaderPagePelanggan title="Keranjang Kamu" subtitle="Periksa kembali pesananmu" bg_video="/background_video/navVideo.mp4" />
@@ -246,7 +244,7 @@ const Keranjang = () => {
             </div>
 
             <div className={styles.right}>
-              <img src={getImageUrl(item.gambar)} className={styles.menuImage} alt={item.nama} />
+              <img src={item.gambar} className={styles.menuImage} alt={item.nama} />
 
               <div className={styles.qtyBox}>
                 <button onClick={() => updateQty(item.id, 'minus')}>−</button>
