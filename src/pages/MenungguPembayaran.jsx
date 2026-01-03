@@ -52,11 +52,11 @@ const MenungguPembayaranKasir = () => {
     // ⭐ LOGIKA NAVIGASI BERDASARKAN RESERVASI
     if (id_reservasi) {
       // Jika ada reservasi, redirect ke struk dengan id_reservasi
-      navigate(`/struk/reservasi/${id_reservasi}`);
+      navigate(`/struk/${id_pemesanan}`);
       console.log(`🔀 Redirect ke struk reservasi: ${id_reservasi}`);
     } else {
       // Jika tidak ada reservasi, tetap pakai id_pemesanan
-      navigate(`/struk/pemesanan/${id_pemesanan}`);
+      navigate(`/struk/${id_pemesanan}`);
       console.log(`🔀 Redirect ke struk pemesanan: ${id_pemesanan}`);
     }
   };
