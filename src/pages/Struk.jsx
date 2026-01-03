@@ -133,7 +133,6 @@ const Struk = () => {
         {pemesanan.reservasi && (
           <>
             <div className={styles.sectionHeader}>
-              <i className="fas fa-calendar-check"></i>
               <h3 className={styles.sectionTitle}>Informasi Reservasi</h3>
             </div>
 
