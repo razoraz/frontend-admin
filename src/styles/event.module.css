@@ -167,21 +167,3 @@
   box-shadow: 0 10px 28px rgba(255, 77, 77, 0.45);
 }
 
-/* Tambahkan di ubah_menu.module.css */
-
-.currentImage {
-  font-size: 14px;
-  margin-top: 5px;
-  color: #aaa;
-}
-
-.filename {
-  display: inline-block;
-  max-width: 300px; /* Sesuaikan dengan lebar form */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: #ffd633;
-  font-weight: bold;
-  vertical-align: bottom;
-}
