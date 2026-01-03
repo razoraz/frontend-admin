@@ -22,6 +22,13 @@ function MenuList({ filteredMenu, onDelete, getImageUrl }) {
     Promo: '🔥',
   };
 
+  // Pastikan "Makanan" paling atas
+  categories.sort((a, b) => {
+    if (a.toLowerCase() === 'makanan') return -1; // makanan dulu
+    if (b.toLowerCase() === 'makanan') return 1;
+    return 0; // kategori lain urut sesuai munculnya
+  });
+
   return (
     <div>
       {categories.map((cat) =>
@@ -29,7 +36,7 @@ function MenuList({ filteredMenu, onDelete, getImageUrl }) {
           <MenuCategory
             key={cat}
             title={cat}
-            icon={kategoriIcons[cat] || '🍽️'}
+            icon={kategoriIcons[cat] || '🥤'}
             items={menusByCategory[cat]}
             onDelete={onDelete}
             getImageUrl={getImageUrl}
