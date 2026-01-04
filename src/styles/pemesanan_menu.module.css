@@ -1,7 +1,9 @@
+/* Container */
 .container {
   padding: 20px;
 }
 
+/* Judul Menu */
 .menuSectionTitle {
   font-size: 24px;
   font-weight: bold;
@@ -84,6 +86,15 @@
   margin-bottom: 50px;
 }
 
+/* Garis */
+.decorativeLine {
+  width: 70%;
+  height: 2px;
+  background: #ffffff;
+  opacity: 0.8;
+  margin: 12px auto;
+  border-radius: 2px;
+}
 .decorativeLine2 {
   background-color: #fff615;
   margin-left: 40px;
@@ -92,6 +103,7 @@
   height: 4px;
 }
 
+/* Card menu */
 .menuCardContainer {
   display: flex;
   justify-content: flex-start;
@@ -100,7 +112,6 @@
   gap: 24px;
   padding-left: 40px;
 }
-
 .menuCard {
   position: relative;
   background-color: rgba(0, 0, 0, 0.75);
@@ -112,7 +123,6 @@
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
   transition: transform 0.3s ease;
 }
-
 .menuCard:hover {
   transform: translateY(-5px);
 }
@@ -129,28 +139,16 @@
   object-fit: cover;
 }
 
-/* Garis dekoratif */
-.decorativeLine {
-  width: 70%;
-  height: 2px;
-  background: #ffffff;
-  opacity: 0.8;
-  margin: 12px auto;
-  border-radius: 2px;
-}
-
 /* Info menu */
 .menuInfo {
   text-align: center;
   padding: 0 10px 10px 10px;
 }
-
 .menuName {
   font-size: 18px;
   font-weight: 600;
   color: #fff;
 }
-
 .menuPrice {
   font-size: 14px;
   margin-top: 4px;
@@ -168,6 +166,7 @@
   margin-bottom: 20px;
 }
 
+/* Tombol kuantitas */
 .qtyBtn {
   background-color: transparent;
   color: #fff;
@@ -183,6 +182,7 @@
   color: #000;
 }
 
+/* Nilai kuantitas */
 .qtyValue {
   font-weight: bold;
   font-size: 1rem;
@@ -207,7 +207,7 @@
   filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9));
 }
 
-/* Floating cart - Updated dengan warna lebih pas dan efek bounce */
+/* Floating cart */
 .floatingCart {
   position: fixed;
   bottom: 30px;
@@ -229,20 +229,16 @@
   z-index: 1000;
   animation: floatIn 0.5s ease forwards gentleBounce 2s infinite ease-in-out;
 }
-
 .floatingCart:hover {
   transform: translateX(-50%) translateY(-6px);
   background: linear-gradient(135deg, #343a40 0%, #23272e 100%);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), inset 0 1px 3px rgba(255, 255, 255, 0.12);
 }
-
 .floatingCart:active {
   transform: translateX(-50%) translateY(-4px);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), inset 0 1px 3px rgba(255, 255, 255, 0.12);
   transition: all 0.1s ease;
 }
-
-/* Icon cart dengan efek bounce saat hover */
 .floatingCart::before {
   content: '🛒';
   font-size: 1.35rem;
@@ -250,12 +246,10 @@
   animation: gentleBounce 2s infinite ease-in-out;
   transition: transform 0.3s ease;
 }
-
 .floatingCart:hover::before {
   animation: fastBounce 0.5s ease;
   transform: scale(1.2);
 }
-
 .floatingCart span {
   font-size: 1rem;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
@@ -263,12 +257,11 @@
   font-weight: 700;
   transition: all 0.3s ease;
 }
-
 .floatingCart:hover span {
   transform: translateX(2px);
 }
 
-/* Badge untuk jumlah item */
+/* Total Items */
 .totalItems {
   background: #e63946;
   box-shadow: 0 4px 12px rgba(230, 57, 70, 0.6);
@@ -287,7 +280,6 @@
   transform-origin: center;
   transition: all 0.3s ease;
 }
-
 .floatingCart:hover .totalItems {
   animation: badgeBounce 0.6s ease;
   transform: scale(1.15);
@@ -303,7 +295,6 @@
     transform: translateX(-50%) translateY(-12px);
   }
 }
-
 @keyframes gentleBounce {
   0%,
   100% {
@@ -313,7 +304,6 @@
     transform: translateY(-3px) scale(1.05);
   }
 }
-
 @keyframes fastBounce {
   0% {
     transform: translateY(0) scale(1);
@@ -331,7 +321,6 @@
     transform: translateY(0) scale(1.2);
   }
 }
-
 @keyframes gentlePulse {
   0%,
   100% {
@@ -341,7 +330,6 @@
     box-shadow: 0 8px 30px rgba(255, 204, 0, 0.7), 0 0 0 3px rgba(255, 255, 255, 0.2), inset 0 2px 6px rgba(255, 255, 255, 0.6);
   }
 }
-
 @keyframes floatIn {
   from {
     transform: translateX(-50%) translateY(100px);
@@ -352,7 +340,6 @@
     opacity: 1;
   }
 }
-
 @keyframes badgePulse {
   0%,
   100% {
@@ -364,7 +351,6 @@
     box-shadow: 0 5px 15px rgba(255, 71, 87, 0.7), 0 0 0 3px rgba(255, 255, 255, 0.3);
   }
 }
-
 @keyframes badgeBounce {
   0% {
     transform: scale(1);
@@ -382,7 +368,6 @@
     transform: scale(1.15);
   }
 }
-
 @keyframes floatOut {
   from {
     transform: translateX(-50%) translateY(0);
@@ -394,15 +379,14 @@
   }
 }
 
+/* Habis */
 .habisCard {
   opacity: 0.5;
   pointer-events: none;
 }
-
 .habisImage {
   filter: grayscale(100%);
 }
-
 .habisText {
   color: red;
   font-weight: bold;
@@ -416,11 +400,9 @@
     align-items: center;
     padding-left: 0;
   }
-
   .menuCard {
     width: 80%;
   }
-
   .searchContainer {
     width: 100%;
   }
