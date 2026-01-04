@@ -107,6 +107,36 @@ function DetailReservasi() {
     }
   };
 
+   const getStatusReservasiText = (status) => {
+    switch (status) {
+      case 'menunggu_pembayaran':
+        return 'Menunggu Pembayaran';
+      case 'menunggu_konfirmasi':
+        return 'Menunggu Konfirmasi';
+      case 'dikonfirmasi':
+        return 'Dikonfirmasi';
+      case 'selesai':
+        return 'Selesai';
+      case 'dibatalkan':
+        return 'Dibatalkan';
+      default:
+        return '-';
+    }
+  };
+
+  const getStatusPembayaranText = (status) => {
+    switch (status) {
+      case 'belum_bayar':
+        return 'Belum Bayar';
+      case 'sudah_bayar':
+        return 'Sudah Bayar';
+      case 'dibatalkan':
+        return 'Dibatalkan';
+      default:
+        return '-';
+    }
+  };
+
   return (
     <div>
       <HeaderPage title="DETAIL RESERVASI" />
@@ -147,12 +177,12 @@ function DetailReservasi() {
 
           <div className={styles.infoRow}>
             <span className={styles.label}>Status Pembayaran</span>
-            <span className={styles.value}>{data.status_pembayaran}</span>
+            <span className={styles.value}>{getStatusPembayaranText(data.status_pembayaran)}</span>
           </div>
 
           <div className={styles.infoRow}>
             <span className={styles.label}>Status Reservasi</span>
-            <span className={styles.value}>{data.status_reservasi}</span>
+            <span className={styles.value}>{getStatusReservasiText(data.status_reservasi)}</span>
           </div>
         </div>
 
