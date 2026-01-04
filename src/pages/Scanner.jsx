@@ -7,7 +7,7 @@ import jsQR from 'jsqr';
 import useBlockBack from '../hooks/BlockBack';
 import useFadeOnScroll from '../hooks/FadeOnScrool';
 import HeaderPagePelanggan from '../components/component-html/HeaderPagePelanggan';
-import FooterPage from '../components/component-html/FooterPage';
+import FooterPage from '../components/component-html/FooterPagePelanggan';
 
 // Import CSS
 import styles from '../styles/scanner.module.css';
