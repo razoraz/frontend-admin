@@ -7,7 +7,7 @@ import useFadeOnScroll from '../hooks/FadeOnScrool';
 
 // Import Component
 import HeaderPagePelanggan from '../components/component-html/HeaderPagePelanggan';
-import FooterPage from '../components/component-html/FooterPage';
+import FooterPage from '../components/component-html/FooterPagePelanggan';
 
 // Import CSS Module
 import styles from '../styles/feedback_pelanggan.module.css';
