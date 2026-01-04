@@ -10,7 +10,7 @@
   border-radius: 15px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
-/* BRAND HEADER */
+
 /* =========================
    ⭐ Brand Header (Aesthetic)
    ========================= */
@@ -20,7 +20,6 @@
   padding-bottom: 20px;
   border-bottom: 1px solid #333;
 }
-
 .brandTitle {
   font-size: 1.9rem;
   font-weight: 800;
@@ -28,7 +27,6 @@
   color: #fff615;
   margin-bottom: 5px;
 }
-
 .brandLogo {
   width: 150px;
   margin: 10px auto;
@@ -39,11 +37,9 @@
 .logoColor {
   display: block;
 }
-
 .logoBlack {
   display: none;
 }
-
 .brandInfo {
   font-size: 0.9rem;
   color: #cccccc;
@@ -59,6 +55,7 @@
   gap: 10px;
 }
 
+/* ===== ROW ===== */
 .row {
   display: grid;
   grid-template-columns: 160px 20px 1fr; /* label | : | value */
@@ -67,37 +64,38 @@
   align-items: center;
 }
 
+/* LABEL */
 .label {
   font-weight: 600;
   color: #bfbfbf;
 }
 
+/* : */
 .colon {
   text-align: center;
   color: #bfbfbf;
   font-weight: 600;
 }
 
+/* VALUE */
 .value {
   font-weight: 500;
   color: #ffffff;
 }
 
+/* STATUS ROW */
 .statusRow {
   border-top: 1px solid #333;
   margin-top: 5px;
   padding-top: 12px;
 }
-
 .statusText {
   font-weight: 700;
   text-transform: uppercase;
 }
-
 .paid {
   color: #00ff88;
 }
-
 .unpaid {
   color: #ff4444;
 }
@@ -108,24 +106,21 @@
   border-collapse: collapse;
   margin-bottom: 20px;
 }
-
 .table th,
 .table td {
   padding: 12px 15px;
   text-align: center;
   border-bottom: 1px solid #333;
 }
-
 .table th {
   background-color: #222;
   color: #fff615;
 }
-
 .table tr:nth-child(even) {
   background-color: #2a2a2a;
 }
 
-/* Total Section dengan styling lebih baik */
+/* ===== TOTAL SECTION ===== */
 .totalSection {
   text-align: right;
   padding: 20px;
@@ -133,27 +128,23 @@
   border-radius: 10px;
   border-top: 2px solid #fff615;
 }
-
 .totalRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
-
 .totalLabel {
   font-size: 1.3rem;
   font-weight: 600;
   color: #cccccc;
 }
-
 .totalValue {
   font-size: 1.8rem;
   font-weight: 800;
   color: #fff615;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
-
 .totalNote {
   font-size: 0.9rem;
   color: #00ff88;
@@ -175,7 +166,6 @@
   margin: 40px auto;
   padding: 30px;
 }
-
 .actionBtn {
   color: #000;
   padding: 14px 10px;
@@ -189,16 +179,12 @@
   transition: 0.3s ease;
   font-size: 1rem;
 }
-/* Action Button dengan Icon */
 .actions button.actionBtn i {
   margin-right: 8px;
 }
-
-/* kedua tombol beda warna */
 .actions button.actionBtn {
   background-color: #00c3ff;
 }
-
 .actions button.actionBtn:hover {
   background-color: #00a0d6;
 }
@@ -211,7 +197,6 @@
   padding: 50px 0;
 }
 
-/* Admin */
 /* Admin Section */
 .adminSection {
   margin-top: 15px;
@@ -221,7 +206,6 @@
   border-left: 4px solid #00c3ff;
   box-shadow: 0 4px 12px rgba(0, 195, 255, 0.1);
 }
-
 .adminHeader {
   display: flex;
   align-items: center;
@@ -230,24 +214,20 @@
   padding-bottom: 8px;
   border-bottom: 1px solid #333;
 }
-
 .adminHeader i {
   color: #00c3ff;
   font-size: 1.1rem;
 }
-
 .adminHeader span {
   font-weight: 600;
   color: #00c3ff;
   font-size: 1rem;
 }
-
 .adminInfo {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-
 .adminBadge {
   display: flex;
   align-items: center;
@@ -256,13 +236,11 @@
   background-color: rgba(0, 195, 255, 0.1);
   border-radius: 6px;
 }
-
 .adminLabel {
   font-weight: 500;
   color: #cccccc;
   min-width: 50px;
 }
-
 .adminName {
   font-weight: 700;
   color: #ffffff;
@@ -279,14 +257,12 @@
   background: white !important;
   filter: grayscale(100%) contrast(120%);
 }
-
 /* SEMUA ELEMENT */
 .printMode * {
   background: white !important;
   color: black !important;
   box-shadow: none !important;
 }
-
 /* STRUK CONTAINER */
 .printMode .page {
   width: 58mm;
@@ -295,7 +271,6 @@
   border-radius: 0;
   background: white !important;
 }
-
 /* BRAND */
 .printMode .brand {
   text-align: center;
@@ -303,17 +278,14 @@
   padding-bottom: 6px;
   margin-bottom: 6px;
 }
-
 .printMode .brandTitle {
   font-size: 13px;
   font-weight: bold;
   color: black !important;
 }
-
 .printMode .logoColor {
   display: none !important;
 }
-
 .printMode .logoBlack {
   display: block !important;
   width: 45px;
@@ -340,7 +312,6 @@
   padding: 2px 0;
   border: none;
 }
-
 .printMode .label,
 .printMode .value,
 .printMode .colon {
@@ -353,13 +324,11 @@
   width: 100%;
   margin-top: 6px;
 }
-
 .printMode .table th {
   font-size: 9px;
   padding: 3px;
   border-bottom: 1px solid black;
 }
-
 .printMode .table td {
   font-size: 9px;
   padding: 3px;
@@ -421,7 +390,6 @@
     padding: 20px;
     gap: 20px;
   }
-
   .actions button.actionBtn {
     width: 100%; /* full width mobile */
     font-size: 1rem;
@@ -430,34 +398,27 @@
     padding: 12px;
     margin: 15px 0;
   }
-
   .adminInfo {
     flex-direction: column;
   }
-
   .adminBadge {
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
   }
-
   .adminLabel {
     min-width: auto;
     font-size: 0.9rem;
   }
-
   .totalSection {
     padding: 15px;
   }
-
   .totalLabel {
     font-size: 1.1rem;
   }
-
   .totalValue {
     font-size: 1.5rem;
   }
-
   .totalNote {
     font-size: 0.8rem;
   }
