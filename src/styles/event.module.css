@@ -1,4 +1,4 @@
-
+/* ================= CONTAINER ================= */
 .container {
   max-width: 900px;
   margin: 50px auto;
@@ -74,7 +74,6 @@
   backdrop-filter: blur(6px);
   transition: transform 0.35s ease;
 }
-
 .eventPromo:hover {
   transform: translateY(-5px);
 }
@@ -102,7 +101,6 @@
   border-radius: 18px;
   overflow: hidden;
 }
-
 .eventMedia img,
 .eventMedia video {
   width: 100%;
@@ -112,7 +110,6 @@
   border: 2px solid rgba(255, 246, 21, 0.4);
   transition: transform 0.4s ease;
 }
-
 .eventMedia img:hover,
 .eventMedia video:hover {
   transform: scale(1.04);
@@ -134,7 +131,6 @@
   gap: 18px;
   flex-wrap: wrap;
 }
-
 .action button {
   padding: 12px 30px;
   border-radius: 14px;
@@ -150,7 +146,6 @@
   background: linear-gradient(135deg, #fff615, #ffe600);
   color: #000;
 }
-
 .action button:first-child:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 28px rgba(255, 246, 21, 0.45);
@@ -161,7 +156,6 @@
   background: linear-gradient(135deg, #ff4d4d, #ff1f1f);
   color: #fff;
 }
-
 .delete:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 28px rgba(255, 77, 77, 0.45);
