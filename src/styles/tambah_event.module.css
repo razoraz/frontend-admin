@@ -4,14 +4,14 @@
   max-width: 90%;
   min-height: 400px;
   margin: 60px auto;
-  background: #1a1a1a; /* gelap tapi tidak hitam pekat */
+  background: #1a1a1a;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
   padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-top: 4px solid #fff615; /* aksen neon header */
+  border-top: 4px solid #fff615;
 }
 
 /* Judul Form */
@@ -20,7 +20,7 @@
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 25px;
-  color: #fff615; /* kuning neon header */
+  color: #fff615; 
   text-shadow: 0 0 5px rgba(255,246,21,0.7);
 }
 
@@ -34,28 +34,26 @@
 /* Label */
 .form label {
   font-weight: 600;
-  color: #eee; /* teks terang supaya kontras */
+  color: #eee;
 }
 
-/* Input dan textarea */
+/* Form Input */
 .form input,
 .form textarea,
 .form input[type="file"] {
   padding: 12px 14px;
   font-size: 16px;
   border-radius: 8px;
-  border: 1px solid #333; /* garis gelap supaya elegan */
+  border: 1px solid #333;
   outline: none;
-  background-color: #222; /* gelap tapi beda sama background */
+  background-color: #222; 
   color: #fff;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-
 .form input::placeholder,
 .form textarea::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
-
 .form input:focus,
 .form textarea:focus,
 .form input[type="file"]:focus {
@@ -63,21 +61,20 @@
   box-shadow: 0 0 8px rgba(255, 246, 21, 0.7);
   background-color: #333;
 }
-
 .form textarea {
   min-height: 120px;
   resize: vertical;
 }
 
+/* Current Image */
 .currentImage {
   font-size: 14px;
   margin-top: 5px;
   color: #aaa;
 }
-
 .filename {
   display: inline-block;
-  max-width: 300px; /* Sesuaikan dengan lebar form */
+  max-width: 300px; 
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -92,13 +89,12 @@
   font-size: 16px;
   border-radius: 10px;
   border: none;
-  background-color: #fff615; /* neon untuk aksen tombol */
+  background-color: #fff615; 
   color: #000;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .saveBtn:hover {
   background-color: #ffd633;
   transform: translateY(-2px);
@@ -111,7 +107,6 @@
     min-height: 400px;
     padding: 25px;
   }
-
   .formTitle {
     font-size: 24px;
   }
