@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 // Import Component
 import useBlockBack from '../hooks/BlockBack';
 import HeaderPagePelanggan from '../components/component-html/HeaderPagePelanggan';
-import FooterPage from '../components/component-html/FooterPage';
+import FooterPage from '../components/component-html/FooterPagePelanggan';
 import Modal from '../components/modal-notifikasi/ModalNotifikasi';
 
 // Import CSS Module
