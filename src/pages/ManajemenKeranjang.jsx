@@ -179,6 +179,16 @@ const Keranjang = () => {
 
   const total = keranjang.reduce((acc, item) => acc + item.harga * item.qty, 0);
 
+  useEffect(() => {
+    const formPemesanan = sessionStorage.getItem('formPemesanan');
+    const reservasi = sessionStorage.getItem('reservasi');
+
+    // ❌ Jika tidak lewat form dan tidak lewat reservasi
+    if (!formPemesanan && !reservasi) {
+      navigate('/scanner', { replace: true });
+    }
+  }, [navigate]);
+
   return (
     <div className={styles.page}>
       <HeaderPagePelanggan title="Keranjang Kamu" subtitle="Periksa kembali pesananmu" bg_video="/background_video/navVideo.mp4" />
@@ -266,7 +276,9 @@ const Keranjang = () => {
           <p>Total:</p>
           <h3>Rp {total.toLocaleString()}</h3>
         </div>
-        <button className={styles.payBtn} onClick={() => navigate('/metode-pembayaran')}>Bayar</button>
+        <button className={styles.payBtn} onClick={() => navigate('/metode-pembayaran')}>
+          Bayar
+        </button>
       </div>
 
       {/* MODAL KONFIRMASI */}
