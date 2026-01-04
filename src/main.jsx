@@ -42,7 +42,7 @@ import Keranjang from './pages/ManajemenKeranjang';
 import KeranjangReservasi from './pages/ManajemenKeranjangReservasi';
 import DaftarMenu from './pages/DaftarMenu';
 import MetodePembayaran from './pages/MetodePembayaran';
-import MenungguPembayaran from './pages/MenungguPembayaran';
+import MenungguPembayaran from './pages/Pembayaran';
 import Struk from './pages/Struk';
 import TentangKamiPage from './pages/TentangKami';
 
