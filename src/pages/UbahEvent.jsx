@@ -20,6 +20,10 @@ function UbahEvent() {
   const [modalQuestionOpen, setModalQuestionOpen] = useState(false);
   const [modalSuccessOpen, setModalSuccessOpen] = useState(false);
 
+  useEffect(() => {
+    document.title = 'Ubah Event - Basecamp Kopi';
+  }, []);
+
   // AMBIL DATA EVENT
   useEffect(() => {
     const fetchEvent = async () => {
