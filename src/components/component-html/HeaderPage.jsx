@@ -67,7 +67,7 @@ function HeaderPage({ title }) {
             {/* Dropdown Future */}
             <li className={styles.dropdown}>
               <button className={styles.dropdownBtn} onClick={() => setDropdownOpen(!dropdownOpen)}>
-                Future <i className={`fa-solid fa-chevron-${dropdownOpen ? 'up' : 'down'}`}></i>
+                Master <i className={`fa-solid fa-chevron-${dropdownOpen ? 'up' : 'down'}`}></i>
               </button>
               {dropdownOpen && (
                 <ul className={`${styles.dropdownMenu} ${styles.show}`}>
