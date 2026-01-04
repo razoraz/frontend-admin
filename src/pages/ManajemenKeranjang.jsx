@@ -179,23 +179,6 @@ const Keranjang = () => {
 
   const total = keranjang.reduce((acc, item) => acc + item.harga * item.qty, 0);
 
-  // untuk INPUT type="date" (ISO)
-  const formatTanggalISO = (tanggal) => {
-    if (!tanggal) return '';
-    return new Date(tanggal).toISOString().split('T')[0];
-  };
-
-  // untuk TAMPILAN (Indonesia)
-  const formatTanggalWIB = (tanggal) => {
-    if (!tanggal) return '-';
-    return new Date(tanggal).toLocaleDateString('id-ID', {
-      timeZone: 'Asia/Jakarta',
-      day: '2-digit',
-      month: 'long',
-      year: 'numeric',
-    });
-  };
-
   return (
     <div className={styles.page}>
       <HeaderPagePelanggan title="Keranjang Kamu" subtitle="Periksa kembali pesananmu" bg_video="/background_video/navVideo.mp4" />
@@ -215,8 +198,7 @@ const Keranjang = () => {
             <input value={no_meja} onChange={(e) => setNomorMeja(e.target.value)} className={styles.inputFormBox} readOnly />
 
             <label className={styles.tanggalLabel}>Tanggal:</label>
-            <input type="date" value={formatTanggalISO(tanggal)} readOnly className={styles.inputFormBox} />
-            <span className={styles.tanggalDisplay}>{formatTanggalWIB(tanggal)}</span>
+            <input type="date" value={tanggal} onChange={(e) => setTanggal(e.target.value)} className={styles.inputFormBox} readOnly />
           </div>
         </div>
 
@@ -284,9 +266,7 @@ const Keranjang = () => {
           <p>Total:</p>
           <h3>Rp {total.toLocaleString()}</h3>
         </div>
-        <button className={styles.payBtn} onClick={() => navigate('/metode-pembayaran')}>
-          Bayar
-        </button>
+        <button className={styles.payBtn} onClick={() => navigate('/metode-pembayaran')}>Bayar</button>
       </div>
 
       {/* MODAL KONFIRMASI */}
