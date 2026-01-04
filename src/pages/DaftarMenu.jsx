@@ -6,7 +6,7 @@ import axios from 'axios';
 // Import Component
 import useBlockBack from '../hooks/BlockBack';
 import HeaderPagePelanggan from '../components/component-html/HeaderPagePelanggan';
-import FooterPage from '../components/component-html/FooterPage';
+import FooterPage from '../components/component-html/FooterPagePelanggan';
 import MenuFilterBar from '../components/component-menuPelanggan/MenuFilterBar2';
 import MenuList from '../components/component-menuPelanggan/MenuList2';
 
