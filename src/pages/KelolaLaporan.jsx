@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useEffect } from 'react';
 import styles from '../styles/kelola_laporan.module.css';
 import HeaderPage from '../components/component-html/HeaderPage';
 import FooterPage from '../components/component-html/FooterPage';
@@ -27,6 +28,9 @@ function LaporanPage() {
       alert('Gagal download laporan!');
     }
   };
+    useEffect(() => {
+      document.title = 'Beranda Admin - Basecamp Kopi';
+    }, []);
 
   return (
     <div>
