@@ -37,17 +37,15 @@ function FooterPage() {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://www.instagram.com/bbs.trans/profilecard/?igsh=OGM1YTM1YW9zbGho"
-                  target="_blank"
-                >
+                <a href="https://www.instagram.com/basecampkopi?igsh=MXNzazgxOHhqNXZoNQ==" target="_blank" rel="noopener noreferrer">
                   <i className="ph ph-instagram-logo"></i> Instagram
-                </Link>
+                </a>
               </li>
+
               <li>
-                <Link to="https://wa.me/6281234567890" target="_blank">
-                  <i className="ph ph-facebook-logo"></i> Facebook
-                </Link>
+                <a href="https://www.tiktok.com/@basecamp_kopi?_r=1&_t=ZS-92mBJwtAUID" target="_blank" rel="noopener noreferrer">
+                  <i className="ph ph-tiktok-logo"></i> TikTok
+                </a>
               </li>
             </ul>
           </div>
@@ -56,10 +54,22 @@ function FooterPage() {
             <h4>Layanan</h4>
             <ul>
               <li>
-                <Link to="">Pemesanan Kopi</Link>
+                <Link to="/pemesanan">Kelola Pemesanan</Link>
               </li>
               <li>
-                <Link to="">Reservasi Meja</Link>
+                <Link to="/reservasi">Kelola Reservasi</Link>
+              </li>
+              <li>
+                <Link to="/feedback">Kelola Feedback</Link>
+              </li>
+              <li>
+                <Link to="/menu">Kelola Menu</Link>
+              </li>
+              <li>
+                <Link to="/kelola-meja">Kelola Meja</Link>
+              </li>
+              <li>
+                <Link to="/kelola-kategori">Kelola Kategori</Link>
               </li>
             </ul>
           </div>
@@ -68,22 +78,22 @@ function FooterPage() {
             <h4>Keunggulan</h4>
             <ul>
               <li>
-                <Link to="#">Cepat dan Efisien</Link>
+                <Link to="/beranda">Cepat dan Efisien</Link>
               </li>
               <li>
-                <Link to="#">Modern dan Nyaman</Link>
+                <Link to="/beranda">Modern dan Nyaman</Link>
               </li>
               <li>
-                <Link to="#">Pelayanan Terbaik</Link>
+                <Link to="/beranda">Pelayanan Terbaik</Link>
               </li>
               <li>
-                <Link to="#">Harga Terjangkau</Link>
+                <Link to="/beranda">Harga Terjangkau</Link>
               </li>
               <li>
-                <Link to="#">Kualitas Terbaik</Link>
+                <Link to="/beranda">Kualitas Terbaik</Link>
               </li>
               <li>
-                <Link to="#">Kenyamanan Terbaik</Link>
+                <Link to="/beranda">Kenyamanan Terbaik</Link>
               </li>
             </ul>
           </div>
@@ -92,7 +102,7 @@ function FooterPage() {
 
       <div className={styles.row2}>
         <br />
-        <p>@2025 Basecamp Kopi Jember. All rights reserved.</p>
+        <p>@2026 Basecamp Kopi Jember. All rights reserved.</p>
       </div>
     </footer>
   );
