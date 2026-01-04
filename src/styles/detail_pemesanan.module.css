@@ -33,7 +33,6 @@
   margin-bottom: 20px;
   transition: 0.3s;
 }
-
 .backBtn:hover {
   color: #fff;
   transform: translateX(-3px);
@@ -66,7 +65,6 @@
   margin-bottom: 40px;
   box-shadow: 0 0 14px #ffd63350;
 }
-
 .infoRow {
   display: grid;
   grid-template-columns: 220px 1fr;
@@ -74,24 +72,20 @@
   font-size: 16px;
   border-bottom: 1px solid #333;
 }
-
 .infoRow:last-child {
   border-bottom: none;
 }
-
 .label {
   font-weight: 700;
   color: #ffdd55;
   position: relative;
   padding-right: 15px;
 }
-
 .label::after {
   content: ':';
   position: absolute;
   right: 0;
 }
-
 .value {
   margin-left: 10px;
   color: #e6e6e6;
@@ -106,7 +100,6 @@
   color: #ffd633;
   text-shadow: 0 0 6px #ffd63366;
 }
-
 /* TABLE */
 .table {
   width: 100%;
@@ -117,31 +110,25 @@
   border: 1px solid #333;
   box-shadow: 0 0 12px #ffd63344;
 }
-
 .tableWrapper {
   width: 100%;
   overflow-x: auto; /* RESPONSIVE MAGIC */
 }
-
 .table thead {
   background: #ffd633;
   color: #000;
 }
-
 .table th,
 .table td {
   padding: 14px 16px;
   font-size: 15px;
 }
-
 .table td {
   text-align: center;
 }
-
 .table tbody tr:nth-child(even) {
   background: #1e1e1e;
 }
-
 .table tbody tr:hover {
   background: #2a2a2a;
   transition: 0.2s;
@@ -154,7 +141,6 @@
   gap: 15px;
   margin-top: 20px;
 }
-
 /* BUTTONS */
 .deleteBtn,
 .editBtn {
@@ -167,23 +153,19 @@
   font-size: 15px;
   transition: 0.3s;
 }
-
 .deleteBtn {
   background: #d63031;
   color: white;
 }
-
 .deleteBtn:hover {
   background: #b42323;
   box-shadow: 0 0 10px #b4232388;
   transform: translateY(-2px);
 }
-
 .editBtn {
   background: #008cff;
   color: white;
 }
-
 .editBtn:hover {
   background: #006fd1;
   box-shadow: 0 0 10px #006fd188;
@@ -199,16 +181,13 @@
   .container {
     padding: 22px;
   }
-
   .title {
     font-size: 24px;
   }
-
   .infoRow {
     grid-template-columns: 160px 1fr;
     font-size: 15px;
   }
-
   .subtitle {
     font-size: 20px;
   }
@@ -219,31 +198,25 @@
   .container {
     padding: 18px;
   }
-
   .infoRow {
     grid-template-columns: 1fr; /* jadi 1 kolom */
     gap: 4px;
     padding: 12px 0;
   }
-
   .label {
     padding: 0;
   }
-
   .label::after {
     display: none; /* hilangkan titik 2 */
   }
-
   .value {
     margin-left: 0;
     color: #fff;
     font-weight: 600;
   }
-
   .actionRow {
     flex-direction: column;
   }
-
   .deleteBtn,
   .editBtn {
     width: 100%;
