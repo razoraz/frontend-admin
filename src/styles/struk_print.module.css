@@ -19,39 +19,33 @@
   border: 1px solid black;
   border-left: 3px solid black;
 }
-
 .strukAdminHeader {
   text-align: center;
   margin-bottom: 4px;
   padding-bottom: 2px;
   border-bottom: 1px dashed black;
 }
-
 .strukAdminTitle {
   font-size: 9px;
   font-weight: bold;
   color: black !important;
 }
-
 .strukAdminInfo {
   display: flex;
   flex-direction: column;
   gap: 3px;
 }
-
 .strukAdminRow {
   display: flex;
   justify-content: space-between;
   padding: 2px 4px;
 }
-
 .strukAdminLabel {
   font-size: 8px;
   font-weight: 500;
   color: black !important;
   min-width: 25px;
 }
-
 .strukAdminValue {
   font-size: 9px;
   font-weight: bold;
@@ -75,7 +69,6 @@
 .logoColor {
   display: block;
 }
-
 .logoBlack {
   display: none;
 }
@@ -97,7 +90,6 @@
   padding-bottom: 6px;
   margin-bottom: 6px;
 }
-
 .strukTitle {
   font-size: 13px;
   font-weight: bold;
@@ -105,17 +97,15 @@
   margin-bottom: 2px;
 }
 
+/* LOGO */
 .logoColor {
   display: none !important;
 }
-
 .logoBlack {
   display: block !important;
   width: 45px;
   margin: 2px auto 4px auto;
 }
-
-/* 🔥 LOGO JADI HITAM PUTIH */
 .strukLogo {
   width: 45px;
   margin: 2px auto 4px auto;
@@ -137,7 +127,6 @@
   padding: 3px 0;
   border: none;
 }
-
 .strukLabel,
 .strukValue,
 .strukColon {
@@ -150,14 +139,12 @@
   width: 100%;
   margin-top: 6px;
 }
-
 .strukTable th {
   font-size: 9px;
   padding: 3px;
   border-bottom: 1px solid black;
   text-align: center;
 }
-
 .strukTable td {
   font-size: 9px;
   padding: 3px;
@@ -184,11 +171,9 @@
   font-weight: 700;
   text-transform: uppercase;
 }
-
 .strukPaid {
   color: #2e7d32 !important;
 }
-
 .strukUnpaid {
   color: #c62828 !important;
 }
@@ -202,34 +187,28 @@
     padding: 4px !important;
     font-size: 9px !important;
   }
-
   .strukRow {
     grid-template-columns: 70px 5px 1fr;
     padding: 2px 0;
   }
-
   .strukLabel,
   .strukValue,
   .strukColon {
     font-size: 8px !important;
   }
-
   .strukTable th,
   .strukTable td {
     font-size: 8px !important;
     padding: 2px;
   }
-
   .strukTotal {
     font-size: 9px !important;
   }
-
   .strukAdminLabel,
   .strukAdminValue,
   .strukAdminCode {
     font-size: 8px !important;
   }
-
   .strukFooter {
     font-size: 7px !important;
   }
