@@ -44,6 +44,26 @@ const Struk = () => {
     return username.charAt(0).toUpperCase() + username.slice(1);
   };
 
+  const formatTanggalWIB = (tanggal) => {
+  if (!tanggal) return '-';
+  return new Date(tanggal).toLocaleDateString('id-ID', {
+    timeZone: 'Asia/Jakarta',
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+  });
+};
+
+const formatJamWIB = (tanggal) => {
+  if (!tanggal) return '-';
+  return new Date(tanggal).toLocaleTimeString('id-ID', {
+    timeZone: 'Asia/Jakarta',
+    hour: '2-digit',
+    minute: '2-digit',
+  }) + ' WIB';
+};
+
+
   return (
     <div>
       <HeaderPagePelanggan 
@@ -85,13 +105,13 @@ const Struk = () => {
           <div className={styles.row}>
             <span className={styles.label}>Tanggal Bayar</span>
             <span className={styles.colon}>:</span>
-            <span className={styles.value}>{pemesanan.waktu_bayar ? new Date(pemesanan.waktu_bayar).toLocaleDateString() : '-'}</span>
+            <span className={styles.value}>{formatTanggalWIB(pemesanan.waktu_bayar) || '-'}</span>
           </div>
 
           <div className={styles.row}>
             <span className={styles.label}>Jam Bayar</span>
             <span className={styles.colon}>:</span>
-            <span className={styles.value}>{pemesanan.waktu_bayar ? new Date(pemesanan.waktu_bayar).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '-'}</span>
+            <span className={styles.value}>{formatJamWIB(pemesanan.waktu_bayar) || '-'}</span>
           </div>
 
           <div className={styles.row}>
