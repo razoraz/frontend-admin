@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import HeaderPagePelanggan from '../components/component-html/HeaderPagePelanggan';
-import FooterPage from '../components/component-html/FooterPage';
+import FooterPage from '../components/component-html/FooterPagePelanggan';
 import Modal from '../components/modal-notifikasi/ModalNotifikasi';
 
 import styles from '../styles/form_reservasi.module.css';
