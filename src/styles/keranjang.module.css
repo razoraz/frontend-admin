@@ -1,5 +1,4 @@
 /* ===== Container Keranjang ===== */
-
 .container {
   background-color: #1a1a1a;
   max-width: 1100px;
@@ -19,7 +18,7 @@
   letter-spacing: 0.5px;
 }
 
-/* ===== Form Pemesanan ===== */
+/* ===== FormBox ===== */
 .formBox {
   padding: 20px;
   border-radius: 12px;
@@ -27,11 +26,9 @@
   background-color: #222;
   border: 1px solid #333;
 }
-
 .inputFormBox {
   cursor: default;
 }
-
 .formBox .row {
   display: flex;
   align-items: center;
@@ -39,13 +36,11 @@
   margin-bottom: 12px;
   flex-wrap: wrap;
 }
-
 .formBox label {
   width: 130px;
   font-weight: 500;
   color: #ffe600;
 }
-
 .formBox input {
   flex: 1;
   padding: 10px 12px;
@@ -54,7 +49,6 @@
   background-color: #2b2b2b;
   color: #fff;
 }
-
 .tanggalLabel {
   margin-left: 20px;
   width: 70px;
@@ -74,7 +68,6 @@
   transition: 0.25s;
   border: none;
 }
-
 .addMoreBtn:hover {
   background-color: #fff59d;
 }
@@ -90,24 +83,20 @@
   border: 1px solid #2c2c2c;
   box-shadow: 0 0 12px rgba(255, 230, 0, 0.08);
 }
-
 .left {
   flex: 1;
   padding-right: 20px;
 }
-
 .left h3 {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 6px;
 }
-
 .left .harga {
   color: #ffe600;
   font-weight: 500;
   margin-bottom: 12px;
 }
-
 .catatanLabel {
   font-size: 0.9rem;
   font-weight: 500;
@@ -117,7 +106,6 @@
   margin-bottom: 6px;
   color: #ffe600;
 }
-
 .iconPencil {
   width: 18px;
   height: 18px;
@@ -134,7 +122,6 @@
   background-color: #2b2b2b;
   color: #fff;
 }
-
 .textareaWrapper {
   margin-top: 6px;
   display: flex;
@@ -142,6 +129,7 @@
   gap: 6px;
 }
 
+/* ===== Catatan Pemesanan ===== */
 .savedNote {
   font-size: 0.9rem;
   margin-top: 5px;
@@ -158,20 +146,17 @@
   cursor: pointer;
   margin-top: 5px;
 }
-
 .noNote {
   font-size: 0.85rem;
   color: #aaa;
   font-style: italic;
   margin: 5px 0;
 }
-
 .noteButtons {
   display: flex;
   gap: 10px;
   margin-top: 8px;
 }
-
 .addNoteBtn,
 .deleteNoteBtn {
   height: 35px;
@@ -184,14 +169,12 @@
   cursor: pointer;
   border: none;
 }
-
 .addNoteBtn {
   background-color: #ffe600;
 }
 .addNoteBtn:hover {
   background-color: #fff59d;
 }
-
 .deleteNoteBtn {
   background: #ff4d4d;
   color: white;
@@ -207,7 +190,6 @@
   align-items: center;
   gap: 12px;
 }
-
 .menuImage {
   width: 110px;
   height: 110px;
@@ -222,7 +204,6 @@
   align-items: center;
   gap: 12px;
 }
-
 .qtyBox button {
   width: 34px;
   height: 34px;
@@ -234,11 +215,9 @@
   cursor: pointer;
   transition: 0.2s;
 }
-
 .qtyBox button:hover {
   background-color: #fff59d;
 }
-
 .qtyBox span {
   min-width: 28px;
   text-align: center;
@@ -274,13 +253,13 @@
   border-top: 1px solid #ffe600;
   z-index: 9999;
 }
-
 .totalInfo h3 {
   margin: 0;
   color: #ffe600;
   font-weight: 700;
 }
 
+/* ===== Bayar Button ===== */
 .payBtn {
   padding: 12px 30px;
   background-color: #ffe600;
@@ -299,7 +278,6 @@
     margin: 30px 10px 100px;
     padding: 15px;
   }
-
   .cardItem {
     max-width: 100%;
     padding: 12px;
@@ -310,35 +288,28 @@
   .formBox input {
     width: 100%; /* ambil full row */
   }
-
   .tanggalLabel {
     margin-left: 0;
   }
-
   .left h3 {
     font-size: 1rem; /* lebih kecil */
   }
-
   .left .harga {
     font-size: 0.9rem;
   }
-
   .menuImage {
     width: 90px; /* lebih kecil */
     height: 90px;
   }
-
   .qtyBox button {
     width: 28px;
     height: 28px;
     font-size: 16px;
   }
-
   .qtyBox span {
     min-width: 25px;
     font-size: 14px;
   }
-
   .addNoteBtn,
   .deleteNoteBtn,
   .saveNoteBtn {
@@ -346,21 +317,17 @@
     font-size: 12px;
     height: 32px;
   }
-
   .textarea {
     height: 55px;
     font-size: 14px;
   }
-
   .addMoreBtn {
     padding: 10px 20px;
     font-size: 14px;
   }
-
   .checkoutBar {
     padding: 15px 20px;
   }
-
   .payBtn {
     padding: 10px 20px;
     font-size: 14px;
