@@ -15,7 +15,6 @@
   text-align: center;
   margin-bottom: 90px;
 }
-
 .actionSection h2 {
   font-size: 2.4rem;
   font-weight: 800;
@@ -23,7 +22,6 @@
   margin-bottom: 12px;
   letter-spacing: 0.5px;
 }
-
 .actionSection p {
   font-size: 1rem;
   opacity: 0.85;
@@ -38,7 +36,6 @@
   justify-content: center;
   gap: 22px;
 }
-
 .primaryBtn,
 .secondaryBtn {
   padding: 15px 30px;
@@ -56,7 +53,6 @@
   border: none;
   box-shadow: 0 0 22px rgba(255, 246, 21, 0.55);
 }
-
 .primaryBtn:hover {
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 0 35px rgba(255, 246, 21, 0.8);
@@ -68,7 +64,6 @@
   color: #fff615;
   border: 2px solid #fff615;
 }
-
 .secondaryBtn:hover {
   background-color: #fff615;
   color: #000;
@@ -80,7 +75,6 @@
 .favoriteSection {
   margin-bottom: 90px;
 }
-
 .sectionTitle {
   text-align: center;
   margin-bottom: 45px;
@@ -88,7 +82,6 @@
   font-weight: 700;
   color: #fff615;
 }
-
 .menuGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -104,7 +97,6 @@
   box-shadow: 0 0 18px rgba(255, 246, 21, 0.18);
   transition: all 0.35s ease;
 }
-
 .menuCard img {
   width: 100%;
   height: 170px;
@@ -112,17 +104,14 @@
   border-radius: 14px;
   margin-bottom: 16px;
 }
-
 .menuCard h4 {
   font-size: 1.2rem;
   margin-bottom: 6px;
 }
-
 .menuCard span {
   font-size: 0.85rem;
   opacity: 0.85;
 }
-
 .menuCard:hover {
   transform: translateY(-8px);
   box-shadow: 0 0 35px rgba(255, 246, 21, 0.6);
@@ -134,13 +123,11 @@
 .eventSection {
   margin: 40px 0;
 }
-
 .eventGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
-
 .eventCard {
   background: #1a1a1a;
   border-radius: 14px;
@@ -148,17 +135,14 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .eventCard:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(255, 246, 21, 0.3);
 }
-
 .eventImageWrapper {
   position: relative;
   overflow: hidden;
 }
-
 .eventImage {
   width: 100%;
   height: 180px;
@@ -166,11 +150,9 @@
   display: block;
   transition: transform 0.3s ease;
 }
-
 .eventCard:hover .eventImage {
   transform: scale(1.05);
 }
-
 .eventBadge {
   position: absolute;
   top: 12px;
@@ -184,11 +166,9 @@
   text-transform: uppercase;
   box-shadow: 0 0 10px rgba(255, 246, 21, 0.4);
 }
-
 .eventContent {
   padding: 15px 12px;
 }
-
 .eventTitle {
   font-size: 18px;
   font-weight: 700;
@@ -196,7 +176,6 @@
   margin-bottom: 8px;
   text-align: center;
 }
-
 .eventDesc {
   font-size: 14px;
   color: #ccc;
@@ -214,7 +193,6 @@
   margin-top: 110px;
   text-align: center;
 }
-
 .feedbackSection h3 {
   text-align: center;
   font-size: 1.8rem;
@@ -222,7 +200,6 @@
   color: #fff615;
   margin-bottom: 45px;
 }
-
 .feedbackGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -238,7 +215,6 @@
   position: relative;
   transition: all 0.35s ease;
 }
-
 .feedbackCard::before {
   content: "“";
   position: absolute;
@@ -247,14 +223,12 @@
   font-size: 4.2rem;
   color: rgba(255, 246, 21, 0.3);
 }
-
 .feedbackCard p {
   font-size: 0.95rem;
   line-height: 1.7;
   margin-bottom: 18px;
   opacity: 0.9;
 }
-
 .feedbackCard img {
   width: 50px;
   height: 50px;
@@ -262,18 +236,15 @@
   object-fit: cover;
   margin-bottom: 10px;
 }
-
 .feedbackCard strong {
   display: block;
   font-size: 0.95rem;
   color: #fff615;
 }
-
 .feedbackCard span {
   font-size: 0.85rem;
   opacity: 0.85;
 }
-
 .feedbackCard:hover {
   transform: translateY(-8px);
   box-shadow: 0 0 38px rgba(255, 246, 21, 0.6);
@@ -286,11 +257,9 @@
   .actionSection h2 {
     font-size: 1.9rem;
   }
-
   .actionButtons {
     flex-direction: column;
   }
-
   .promoSection {
     padding: 30px 22px;
   }
