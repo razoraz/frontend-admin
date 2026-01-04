@@ -1,3 +1,4 @@
+/* Container */
 .container {
   min-height: 100vh;
   display: flex;
@@ -6,6 +7,7 @@
   padding: 40px 20px;
 }
 
+/* Card */
 .card {
   background: linear-gradient(to bottom right, rgba(20,20,20,0.95), rgba(10,10,10,0.95));
   border-radius: 22px;
@@ -17,30 +19,33 @@
   border: 1px solid rgba(255, 246, 21, 0.2);
 }
 
+/* Icon */
 .icon {
   font-size: 3.5rem;
   margin-bottom: 15px;
   animation: bounce 2s infinite;
 }
 
+/* Animasi bounce */
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
 }
 
+/* Title */
 .title {
   font-size: 2rem;
   font-weight: 700;
   color: #fff615;
   margin-bottom: 10px;
 }
-
 .subtitle {
   font-size: 1rem;
   color: #e0e0e0;
   margin-bottom: 25px;
 }
 
+/* Info Box */
 .infoBox {
   background: rgba(255, 246, 21, 0.08);
   border: 1px dashed rgba(255, 246, 21, 0.5);
@@ -49,22 +54,18 @@
   margin-bottom: 20px;
   text-align: left;
 }
-
 .infoBox div {
   margin-bottom: 12px;
 }
-
 .infoBox span {
   display: block;
   font-size: 0.85rem;
   color: #cfcfcf;
 }
-
 .infoBox strong {
   font-size: 1.1rem;
   color: #fff615;
 }
-
 .note {
   font-size: 0.95rem;
   color: #e0e0e0;
