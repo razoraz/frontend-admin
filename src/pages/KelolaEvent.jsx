@@ -25,6 +25,9 @@ function KelolaEvent() {
       setLoading(false);
     }
   };
+  useEffect(() => {
+    document.title = 'Kelola Event - Basecamp Kopi';
+  }, []);
 
   useEffect(() => {
     fetchEvent();
@@ -36,7 +39,7 @@ function KelolaEvent() {
     try {
       await axios.delete(`https://backend-production-8cf7.up.railway.app/api/event/${event.id_event}`);
       setEvent(null);
-      setModalOpen(false);      // tutup modal question
+      setModalOpen(false); // tutup modal question
       setModalSuccessOpen(true); // buka modal success
     } catch (err) {
       alert('Gagal hapus event');
@@ -77,16 +80,7 @@ function KelolaEvent() {
               <h3 className={styles.eventTitle}>{event.judul}</h3>
               <p className={styles.eventDate}>{formatTanggal(event.tanggal)}</p>
 
-              <div className={styles.eventMedia}>
-                {isVideo(event.gambar_event) ? (
-                  <video src={event.gambar_event} controls />
-                ) : (
-                  <img
-                    src={event.gambar_event}
-                    alt={event.judul}
-                  />
-                )}
-              </div>
+              <div className={styles.eventMedia}>{isVideo(event.gambar_event) ? <video src={event.gambar_event} controls /> : <img src={event.gambar_event} alt={event.judul} />}</div>
 
               <p className={styles.eventDesc}>{event.deskripsi}</p>
 
@@ -102,25 +96,10 @@ function KelolaEvent() {
       </div>
 
       {/* Modal Konfirmasi Hapus */}
-      <Modal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        onConfirm={handleDelete}
-        title="Hapus Event"
-        message="Apakah kamu yakin ingin menghapus event ini?"
-        type="question"
-        confirmLabel="Ya, Hapus"
-        cancelLabel="Batal"
-      />
+      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} onConfirm={handleDelete} title="Hapus Event" message="Apakah kamu yakin ingin menghapus event ini?" type="question" confirmLabel="Ya, Hapus" cancelLabel="Batal" />
 
       {/* Modal Success */}
-      <Modal
-        isOpen={modalSuccessOpen}
-        onClose={() => setModalSuccessOpen(false)}
-        title="Sukses"
-        message="Event berhasil dihapus!"
-        type="success"
-      />
+      <Modal isOpen={modalSuccessOpen} onClose={() => setModalSuccessOpen(false)} title="Sukses" message="Event berhasil dihapus!" type="success" />
 
       <FooterPage />
     </div>
