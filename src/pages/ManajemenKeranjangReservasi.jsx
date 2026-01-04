@@ -186,6 +186,30 @@ const Keranjang = () => {
 
   const total = keranjang.reduce((acc, item) => acc + item.harga * item.qty, 0);
 
+    const formatTanggalIndoLengkap = (tanggal, jam) => {
+    if (!tanggal) return '—';
+
+    const date = new Date(tanggal);
+
+    // Validasi Date
+    if (isNaN(date.getTime())) return '—';
+
+    const hari = date.toLocaleDateString('id-ID', { weekday: 'long' });
+    const tanggalIndo = date.toLocaleDateString('id-ID', {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+    });
+
+    let jamIndo = '';
+    if (jam) {
+      // ambil HH:mm dari HH:mm:ss
+      jamIndo = jam.substring(0, 5);
+    }
+
+    return jamIndo ? `${hari}, ${tanggalIndo} • ${jamIndo} WIB` : `${hari}, ${tanggalIndo}`;
+  };
+
   return (
     <div className={styles.page}>
       <HeaderPagePelanggan title="Keranjang Kamu" subtitle="Periksa kembali pesananmu" bg_video="/background_video/navVideo.mp4" />
@@ -209,9 +233,9 @@ const Keranjang = () => {
           </div>
           <div className={styles.row}>
             <label>Tanggal Reservasi:</label>
-            <input type="date" value={tanggal_reservasi} onChange={(e) => setTanggalReservasi(e.target.value)} className={styles.inputFormBox} readOnly />
+            <input type="date" value={formatTanggalIndoLengkap(tanggal_reservasi)} onChange={(e) => setTanggalReservasi(e.target.value)} className={styles.inputFormBox} readOnly />
             <label>Jam Reservasi:</label>
-            <input type="time" value={jam_reservasi} className={styles.inputFormBox} readOnly />
+            <input type="time" value={formatTanggalIndoLengkap(jam_reservasi)} onChange={(e) => setJamReservasi(e.target.value)} className={styles.inputFormBox} readOnly />
           </div>
           <div className={styles.row}>
             <label>Nomor WhatsApp:</label>
