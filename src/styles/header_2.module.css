@@ -75,7 +75,6 @@
   width: 50%;
   margin: auto;
 }
-/* Hapus Efek Garis */
 .navbarNav li.dropdown::after,
 .navbarNav li.dropdown:hover::after {
   display: none !important;
@@ -173,6 +172,7 @@
   height: 0 !important;
   background: none !important;
 }
+
 /* Animasi muncul dropdown */
 @keyframes fadeIn {
   from {
