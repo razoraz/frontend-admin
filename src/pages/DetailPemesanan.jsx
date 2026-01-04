@@ -112,17 +112,13 @@ function DetailPemesanan() {
     }
   };
 
-  const formatTanggalWIB = (tanggal) => {
-    return (
-      new Date(tanggal).toLocaleString('id-ID', {
-        timeZone: 'Asia/Jakarta',
-        day: '2-digit',
-        month: 'long',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-      }) + ' WIB'
-    );
+  const formatTanggal = (tanggal) => {
+    return new Date(tanggal).toLocaleString('id-ID', {
+      timeZone: 'Asia/Jakarta',
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+    });
   };
 
   return (
@@ -151,7 +147,7 @@ function DetailPemesanan() {
 
           <div className={styles.infoRow}>
             <span className={styles.label}>Tanggal</span>
-            <span className={styles.value}>{formatTanggalWIB(data.tanggal_pemesanan)}</span>
+            <span className={styles.value}>{formatTanggal(data.tanggal_pemesanan)}</span>
           </div>
 
           <div className={styles.infoRow}>
