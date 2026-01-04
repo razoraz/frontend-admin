@@ -1,7 +1,6 @@
 /* ================================
    TENTANG KAMI - DARK COFFEE THEME
 ================================ */
-
 .pageWrapper {
   background-color: #0a0a0a;
   color: #f5f5f5;
@@ -19,11 +18,8 @@
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-    url('/images/coffee-background.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('/images/coffee-background.jpg') center/cover no-repeat;
 }
-
 .heroContent {
   position: relative;
   z-index: 2;
@@ -31,7 +27,6 @@
   padding: 0 20px;
   animation: fadeInUp 1s ease-out;
 }
-
 .heroTitle {
   font-size: 3.5rem;
   font-weight: 800;
@@ -39,17 +34,14 @@
   color: #f5f5f5;
   text-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
 }
-
 .highlight {
   color: #8b6b4f;
 }
-
 .heroSubtitle {
   font-size: 1.25rem;
   color: #ccc;
   line-height: 1.6;
 }
-
 .heroOverlay {
   position: absolute;
   inset: 0;
@@ -65,23 +57,19 @@
   margin: 0 auto;
   padding: 0 20px;
 }
-
 .sectionHeader {
   text-align: center;
   margin-bottom: 3rem;
 }
-
 .sectionTitle {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
   color: #f5f5f5;
 }
-
 .accent {
   color: #6f4e37;
 }
-
 .sectionSubtitle {
   font-size: 1.1rem;
   color: #aaa;
@@ -96,14 +84,12 @@
   padding: 80px 0;
   background: linear-gradient(180deg, #0a0a0a 0%, #151515 100%);
 }
-
 .philosophyCards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   margin-top: 40px;
 }
-
 .philosophyCard {
   background: rgba(255, 255, 255, 0.04);
   border-radius: 18px;
@@ -112,25 +98,21 @@
   border: 1px solid rgba(111, 78, 55, 0.25);
   transition: all 0.3s ease;
 }
-
 .philosophyCard:hover {
   transform: translateY(-8px);
   background: rgba(111, 78, 55, 0.15);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
-
 .cardIcon {
   font-size: 3rem;
   color: #8b6b4f;
   margin-bottom: 1.5rem;
 }
-
 .philosophyCard h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #8b6b4f;
 }
-
 .philosophyCard p {
   color: #ccc;
   line-height: 1.6;
@@ -143,7 +125,6 @@
   padding: 80px 0;
   background-color: #0a0a0a;
 }
-
 .timeline {
   position: relative;
   max-width: 1000px;
@@ -159,13 +140,7 @@
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(to bottom, 
-    transparent, 
-    #6f4e37 20%, 
-    #8b6b4f 50%, 
-    #6f4e37 80%, 
-    transparent
-  );
+  background: linear-gradient(to bottom, transparent, #6f4e37 20%, #8b6b4f 50%, #6f4e37 80%, transparent);
   transform: translateX(-50%);
 }
 
@@ -180,10 +155,8 @@
   background: #8b6b4f;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 0 4px rgba(139, 107, 79, 0.3),
-              0 0 20px rgba(139, 107, 79, 0.5);
+  box-shadow: 0 0 0 4px rgba(139, 107, 79, 0.3), 0 0 20px rgba(139, 107, 79, 0.5);
 }
-
 .timelineItem {
   position: relative;
   display: flex;
@@ -192,10 +165,15 @@
   transform: translateY(30px);
   animation: fadeInUp 0.8s ease forwards;
 }
-
-.timelineItem:nth-child(1) { animation-delay: 0.1s; }
-.timelineItem:nth-child(2) { animation-delay: 0.3s; }
-.timelineItem:nth-child(3) { animation-delay: 0.5s; }
+.timelineItem:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.timelineItem:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.timelineItem:nth-child(3) {
+  animation-delay: 0.5s;
+}
 
 /* Bulatan di setiap item */
 .timelineItem::before {
@@ -212,7 +190,6 @@
   z-index: 2;
   box-shadow: 0 0 10px rgba(139, 107, 79, 0.5);
 }
-
 .timelineYear {
   position: absolute;
   left: 50%;
@@ -228,7 +205,6 @@
   white-space: nowrap;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
-
 .timelineContent {
   width: 45%;
   padding: 30px;
@@ -255,7 +231,6 @@
   margin-right: auto;
   margin-left: 0;
 }
-
 .timelineItem:nth-child(odd) .timelineContent::before {
   right: -15px;
   border-width: 10px 0 10px 15px;
@@ -267,19 +242,16 @@
   margin-left: auto;
   margin-right: 0;
 }
-
 .timelineItem:nth-child(even) .timelineContent::before {
   left: -15px;
   border-width: 10px 15px 10px 0;
   border-color: transparent rgba(255, 255, 255, 0.04) transparent transparent;
 }
-
 .timelineContent h3 {
   color: #8b6b4f;
   margin-bottom: 15px;
   font-size: 1.4rem;
 }
-
 .timelineContent p {
   color: #ccc;
   line-height: 1.7;
@@ -292,67 +264,6 @@
   border-color: rgba(139, 107, 79, 0.5);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
-}
-
-/* ================================
-   RESPONSIVE - Timeline
-================================ */
-@media (max-width: 992px) {
-  .timeline::before {
-    left: 40px;
-  }
-  
-  .timeline::after {
-    left: 40px;
-  }
-  
-  .timelineItem {
-    padding-left: 80px;
-  }
-  
-  .timelineItem::before {
-    left: 40px;
-  }
-  
-  .timelineYear {
-    left: 40px;
-    text-align: center;
-    min-width: 80px;
-  }
-  
-  .timelineContent {
-    width: 100%;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-  
-  .timelineContent::before {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .timeline::before {
-    left: 30px;
-  }
-  
-  .timelineItem::before {
-    left: 30px;
-  }
-  
-  .timelineYear {
-    left: 30px;
-    font-size: 1rem;
-    padding: 6px 15px;
-  }
-  
-  .timelineItem {
-    padding-left: 70px;
-  }
-  
-  .timelineContent {
-    padding: 25px 20px;
-  }
 }
 
 /* Animasi khusus untuk timeline */
@@ -374,14 +285,12 @@
   padding: 80px 0;
   background: linear-gradient(180deg, #151515 0%, #0a0a0a 100%);
 }
-
 .valuesGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 30px;
   margin-top: 40px;
 }
-
 .valueItem {
   text-align: center;
   padding: 30px 20px;
@@ -389,22 +298,18 @@
   border-radius: 15px;
   transition: all 0.3s ease;
 }
-
 .valueItem:hover {
   background: rgba(111, 78, 55, 0.12);
   transform: scale(1.05);
 }
-
 .valueIcon {
   font-size: 2.5rem;
   color: #8b6b4f;
   margin-bottom: 20px;
 }
-
 .valueItem h4 {
   margin-bottom: 10px;
 }
-
 .valueItem p {
   color: #aaa;
   font-size: 0.95rem;
@@ -418,24 +323,24 @@
   text-align: center;
   background: radial-gradient(circle at center, rgba(111, 78, 55, 0.15), transparent 70%);
 }
-
 .ctaTitle {
   font-size: 2.4rem;
   margin-bottom: 1.5rem;
 }
-
 .ctaText {
   color: #ccc;
   max-width: 600px;
   margin: 0 auto 3rem;
 }
-
 .ctaButtons {
   display: flex;
   gap: 20px;
   justify-content: center;
 }
 
+/* ================================
+   BUTTON
+================================ */
 .primaryBtn,
 .secondaryBtn {
   padding: 14px 36px;
@@ -444,22 +349,18 @@
   text-decoration: none;
   transition: all 0.3s ease;
 }
-
 .primaryBtn {
   background: linear-gradient(45deg, #6f4e37, #4b3621);
   color: #fff;
 }
-
 .primaryBtn:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
 }
-
 .secondaryBtn {
   border: 2px solid #8b6b4f;
   color: #8b6b4f;
 }
-
 .secondaryBtn:hover {
   background: rgba(111, 78, 55, 0.15);
 }
@@ -479,39 +380,78 @@
 }
 
 /* ================================
-   RESPONSIVE
+   RESPONSIVE - Timeline
 ================================ */
+@media (max-width: 992px) {
+  .timeline::before {
+    left: 40px;
+  }
+  .timeline::after {
+    left: 40px;
+  }
+  .timelineItem {
+    padding-left: 80px;
+  }
+  .timelineItem::before {
+    left: 40px;
+  }
+  .timelineYear {
+    left: 40px;
+    text-align: center;
+    min-width: 80px;
+  }
+  .timelineContent {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .timelineContent::before {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .heroTitle {
     font-size: 2.5rem;
   }
-
   .sectionTitle {
     font-size: 2rem;
   }
-
   .timeline::before {
     left: 30px;
   }
-
   .timelineItem {
     flex-direction: column;
     padding-left: 60px;
   }
-
   .timelineYear {
     left: 0;
     transform: none;
   }
-
   .timelineContent {
     width: 100%;
     margin-top: 20px;
     border-left: 3px solid #6f4e37;
   }
-
   .ctaButtons {
     flex-direction: column;
+  }
+  .timeline::before {
+    left: 30px;
+  }
+  .timelineItem::before {
+    left: 30px;
+  }
+  .timelineYear {
+    left: 30px;
+    font-size: 1rem;
+    padding: 6px 15px;
+  }
+  .timelineItem {
+    padding-left: 70px;
+  }
+  .timelineContent {
+    padding: 25px 20px;
   }
 }
 
@@ -519,11 +459,9 @@
   .hero {
     height: 400px;
   }
-
   .heroTitle {
     font-size: 2rem;
   }
-
   .philosophyCards,
   .valuesGrid {
     grid-template-columns: 1fr;
