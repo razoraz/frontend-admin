@@ -7,7 +7,7 @@ import axios from 'axios';
 import useBlockBack from '../hooks/BlockBack';
 import useFadeOnScroll from '../hooks/FadeOnScrool';
 import HeaderPagePelanggan from '../components/component-html/HeaderPagePelanggan';
-import FooterPage from '../components/component-html/FooterPage';
+import FooterPage from '../components/component-html/FooterPagePelanggan';
 
 // Import Style
 import styles from '../styles/pemesanan_menu.module.css';
