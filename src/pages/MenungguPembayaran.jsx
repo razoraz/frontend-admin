@@ -14,13 +14,15 @@ const MenungguPembayaranKasir = () => {
   const [id_reservasi, setIdReservasi] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
+  useEffect(() => {
+    document.title = 'Pembayaran - Basecamp Kopi';
+  }, []);
+
   // Fetch & polling status pembayaran
   useEffect(() => {
     const fetchPemesanan = async () => {
       try {
-        const res = await axios.get(
-          `https://backend-production-8cf7.up.railway.app/api/pemesanan/detail/${id_pemesanan}`
-        );
+        const res = await axios.get(`https://backend-production-8cf7.up.railway.app/api/pemesanan/detail/${id_pemesanan}`);
         setPemesanan(res.data);
 
         // ⭐ CEK APAKAH ADA id_reservasi
@@ -48,7 +50,7 @@ const MenungguPembayaranKasir = () => {
 
   const handleModalClose = () => {
     setShowModal(false);
-    
+
     // ⭐ LOGIKA NAVIGASI BERDASARKAN RESERVASI
     if (id_reservasi) {
       // Jika ada reservasi, redirect ke struk dengan id_reservasi
@@ -74,27 +76,21 @@ const MenungguPembayaranKasir = () => {
 
   return (
     <div>
-      <HeaderPagePelanggan
-        title="Metode Pembayaran"
-        subtitle="Silakan lakukan pembayaran langsung di kasir"
-        bg_video="/background_video/navVideo.mp4"
-      />
+      <HeaderPagePelanggan title="Metode Pembayaran" subtitle="Silakan lakukan pembayaran langsung di kasir" bg_video="/background_video/navVideo.mp4" />
 
       <div className={styles.container}>
         <div className={styles.card}>
           <div className={styles.icon}>💵</div>
 
           <h1 className={styles.title}>Menunggu Pembayaran</h1>
-          <p className={styles.subtitle}>
-            Tunjukkan ID pemesanan atau reservasi Anda kepada kasir untuk menyelesaikan pembayaran
-          </p>
+          <p className={styles.subtitle}>Tunjukkan ID pemesanan atau reservasi Anda kepada kasir untuk menyelesaikan pembayaran</p>
 
           <div className={styles.infoBox}>
             <div>
               <span>Nama Pelanggan</span>
               <strong>{pemesanan.nama_pelanggan}</strong>
             </div>
-            
+
             <div>
               <span>Pemesanan Order</span>
               <strong>#{pemesanan.id_pemesanan}</strong>
@@ -114,9 +110,7 @@ const MenungguPembayaranKasir = () => {
             </div>
           </div>
 
-          <p className={styles.note}>
-            🛎️ Nikmati kopi sambil menunggu kasir memproses pembayaran Anda.
-          </p>
+          <p className={styles.note}>🛎️ Nikmati kopi sambil menunggu kasir memproses pembayaran Anda.</p>
         </div>
       </div>
 
@@ -127,11 +121,7 @@ const MenungguPembayaranKasir = () => {
         isOpen={showModal}
         onClose={handleModalClose}
         title="Pembayaran Berhasil"
-        message={
-          isReservasi 
-            ? "Pembayaran reservasi Anda telah dikonfirmasi oleh kasir. Struk siap ditampilkan."
-            : "Pembayaran Anda telah dikonfirmasi oleh kasir. Struk siap ditampilkan."
-        }
+        message={isReservasi ? 'Pembayaran reservasi Anda telah dikonfirmasi oleh kasir. Struk siap ditampilkan.' : 'Pembayaran Anda telah dikonfirmasi oleh kasir. Struk siap ditampilkan.'}
         type="success"
       />
     </div>
