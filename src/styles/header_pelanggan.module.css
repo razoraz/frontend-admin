@@ -43,7 +43,6 @@
   text-shadow: 0 0 25px rgba(255, 246, 21, 0.3);
   animation: fadeInText 2.5s ease-in-out forwards;
 }
-
 .motivasiTengah h1 {
   font-size: 3rem;
   font-weight: 800;
@@ -51,7 +50,6 @@
   margin-bottom: 10px;
   animation: glowPulse 3s infinite alternate;
 }
-
 .motivasiTengah p {
   font-size: 1.2rem;
   color: #f8f8f8;
@@ -61,6 +59,7 @@
   opacity: 0.9;
 }
 
+/* Animation */
 @keyframes fadeInText {
   from {
     opacity: 0;
@@ -71,7 +70,6 @@
     transform: translateY(0);
   }
 }
-
 @keyframes glowPulse {
   from {
     text-shadow: 0 0 10px #fff615, 0 0 20px #fff615;
@@ -95,7 +93,6 @@
   backdrop-filter: blur(10px);
   transition: all 0.3s ease-in-out;
 }
-
 .navLogo img {
   height: 90px;
   transition: 0.3s;
@@ -109,26 +106,21 @@
   margin: 0;
   padding-right: 48px;
 }
-
 .navbarNav li {
   margin: 0 16px;
   font-weight: 700;
   font-size: 15px;
   position: relative;
 }
-
 .navbarNav a {
   padding: 10px;
   color: #e9e9e9;
   display: inline-block;
   transition: color 0.3s ease;
 }
-
 .navbarNav li:hover a {
   color: #fff615;
 }
-
-/* 🔶 Underline efek neon */
 .navbarNav li:not(:has(.btnNavbar))::after {
   content: '';
   display: block;
