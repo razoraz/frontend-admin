@@ -15,6 +15,7 @@
   min-height: 100vh;
 }
 
+/* Judul */
 .sectionTitle {
   font-size: 24px;
   font-weight: bold;
@@ -35,7 +36,6 @@
   margin-bottom: 30px;
   border: 2px solid #fff615;
 }
-
 .tableContainer table {
   min-width: 100%;
   width: 100%;
@@ -51,7 +51,6 @@
 .tableContainer thead {
   background: linear-gradient(90deg, #fff615 0%, #ffd633 100%);
 }
-
 .tableContainer th {
   color: #000;
   font-weight: bold;
@@ -61,11 +60,9 @@
   border-bottom: 3px solid #111 !important;
   position: relative;
 }
-
 .tableContainer th:first-child {
   border-left: 2px solid #111 !important;
 }
-
 .tableContainer th:last-child {
   border-right: 2px solid #111 !important;
 }
@@ -78,7 +75,6 @@
   vertical-align: middle;
   transition: all 0.3s ease;
 }
-
 .tableContainer tr:last-child td {
   border-bottom: 2px solid #333 !important;
 }
@@ -93,7 +89,6 @@
 .tableContainer tbody tr:nth-child(even) {
   background-color: rgba(255, 255, 255, 0.03);
 }
-
 .tableContainer tbody tr:nth-child(even):hover td {
   background-color: rgba(255, 246, 21, 0.15);
   border-color: #ffd633 !important;
@@ -103,15 +98,12 @@
 .tableContainer thead th:first-child {
   border-top-left-radius: 6px;
 }
-
 .tableContainer thead th:last-child {
   border-top-right-radius: 6px;
 }
-
 .tableContainer tbody tr:last-child td:first-child {
   border-bottom-left-radius: 6px;
 }
-
 .tableContainer tbody tr:last-child td:last-child {
   border-bottom-right-radius: 6px;
 }
@@ -146,7 +138,6 @@
   border-radius: 8px;
   border: 2px solid #fff615;
 }
-
 .pagination button {
   background: linear-gradient(135deg, #fff615 0%, #ffd633 100%);
   color: #000;
@@ -161,13 +152,11 @@
   align-items: center;
   gap: 8px;
 }
-
 .pagination button:hover:not(:disabled) {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(255, 246, 21, 0.4);
   border-color: #fff615;
 }
-
 .pagination button:disabled {
   background: #333;
   color: #666;
@@ -175,7 +164,6 @@
   cursor: not-allowed;
   box-shadow: none;
 }
-
 .pagination span {
   color: #fff615;
   font-weight: bold;
@@ -187,7 +175,6 @@
   min-width: 180px;
   text-align: center;
 }
-
 .pagination select {
   background: #1a1a1a;
   color: #fff615;
@@ -198,22 +185,20 @@
   font-weight: bold;
   transition: all 0.3s ease;
 }
-
 .pagination select:hover {
   background: #222;
   box-shadow: 0 0 10px rgba(255, 246, 21, 0.3);
 }
+
 /* Search Container */
 .searchContainer {
   margin: 20px 0 30px 0;
 }
-
 .searchWrapper {
   position: relative;
   max-width: 500px;
   margin-bottom: 10px;
 }
-
 .searchIcon {
   position: absolute;
   left: 15px;
@@ -222,7 +207,6 @@
   color: #fff615;
   font-size: 1rem;
 }
-
 .searchInput {
   width: 100%;
   padding: 12px 45px 12px 45px;
@@ -233,18 +217,15 @@
   font-size: 1rem;
   transition: all 0.3s ease;
 }
-
 .searchInput:focus {
   outline: none;
   background: rgba(255, 255, 255, 0.15);
   box-shadow: 0 0 15px rgba(255, 246, 21, 0.3);
   border-color: #ffd633;
 }
-
 .searchInput::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
-
 .clearSearchBtn {
   position: absolute;
   right: 15px;
@@ -258,11 +239,9 @@
   padding: 5px;
   transition: color 0.3s ease;
 }
-
 .clearSearchBtn:hover {
   color: #fff615;
 }
-
 .searchInfo {
   color: #fff615;
   font-weight: 600;
@@ -276,27 +255,23 @@
   padding: 60px 20px !important;
   border: none !important;
 }
-
 .noDataContent {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
 }
-
 .noDataContent i {
   font-size: 3rem;
   color: #fff615;
   opacity: 0.7;
   margin-bottom: 10px;
 }
-
 .noDataContent p {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1.1rem;
   margin-bottom: 10px;
 }
-
 .clearFilterBtn {
   background: linear-gradient(135deg, #fff615 0%, #ffd633 100%);
   color: #000;
@@ -308,7 +283,6 @@
   transition: all 0.3s ease;
   margin-top: 10px;
 }
-
 .clearFilterBtn:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(255, 246, 21, 0.4);
@@ -316,70 +290,40 @@
 
 /* Responsive */
 @media screen and (max-width: 768px) {
-  .searchWrapper {
-    max-width: 100%;
-  }
-  
-  .searchInfo {
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .searchInput {
-    padding: 10px 40px 10px 40px;
-    font-size: 0.9rem;
-  }
-  
-  .searchInfo {
-    font-size: 0.85rem;
-  }
-  
-  .noDataContent i {
-    font-size: 2.5rem;
-  }
-  
-  .noDataContent p {
-    font-size: 1rem;
-  }
-}
-
-/* Responsive */
-@media screen and (max-width: 768px) {
   .container {
     padding: 15px;
   }
-  
   .sectionTitle {
     font-size: 20px;
     text-align: center;
   }
-  
   .decorativeLine2 {
     margin: 0 auto 30px;
   }
-  
   .pagination {
     flex-wrap: wrap;
     gap: 10px;
     padding: 15px;
   }
-  
   .pagination span {
     order: 1;
     width: 100%;
     margin: 10px 0;
   }
-  
   .pagination button {
     flex: 1;
     justify-content: center;
   }
-  
   .pagination select {
     order: 4;
     width: 100%;
     margin-top: 10px;
+  }
+  .searchWrapper {
+    max-width: 100%;
+  }
+  .searchInfo {
+    text-align: center;
   }
 }
 
@@ -387,32 +331,40 @@
   .sectionTitle {
     font-size: 18px;
   }
-  
   .tableContainer {
     padding: 10px;
     border-width: 1px;
   }
-  
   .tableContainer table {
     border-width: 1px;
   }
-  
   .tableContainer th,
   .tableContainer td {
     padding: 10px 8px;
     font-size: 0.9rem;
     border-width: 1px !important;
   }
-  
   .pagination {
     flex-direction: column;
     gap: 10px;
     padding: 10px;
     border-width: 1px;
   }
-  
   .pagination button {
     padding: 8px 16px;
     font-size: 0.9rem;
+  }
+  .searchInput {
+    padding: 10px 40px 10px 40px;
+    font-size: 0.9rem;
+  }
+  .searchInfo {
+    font-size: 0.85rem;
+  }
+  .noDataContent i {
+    font-size: 2.5rem;
+  }
+  .noDataContent p {
+    font-size: 1rem;
   }
 }
