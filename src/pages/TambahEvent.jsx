@@ -19,6 +19,10 @@ function TambahEvent() {
   const [modalQuestionOpen, setModalQuestionOpen] = useState(false);
   const [modalSuccessOpen, setModalSuccessOpen] = useState(false);
 
+  useEffect(() => {
+    document.title = 'Tambah Event - Basecamp Kopi';
+  }, []);
+
   // CEK APAKAH EVENT SUDAH ADA
   useEffect(() => {
     const cekEvent = async () => {
