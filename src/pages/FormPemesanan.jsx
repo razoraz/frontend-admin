@@ -57,6 +57,7 @@ function FormPemesanan() {
     }
     sessionStorage.removeItem('cartPemesanan');
     sessionStorage.removeItem('konteksPemesanan');
+    sessionStorage.removeItem('reservasi');
     sessionStorage.setItem('formPemesanan', JSON.stringify(formData));
     navigate('/pemesanan-menu');
   };
