@@ -16,6 +16,10 @@ function FeedbackPage() {
   useBlockBack();
   useFadeOnScroll();
 
+  useEffect(() => {
+    document.title = 'Feedback Pelanggan - Basecamp Kopi';
+  }, []);
+
   // 🔸 State
   const [feedbacks, setFeedbacks] = useState([]);
   const [loading, setLoading] = useState(true);
