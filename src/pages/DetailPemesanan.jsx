@@ -84,7 +84,7 @@ function DetailPemesanan() {
     }
   };
 
-    const getStatusPemesananText = (status) => {
+  const getStatusPemesananText = (status) => {
     switch (status) {
       case 'menunggu_pembayaran':
         return 'Menunggu Pembayaran';
@@ -112,6 +112,19 @@ function DetailPemesanan() {
     }
   };
 
+  const formatTanggalWIB = (tanggal) => {
+    return (
+      new Date(tanggal).toLocaleString('id-ID', {
+        timeZone: 'Asia/Jakarta',
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+      }) + ' WIB'
+    );
+  };
+
   return (
     <div>
       <HeaderPage title="DETAIL PEMESANAN" />
@@ -128,7 +141,7 @@ function DetailPemesanan() {
           </div>
           <div className={styles.infoRow}>
             <span className={styles.label}>Order ID</span>
-            <span className={styles.value}>{data.nama_metode  !== 'Tunai di Kasir' ? data.order_id : '-'}</span>
+            <span className={styles.value}>{data.nama_metode !== 'Tunai di Kasir' ? data.order_id : '-'}</span>
           </div>
 
           <div className={styles.infoRow}>
@@ -138,7 +151,7 @@ function DetailPemesanan() {
 
           <div className={styles.infoRow}>
             <span className={styles.label}>Tanggal</span>
-            <span className={styles.value}>{new Date(data.tanggal_pemesanan).toISOString().split('T')[0]}</span>
+            <span className={styles.value}>{formatTanggalWIB(data.tanggal_pemesanan)}</span>
           </div>
 
           <div className={styles.infoRow}>
