@@ -23,7 +23,7 @@
   color: #eee;
 }
 
-/* Group */
+/* Form Group */
 .formGroup {
   display: flex;
   flex-direction: column;
@@ -63,14 +63,12 @@ textarea {
   min-height: 90px;
 }
 
-/* Tambahkan di ubah_menu.module.css */
-
+/* Current Image */
 .currentImage {
   font-size: 14px;
   margin-top: 5px;
   color: #aaa;
 }
-
 .filename {
   display: inline-block;
   max-width: 300px; /* Sesuaikan dengan lebar form */
@@ -126,7 +124,7 @@ textarea {
   background: #218838;
 }
 
-/* Custom dropdown icon dengan animasi */
+/* Form Group Select */
 .formGroup select {
   cursor: pointer;
   appearance: none;
