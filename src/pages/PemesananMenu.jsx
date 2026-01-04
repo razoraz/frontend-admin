@@ -1,6 +1,6 @@
 // Import Library
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 // Import Component
@@ -97,9 +97,7 @@ function MenuList({ filteredMenu, cart, addToCart, updateQty }) {
 
   return (
     <div>
-      {categories.map(
-        (cat) => menusByCategory[cat].length > 0 && <MenuCategory key={cat} title={cat} icon={kategoriIcons[cat] || '🥤'} items={menusByCategory[cat]} cart={cart} addToCart={addToCart} updateQty={updateQty} />
-      )}
+      {categories.map((cat) => menusByCategory[cat].length > 0 && <MenuCategory key={cat} title={cat} icon={kategoriIcons[cat] || '🥤'} items={menusByCategory[cat]} cart={cart} addToCart={addToCart} updateQty={updateQty} />)}
 
       {noData && (
         <div className={styles.emptyContainer}>
@@ -118,6 +116,8 @@ function PemesananPelanggan() {
   useEffect(() => {
     document.title = 'Pemesanan Menu - Basecamp Kopi';
   }, []);
+
+  const navigate = useNavigate();
 
   useBlockBack();
   useFadeOnScroll();
@@ -218,6 +218,16 @@ function PemesananPelanggan() {
     const item = menu.find((m) => m.id_menu === Number(id));
     return sum + (item?.harga || 0) * qty;
   }, 0);
+
+  useEffect(() => {
+    const formPemesanan = sessionStorage.getItem('formPemesanan');
+    const reservasi = sessionStorage.getItem('reservasi');
+
+    // ❌ Jika tidak lewat form dan tidak lewat reservasi
+    if (!formPemesanan && !reservasi) {
+      navigate('/scanner', { replace: true });
+    }
+  }, [navigate]);
 
   return (
     <div className={styles.wrapper}>
