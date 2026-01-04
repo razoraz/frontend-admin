@@ -1,6 +1,3 @@
-/* Styles for the menu page */
-/* Warna dasar: #1a1a1a (gelap), #fff615 (kuning cerah), #ffd633 (kuning muda) */
-
 /* Garis */
 .decorativeLine2 {
   background-color: #fff615;
@@ -199,7 +196,7 @@
 }
 
 /* ============================== */
-/* Jika tidak ada menu ditemukan  */
+/* Tampilan jika menu kosong */
 /* ============================== */
 .emptyContainer {
   display: flex;
@@ -211,14 +208,12 @@
   margin-bottom: 80px;
   animation: fadeIn 0.5s ease-in-out;
 }
-
 .emptyImage {
   width: 360px;
   opacity: 0.8;
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
   margin-bottom: 15px;
 }
-
 .noMenuText {
   font-size: 16px;
   color: #fff;
