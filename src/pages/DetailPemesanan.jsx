@@ -84,6 +84,34 @@ function DetailPemesanan() {
     }
   };
 
+    const getStatusPemesananText = (status) => {
+    switch (status) {
+      case 'menunggu_pembayaran':
+        return 'Menunggu Pembayaran';
+      case 'dikonfirmasi':
+        return 'Dikonfirmasi';
+      case 'selesai':
+        return 'Selesai';
+      case 'dibatalkan':
+        return 'Dibatalkan';
+      default:
+        return '-';
+    }
+  };
+
+  const getStatusPembayaranText = (status) => {
+    switch (status) {
+      case 'belum_bayar':
+        return 'Belum Bayar';
+      case 'sudah_bayar':
+        return 'Sudah Bayar';
+      case 'dibatalkan':
+        return 'Dibatalkan';
+      default:
+        return '-';
+    }
+  };
+
   return (
     <div>
       <HeaderPage title="DETAIL PEMESANAN" />
@@ -125,12 +153,12 @@ function DetailPemesanan() {
 
           <div className={styles.infoRow}>
             <span className={styles.label}>Status Pembayaran</span>
-            <span className={styles.value}>{data.status_pembayaran}</span>
+            <span className={styles.value}>{getStatusPembayaranText(data.status_pembayaran)}</span>
           </div>
 
           <div className={styles.infoRow}>
             <span className={styles.label}>Status Pemesanan</span>
-            <span className={styles.value}>{data.status_pemesanan}</span>
+            <span className={styles.value}>{getStatusPemesananText(data.status_pemesanan)}</span>
           </div>
         </div>
 
