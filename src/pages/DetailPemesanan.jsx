@@ -142,6 +142,7 @@ function DetailPemesanan() {
               <th>Jumlah</th>
               <th>Harga</th>
               <th>Total</th>
+              <th>Catatan</th>
             </tr>
           </thead>
 
@@ -152,6 +153,7 @@ function DetailPemesanan() {
                 <td>{it.jumlah}</td>
                 <td>Rp {it.harga}</td>
                 <td>Rp {it.subtotal}</td>
+                <td>{it.catatan || '-'}</td>
               </tr>
             ))}
           </tbody>
