@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from '../styles/metode_pembayaran.module.css';
 import HeaderPagePelanggan from '../components/component-html/HeaderPagePelanggan';
 import axios from 'axios';
@@ -15,6 +16,8 @@ const MetodePembayaran = () => {
   useEffect(() => {
     document.title = 'Metode Pembayaran - Basecamp Kopi';
   }, []);
+
+  const navigate = useNavigate();
 
   // Ambil menu dari backend
   useEffect(() => {
@@ -91,7 +94,7 @@ const MetodePembayaran = () => {
           tanggal_dibuat: reservasi.tanggal_dibuat,
           nama_pelanggan: reservasi.nama_pelanggan,
           no_meja: reservasi.no_meja,
-          tanggal_pemesanan: reservasi.tanggal_dibuat, // 
+          tanggal_pemesanan: reservasi.tanggal_dibuat, //
           tanggal_reservasi: reservasi.tanggal_reservasi,
           jam_reservasi: reservasi.jam_reservasi,
           nomor_whatsapp: reservasi.nomor_whatsapp,
@@ -143,6 +146,16 @@ const MetodePembayaran = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    const formPemesanan = sessionStorage.getItem('formPemesanan');
+    const reservasi = sessionStorage.getItem('reservasi');
+
+    // ❌ Jika tidak lewat form dan tidak lewat reservasi
+    if (!formPemesanan && !reservasi) {
+      navigate('/scanner', { replace: true });
+    }
+  }, [navigate]);
 
   return (
     <div className={styles.page}>
