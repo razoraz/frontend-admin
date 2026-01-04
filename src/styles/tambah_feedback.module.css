@@ -29,7 +29,6 @@
   color: #fff615;
   margin-bottom: 10px;
 }
-
 .subtitle {
   color: #cfcfcf;
   font-size: 0.95rem;
@@ -43,19 +42,16 @@
 .rating {
   margin: 10px 0 15px;
 }
-
 .star {
   font-size: 2.3rem;
   cursor: pointer;
   color: #555;
   transition: transform 0.2s ease, color 0.2s ease;
 }
-
 .star:hover {
   transform: scale(1.2);
   color: #ffd900;
 }
-
 .active {
   color: #ffd900;
 }
@@ -66,17 +62,15 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 10px;              /* DIPERKECIL */
+  gap: 10px;              
 }
-
 .formGroup {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left !important;
-  margin-bottom: 8px;     /* DIPERKECIL */
+  margin-bottom: 8px;     
 }
-
 .label {
   font-size: 0.95rem;
   font-weight: 600;
@@ -96,7 +90,6 @@
   outline: none;
   transition: 0.2s;
 }
-
 .input:focus {
   border-color: #fff615;
 }
@@ -115,7 +108,6 @@
   outline: none;
   transition: 0.2s;
 }
-
 .textarea:focus {
   border-color: #fff615;
 }
@@ -124,8 +116,8 @@
    UPLOAD GAMBAR
    ========================= */
 .fileInput {
-  width: 100%;              /* AGAR LURUS */
-  padding: 12px 14px;       /* SAMA DENGAN INPUT LAIN */
+  width: 100%;              
+  padding: 12px 14px;       
   border: 1px solid #333;
   border-radius: 10px;
   background: #111;
@@ -133,7 +125,6 @@
   cursor: pointer;
   transition: 0.2s ease;
 }
-
 .fileInput:hover {
   border-color: #fff615;
 }
@@ -146,7 +137,6 @@
   border-radius: 12px;
   border: 1px solid #333;
 }
-
 .previewImage {
   width: 100%;
   max-height: 250px;
@@ -154,7 +144,6 @@
   border-radius: 10px;
   margin-bottom: 10px;
 }
-
 
 /* =========================
    BUTTON SUBMIT
@@ -170,7 +159,6 @@
   cursor: pointer;
   transition: 0.3s ease;
 }
-
 .submitBtn:hover {
   background: #e6e600;
   transform: translateY(-2px);
