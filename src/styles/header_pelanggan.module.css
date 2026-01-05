@@ -1,4 +1,5 @@
-/* 🌌 GEN Z AESTHETIC HEADER - RESTORED STABLE VERSION */
+/* 🌌 GEN Z AESTHETIC HEADER */
+
 /* --- Variables --- */
 :root {
   --neon-yellow: #fff615;
@@ -7,6 +8,7 @@
   --text-primary: #ffffff;
   --text-secondary: #e0e0e0;
 }
+
 /* 🎥 Video Container */
 .navbar {
   position: relative;
@@ -17,6 +19,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .bgVideo {
   position: absolute;
   top: 0;
@@ -27,14 +30,16 @@
   z-index: 1;
   filter: brightness(0.4) contrast(1.1); /* Darker for better text visibility */
 }
+
 /* Gradient Overlay */
 .navbar::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+  background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%);
   z-index: 2;
 }
+
 /* ✨ Motivasi Tengah (HERO TEXT) ✨ */
 .motivasiTengah {
   position: relative;
@@ -44,6 +49,7 @@
   max-width: 900px;
   animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
+
 .motivasiTengah h1 {
   font-size: 4rem; /* Big & Bold */
   font-weight: 900;
@@ -53,11 +59,12 @@
   margin-bottom: 20px;
   text-transform: uppercase;
   /* Modern Text Gradient */
-  background: linear-gradient(to right, #ffffff, #fff615);
+  background: linear-gradient(to right, #ffffff, #fff615); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 20px rgba(255, 246, 21, 0.3));
 }
+
 .motivasiTengah p {
   font-size: 1.3rem;
   color: var(--text-secondary);
@@ -66,6 +73,7 @@
   max-width: 600px;
   margin: 0 auto;
 }
+
 /* 🌒 Navbar Content (Sticky Glass Bar) */
 .navContent {
   position: fixed;
@@ -76,19 +84,22 @@
   max-width: 1200px;
   height: 70px;
   z-index: 1000;
+  
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
+  
   /* Glassmorphism */
   background: rgba(30, 30, 30, 0.65);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-radius: 50px; /* Pill shape */
   border: 1px solid var(--glass-border);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   transition: all 0.4s ease;
 }
+
 /* Logo */
 .navLogo img {
   height: 40px;
@@ -98,6 +109,7 @@
 .navLogo:hover img {
   transform: scale(1.1) rotate(-5deg);
 }
+
 /* 🖤 Navbar Link Items */
 .navbarNav ul {
   display: flex;
@@ -107,6 +119,7 @@
   padding: 0;
   align-items: center;
 }
+
 .navbarNav a {
   text-decoration: none;
   font-size: 0.95rem;
@@ -115,6 +128,7 @@
   position: relative;
   transition: color 0.3s ease;
 }
+
 /* Hover Animation (Underline Slide) */
 .navbarNav a::after {
   content: '';
@@ -128,6 +142,7 @@
   transform-origin: right;
   transition: transform 0.3s ease;
 }
+
 .navbarNav a:hover {
   color: white;
 }
@@ -135,6 +150,7 @@
   transform: scaleX(1);
   transform-origin: left;
 }
+
 /* 🟨 Tombol Pesan (Pill Button) */
 .btnNavbar {
   background: var(--neon-yellow);
@@ -146,8 +162,8 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  text-decoration: none !important;
 }
+
 .btnNavbar:hover {
   transform: translateY(-2px) !important;
   box-shadow: 0 5px 15px rgba(255, 246, 21, 0.4);
@@ -155,6 +171,7 @@
 .btnNavbar::after {
   display: none !important; /* No underline for button */
 }
+
 /* Menu Icon (Burger) */
 .menuIcon {
   display: none;
@@ -167,117 +184,137 @@
   color: var(--neon-yellow);
   transform: scale(1.1);
 }
+
 /* =========================================
-   📱 MOBILE RESPONSIVE
+   📱 MOBILE RESPONSIVE (The "Gen Z" Part) 
 ========================================= */
 @media (max-width: 900px) {
   .navContent {
-    left: 0 !important;
-    transform: none !important;
-    width: 100%;
-    border-radius: 0;
+    width: 92%;
     padding: 0 20px;
+    top: 15px;
   }
-  .navLogo {
-    align-self: center;
-    margin-bottom: 0;
-  }
+  
   .motivasiTengah h1 {
     font-size: 2.8rem;
   }
+  
   .menuIcon {
     display: block;
     z-index: 1002; /* Above overlay */
   }
-  /* FULL SCREEN MENU OVERLAY */
+
+  /* FULL SCREEN MENU OVERLAY (Elegant Version) */
   .navbarNav ul {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(10, 10, 10, 0.98); /* Solid dark */
+    background: rgba(12, 12, 12, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
+    align-items: flex-start; /* Rata Kiri */
+    justify-content: center; 
+    gap: 25px;
     z-index: 1001;
-    /* Hidden by default */
+    padding: 0 50px; /* Padding kiri lebih besar */
+    
+    /* Animation */
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translateX(-20px); /* Slide dari kiri */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
   }
-  /* Active State (Shown via React state) */
+
+  /* Active State */
   .navbarNav ul.show {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateX(0);
+    pointer-events: auto;
   }
-  /* Staggered Text Animation */
+
+  /* Links - Elegant Typography */
   .navbarNav a {
-    font-size: 1.5rem; /* Standard comfortable size */
-    font-weight: 700;
-    color: #ccc;
+    font-size: 1.35rem; /* Sedikit lebih besar untuk rata kiri */
+    font-weight: 600;
+    color: #cccccc;
+    text-decoration: none;
     transition: all 0.3s ease;
-    text-align: center;
-    width: 100%;
+    padding: 10px 0; /* Hapus padding samping */
+    letter-spacing: 0.5px;
     display: block;
-  }
-  .navbarNav ul li {
     width: 100%;
+    text-align: left; /* Rata Kiri */
+    position: relative;
+  }
+  
+  .navbarNav > li {
+    width: 100%;
+    max-width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Rata Kiri */
   }
-  .navbarNav ul {
-    padding-left: 0; /* HILANGIN default UL */
-    margin: 0;
-  }
+  
+  /* Hover & Active State */
   .navbarNav a:hover,
-  .navbarNav .active {
+  .navbarNav a.active {
     color: var(--neon-yellow);
-    transform: scale(1.05);
+    transform: translateX(10px); /* Geser kanan dikit saat hover */
+    background: transparent;
+    box-shadow: none;
+    border: none;
   }
-  /* Hide underline on mobile big menu */
+  
+  /* Modern Arrow Indicator on Hover */
+  .navbarNav a:hover::before {
+    content: '→';
+    position: absolute;
+    left: -25px;
+    color: var(--neon-yellow);
+    opacity: 1; 
+  }
+
+  /* Hide underline */
   .navbarNav a::after {
     display: none;
   }
-  /* Tombol Pesan di Mobile Menu (Simple & Clean) */
+  
+  /* Tombol Pesan */
+  
+
+  /* Tombol Pesan (Mobile Minimal) */
   .btnNavbar {
-    font-size: 1.2rem !important;
-    padding: 15px 40px !important;
+    font-size: 1.1rem !important;
+    padding: 14px 40px !important;
     margin-top: 20px;
+    padding: 10px 0 !important; /* Hapus padding samping */
+    margin-top: 25px;
     width: auto;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(255, 246, 21, 0.2);
+    justify-content: flex-start; /* Rata kiri */
+    
+    /* Remove Background */
     background: transparent !important;
-    border: 2px solid var(--neon-yellow) !important;
-    color: var(--neon-yellow) !important;
     box-shadow: none !important;
+    color: var(--neon-yellow) !important;
+    border-radius: 0 !important;
+    
+    /* Add slight border bottom or indicator if wanted, or just clean text */
+    border: 1px solid var(--neon-yellow) !important;
+    padding: 12px 30px !important;
+    border-radius: 50px !important;
   }
+  
   .btnNavbar:hover {
     background: rgba(255, 246, 21, 0.1) !important;
-  }
-}
-@media (max-width: 480px) {
-  .motivasiTengah h1 {
-    font-size: 2.2rem;
-  }
-  .motivasiTengah p {
-    font-size: 1rem;
-  }
-  .navbar {
-    height: 70vh;
-  }
-}
-/* Animations Keyframes */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+    box-shadow: 0 0 15px rgba(255, 246, 21, 0.2) !important;
+    transform: translateX(5px) !important;
   }
 }
