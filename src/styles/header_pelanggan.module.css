@@ -60,8 +60,6 @@
   text-transform: uppercase;
   /* Modern Text Gradient */
   background: linear-gradient(to right, #ffffff, #fff615); 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 20px rgba(255, 246, 21, 0.3));
 }
 
@@ -285,14 +283,43 @@
     display: none;
   }
   
-  /* Tombol Pesan */
+  /* Mobile Logo Style */
+  .mobileLogoContainer {
+    display: flex !important;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .mobileLogo {
+    height: 50px; /* Adjust size as needed */
+    filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 246, 21, 0.3));
+  }
+
+  /* Tombol Pesan (Mobile Minimal) */
   .btnNavbar {
     font-size: 1.1rem !important;
-    padding: 14px 40px !important;
-    margin-top: 20px;
+    padding: 10px 0 !important; /* Hapus padding samping */
+    margin-top: 25px;
     width: auto;
-    justify-content: center;
-    box-shadow: 0 8px 25px rgba(255, 246, 21, 0.2);
+    justify-content: flex-start; /* Rata kiri */
+    
+    /* Remove Background */
+    background: transparent !important;
+    box-shadow: none !important;
+    color: var(--neon-yellow) !important;
+    border-radius: 0 !important;
+    
+    /* Add slight border bottom or indicator if wanted, or just clean text */
+    border: 1px solid var(--neon-yellow) !important;
+    padding: 12px 30px !important;
+    border-radius: 50px !important;
+  }
+  
+  .btnNavbar:hover {
+    background: rgba(255, 246, 21, 0.1) !important;
+    box-shadow: 0 0 15px rgba(255, 246, 21, 0.2) !important;
+    transform: translateX(5px) !important;
   }
 }
 
