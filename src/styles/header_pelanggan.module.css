@@ -204,84 +204,99 @@
     z-index: 1002; /* Above overlay */
   }
 
-  /* FULL SCREEN MENU OVERLAY */
+  /* FULL SCREEN MENU OVERLAY (Elegant Version) */
   .navbarNav ul {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(10, 10, 10, 0.98); /* Almost solid background for better readability */
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    background: rgba(12, 12, 12, 0.95); /* Deep dark elegance */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     
-    display: flex; /* Force flex display */
+    display: flex;
     flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
-    gap: 30px;
+    align-items: center; 
+    justify-content: center; 
+    gap: 25px; /* Comfortable spacing */
     z-index: 1001;
-    padding-bottom: 50px; /* Slight offset for visual balance */
+    padding: 0 20px;
     
-    /* Hidden by default */
+    /* Animation: Soft Fade & Slide */
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-20px) scale(0.98);
-    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    pointer-events: none; /* Prevent clicks when hidden */
+    transform: translateY(-15px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
   }
 
-  /* Active State (Shown via React state) */
+  /* Active State */
   .navbarNav ul.show {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
     pointer-events: auto;
   }
-  
-  /* Active Link Indicator Mobile */
-  .navbarNav a.active {
-    color: var(--neon-yellow);
-    border-bottom: 2px solid var(--neon-yellow);
-  }
 
-  /* Staggered Text Animation */
+  /* Links - Elegant Typography */
   .navbarNav a {
-    font-size: 2.2rem; /* Big text for mobile */
-    font-weight: 800;
-    color: rgba(255,255,255,0.6);
+    font-size: 1.25rem; /* ~20px, Readable & Classy */
+    font-weight: 600;
+    color: #cccccc;
+    text-decoration: none;
     transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: center;
-    width: 100%;
+    padding: 10px 25px;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
     display: block;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    /* Removed text-transform: uppercase */
   }
   
   .navbarNav > li {
     width: 100%;
-    text-align: center;
+    max-width: 300px; /* Limit width */
+    display: flex;
+    justify-content: center;
   }
   
-  .navbarNav a:hover {
-    color: var(--neon-yellow);
-    transform: scale(1.1);
+  /* Hover & Active State */
+  .navbarNav a:hover,
+  .navbarNav a.active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05); /* Subtle highlight */
+    transform: scale(1.02);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  /* Hide underline on mobile big menu */
+  /* Specific style for active link text color if needed */
+  .navbarNav a:hover {
+    color: var(--neon-yellow);
+    border-color: rgba(255, 246, 21, 0.3);
+  }
+
+  /* Hide underline from desktop styles */
   .navbarNav a::after {
     display: none;
   }
   
   /* Tombol Pesan di Mobile Menu */
   .btnNavbar {
-    font-size: 1.4rem !important;
-    padding: 18px 50px !important;
-    margin-top: 30px;
-    width: auto;
-    display: inline-flex;
-    background: var(--neon-yellow);
-    color: black !important;
+    font-size: 1.1rem !important;
+    padding: 14px 35px !important;
+    margin-top: 15px;
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(255, 246, 21, 0.25);
+  }
+  
+  .btnNavbar:hover {
+    box-shadow: 0 12px 35px rgba(255, 246, 21, 0.4);
   }
 }
 
