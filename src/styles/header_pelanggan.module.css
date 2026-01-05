@@ -172,17 +172,10 @@
   display: none !important; /* No underline for button */
 }
 
-/* Menu Icon (Burger) */
-.menuIcon {
+
+/* FIX BUG: Hide Mobile Logo on Desktop */
+.mobileLogoContainer {
   display: none;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-.menuIcon:hover {
-  color: var(--neon-yellow);
-  transform: scale(1.1);
 }
 
 /* =========================================
@@ -217,6 +210,7 @@
     
     flex-direction: column;
     justify-content: center;
+    align-items: center; /* Center horizontally */
     gap: 40px;
     z-index: 1001;
     
@@ -234,12 +228,34 @@
     transform: scale(1);
   }
 
+  /* Show Logo on Mobile Only */
+  .mobileLogoContainer {
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .mobileLogo {
+    height: 60px;
+    filter: drop-shadow(0 0 10px rgba(255, 246, 21, 0.4));
+  }
+
   /* Staggered Text Animation */
   .navbarNav a {
     font-size: 2rem; /* Big text for mobile */
     font-weight: 800;
     color: rgba(255,255,255,0.5);
     transition: all 0.3s ease;
+    text-align: center; /* Center text */
+    display: block;
+    width: 100%;
+  }
+  
+  .navbarNav > li {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center li content */
   }
   
   .navbarNav a:hover,
@@ -253,12 +269,26 @@
     display: none;
   }
   
-  /* Tombol Pesan di Mobile Menu */
+  /* Tombol Pesan di Mobile Menu (Center & Minimal) */
   .btnNavbar {
-    font-size: 1.5rem !important;
-    padding: 15px 40px !important;
-    margin-top: 20px;
+    font-size: 1.2rem !important;
+    padding: 15px 45px !important;
+    margin-top: 25px;
     width: auto;
+    display: inline-flex !important;
+    justify-content: center;
+    
+    background: transparent !important;
+    border: 2px solid var(--neon-yellow) !important;
+    color: var(--neon-yellow) !important;
+    border-radius: 50px !important;
+    box-shadow: none !important;
+  }
+
+  .btnNavbar:hover {
+    background: rgba(255, 246, 21, 0.15) !important;
+    box-shadow: 0 0 20px rgba(255, 246, 21, 0.3) !important;
+    transform: scale(1.05) !important;
   }
 }
 
