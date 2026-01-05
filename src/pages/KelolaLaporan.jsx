@@ -5,12 +5,7 @@ import HeaderPage from '../components/component-html/HeaderPage';
 import FooterPage from '../components/component-html/FooterPage';
 import useBlockBack from '../hooks/BlockBack';
 
-const ranges = [
-  { label: 'Harian', value: 'hari' },
-  { label: 'Mingguan', value: 'minggu' },
-  { label: 'Bulanan', value: 'bulan' },
-  { label: 'Tahunan', value: 'tahun' },
-];
+const ranges = [' Hari', 'Mingg', 'Bulan', 'Tahun'];
 
 function LaporanPage() {
   useBlockBack();
@@ -33,9 +28,9 @@ function LaporanPage() {
       alert('Gagal download laporan!');
     }
   };
-  useEffect(() => {
-    document.title = 'Beranda Admin - Basecamp Kopi';
-  }, []);
+    useEffect(() => {
+      document.title = 'Beranda Admin - Basecamp Kopi';
+    }, []);
 
   return (
     <div>
@@ -43,9 +38,9 @@ function LaporanPage() {
       <div className={styles.container}>
         <section className={styles.section}>
           <h2>Laporan Pemesanan</h2>
-          {ranges.map((r) => (
-            <button key={`pemesanan-${r.value}`} className={styles.downloadBtn} onClick={() => downloadLaporan('pemesanan', r.value)}>
-              Download {r.label}
+          {ranges.map((range) => (
+            <button key={`pemesanan-${range}`} className={styles.downloadBtn} onClick={() => downloadLaporan('pemesanan', range)}>
+              Download {range}
             </button>
           ))}
         </section>
