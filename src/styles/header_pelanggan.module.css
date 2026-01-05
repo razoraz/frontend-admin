@@ -60,6 +60,8 @@
   text-transform: uppercase;
   /* Modern Text Gradient */
   background: linear-gradient(to right, #ffffff, #fff615); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 20px rgba(255, 246, 21, 0.3));
 }
 
@@ -202,127 +204,63 @@
     z-index: 1002; /* Above overlay */
   }
 
-  /* FULL SCREEN MENU OVERLAY (Elegant Version) */
+  /* FULL SCREEN MENU OVERLAY */
   .navbarNav ul {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(12, 12, 12, 0.98);
+    background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     
-    display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Rata Kiri */
-    justify-content: center; 
-    gap: 25px;
+    justify-content: center;
+    gap: 40px;
     z-index: 1001;
-    padding: 0 50px; /* Padding kiri lebih besar */
     
-    /* Animation */
+    /* Hidden by default */
     opacity: 0;
     visibility: hidden;
-    transform: translateX(-20px); /* Slide dari kiri */
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    pointer-events: none;
+    transform: scale(1.1);
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
-  /* Active State */
+  /* Active State (Shown via React state) */
   .navbarNav ul.show {
     opacity: 1;
     visibility: visible;
-    transform: translateX(0);
-    pointer-events: auto;
+    transform: scale(1);
   }
 
-  /* Links - Elegant Typography */
+  /* Staggered Text Animation */
   .navbarNav a {
-    font-size: 1.35rem; /* Sedikit lebih besar untuk rata kiri */
-    font-weight: 600;
-    color: #cccccc;
-    text-decoration: none;
+    font-size: 2rem; /* Big text for mobile */
+    font-weight: 800;
+    color: rgba(255,255,255,0.5);
     transition: all 0.3s ease;
-    padding: 10px 0; /* Hapus padding samping */
-    letter-spacing: 0.5px;
-    display: block;
-    width: 100%;
-    text-align: left; /* Rata Kiri */
-    position: relative;
   }
   
-  .navbarNav > li {
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    justify-content: flex-start; /* Rata Kiri */
-  }
-  
-  /* Hover & Active State */
   .navbarNav a:hover,
-  .navbarNav a.active {
+  .navbarNav .active {
     color: var(--neon-yellow);
-    transform: translateX(10px); /* Geser kanan dikit saat hover */
-    background: transparent;
-    box-shadow: none;
-    border: none;
-  }
-  
-  /* Modern Arrow Indicator on Hover */
-  .navbarNav a:hover::before {
-    content: '→';
-    position: absolute;
-    left: -25px;
-    color: var(--neon-yellow);
-    opacity: 1; 
+    transform: translateX(10px); /* Slips to right */
   }
 
-  /* Hide underline */
+  /* Hide underline on mobile big menu */
   .navbarNav a::after {
     display: none;
   }
   
-  /* Mobile Logo Style */
-  .mobileLogoContainer {
-    display: flex !important;
-    justify-content: flex-start;
-    margin-bottom: 20px;
-    width: 100%;
-  }
-
-  .mobileLogo {
-    height: 50px; /* Adjust size as needed */
-    filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 246, 21, 0.3));
-  }
-
-  /* Tombol Pesan (Mobile Minimal) */
+  /* Tombol Pesan di Mobile Menu */
   .btnNavbar {
-    font-size: 1.1rem !important;
-    padding: 10px 0 !important; /* Hapus padding samping */
-    margin-top: 25px;
+    font-size: 1.5rem !important;
+    padding: 15px 40px !important;
+    margin-top: 20px;
     width: auto;
-    justify-content: flex-start; /* Rata kiri */
-    
-    /* Remove Background */
-    background: transparent !important;
-    box-shadow: none !important;
-    color: var(--neon-yellow) !important;
-    border-radius: 0 !important;
-    
-    /* Add slight border bottom or indicator if wanted, or just clean text */
-    border: 1px solid var(--neon-yellow) !important;
-    padding: 12px 30px !important;
-    border-radius: 50px !important;
-  }
-  
-  .btnNavbar:hover {
-    background: rgba(255, 246, 21, 0.1) !important;
-    box-shadow: 0 0 15px rgba(255, 246, 21, 0.2) !important;
-    transform: translateX(5px) !important;
   }
 }
-
 
 @media (max-width: 480px) {
   .motivasiTengah h1 {
