@@ -372,3 +372,15 @@
     white-space: nowrap;
   }
 }
+
+/* ===== SCROLL REVEAL ANIMATION ===== */
+.hiddenSection {
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.visibleSection {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
