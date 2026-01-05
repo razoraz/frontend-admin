@@ -10,7 +10,7 @@ import styles from '../styles/beranda.module.css';
 import HeaderPage from '../components/component-html/HeaderPage';
 import FooterPage from '../components/component-html/FooterPage';
 import useBlockBack from '../hooks/BlockBack';
-import useFadeOnScroll from '../hooks/FadeOnScrool';
+
 
 function Beranda() {
   const navigate = useNavigate();
@@ -23,7 +23,6 @@ function Beranda() {
   }, []);
 
   useBlockBack();
-  useFadeOnScroll();
 
   // Auth
   useEffect(() => {
@@ -43,11 +42,11 @@ function Beranda() {
   };
 
   useEffect(() => {
-    fetchData();
+    fetchData(); // load awal
 
     const interval = setInterval(() => {
       fetchData();
-    }, 60000);
+    }, 60000); // 1 menit
 
     return () => clearInterval(interval);
   }, []);
@@ -80,7 +79,7 @@ function Beranda() {
         </div>
 
         {/* 📊 AKTIVITAS */}
-        <section className={`${styles.activitySection} fade-section`}>
+        <section className={styles.activitySection}>
           <div className={styles.activityHeader}>
             <h2 className={styles.sectionTitle}>📊 Aktivitas Kafe Hari Ini</h2>
             <span className={styles.activityDate}>Hari ini</span>
@@ -129,7 +128,7 @@ function Beranda() {
         </section>
 
         {/* ⚡ AKSI CEPAT */}
-        <section className={`${styles.quickActionSection} fade-section`}>
+        <section className={styles.quickActionSection}>
           <h2 className={styles.sectionTitle}>⚡ Aksi Cepat Admin</h2>
           <div className={styles.decorativeLine2}></div>
 
@@ -150,7 +149,7 @@ function Beranda() {
         </section>
 
         {/* 📌 STATUS */}
-        <section className={`${styles.statusSection} fade-section`}>
+        <section className={styles.statusSection}>
           <h2 className={styles.sectionTitle}>📌 Status Operasional</h2>
           <div className={styles.decorativeLine2}></div>
 
