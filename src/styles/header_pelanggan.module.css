@@ -100,6 +100,10 @@
 }
 
 /* Logo */
+.navLogo {
+  z-index: 1003; /* Lebih tinggi dari menu overlay */
+  position: relative;
+}
 .navLogo img {
   height: 40px;
   filter: brightness(1.1);
