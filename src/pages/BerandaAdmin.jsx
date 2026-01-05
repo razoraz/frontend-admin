@@ -80,7 +80,7 @@ function Beranda() {
         </div>
 
         {/* 📊 AKTIVITAS */}
-        <section className={`${styles.activitySection} fade-on-scroll`}>
+        <section className={`${styles.activitySection} fade-section`}>
           <div className={styles.activityHeader}>
             <h2 className={styles.sectionTitle}>📊 Aktivitas Kafe Hari Ini</h2>
             <span className={styles.activityDate}>Hari ini</span>
@@ -129,7 +129,7 @@ function Beranda() {
         </section>
 
         {/* ⚡ AKSI CEPAT */}
-        <section className={`${styles.quickActionSection} fade-on-scroll`}>
+        <section className={`${styles.quickActionSection} fade-section`}>
           <h2 className={styles.sectionTitle}>⚡ Aksi Cepat Admin</h2>
           <div className={styles.decorativeLine2}></div>
 
@@ -150,7 +150,7 @@ function Beranda() {
         </section>
 
         {/* 📌 STATUS */}
-        <section className={`${styles.statusSection} fade-on-scroll`}>
+        <section className={`${styles.statusSection} fade-section`}>
           <h2 className={styles.sectionTitle}>📌 Status Operasional</h2>
           <div className={styles.decorativeLine2}></div>
 
