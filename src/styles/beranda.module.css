@@ -78,9 +78,9 @@
 
 /* ===== SECTION HEADER ===== */
 .sectionTitle {
+  color: #ffd633;
   font-size: 24px;
   font-weight: 800;
-  -webkit-text-fill-color: transparent;
   display: flex;
   align-items: center;
   gap: 12px;
