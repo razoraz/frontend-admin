@@ -36,7 +36,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%);
+  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
   z-index: 2;
 }
 
@@ -59,7 +59,7 @@
   margin-bottom: 20px;
   text-transform: uppercase;
   /* Modern Text Gradient */
-  background: linear-gradient(to right, #ffffff, #fff615); 
+  background: linear-gradient(to right, #ffffff, #fff615);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 20px rgba(255, 246, 21, 0.3));
@@ -84,19 +84,19 @@
   max-width: 1200px;
   height: 70px;
   z-index: 1000;
-  
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
-  
+
   /* Glassmorphism */
   background: rgba(30, 30, 30, 0.65);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-radius: 50px; /* Pill shape */
   border: 1px solid var(--glass-border);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   transition: all 0.4s ease;
 }
 
@@ -194,11 +194,11 @@
     padding: 0 20px;
     top: 15px;
   }
-  
+
   .motivasiTengah h1 {
     font-size: 2.8rem;
   }
-  
+
   .menuIcon {
     display: block;
     z-index: 1002; /* Above overlay */
@@ -214,15 +214,15 @@
     background: rgba(12, 12, 12, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    
+
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* Rata Kiri */
-    justify-content: center; 
+    justify-content: center;
     gap: 25px;
     z-index: 1001;
     padding: 0 50px; /* Padding kiri lebih besar */
-    
+
     /* Animation */
     opacity: 0;
     visibility: hidden;
@@ -253,14 +253,14 @@
     text-align: left; /* Rata Kiri */
     position: relative;
   }
-  
+
   .navbarNav > li {
     width: 100%;
     max-width: 100%;
     display: flex;
     justify-content: flex-start; /* Rata Kiri */
   }
-  
+
   /* Hover & Active State */
   .navbarNav a:hover,
   .navbarNav a.active {
@@ -270,23 +270,22 @@
     box-shadow: none;
     border: none;
   }
-  
+
   /* Modern Arrow Indicator on Hover */
   .navbarNav a:hover::before {
     content: '→';
     position: absolute;
     left: -25px;
     color: var(--neon-yellow);
-    opacity: 1; 
+    opacity: 1;
   }
 
   /* Hide underline */
   .navbarNav a::after {
     display: none;
   }
-  
+
   /* Tombol Pesan */
-  
 
   /* Tombol Pesan (Mobile Minimal) */
   .btnNavbar {
@@ -299,22 +298,20 @@
     justify-content: center;
     box-shadow: 0 8px 25px rgba(255, 246, 21, 0.2);
     justify-content: flex-start; /* Rata kiri */
-    
+
     /* Remove Background */
     background: transparent !important;
     box-shadow: none !important;
     color: var(--neon-yellow) !important;
     border-radius: 0 !important;
-    
+
     /* Add slight border bottom or indicator if wanted, or just clean text */
     border: 1px solid var(--neon-yellow) !important;
     padding: 12px 30px !important;
     border-radius: 50px !important;
   }
-  
-  .btnNavbar:hover {
-    background: rgba(255, 246, 21, 0.1) !important;
-    box-shadow: 0 0 15px rgba(255, 246, 21, 0.2) !important;
-    transform: translateX(5px) !important;
+
+  .btnNavbar{
+    box-shadow: none !important;
   }
 }
