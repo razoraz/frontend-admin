@@ -51,6 +51,32 @@ function Beranda() {
     return () => clearInterval(interval);
   }, []);
 
+  // Scroll Animation Observer
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1, // Trigger when 10% of element is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(styles.visibleSection);
+          observer.unobserve(entry.target); // Animasi hanya sekali
+        }
+      });
+    }, observerOptions);
+
+    const sections = document.querySelectorAll(`.${styles.activitySection}, .${styles.quickActionSection}, .${styles.statusSection}, .${styles.notificationBox}`);
+    sections.forEach((section) => {
+      section.classList.add(styles.hiddenSection); // Set initial hidden state
+      observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, [summary]); // Re-run when summary loads so elements exist
+
   if (!summary) return <div style={{ color: '#fff615', padding: 40 }}>Loading beranda...</div>;
 
   return (
@@ -58,7 +84,7 @@ function Beranda() {
       <HeaderPage title="BERANDA" />
 
       <main className={styles.container}>
-        {/* 🔔 NOTIFIKASI */}
+        {/* 🔔 NOTIFIKASI - Note: added hiddenSection class via JS above */}
         <div className={styles.notificationBox}>
           <div className={styles.notificationHeader}>
             🔔 Notifikasi Penting
