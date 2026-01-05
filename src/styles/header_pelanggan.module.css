@@ -211,22 +211,22 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(12, 12, 12, 0.95); /* Deep dark elegance */
+    background: rgba(12, 12, 12, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: flex-start; /* Rata Kiri */
     justify-content: center; 
-    gap: 25px; /* Comfortable spacing */
+    gap: 25px;
     z-index: 1001;
-    padding: 0 20px;
+    padding: 0 50px; /* Padding kiri lebih besar */
     
-    /* Animation: Soft Fade & Slide */
+    /* Animation */
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-15px);
+    transform: translateX(-20px); /* Slide dari kiri */
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: none;
   }
@@ -235,68 +235,64 @@
   .navbarNav ul.show {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateX(0);
     pointer-events: auto;
   }
 
   /* Links - Elegant Typography */
   .navbarNav a {
-    font-size: 1.25rem; /* ~20px, Readable & Classy */
+    font-size: 1.35rem; /* Sedikit lebih besar untuk rata kiri */
     font-weight: 600;
     color: #cccccc;
     text-decoration: none;
     transition: all 0.3s ease;
-    padding: 10px 25px;
-    border-radius: 50px;
+    padding: 10px 0; /* Hapus padding samping */
     letter-spacing: 0.5px;
     display: block;
     width: 100%;
-    text-align: center;
+    text-align: left; /* Rata Kiri */
     position: relative;
-    /* Removed text-transform: uppercase */
   }
   
   .navbarNav > li {
     width: 100%;
-    max-width: 300px; /* Limit width */
+    max-width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Rata Kiri */
   }
   
   /* Hover & Active State */
   .navbarNav a:hover,
   .navbarNav a.active {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.05); /* Subtle highlight */
-    transform: scale(1.02);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  /* Specific style for active link text color if needed */
-  .navbarNav a:hover {
     color: var(--neon-yellow);
-    border-color: rgba(255, 246, 21, 0.3);
+    transform: translateX(10px); /* Geser kanan dikit saat hover */
+    background: transparent;
+    box-shadow: none;
+    border: none;
+  }
+  
+  /* Modern Arrow Indicator on Hover */
+  .navbarNav a:hover::before {
+    content: '→';
+    position: absolute;
+    left: -25px;
+    color: var(--neon-yellow);
+    opacity: 1; 
   }
 
-  /* Hide underline from desktop styles */
+  /* Hide underline */
   .navbarNav a::after {
     display: none;
   }
   
-  /* Tombol Pesan di Mobile Menu */
+  /* Tombol Pesan */
   .btnNavbar {
     font-size: 1.1rem !important;
-    padding: 14px 35px !important;
-    margin-top: 15px;
-    width: 100%;
-    max-width: 250px;
+    padding: 14px 40px !important;
+    margin-top: 20px;
+    width: auto;
     justify-content: center;
-    box-shadow: 0 8px 25px rgba(255, 246, 21, 0.25);
-  }
-  
-  .btnNavbar:hover {
-    box-shadow: 0 12px 35px rgba(255, 246, 21, 0.4);
+    box-shadow: 0 8px 25px rgba(255, 246, 21, 0.2);
   }
 }
 
