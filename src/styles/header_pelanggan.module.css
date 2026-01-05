@@ -213,8 +213,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh; /* Ubah menjadi full height */
+  height: 80vh; /* Ubah menjadi full height */
   width: 100%;
+  border-radius: 10px;
   
   /* Glassmorphism yang lebih transparan dan modern */
   background: rgba(18, 18, 18, 0.92) !important; /* Sedikit lebih terang */
