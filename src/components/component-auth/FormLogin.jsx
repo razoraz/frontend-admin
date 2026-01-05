@@ -22,7 +22,7 @@ function LoginForm({ error, setError, onSuccess, onError }) {
       onError({
         title: 'Data Kosong',
         message: 'Data wajib diisi.',
-        type: 'error',
+        type: 'warning',
       });
       return;
     }
