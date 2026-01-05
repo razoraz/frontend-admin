@@ -38,6 +38,11 @@ function HeaderPagePelanggan({ bg_video, title, subtitle }) {
           <div className={styles.navbarNav}>
             {/* Gunakan conditional class */}
             <ul className={menuActive ? styles.show : ''}>
+              {/* Mobile Logo */}
+              <li className={styles.mobileLogoContainer}>
+                <img src="/logo_kafe/Logo.PNG" alt="Basecamp Kopi" className={styles.mobileLogo} />
+              </li>
+
               <li>
                 <Link to="/beranda-pelanggan">Beranda</Link>
               </li>
@@ -55,7 +60,7 @@ function HeaderPagePelanggan({ bg_video, title, subtitle }) {
               </li>
               <li>
                 <Link to="/scanner" className={styles.btnNavbar}>
-                  <i className="fa-solid fa-mug-hot"></i> Pesan Kopi
+                  <i className="fa-solid fa-mug-saucer"></i> Pesan Disini
                 </Link>
               </li>
             </ul>
