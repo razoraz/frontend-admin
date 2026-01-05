@@ -172,12 +172,6 @@
   display: none !important; /* No underline for button */
 }
 
-
-/* FIX BUG: Hide Mobile Logo on Desktop */
-.mobileLogoContainer {
-  display: none;
-}
-
 /* =========================================
    📱 MOBILE RESPONSIVE (The "Gen Z" Part) 
 ========================================= */
@@ -186,6 +180,10 @@
     width: 92%;
     padding: 0 20px;
     top: 15px;
+  }
+  .navLogo {
+    align-self: center;
+    margin-bottom: 10px;
   }
   
   .motivasiTengah h1 {
@@ -227,20 +225,6 @@
     visibility: visible;
     transform: scale(1);
   }
-
-  /* Show Logo on Mobile Only */
-  .mobileLogoContainer {
-    display: block;
-    margin-bottom: 20px;
-    text-align: center;
-    width: 100%;
-  }
-
-  .mobileLogo {
-    height: 60px;
-    filter: drop-shadow(0 0 10px rgba(255, 246, 21, 0.4));
-  }
-
   /* Staggered Text Animation */
   .navbarNav a {
     font-size: 2rem; /* Big text for mobile */
@@ -248,7 +232,6 @@
     color: rgba(255,255,255,0.5);
     transition: all 0.3s ease;
     text-align: center; /* Center text */
-    display: block;
     width: 100%;
   }
   
