@@ -1,4 +1,4 @@
-/* 🌌 GEN Z AESTHETIC HEADER */
+/* 🌌 GEN Z AESTHETIC HEADER - RESTORED STABLE VERSION */
 
 /* --- Variables --- */
 :root {
@@ -162,6 +162,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  text-decoration: none !important;
 }
 
 .btnNavbar:hover {
@@ -172,8 +173,21 @@
   display: none !important; /* No underline for button */
 }
 
+/* Menu Icon (Burger) */
+.menuIcon {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.menuIcon:hover {
+  color: var(--neon-yellow);
+  transform: scale(1.1);
+}
+
 /* =========================================
-   📱 MOBILE RESPONSIVE (The "Gen Z" Part) 
+   📱 MOBILE RESPONSIVE
 ========================================= */
 @media (max-width: 900px) {
   .navContent {
@@ -183,7 +197,7 @@
   }
   .navLogo {
     align-self: center;
-    margin-bottom: 10px;
+    margin-bottom: 0;
   }
   
   .motivasiTengah h1 {
@@ -202,20 +216,20 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(10, 10, 10, 0.95);
+    background: rgba(10, 10, 10, 0.98); /* Solid dark */
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Center horizontally */
-    gap: 40px;
+    align-items: center; 
+    gap: 30px;
     z-index: 1001;
     
     /* Hidden by default */
     opacity: 0;
     visibility: hidden;
-    transform: scale(1.1);
+    transform: translateY(-10px);
     transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
@@ -223,28 +237,30 @@
   .navbarNav ul.show {
     opacity: 1;
     visibility: visible;
-    transform: scale(1);
+    transform: translateY(0);
   }
+
   /* Staggered Text Animation */
   .navbarNav a {
-    font-size: 2rem; /* Big text for mobile */
-    font-weight: 800;
-    color: rgba(255,255,255,0.5);
+    font-size: 1.5rem; /* Standard comfortable size */
+    font-weight: 700;
+    color: #ccc;
     transition: all 0.3s ease;
-    text-align: center; /* Center text */
+    text-align: center;
     width: 100%;
+    display: block;
   }
   
   .navbarNav > li {
     width: 100%;
     display: flex;
-    justify-content: center; /* Center li content */
+    justify-content: center;
   }
   
   .navbarNav a:hover,
   .navbarNav .active {
     color: var(--neon-yellow);
-    transform: translateX(10px); /* Slips to right */
+    transform: scale(1.05); 
   }
 
   /* Hide underline on mobile big menu */
@@ -252,26 +268,21 @@
     display: none;
   }
   
-  /* Tombol Pesan di Mobile Menu (Center & Minimal) */
+  /* Tombol Pesan di Mobile Menu (Simple & Clean) */
   .btnNavbar {
     font-size: 1.2rem !important;
-    padding: 15px 45px !important;
-    margin-top: 25px;
+    padding: 15px 40px !important;
+    margin-top: 20px;
     width: auto;
-    display: inline-flex !important;
-    justify-content: center;
     
     background: transparent !important;
     border: 2px solid var(--neon-yellow) !important;
     color: var(--neon-yellow) !important;
-    border-radius: 50px !important;
     box-shadow: none !important;
   }
 
   .btnNavbar:hover {
-    background: rgba(255, 246, 21, 0.15) !important;
-    box-shadow: 0 0 20px rgba(255, 246, 21, 0.3) !important;
-    transform: scale(1.05) !important;
+    background: rgba(255, 246, 21, 0.1) !important;
   }
 }
 
