@@ -1,25 +1,15 @@
 /* CSS GLOBAL */
-:root {
-  --color-neon: #fff615;
-  --color-dark: #0d0d0d;
-  --color-card-bg: linear-gradient(145deg, #252525, #1a1a1a);
-  --glass-bg: rgba(28, 28, 28, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.08);
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Source Serif 4', serif;
 }
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-
 html,
 body {
   overflow-x: hidden;
@@ -29,7 +19,7 @@ body {
 /* body scroll smooth */
 html {
   scroll-behavior: smooth;
-  background: #050505; /* Darker background for neon contrast */
+  background: #050505;
   color: #fff;
 }
 
@@ -37,53 +27,6 @@ a {
   text-decoration: none;
   color: inherit;
   transition: all 0.3s ease;
-}
-
-/* GLOBAL DECORATIVE LINE (Standardized) */
-.decorativeLine {
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--color-neon), transparent);
-  margin: 16px 0 32px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255, 246, 21, 0.3);
-}
-
-/* 3D UTILITY CLASSES */
-.card-3d {
-  background: var(--color-card-bg);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-  transform-style: preserve-3d;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  position: relative;
-  overflow: hidden;
-}
-
-.card-3d:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 
-    0 20px 40px rgba(0,0,0,0.6),
-    0 0 20px rgba(255, 246, 21, 0.15); /* Neon Glow */
-  border-color: rgba(255, 246, 21, 0.3);
-}
-
-.card-3d::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(255, 246, 21, 0.1), transparent);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-}
-
-.card-3d:hover::after {
-  opacity: 1;
 }
 
 /* Fade On Scroll */
