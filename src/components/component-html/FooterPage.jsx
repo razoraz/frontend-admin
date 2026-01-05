@@ -30,6 +30,7 @@ function FooterPage() {
         <div className={styles.footerCol}>
           <div className={styles.footerContent}>
             <h4>Kontak Kami</h4>
+            <div className="decorativeLine"></div>
             <ul>
               <li>
                 <Link to="https://wa.me/6281337142265" target="_blank">
@@ -52,6 +53,7 @@ function FooterPage() {
 
           <div className={styles.footerContent}>
             <h4>Layanan</h4>
+            <div className="decorativeLine"></div>
             <ul>
               <li>
                 <Link to="/pemesanan">Kelola Pemesanan</Link>
@@ -76,6 +78,7 @@ function FooterPage() {
 
           <div className={styles.footerContent}>
             <h4>Keunggulan</h4>
+            <div className="decorativeLine"></div>
             <ul>
               <li>
                 <Link to="/beranda">Cepat dan Efisien</Link>
