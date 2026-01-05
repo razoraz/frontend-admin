@@ -1,10 +1,9 @@
-/* GEN Z HEADER PELANGGAN */
+/* 🌌 Navbar Section */
 .navbar {
   position: relative;
   width: 100%;
-  height: 85vh; /* Taller hero section */
+  height: 70vh;
   overflow: hidden;
-  background: #000;
 }
 
 /* 🎥 Video Background */
@@ -16,15 +15,15 @@
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  filter: brightness(0.4) contrast(1.2) grayscale(0.2);
+  filter: brightness(0.5) contrast(1.1) saturate(1.2);
 }
 
-/* Overlay gradient */
+/* Overlay gelap */
 .navbar::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.95) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.85));
   z-index: 2;
 }
 
@@ -40,112 +39,117 @@
   text-align: center;
   color: #fff615;
   padding: 20px;
-  /* Glass effect container */
-  background: rgba(0, 0, 0, 0.2); 
   backdrop-filter: blur(3px);
+  text-shadow: 0 0 25px rgba(255, 246, 21, 0.3);
+  animation: fadeInText 2.5s ease-in-out forwards;
 }
-
 .motivasiTengah h1 {
-  font-size: 4rem;
-  font-weight: 900;
-  letter-spacing: -1px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  background: linear-gradient(to right, #fff, #fff615);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 20px rgba(255, 246, 21, 0.4));
-  animation: slideUpFade 1.5s ease-out;
-}
-
-.motivasiTengah p {
-  font-size: 1.4rem;
-  color: #e0e0e0;
-  font-weight: 300;
+  font-size: 3rem;
+  font-weight: 800;
   letter-spacing: 1px;
-  margin-top: 10px;
-  max-width: 600px;
-  animation: slideUpFade 2s ease-out;
+  margin-bottom: 10px;
+  animation: glowPulse 3s infinite alternate;
+}
+.motivasiTengah p {
+  font-size: 1.2rem;
+  color: #f8f8f8;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-top: 5px;
+  opacity: 0.9;
 }
 
-@keyframes slideUpFade {
-  0% { opacity: 0; transform: translateY(50px); }
-  100% { opacity: 1; transform: translateY(0); }
+/* Animation */
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 10px #fff615, 0 0 20px #fff615;
+  }
+  to {
+    text-shadow: 0 0 30px #fff615, 0 0 50px #fff615;
+  }
 }
 
 /* 🌒 Navbar Content (atas) */
 .navContent {
   position: fixed;
-  top: 0;
-  left: 0;
   z-index: 10000;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 30px;
+  padding: 16px;
   width: 100%;
-  height: auto;
-  min-height: 80px;
-  background: rgba(10, 10, 10, 0.8);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  height: 90px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), transparent);
+  backdrop-filter: blur(10px);
   transition: all 0.3s ease-in-out;
 }
-
 .navLogo img {
-  height: 60px;
+  height: 90px;
   transition: 0.3s;
-  filter: drop-shadow(0 0 5px rgba(255, 246, 21, 0.3));
-}
-
-.navLogo:hover img {
-  transform: scale(1.05) rotate(-3deg);
+  filter: brightness(0.9);
 }
 
 /* 🖤 Navbar Links */
 .navbarNav ul {
   display: flex;
-  align-items: center;
   list-style: none;
   margin: 0;
-  gap: 15px;
+  padding-right: 48px;
 }
-
-.navbarNav a {
-  padding: 8px 16px;
-  color: #ccc;
+.navbarNav li {
+  margin: 0 16px;
+  font-weight: 700;
   font-size: 15px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border-radius: 20px;
-  transition: all 0.3s ease;
   position: relative;
 }
-
-.navbarNav a:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+.navbarNav a {
+  padding: 10px;
+  color: #e9e9e9;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+.navbarNav li:hover a {
+  color: #fff615;
+}
+.navbarNav li:not(:has(.btnNavbar))::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #fff615;
+  transition: 0.3s;
+}
+.navbarNav li:hover::after {
+  width: 50%;
+  margin: auto;
 }
 
-/* Active/Indicator line handled globally or via specific active class if needed, for now hover is enough */
-
-/* 🟨 Tombol Pesan (Special) */
+/* 🟨 Tombol Pesan */
 .btnNavbar {
-  background: var(--color-neon, #fff615) !important;
-  color: #000 !important;
-  font-weight: 800 !important;
-  box-shadow: 0 0 20px rgba(255, 246, 21, 0.4) !important;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fff615;
+  color: #000000 !important;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none !important;
+  transition: background-color 0.3s ease, transform 0.2s;
   border: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
-
 .btnNavbar:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 0 30px rgba(255, 246, 21, 0.6) !important;
+  background-color: #fffa9f;
+  transform: scale(1.05);
 }
 
 /* Menu Icon Navbar */
@@ -153,70 +157,131 @@
   font-size: 28px;
   display: none;
   cursor: pointer;
-  color: #fff;
-  padding: 5px;
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
-  background: rgba(0,0,0,0.5);
+  color: #fff615;
+}
+.show {
+  display: block;
+}
+.materialIconsOutlined {
+  margin-right: 10px;
 }
 
 /* ✅ Responsif */
 @media (max-width: 992px) {
-  .menuIcon {
-    display: block;
-  }
-  
-  .navContent {
-    padding: 10px 20px;
-  }
-
-  .navbarNav ul {
-    display: none; /* Mobile menu hidden by default */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    flex-direction: column;
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(20px);
-    padding: 20px;
-    gap: 10px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-
-  .navbarNav ul.show {
-    display: flex;
-    animation: slideDown 0.3s ease-out;
-  }
-
-  @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .navbarNav a {
-    display: block;
-    width: 100%;
-    text-align: center;
-    background: rgba(255,255,255,0.03);
-  }
-
   .motivasiTengah h1 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
-  
   .motivasiTengah p {
     font-size: 1rem;
-    padding: 0 20px;
+  }
+  .navContent {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 55vh;
+  }
+  .navContent {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 1rem;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    backdrop-filter: blur(5px);
+  }
+  .navLogo {
+    align-self: center;
+    margin-bottom: 10px;
+  }
+  .navbarNav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    position: relative;
+  }
+  .navbarNav ul.show {
+    display: flex;
+  }
+  .navbarNav li {
+    width: 100%;
+    padding: 10px 16px;
+    margin: 0;
+    text-align: left;
+  }
+  .navbarNav li a {
+    display: block;
+    width: 100%;
+    padding: 10px 16px;
+    text-align: left;
+  }
+  .navbarNav > ul > li:not(.dropdown):hover > a {
+    border-radius: 10px;
+    background: rgba(255, 246, 21, 0.15);
+    color: #fff615 !important;
+    box-shadow: 0 0 10px rgba(255, 246, 21, 0.4);
+    transform: translateY(-2px);
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  }
+  .menuIcon {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1.5rem 10%;
+  }
+  .navbar .navbarNav {
+    width: 100%;
+  }
+  .menuIcon:hover {
+    color: #ffd633;
+  }
+  .navbar .navbarNav ul {
+    display: none;
+  }
+  .navbar .navbarNav ul.show {
+    display: flex;
+    flex-direction: column;
+  }
+  .navbarTitle h1 {
+    margin-top: 50px;
+  }
+  .navbarNav li::after,
+  .navbarNav li:hover::after {
+    display: none !important;
+    content: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    color: #f5f5f5 !important;
+  }
+  .navbarNav ul li .btnNavbar {
+    display: block;        
+    margin: 10px auto;  
+    text-align: center; 
+  }
+  .motivasiTengah h1 {
+    font-size: 1.8rem;
+  }
+  .motivasiTengah p {
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
   .navbar {
-    height: 60vh;
+    height: 50vh;
   }
-  
   .motivasiTengah h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+  .motivasiTengah p {
+    font-size: 0.85rem;
   }
 }
