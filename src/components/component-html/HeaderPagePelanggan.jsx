@@ -38,11 +38,6 @@ function HeaderPagePelanggan({ bg_video, title, subtitle }) {
           <div className={styles.navbarNav}>
             {/* Gunakan conditional class */}
             <ul className={menuActive ? styles.show : ''}>
-              {/* Mobile Logo */}
-              <li className={styles.mobileLogoContainer}>
-                <img src="/logo_kafe/Logo.PNG" alt="Basecamp Kopi" className={styles.mobileLogo} />
-              </li>
-
               <li>
                 <Link to="/beranda-pelanggan">Beranda</Link>
               </li>
