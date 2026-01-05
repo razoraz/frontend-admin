@@ -64,7 +64,6 @@ function BerandaPage() {
         {/* Aksi Utama */}
         <section className={styles.actionSection}>
           <h2>☕ Mau Ngopi Apa Hari Ini?</h2>
-          <div className="decorativeLine" style={{ margin: '15px auto', width: '100px' }}></div>
           <p>Pilih menu favoritmu dan nikmati suasana Basecamp Kopi</p>
 
           <div className={styles.actionButtons}>
@@ -80,7 +79,6 @@ function BerandaPage() {
         {/* Menu Terlaris */}
         <section className={styles.favoriteSection}>
           <h3 className={styles.sectionTitle}>🔥 Menu Favorit Pelanggan</h3>
-          <div className="decorativeLine" style={{ margin: '0 auto 40px' }}></div>
 
           <div className={styles.menuGrid}>
             {menuTerlaris.length > 0 ? (
@@ -98,8 +96,7 @@ function BerandaPage() {
         </section>
         {/* Feedback */}
         <section className={styles.feedbackSection}>
-          <h3 className={styles.sectionTitle}>💬 Apa Kata Pelanggan</h3>
-          <div className="decorativeLine" style={{ margin: '0 auto 40px' }}></div>
+          <h3>💬 Apa Kata Pelanggan</h3>
 
           <div className={styles.feedbackGrid}>
             {feedback.length > 0 ? (
@@ -123,7 +120,6 @@ function BerandaPage() {
 ====================== */}
         <section className={styles.eventSection}>
           <h3 className={styles.sectionTitle}>🎁 Event & Promo</h3>
-          <div className="decorativeLine" style={{ margin: '0 auto 40px' }}></div>
 
           {event && (
             <div className={styles.eventGrid}>
