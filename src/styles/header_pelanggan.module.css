@@ -220,11 +220,15 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     
+    display: flex; /* Ensure flex is active */
     flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-    gap: 30px;
+    justify-content: flex-start; /* Move items up */
+    align-items: flex-start; /* Left align items */
+    gap: 25px;
     z-index: 1001;
+    
+    padding-top: 120px; /* Moved up (was centered) */
+    padding-left: 50px; /* Left alignment spacing */
     
     /* Hidden by default */
     opacity: 0;
@@ -246,7 +250,7 @@
     font-weight: 700;
     color: #ccc;
     transition: all 0.3s ease;
-    text-align: center;
+    text-align: left; /* Left align text */
     width: 100%;
     display: block;
   }
@@ -254,13 +258,13 @@
   .navbarNav > li {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Limit content width */
   }
   
   .navbarNav a:hover,
   .navbarNav .active {
     color: var(--neon-yellow);
-    transform: scale(1.05); 
+    transform: translateX(10px); /* Slide right interaction */
   }
 
   /* Hide underline on mobile big menu */
@@ -268,22 +272,73 @@
     display: none;
   }
   
-  /* Tombol Pesan di Mobile Menu (Simple & Clean) */
+  /* Tombol Pesan di Mobile Menu (Centered & Clean) */
+  .btnNavbar {
+    font-size: 1.2rem !important;
+    padding: 15px 45px !important;
+    margin-top: 30px;
+    width: auto;
+    
+    /* Center the button implies overriding flex-start */
+    align-self: center; /* This centers the button in the flex container */
+    margin-left: -50px; /* Counteract the container padding-left to be truly centered if needed, 
+                         OR better: set margin-left: auto; margin-right: auto + container adjustments.
+                         Let's try absolute centering relative to screen width logic or valid flex centering. */
+    margin-left: calc(50vw - 50px - (150px / 2)); /* Rough calc or just use global center */
+  }
+  /* Better centering approach for button mixed with left items */
+  .navbarNav li:last-child {
+      width: 100%;
+      display: flex;
+      justify-content: center; /* Center the li containing the button */
+      position: absolute;
+      bottom: 100px; /* Place button at bottom or just center it below? User said "tetap di tengah". */
+      left: 0;
+      padding: 0;
+  }
+
+  /* Let's try a simpler approach for the button styles first without absolute positioning if possible */
   .btnNavbar {
     font-size: 1.2rem !important;
     padding: 15px 40px !important;
-    margin-top: 20px;
-    width: auto;
     
     background: transparent !important;
     border: 2px solid var(--neon-yellow) !important;
     color: var(--neon-yellow) !important;
     box-shadow: none !important;
+    
+    /* Reset transform logic for button to avoid double slide */
+    transform: none !important;
   }
+  
+  /* Special handling for centering button while others are left */
+  /* We target the LI wrapping the button actually */
+}
 
-  .btnNavbar:hover {
-    background: rgba(255, 246, 21, 0.1) !important;
-  }
+@media (max-width: 900px) {
+    /* Overriding the li rule specifically for the button container if it's the last one */
+    .navbarNav li:has(.btnNavbar) {
+        justify-content: center;
+        width: 100vw;
+        position: absolute;
+        bottom: 80px; 
+        left: 0;
+    }
+    /* Fallback if :has isn't supported commonly enough yet (though it is in modern browsers). 
+       Assuming it's the last child based on file structure: */
+    .navbarNav > li:last-child {
+       justify-content: center;
+       position: fixed; /* Stick to bottom area */
+       bottom: 15%;
+       left: 0;
+       width: 100%;
+       padding: 0;
+    }
+    
+    /* Counteract padding-left of UL for this absolute item */
+    .navbarNav {
+        /* No specific styling on nav, but UL has padding */
+    }
 }
 
 @media (max-width: 480px) {
