@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import styles from '../../styles/footer.module.css';
 
 // Main Function FooterPage
-function FooterPagePelanggan() {
+function FooterPage() {
   return (
     <footer className={styles.footer}>
       <div className={styles.rowFooter}>
@@ -30,7 +30,6 @@ function FooterPagePelanggan() {
         <div className={styles.footerCol}>
           <div className={styles.footerContent}>
             <h4>Kontak Kami</h4>
-            <div className="decorativeLine"></div>
             <ul>
               <li>
                 <Link to="https://wa.me/6281337142265" target="_blank">
@@ -53,7 +52,6 @@ function FooterPagePelanggan() {
 
           <div className={styles.footerContent}>
             <h4>Layanan</h4>
-            <div className="decorativeLine"></div>
             <ul>
               <li>
                 <Link to="/scanner">Pemesanan Kopi</Link>
@@ -66,7 +64,6 @@ function FooterPagePelanggan() {
 
           <div className={styles.footerContent}>
             <h4>Keunggulan</h4>
-            <div className="decorativeLine"></div>
             <ul>
               <li>
                 <Link to="/beranda-pelanggan">Kualitas Terbaik</Link>
