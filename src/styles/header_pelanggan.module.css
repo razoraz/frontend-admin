@@ -211,41 +211,61 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(10, 10, 10, 0.98); /* Almost solid background for better readability */
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     
+    display: flex; /* Force flex display */
     flex-direction: column;
-    justify-content: center;
-    gap: 40px;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    gap: 30px;
     z-index: 1001;
+    padding-bottom: 50px; /* Slight offset for visual balance */
     
     /* Hidden by default */
     opacity: 0;
     visibility: hidden;
-    transform: scale(1.1);
+    transform: translateY(-20px) scale(0.98);
     transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    pointer-events: none; /* Prevent clicks when hidden */
   }
 
   /* Active State (Shown via React state) */
   .navbarNav ul.show {
     opacity: 1;
     visibility: visible;
-    transform: scale(1);
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+  
+  /* Active Link Indicator Mobile */
+  .navbarNav a.active {
+    color: var(--neon-yellow);
+    border-bottom: 2px solid var(--neon-yellow);
   }
 
   /* Staggered Text Animation */
   .navbarNav a {
-    font-size: 2rem; /* Big text for mobile */
+    font-size: 2.2rem; /* Big text for mobile */
     font-weight: 800;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.6);
     transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    width: 100%;
+    display: block;
   }
   
-  .navbarNav a:hover,
-  .navbarNav .active {
+  .navbarNav > li {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .navbarNav a:hover {
     color: var(--neon-yellow);
-    transform: translateX(10px); /* Slips to right */
+    transform: scale(1.1);
   }
 
   /* Hide underline on mobile big menu */
@@ -255,12 +275,16 @@
   
   /* Tombol Pesan di Mobile Menu */
   .btnNavbar {
-    font-size: 1.5rem !important;
-    padding: 15px 40px !important;
-    margin-top: 20px;
+    font-size: 1.4rem !important;
+    padding: 18px 50px !important;
+    margin-top: 30px;
     width: auto;
+    display: inline-flex;
+    background: var(--neon-yellow);
+    color: black !important;
   }
 }
+
 
 @media (max-width: 480px) {
   .motivasiTengah h1 {
