@@ -80,8 +80,6 @@
 .sectionTitle {
   font-size: 24px;
   font-weight: 800;
-  background: linear-gradient(90deg, #ffd633, #fff615);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: flex;
   align-items: center;
@@ -366,5 +364,10 @@
   /* Disable some heavy 3D effects on mobile for performance/UX */
   .card:hover {
     transform: translateY(-5px);
+  }
+
+  .activityDate {
+    font-size: 12px;
+    padding: 4px 10px;
   }
 }
