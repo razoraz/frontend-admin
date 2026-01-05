@@ -28,7 +28,7 @@
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  filter: brightness(0.4) contrast(1.1); /* Darker for better text visibility */
+  filter: brightness(0.4) contrast(1.1);
 }
 
 /* Gradient Overlay */
@@ -51,14 +51,13 @@
 }
 
 .motivasiTengah h1 {
-  font-size: 4rem; /* Big & Bold */
+  font-size: 4rem;
   font-weight: 900;
   letter-spacing: -2px;
   line-height: 1.1;
   color: white;
   margin-bottom: 20px;
   text-transform: uppercase;
-  /* Modern Text Gradient */
   background: linear-gradient(to right, #ffffff, #fff615);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -94,7 +93,7 @@
   background: rgba(30, 30, 30, 0.65);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-radius: 50px; /* Pill shape */
+  border-radius: 50px;
   border: 1px solid var(--glass-border);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   transition: all 0.4s ease;
@@ -154,7 +153,7 @@
 /* 🟨 Tombol Pesan (Pill Button) */
 .btnNavbar {
   background: var(--neon-yellow);
-  color: #111 !important; /* Force black text */
+  color: #111 !important;
   padding: 10px 24px !important;
   border-radius: 30px;
   font-weight: 700 !important;
@@ -162,6 +161,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  border: none !important;
 }
 
 .btnNavbar:hover {
@@ -169,7 +169,7 @@
   box-shadow: 0 5px 15px rgba(255, 246, 21, 0.4);
 }
 .btnNavbar::after {
-  display: none !important; /* No underline for button */
+  display: none !important;
 }
 
 /* Menu Icon (Burger) */
@@ -179,6 +179,7 @@
   color: white;
   cursor: pointer;
   transition: transform 0.3s ease;
+  z-index: 1002;
 }
 .menuIcon:hover {
   color: var(--neon-yellow);
@@ -186,7 +187,7 @@
 }
 
 /* =========================================
-   📱 MOBILE RESPONSIVE (The "Gen Z" Part) 
+   📱 MOBILE RESPONSIVE 
 ========================================= */
 @media (max-width: 900px) {
   .navContent {
@@ -201,10 +202,9 @@
 
   .menuIcon {
     display: block;
-    z-index: 1002; /* Above overlay */
   }
 
-  /* FULL SCREEN MENU OVERLAY (Elegant Version) */
+  /* FULL SCREEN MENU OVERLAY */
   .navbarNav ul {
     position: fixed;
     top: 0;
@@ -217,16 +217,15 @@
 
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Rata Kiri */
+    align-items: flex-start;
     justify-content: center;
     gap: 25px;
     z-index: 1001;
-    padding: 0 50px; /* Padding kiri lebih besar */
+    padding: 0 50px;
 
-    /* Animation */
     opacity: 0;
     visibility: hidden;
-    transform: translateX(-20px); /* Slide dari kiri */
+    transform: translateX(-20px);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: none;
   }
@@ -239,39 +238,36 @@
     pointer-events: auto;
   }
 
-  /* Links - Elegant Typography */
+  /* Links - Clean Design */
   .navbarNav a {
-    font-size: 1.35rem; /* Sedikit lebih besar untuk rata kiri */
+    font-size: 1.35rem;
     font-weight: 600;
     color: #cccccc;
     text-decoration: none;
     transition: all 0.3s ease;
-    padding: 10px 0; /* Hapus padding samping */
+    padding: 10px 0;
     letter-spacing: 0.5px;
     display: block;
     width: 100%;
-    text-align: left; /* Rata Kiri */
+    text-align: left;
     position: relative;
   }
 
-  .navbarNav > li {
+  .navbarNav li {
     width: 100%;
-    max-width: 100%;
     display: flex;
-    justify-content: flex-start; /* Rata Kiri */
+    justify-content: flex-start;
   }
 
-  /* Hover & Active State */
+  /* Hover Effect */
   .navbarNav a:hover,
   .navbarNav a.active {
     color: var(--neon-yellow);
-    transform: translateX(10px); /* Geser kanan dikit saat hover */
+    transform: translateX(10px);
     background: transparent;
-    box-shadow: none;
-    border: none;
   }
 
-  /* Modern Arrow Indicator on Hover */
+  /* Modern Arrow Indicator */
   .navbarNav a:hover::before {
     content: '→';
     position: absolute;
@@ -280,38 +276,55 @@
     opacity: 1;
   }
 
-  /* Hide underline */
+  /* Hide underline on mobile */
   .navbarNav a::after {
     display: none;
   }
 
-  /* Tombol Pesan */
-
-  /* Tombol Pesan (Mobile Minimal) */
-  .btnNavbar {
-    font-size: 1.1rem !important;
-    padding: 14px 40px !important;
-    margin-top: 20px;
-    padding: 10px 0 !important; /* Hapus padding samping */
-    margin-top: 25px;
-    width: auto;
-    justify-content: center;
-    box-shadow: 0 8px 25px rgba(255, 246, 21, 0.2);
-    justify-content: flex-start; /* Rata kiri */
-
-    /* Remove Background */
+  /* TOMBOL PESAN - SAMA DENGAN LINK LAIN */
+  .navbarNav .btnNavbar {
+    /* Reset semua styling tombol */
     background: transparent !important;
     box-shadow: none !important;
-    color: var(--neon-yellow) !important;
+    color: #cccccc !important;
+    border: none !important;
     border-radius: 0 !important;
-
-    /* Add slight border bottom or indicator if wanted, or just clean text */
-    border: 1px solid var(--neon-yellow) !important;
-    padding: 12px 30px !important;
-    border-radius: 50px !important;
+    padding: 10px 0 !important;
+    font-size: 1.35rem !important;
+    font-weight: 600 !important;
+    justify-content: flex-start;
+    margin-top: 0;
+    display: block;
+    text-align: left;
   }
 
-  .btnNavbar{
+  /* Hover state tombol sama dengan link lain */
+  .navbarNav .btnNavbar:hover {
+    color: var(--neon-yellow) !important;
+    transform: translateX(10px) !important;
+    background: transparent !important;
     box-shadow: none !important;
+  }
+
+  /* Icon dalam tombol */
+  .navbarNav .btnNavbar i {
+    color: #cccccc;
+    transition: color 0.3s ease;
+  }
+
+  .navbarNav .btnNavbar:hover i {
+    color: var(--neon-yellow);
+  }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
