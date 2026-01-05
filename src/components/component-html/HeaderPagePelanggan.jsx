@@ -25,7 +25,6 @@ function HeaderPagePelanggan({ bg_video, title, subtitle }) {
         {/* ✨ Motivasi Tengah ✨ */}
         <div className={styles.motivasiTengah}>
           <h1>{title}</h1>
-          <div className="decorativeLine" style={{ margin: '10px auto', width: '60px', height: '3px' }}></div>
           <p>{subtitle}</p>
         </div>
 
