@@ -94,7 +94,7 @@ function HeaderPage({ title }) {
 
       <section className={styles.navbarTitle}>
         <h1>{title}</h1>
-        <div className="decorativeLine" style={{ margin: '16px auto' }}></div>
+        <div className={styles.decorativeLine}></div>
       </section>
 
       <Modal isOpen={modalOpen} onClose={handleCloseModal} title={modalTitle} message={modalMessage} type={modalType} />
