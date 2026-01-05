@@ -211,9 +211,9 @@
   /* FULL SCREEN MENU OVERLAY */
   .navbarNav ul {
     position: fixed;
-    margin-top: -20px;
     top: 0;
     left: 0;
+    height: 80vh;
     border-radius: 10px;
     width: 100%;
     background: rgba(12, 12, 12, 0.98);
