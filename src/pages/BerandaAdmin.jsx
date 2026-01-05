@@ -10,7 +10,7 @@ import styles from '../styles/beranda.module.css';
 import HeaderPage from '../components/component-html/HeaderPage';
 import FooterPage from '../components/component-html/FooterPage';
 import useBlockBack from '../hooks/BlockBack';
-
+import useFadeOnScroll from '../hooks/FadeOnScrool';
 
 function Beranda() {
   const navigate = useNavigate();
@@ -23,6 +23,7 @@ function Beranda() {
   }, []);
 
   useBlockBack();
+  useFadeOnScroll();
 
   // Auth
   useEffect(() => {
@@ -42,40 +43,14 @@ function Beranda() {
   };
 
   useEffect(() => {
-    fetchData(); // load awal
+    fetchData();
 
     const interval = setInterval(() => {
       fetchData();
-    }, 60000); // 1 menit
+    }, 60000);
 
     return () => clearInterval(interval);
   }, []);
-
-  // Scroll Animation Observer
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1, // Trigger when 10% of element is visible
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add(styles.visibleSection);
-          observer.unobserve(entry.target); // Animasi hanya sekali
-        }
-      });
-    }, observerOptions);
-
-    const sections = document.querySelectorAll(`.${styles.activitySection}, .${styles.quickActionSection}, .${styles.statusSection}, .${styles.notificationBox}`);
-    sections.forEach((section) => {
-      section.classList.add(styles.hiddenSection); // Set initial hidden state
-      observer.observe(section);
-    });
-
-    return () => observer.disconnect();
-  }, [summary]); // Re-run when summary loads so elements exist
 
   if (!summary) return <div style={{ color: '#fff615', padding: 40 }}>Loading beranda...</div>;
 
@@ -84,7 +59,7 @@ function Beranda() {
       <HeaderPage title="BERANDA" />
 
       <main className={styles.container}>
-        {/* 🔔 NOTIFIKASI - Note: added hiddenSection class via JS above */}
+        {/* 🔔 NOTIFIKASI */}
         <div className={styles.notificationBox}>
           <div className={styles.notificationHeader}>
             🔔 Notifikasi Penting
@@ -105,7 +80,7 @@ function Beranda() {
         </div>
 
         {/* 📊 AKTIVITAS */}
-        <section className={styles.activitySection}>
+        <section className={`${styles.activitySection} fade-section`}>
           <div className={styles.activityHeader}>
             <h2 className={styles.sectionTitle}>📊 Aktivitas Kafe Hari Ini</h2>
             <span className={styles.activityDate}>Hari ini</span>
@@ -154,7 +129,7 @@ function Beranda() {
         </section>
 
         {/* ⚡ AKSI CEPAT */}
-        <section className={styles.quickActionSection}>
+        <section className={`${styles.quickActionSection} fade-section`}>
           <h2 className={styles.sectionTitle}>⚡ Aksi Cepat Admin</h2>
           <div className={styles.decorativeLine2}></div>
 
@@ -175,7 +150,7 @@ function Beranda() {
         </section>
 
         {/* 📌 STATUS */}
-        <section className={styles.statusSection}>
+        <section className={`${styles.statusSection} fade-section`}>
           <h2 className={styles.sectionTitle}>📌 Status Operasional</h2>
           <div className={styles.decorativeLine2}></div>
 
