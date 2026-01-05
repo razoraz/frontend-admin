@@ -71,10 +71,10 @@ function HeaderPage({ title }) {
               </button>
               {dropdownOpen && (
                 <ul className={`${styles.dropdownMenu} ${styles.show}`}>
-                  <li><Link to="/kelola-meja">Data Meja</Link></li>
-                  <li><Link to="/kelola-kategori">Data Kategori</Link></li>
-                  <li><Link to="/kelola-laporan">Laporan</Link></li>
-                  <li><Link to="/kelola-event">Event</Link></li>
+                  <li><Link to="/kelola-meja">Kelola Meja</Link></li>
+                  <li><Link to="/kelola-kategori">Kelola Kategori</Link></li>
+                  <li><Link to="/kelola-laporan">Unduh Laporan</Link></li>
+                  <li><Link to="/kelola-event">Kelola Event</Link></li>
                 </ul>
               )}
             </li>
