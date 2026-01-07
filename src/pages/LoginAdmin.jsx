@@ -32,6 +32,7 @@ function LoginPage() {
 
   return (
     <div className={styles.centerWrapper}>
+      <div class="floatingToy"></div>
       <div className={styles.loginCard}>
         {/* Component VideoSide */}
         <VideoSide />
