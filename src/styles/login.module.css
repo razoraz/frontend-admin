@@ -43,25 +43,6 @@
   cursor: grabbing;
 }
 
-/* Ngambang */
-@keyframes floatIdle {
-  0% {
-    transform: translate(-0px, -50%);
-  }
-  50% {
-    transform: translate(-25px, -55%);
-  }
-  100% {
-    transform: translate(0px, -50%);
-  }
-}
-
-/* Hilang di HP */
-@media (max-width: 768px) {
-  .floatingToy {
-    display: none;
-  }
-}
 
 .loginCard {
   display: flex;
