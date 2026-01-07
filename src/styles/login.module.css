@@ -5,23 +5,38 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative; /* penting */
+  overflow: hidden;   /* biar mantul */
 }
+
 
 /* MAINAN */
 .floatingToy {
   position: absolute;
-  right: 6%;
+  left: calc(50% + 420px);
   top: 50%;
+
   width: 65px;
   height: 65px;
   border-radius: 50%;
   background: radial-gradient(circle at 30% 30%, #fff615, #9c9400);
-  box-shadow: 0 0 15px rgba(255, 246, 21, 0.7), inset 0 0 10px rgba(255, 255, 255, 0.4);
+
+  box-shadow:
+    0 0 15px rgba(255, 246, 21, 0.7),
+    inset 0 0 10px rgba(255,255,255,0.4);
+
   cursor: grab;
-  transform: translateY(-50%);
-  z-index: 5;
+  transform: translate(-50%, -50%);
+  z-index: 10;
 
   animation: floatIdle 4s ease-in-out infinite;
+  touch-action: none; /* ⭐ WAJIB untuk HP */
+}
+
+@keyframes floatIdle {
+  0% { transform: translate(-50%, -50%); }
+  50% { transform: translate(-70%, -55%); }
+  100% { transform: translate(-50%, -50%); }
 }
 
 .floatingToy:active {
