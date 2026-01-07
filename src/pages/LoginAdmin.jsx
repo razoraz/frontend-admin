@@ -145,8 +145,6 @@ function LoginPage() {
     <div className={styles.centerWrapper}>
       {/* 🧸 MAINAN */}
       <div ref={toyRef} className={styles.floatingToy}></div>
-      <div ref={toyRef} className={styles.floatingToy}></div>
-
       {/* 🟨 LOGIN CARD */}
       <div ref={cardRef} className={styles.loginCard}>
         {/* Component VideoSide */}
