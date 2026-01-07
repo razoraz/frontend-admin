@@ -7,35 +7,46 @@
   align-items: center;
 }
 
+/* MAINAN */
 .floatingToy {
   position: absolute;
-  right: 8%;
-  width: 60px;
-  height: 60px;
+  right: 6%;
+  top: 50%;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
-  background: radial-gradient(circle, #fff615, #b3aa00);
-  box-shadow: 0 0 20px rgba(255, 246, 21, 0.6);
-  cursor: pointer;
+  background: radial-gradient(circle at 30% 30%, #fff615, #9c9400);
+  box-shadow: 0 0 15px rgba(255, 246, 21, 0.7), inset 0 0 10px rgba(255, 255, 255, 0.4);
+  cursor: grab;
+  transform: translateY(-50%);
+  z-index: 5;
 
-  animation: floatSide 4s ease-in-out infinite;
-  transition: transform 0.2s ease;
+  animation: floatIdle 4s ease-in-out infinite;
 }
-@keyframes floatSide {
+
+.floatingToy:active {
+  cursor: grabbing;
+}
+
+/* Ngambang */
+@keyframes floatIdle {
   0% {
-    transform: translateX(0);
+    transform: translate(-0px, -50%);
   }
   50% {
-    transform: translateX(-25px);
+    transform: translate(-25px, -55%);
   }
   100% {
-    transform: translateX(0);
+    transform: translate(0px, -50%);
   }
 }
-.floatingToy:hover {
-  transform: translateX(-40px) rotate(15deg) scale(1.1);
-  box-shadow: 0 0 30px rgba(255, 246, 21, 0.9);
-}
 
+/* Hilang di HP */
+@media (max-width: 768px) {
+  .floatingToy {
+    display: none;
+  }
+}
 
 .loginCard {
   display: flex;
@@ -52,16 +63,23 @@
 
 /* Animasi */
 @keyframes neonFlickerRandom {
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
     box-shadow: 0 0 20px rgba(255, 246, 21, 0.7);
     opacity: 1;
   }
-  20%, 24%, 55% {
+  20%,
+  24%,
+  55% {
     box-shadow: none;
     opacity: 0.3;
   }
 }
-
 
 /* Kiri: Video */
 .videoSide {
@@ -150,7 +168,6 @@ input[type='password']::-ms-clear {
 .errorText {
   display: none;
 }
-
 
 /*  Css Link Action */
 .actions {
