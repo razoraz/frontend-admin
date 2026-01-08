@@ -213,7 +213,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 80vh; /* Ubah menjadi full height */
+  height: 90vh; /* Ubah menjadi full height */
   width: 100%;
   border-radius: 10px;
   
@@ -260,7 +260,7 @@
 
   /* Links - Clean Design */
   .navbarNav a {
-    font-size: 1.35rem;
+    font-size: 1 rem;
     font-weight: 600;
     color: #cccccc;
     text-decoration: none;
