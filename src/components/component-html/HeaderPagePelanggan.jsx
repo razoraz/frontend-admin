@@ -1,6 +1,6 @@
 // Import Library
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 // Import Style (pakai module)
 import styles from '../../styles/header_pelanggan.module.css'; // pastikan path benar
@@ -9,6 +9,7 @@ import styles from '../../styles/header_pelanggan.module.css'; // pastikan path 
 function HeaderPagePelanggan({ bg_video, title, subtitle }) {
   // Gunakan state untuk menu responsive
   const [menuActive, setMenuActive] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setMenuActive(!menuActive);
@@ -39,19 +40,19 @@ function HeaderPagePelanggan({ bg_video, title, subtitle }) {
             {/* Gunakan conditional class */}
             <ul className={menuActive ? styles.show : ''}>
               <li>
-                <Link to="/beranda-pelanggan">Beranda</Link>
+                <Link to="/beranda-pelanggan" className={location.pathname === '/beranda-pelanggan' ? styles.active : ''}>Beranda</Link>
               </li>
               <li>
-                <Link to="/daftar-menu">Menu</Link>
+                <Link to="/daftar-menu" className={location.pathname === '/daftar-menu' ? styles.active : ''}>Menu</Link>
               </li>
               <li>
-                <Link to="/form-reservasi">Reservasi</Link>
+                <Link to="/form-reservasi" className={location.pathname === '/form-reservasi' ? styles.active : ''}>Reservasi</Link>
               </li>
               <li>
-                <Link to="/feedback-pelanggan">Feedback</Link>
+                <Link to="/feedback-pelanggan" className={location.pathname === '/feedback-pelanggan' ? styles.active : ''}>Feedback</Link>
               </li>
               <li>
-                <Link to="/tentang-kami">Tentang Kami</Link>
+                <Link to="/tentang-kami" className={location.pathname === '/tentang-kami' ? styles.active : ''}>Tentang Kami</Link>
               </li>
               <li>
                 <Link to="/scanner" className={styles.btnNavbar}>
