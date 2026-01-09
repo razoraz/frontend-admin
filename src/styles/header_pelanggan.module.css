@@ -128,7 +128,7 @@
   font-weight: 900 !important;
   position: relative;
 }
-.navbarNav a.active :hover {
+.navbarNav a.active:hover {
   color: var(--text-primary);
 
 }
