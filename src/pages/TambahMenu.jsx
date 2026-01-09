@@ -92,7 +92,7 @@ function TambahMenu() {
     e.preventDefault();
 
     // Validasi form dulu
-    if (!formData.nama_menu.trim() || !formData.id_kategori || !formData.harga || !formData.status_tersedia || !formData.gambar_menu) {
+    if (!formData.nama_menu.trim() || !formData.id_kategori || !formData.harga || !formData.status_tersedia) {
       setModalType('error');
       setModalTitle('Penambahan Gagal');
       setModalMessage('Data yang anda isi tidak sesuai. Silahkan periksa kembali.');
