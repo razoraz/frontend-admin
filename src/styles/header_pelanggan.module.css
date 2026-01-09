@@ -336,6 +336,14 @@
     color: var(--neon-yellow);
   }
 }
+@media (max-width: 480px) {
+ .navbarNav a{
+    font-size: 1.2rem;
+  }
+  .navbarNav .btnNavbar {
+    font-size: 1.2rem !important;
+ }
+}
 
 /* Animation */
 @keyframes fadeInUp {
