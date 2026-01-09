@@ -25,7 +25,7 @@ function DaftarMenu() {
   useEffect(() => {
     document.title = 'Daftar Menu - Basecamp Kopi';
     axios
-      .get('https://backend-production-8cf7.up.railway.app/api/menu/menu')
+      .get('https://backend-production-8cf7.up.railway.app/api/menu-pelanggan/daftar-menu')
       .then((res) => setMenu(res.data))
       .catch((err) => console.error('Gagal ambil menu:', err));
   }, []);
