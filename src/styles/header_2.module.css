@@ -36,8 +36,36 @@
   font-size: 15px;
   position: relative;
 }
-.navbarNav li:active {
-  color: #fff615;
+/* Active Link Styling - YANG INI YANG LU BUTUHH!! */
+.navbarNav a.active {
+  color: #fff615 !important;
+  font-weight: 900 !important;
+  position: relative;
+}
+
+/* Tambah underline buat active */
+.navbarNav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 10px;
+  right: 10px;
+  height: 3px;
+  background-color: #fff615;
+  border-radius: 2px;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Atau lebih kentara: */
+.navbarNav a.active {
+  color: #fff615 !important;
+  font-weight: 900;
+  background: rgba(255, 246, 21, 0.15);
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 246, 21, 0.4);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
 }
 .navbarNav a {
   padding: 10px;
