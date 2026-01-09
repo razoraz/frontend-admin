@@ -71,7 +71,7 @@ function TambahMenu() {
       if (res.ok) {
         setModalType('success');
         setModalTitle('Penambahan Berhasil');
-        setModalMessage('Menu berhasil ditambahkan.');
+        setModalMessage('Data berhasil ditambahkan.');
       } else {
         setModalType('error');
         setModalTitle('Penambahan Gagal');
@@ -139,7 +139,7 @@ function TambahMenu() {
       </main>
 
       {/* Modal Konfirmasi (Question) */}
-      {confirmOpen && <Modal isOpen={confirmOpen} onClose={handleConfirmNo} title="Tambah Menu" message="Apakah Anda yakin menambah data menu ini?" type="question" onConfirm={handleConfirmYes} confirmLabel="Tambah" cancelLabel="Batal" />}
+      {confirmOpen && <Modal isOpen={confirmOpen} onClose={handleConfirmNo} title="Tambah Menu" message="Apakah anda yakin menambah data menu ini?" type="question" onConfirm={handleConfirmYes} confirmLabel="Tambah" cancelLabel="Batal" />}
 
       {/* Modal Hasil (Success / Error) */}
       <Modal isOpen={modalOpen} onClose={handleModalClose} title={modalTitle} message={modalMessage} type={modalType} />
