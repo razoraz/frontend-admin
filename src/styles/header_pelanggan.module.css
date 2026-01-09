@@ -129,17 +129,6 @@
   position: relative;
 }
 
-/* Atau lebih kentara: */
-.navbarNav a.active {
-  color: var(--neon-yellow) !important;
-  font-weight: 900;
-  background: rgba(255, 246, 21, 0.15);
-  padding: 10px 15px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(255, 246, 21, 0.4);
-  transform: scale(1.05);
-  transition: all 0.3s ease;
-}
 .navbarNav a {
   text-decoration: none;
   font-size: 0.95rem;
