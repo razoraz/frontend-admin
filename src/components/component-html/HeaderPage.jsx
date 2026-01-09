@@ -1,7 +1,7 @@
 // Component: HeaderPage
 
 // Import Library
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 // Import Component
@@ -13,6 +13,7 @@ import styles from '../../styles/header_2.module.css';
 // Main Function HeaderPage
 function HeaderPage({ title }) {
   const navigate = useNavigate();
+  const location = useLocation();
   const [modalOpen, setModalOpen] = useState(false);
   const [modalType, setModalType] = useState('');
   const [modalTitle, setModalTitle] = useState('');
@@ -58,11 +59,16 @@ function HeaderPage({ title }) {
 
         <div className={styles.navbarNav}>
           <ul id="nav-list">
-            <li><Link to="/beranda">Beranda</Link></li>
-            <li><Link to="/menu">Menu</Link></li>
-            <li><Link to="/reservasi">Reservasi</Link></li>
-            <li><Link to="/pemesanan">Pemesanan</Link></li>
-            <li><Link to="/feedback">Feedback</Link></li>
+            <li><Link to="/beranda"
+            className={location.pathname === '/beranda' ? styles.active : ''}>Beranda</Link></li>
+            <li><Link to="/menu"
+            className={location.pathname === '/menu' ? styles.active : ''}>Menu</Link></li>
+            <li><Link to="/reservasi"
+            className={location.pathname === '/reservasi' ? styles.active : ''}>Reservasi</Link></li>
+            <li><Link to="/pemesanan"
+            className={location.pathname === '/pemesanan' ? styles.active : ''}>Pemesanan</Link></li>
+            <li><Link to="/feedback"
+            className={location.pathname === '/feedback' ? styles.active : ''}>Feedback</Link></li>
 
             {/* Dropdown Future */}
             <li className={styles.dropdown}>
