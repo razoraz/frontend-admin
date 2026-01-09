@@ -1,5 +1,6 @@
 // Import Library
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 // Import Style
 import styles from '../styles/password_baru.module.css';
 
@@ -9,10 +10,21 @@ import Modal from '../components/modal-notifikasi/ModalNotifikasi';
 
 // Main Function NewPasswordPage
 function NewPasswordPage() {
-  // Title Halaman
+  const navigate = useNavigate();
+
   useEffect(() => {
     document.title = 'Password Baru - Basecamp Kopi';
-  }, []);
+
+    const token = sessionStorage.getItem('resetToken');
+    if (!token) {
+      navigate('/forgot-password', { replace: true });
+    }
+
+    // 🔥 JIKA USER KELUAR DARI HALAMAN INI
+    return () => {
+      sessionStorage.removeItem('resetToken');
+    };
+  }, [navigate]);
   // State modal
   const [modalOpen, setModalOpen] = useState(false);
   const [modalData, setModalData] = useState({ title: '', message: '', type: '' });
