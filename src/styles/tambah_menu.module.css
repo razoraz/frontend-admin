@@ -5,11 +5,11 @@
   justify-content: center;
   align-items: center;
   padding: 40px 20px;
-  background: #111;
 }
 
 /* Form */
 .menuForm {
+  background: #222;
   padding: 25px;
   border-radius: 12px;
   width: 100%;
