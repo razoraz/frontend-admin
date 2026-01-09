@@ -185,6 +185,24 @@
   }
 }
 
+ul#nav-list li a.active {
+  color: #ffd633;
+  font-weight: bold;
+  position: relative;
+}
+
+ul#nav-list li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #ffd633;
+  border-radius: 3px;
+}
+
+
 /* Garis */
 .decorativeLine {
   width: 80%;
