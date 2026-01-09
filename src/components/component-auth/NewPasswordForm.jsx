@@ -20,6 +20,9 @@ function NewPasswordForm({ onError, onSuccess }) {
     if (!token) {
       navigate('/forgot-password', { replace: true });
     }
+    return () => {
+      sessionStorage.removeItem('resetToken');
+    };
   }, [navigate]);
 
   const handleSubmit = async (e) => {
@@ -96,36 +99,16 @@ function NewPasswordForm({ onError, onSuccess }) {
       <div className={styles.inputGroup}>
         <label htmlFor="password">Password Baru</label>
         <div className={styles.inputWrapper}>
-          <input
-            type={showPassword ? 'text' : 'password'}
-            id="password"
-            required
-            placeholder="Masukkan password baru"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <i
-            className={`fa-solid ${showPassword ? 'fa-eye-slash' : 'fa-eye'} ${styles.togglePassword}`}
-            onClick={() => setShowPassword(!showPassword)}
-          ></i>
+          <input type={showPassword ? 'text' : 'password'} id="password" required placeholder="Masukkan password baru" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <i className={`fa-solid ${showPassword ? 'fa-eye-slash' : 'fa-eye'} ${styles.togglePassword}`} onClick={() => setShowPassword(!showPassword)}></i>
         </div>
       </div>
 
       <div className={styles.inputGroup}>
         <label htmlFor="confirm-password">Konfirmasi Password</label>
         <div className={styles.inputWrapper}>
-          <input
-            type={showConfirmPassword ? 'text' : 'password'}
-            id="confirm-password"
-            required
-            placeholder="Ulangi password baru"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-          <i
-            className={`fa-solid ${showConfirmPassword ? 'fa-eye-slash' : 'fa-eye'} ${styles.togglePassword}`}
-            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-          ></i>
+          <input type={showConfirmPassword ? 'text' : 'password'} id="confirm-password" required placeholder="Ulangi password baru" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+          <i className={`fa-solid ${showConfirmPassword ? 'fa-eye-slash' : 'fa-eye'} ${styles.togglePassword}`} onClick={() => setShowConfirmPassword(!showConfirmPassword)}></i>
         </div>
       </div>
 
