@@ -123,9 +123,3 @@ textarea {
 .btnSubmit:hover {
   background: #218838;
 }
-
-@media (max-width: 480px) {
-  .formContainer {
-    margin-top: 20px;
-  }
-}
