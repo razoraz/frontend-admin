@@ -92,7 +92,7 @@ function TambahMenu() {
     e.preventDefault();
 
     // Validasi form dulu
-    if (!formData.nama_menu.trim() || !formData.id_kategori || !formData.harga || !formData.deskripsi.trim() || !formData.status_tersedia || !formData.gambar_menu) {
+    if (!formData.nama_menu.trim() || !formData.id_kategori || !formData.harga || !formData.status_tersedia || !formData.gambar_menu) {
       setModalType('error');
       setModalTitle('Penambahan Gagal');
       setModalMessage('Data yang anda isi tidak sesuai. Silahkan periksa kembali.');
@@ -102,7 +102,7 @@ function TambahMenu() {
     if (parseInt(formData.harga) <= 0) {
       setModalType('error');
       setModalTitle('Penambahan Gagal');
-      setModalMessage('Harga tidak boleh 0 atau negatif!');
+      setModalMessage('Data yang anda isi tidak sesuai. Silahkan periksa kembali.');
       setModalOpen(true);
       return;
     }
