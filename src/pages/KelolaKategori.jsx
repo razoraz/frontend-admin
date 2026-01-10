@@ -126,16 +126,27 @@ function KelolaKategori() {
   };
 
   // HANDLER DELETE
+  // HANDLER DELETE SEDERHANA & PASTI BEKERJA
   const handleDelete = (id_kategori) => {
     showModal('question', 'Hapus Kategori', 'Apakah anda yakin ingin menghapus data kategori ini?', async () => {
-      closeModal(); // tutup modal konfirmasi dulu
+      closeModal();
       try {
-        await fetch(`${API_URL}/${id_kategori}`, { method: 'DELETE' });
-        setKategoriList((prev) => prev.filter((m) => m.id_kategori !== id_kategori));
+        // 1. Hapus dari backend
+        await fetch(`${API_URL}/${id_kategori}`, {
+          method: 'DELETE',
+        });
+
+        // 2. Hapus dari state dengan cara yang robust
+        setKategoriList((prevList) => {
+          // Gunakan Number() untuk normalisasi
+          const deleteId = Number(id_kategori);
+          return prevList.filter((item) => Number(item.id_kategori) !== deleteId);
+        });
+
         showModal('success', 'Berhasil Dihapus', 'Data kategori berhasil dihapus.');
       } catch (err) {
+        console.error('Delete error:', err);
         showModal('error', 'Error', 'Gagal menghapus kategori!');
-        console.log(err);
       }
     });
   };
