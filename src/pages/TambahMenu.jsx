@@ -82,7 +82,7 @@ function TambahMenu() {
       console.error(error);
       setModalType('error');
       setModalTitle('Penambahan Gagal');
-      setModalMessage('Terjadi kesalahan koneksi ke server!');
+      setModalMessage('Data yang anda isi tidak sesuai. Silahkan periksa kembali.');
       setModalOpen(true);
     }
   };
