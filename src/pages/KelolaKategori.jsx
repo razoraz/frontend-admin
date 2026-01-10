@@ -139,12 +139,9 @@ const handleDelete = (id_kategori) => {
           method: 'DELETE',
         });
 
-        const data = await res.json();
-
         if (!res.ok) {
           // 🔥 PESAN KHUSUS
           throw new Error(
-            data.message ||
             'Kategori tidak dapat dihapus karena masih digunakan oleh menu.'
           );
         }
