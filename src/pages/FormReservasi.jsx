@@ -26,6 +26,14 @@ function FormReservasi() {
     jam_reservasi: '',
     tanggal_dibuat: new Date().toISOString().split('T')[0],
   });
+  // Hitung tanggal besok
+  const today = new Date();
+  const besok = new Date(today);
+  besok.setDate(today.getDate() + 1);
+
+  // Format YYYY-MM-DD
+  const formatDate = (date) => date.toISOString().split('T')[0];
+  const maxTanggal = formatDate(besok);
 
   useEffect(() => {
     document.title = 'Reservasi Meja - Basecamp Kopi';
@@ -97,8 +105,7 @@ function FormReservasi() {
             <form onSubmit={handleSubmit}>
               <div className={styles.inputGroup}>
                 <label>Nama Lengkap</label>
-                <input type="text" name="nama_pelanggan" value={formData.nama_pelanggan} onChange={handleChange}
-                placeholder="Masukkan nama lengkap Anda" />
+                <input type="text" name="nama_pelanggan" value={formData.nama_pelanggan} onChange={handleChange} placeholder="Masukkan nama lengkap Anda" />
               </div>
 
               <div className={styles.inputGroup}>
@@ -121,7 +128,7 @@ function FormReservasi() {
 
               <div className={styles.inputGroup}>
                 <label>Tanggal Reservasi</label>
-                <input type="date" name="tanggal_reservasi" value={formData.tanggal_reservasi} onChange={handleChange} />
+                <input type="date" name="tanggal_reservasi" value={formData.tanggal_reservasi} onChange={handleChange} max={maxTanggal} />
               </div>
 
               <div className={styles.inputGroup}>
