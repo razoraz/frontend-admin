@@ -126,7 +126,7 @@ function KelolaKategori() {
   };
 
   // HANDLER DELETE
- const handleDelete = (id_kategori) => {
+const handleDelete = (id_kategori) => {
   showModal(
     'question',
     'Hapus Kategori',
@@ -139,10 +139,14 @@ function KelolaKategori() {
           method: 'DELETE',
         });
 
-        // 🔥 CEK STATUS RESPONSE
+        const data = await res.json();
+
         if (!res.ok) {
-          const errData = await res.json();
-          throw new Error(errData.message || 'Gagal hapus kategori');
+          // 🔥 PESAN KHUSUS
+          throw new Error(
+            data.message ||
+            'Kategori tidak dapat dihapus karena masih digunakan oleh menu.'
+          );
         }
 
         setKategoriList((prev) => {
@@ -156,10 +160,17 @@ function KelolaKategori() {
           return updated;
         });
 
-        showModal('success', 'Berhasil Dihapus', 'Data kategori berhasil dihapus.');
+        showModal(
+          'success',
+          'Berhasil Dihapus',
+          'Data kategori berhasil dihapus.'
+        );
       } catch (err) {
-        console.error(err);
-        showModal('error', 'Error', err.message || 'Gagal menghapus kategori!');
+        showModal(
+          'error',
+          'Gagal Menghapus',
+          err.message
+        );
       }
     }
   );
