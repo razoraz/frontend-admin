@@ -126,30 +126,45 @@ function KelolaKategori() {
   };
 
   // HANDLER DELETE
-  // HANDLER DELETE SEDERHANA & PASTI BEKERJA
-  const handleDelete = (id_kategori) => {
-    showModal('question', 'Hapus Kategori', 'Apakah anda yakin ingin menghapus data kategori ini?', async () => {
+ const handleDelete = (id_kategori) => {
+  showModal(
+    'question',
+    'Hapus Kategori',
+    'Apakah anda yakin ingin menghapus data kategori ini?',
+    async () => {
       closeModal();
+
       try {
-        // 1. Hapus dari backend
-        await fetch(`${API_URL}/${id_kategori}`, {
+        const res = await fetch(`${API_URL}/${id_kategori}`, {
           method: 'DELETE',
         });
 
-        // 2. Hapus dari state dengan cara yang robust
-        setKategoriList((prevList) => {
-          // Gunakan Number() untuk normalisasi
-          const deleteId = Number(id_kategori);
-          return prevList.filter((item) => Number(item.id_kategori) !== deleteId);
+        // 🔥 CEK STATUS RESPONSE
+        if (!res.ok) {
+          const errData = await res.json();
+          throw new Error(errData.message || 'Gagal hapus kategori');
+        }
+
+        setKategoriList((prev) => {
+          const updated = prev.filter((m) => m.id_kategori !== id_kategori);
+
+          const newTotalPages = Math.ceil(updated.length / ITEMS_PER_PAGE);
+          if (currentPage > newTotalPages) {
+            setCurrentPage(newTotalPages || 1);
+          }
+
+          return updated;
         });
 
         showModal('success', 'Berhasil Dihapus', 'Data kategori berhasil dihapus.');
       } catch (err) {
-        console.error('Delete error:', err);
-        showModal('error', 'Error', 'Gagal menghapus kategori!');
+        console.error(err);
+        showModal('error', 'Error', err.message || 'Gagal menghapus kategori!');
       }
-    });
-  };
+    }
+  );
+};
+
 
   // Pagination
   const totalPages = Math.ceil(kategoriList.length / ITEMS_PER_PAGE);
