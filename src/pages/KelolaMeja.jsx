@@ -110,7 +110,6 @@ function KelolaMeja() {
         }
       });
     } else {
-
       // UPDATE
       if (!mejaInput || !kapasitasInput) {
         showModal('error', 'Perubahan Gagal', 'Silahkan isi semua kolom!');
@@ -118,7 +117,7 @@ function KelolaMeja() {
       }
       const updatedMeja = { no_meja: mejaInput, kapasitas: kapasitasInput };
       showModal('question', 'Simpan Perubahan', 'Apakah anda yakin ingin merubah data meja ini?', async () => {
-        closeModal(); 
+        closeModal();
         try {
           await fetch(`${API_URL}/${editingId}`, {
             method: 'PUT',
@@ -177,40 +176,41 @@ function KelolaMeja() {
   const currentItems = mejaList.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   return (
-    <div className={styles.kelolaContainer}>
+    <div>
       {/* HEADER */}
       <HeaderPage title="KELOLA MEJA" />
 
-      {/* CONTENT */}
-      <div className={styles.centerWrapper}>
-        {/* TABLE */}
-        <TableMeja
-          currentItems={currentItems}
-          startIndex={startIndex}
-          handleEdit={handleEdit}
-          handleDelete={handleDelete}
-          handleDownloadQR={handleDownloadQR}
-          currentPage={currentPage}
-          totalPages={totalPages}
-          setCurrentPage={setCurrentPage}
-          FRONTEND_URL={FRONTEND_URL}
-        />
-        {/* FORM */}
-        <FormMeja
-          mejaInput={mejaInput}
-          kapasitasInput={kapasitasInput}
-          setMejaInput={setMejaInput}
-          setKapasitasInput={setKapasitasInput}
-          editingId={editingId}
-          onSubmit={handleAddOrUpdate}
-          onCancel={() => {
-            setEditingId(null);
-            setMejaInput('');
-            setKapasitasInput('');
-          }}
-        />
+      <div className={styles.kelolaContainer}>
+        {/* CONTENT */}
+        <div className={styles.centerWrapper}>
+          {/* TABLE */}
+          <TableMeja
+            currentItems={currentItems}
+            startIndex={startIndex}
+            handleEdit={handleEdit}
+            handleDelete={handleDelete}
+            handleDownloadQR={handleDownloadQR}
+            currentPage={currentPage}
+            totalPages={totalPages}
+            setCurrentPage={setCurrentPage}
+            FRONTEND_URL={FRONTEND_URL}
+          />
+          {/* FORM */}
+          <FormMeja
+            mejaInput={mejaInput}
+            kapasitasInput={kapasitasInput}
+            setMejaInput={setMejaInput}
+            setKapasitasInput={setKapasitasInput}
+            editingId={editingId}
+            onSubmit={handleAddOrUpdate}
+            onCancel={() => {
+              setEditingId(null);
+              setMejaInput('');
+              setKapasitasInput('');
+            }}
+          />
+        </div>
       </div>
-
       {/* FOOTER */}
       <FooterPage />
 
