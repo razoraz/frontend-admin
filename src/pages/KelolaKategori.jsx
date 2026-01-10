@@ -28,7 +28,6 @@ function KelolaKategori() {
   const [modal, setModal] = useState({ isOpen: false, type: '', title: '', message: '', onConfirm: null });
   const [currentPage, setCurrentPage] = useState(1);
 
-
   const showModal = (type, title, message, onConfirm = null) => {
     setModal({ isOpen: true, type, title, message, onConfirm });
   };
@@ -100,15 +99,14 @@ function KelolaKategori() {
         }
       });
     } else {
-
       // UPDATE
       if (!kategoriInput) {
         showModal('error', 'Perubahan Gagal', 'Silahkan isi semua kolom!');
         return;
       }
-      const updatedKategori = { nama_kategori:kategoriInput};
+      const updatedKategori = { nama_kategori: kategoriInput };
       showModal('question', 'Simpan Perubahan', 'Apakah anda yakin ingin merubah data kategori ini?', async () => {
-        closeModal(); 
+        closeModal();
         try {
           await fetch(`${API_URL}/${editingId}`, {
             method: 'PUT',
@@ -118,7 +116,7 @@ function KelolaKategori() {
           setKategoriList((prev) => prev.map((m) => (m.id_kategori === editingId ? { ...m, nama: updatedKategori.nama_kategori } : m)));
           showModal('success', 'Perubahan Berhasil', 'Data Kategori berhasil diubah.');
           setEditingId(null);
-          setKategoriInput('');        
+          setKategoriInput('');
         } catch (err) {
           showModal('error', 'Error', 'Gagal mengubah kategori!');
           console.log(err);
@@ -149,40 +147,31 @@ function KelolaKategori() {
 
   return (
     <div>
-       <HeaderPage title="KELOLA KATEGORI" />
-    // MAIN CONTAINER
-    <div className={styles.kelolaContainer}>
-      {/* HEADER */}
-     
-
+      <HeaderPage title="KELOLA KATEGORI" />
       {/* CONTENT */}
-      <div className={styles.centerWrapper}>
-        {/* TABLE */}
-        <TableKategori
-          currentItems={currentItems}
-          startIndex={startIndex}
-          handleEdit={handleEdit}
-          handleDelete={handleDelete}
-          currentPage={currentPage}
-          totalPages={totalPages}
-          setCurrentPage={setCurrentPage}
-        />
-        {/* FORM */}
-        <FormKategori
-          kategoriInput={kategoriInput}
-          setKategoriInput={setKategoriInput}
-          editingId={editingId}
-          onSubmit={handleAddOrUpdate}
-          onCancel={() => {
-            setEditingId(null);
-            setKategoriInput('');
-          }}
-        />
+      <div className={styles.kelolaContainer}>
+        {/* HEADER */}
+
+        {/* CONTENT */}
+        <div className={styles.centerWrapper}>
+          {/* TABLE */}
+          <TableKategori currentItems={currentItems} startIndex={startIndex} handleEdit={handleEdit} handleDelete={handleDelete} currentPage={currentPage} totalPages={totalPages} setCurrentPage={setCurrentPage} />
+          {/* FORM */}
+          <FormKategori
+            kategoriInput={kategoriInput}
+            setKategoriInput={setKategoriInput}
+            editingId={editingId}
+            onSubmit={handleAddOrUpdate}
+            onCancel={() => {
+              setEditingId(null);
+              setKategoriInput('');
+            }}
+          />
+        </div>
       </div>
-    </div>
       {/* FOOTER */}
       <FooterPage />
-       {/* MODAL */}
+      {/* MODAL */}
       <Modal isOpen={modal.isOpen} type={modal.type} title={modal.title} message={modal.message} onClose={closeModal} onConfirm={modal.onConfirm} />
     </div>
   );
