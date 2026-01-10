@@ -100,7 +100,7 @@ function KelolaKategori() {
             },
           ]);
 
-          showModal('success', 'Penambahan Berhasil', 'Data kategori berhasil ditambahkan.');
+          showModal('success', 'Penambahan Berhasil', 'Data berhasil ditambahkan.');
 
           setKategoriInput('');
         } catch (err) {
@@ -115,7 +115,7 @@ function KelolaKategori() {
         return;
       }
       const updatedKategori = { nama_kategori: kategoriInput };
-      showModal('question', 'Simpan Perubahan', 'Apakah anda yakin ingin merubah data kategori ini?', async () => {
+      showModal('question', 'Simpan Perubahan', 'Apakah anda yakin ingin merubah data kategori menu ini?', async () => {
         closeModal();
         try {
           await fetch(`${API_URL}/${editingId}`, {
@@ -124,7 +124,7 @@ function KelolaKategori() {
             body: JSON.stringify(updatedKategori),
           });
           setKategoriList((prev) => prev.map((m) => (m.id_kategori === editingId ? { ...m, nama: updatedKategori.nama_kategori } : m)));
-          showModal('success', 'Perubahan Berhasil', 'Data kategori berhasil diubah.');
+          showModal('success', 'Perubahan Berhasil', 'Data kategori menu berhasil diubah.');
           setEditingId(null);
           setKategoriInput('');
         } catch (err) {
@@ -137,12 +137,12 @@ function KelolaKategori() {
 
   // HANDLER DELETE
   const handleDelete = (id_kategori) => {
-    showModal('question', 'Hapus Kategori', 'Apakah anda yakin ingin menghapus data kategori ini?', async () => {
+    showModal('question', 'Hapus Kategori', 'Apakah anda yakin ingin menghapus data kategori menu ini?', async () => {
       closeModal(); // tutup modal konfirmasi dulu
       try {
         await fetch(`${API_URL}/${id_kategori}`, { method: 'DELETE' });
         setKategoriList((prev) => prev.filter((m) => m.id_kategori !== id_kategori));
-        showModal('success', 'Berhasil Dihapus', 'Data kategori berhasil dihapus.');
+        showModal('success', 'Berhasil Dihapus', 'Data kategori menu berhasil dihapus.');
       } catch (err) {
         showModal('error', 'Error', 'Gagal menghapus kategori!');
         console.log(err);
