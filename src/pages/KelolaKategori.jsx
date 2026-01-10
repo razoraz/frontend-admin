@@ -67,34 +67,44 @@ function KelolaKategori() {
 
   // HANDLER ADD / UPDATE
   const handleAddOrUpdate = () => {
+    // HANDLER ADD
     if (!editingId) {
-      // ADD
-      if (!kategoriInput) {
-        showModal('error', 'Penambahan Gagal', 'Silahkan isi semua kolom!');
+      if (!kategoriInput.trim()) {
+        showModal('error', 'Penambahan Gagal', 'Nama kategori tidak boleh kosong!');
         return;
       }
+
       showModal('question', 'Tambah Kategori', 'Apakah anda yakin ingin menambah data kategori ini?', async () => {
         closeModal();
+
         try {
           const res = await fetch(API_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ nama_kategori: kategoriInput, kapasitas: kategoriInput }),
+            body: JSON.stringify({
+              nama_kategori: kategoriInput,
+            }),
           });
-          const newData = await res.json();
+
+          const data = await res.json();
+
+          if (!res.ok) {
+            throw new Error(data.message || 'Gagal menambahkan kategori');
+          }
 
           setKategoriList((prev) => [
             ...prev,
             {
-              id_kategori: newData.id_kategori,
-              nama: kategoriInput,
+              id_kategori: data.id_kategori,
+              nama: data.nama_kategori,
             },
           ]);
 
-          showModal('success', 'Penambahan Berhasil', 'Data kategori berhasil ditambahkan');
+          showModal('success', 'Penambahan Berhasil', 'Data kategori berhasil ditambahkan.');
+
           setKategoriInput('');
         } catch (err) {
-          showModal('error', 'Error', 'Gagal menambahkan kategori!');
+          showModal('error', 'Penambahan Gagal', err.message);
           console.log(err);
         }
       });
