@@ -1,9 +1,9 @@
-/* Css Kelola Kategori */
+/* Css Kelola Kategori - Responsive & Animasi */
 
 /* Konten */
 .kelolaContainer {
   min-height: 100vh;
-  padding-bottom: 40px; /* space bawah */
+  padding-bottom: 40px;
 }
 .centerWrapper {
   display: flex;
@@ -11,15 +11,21 @@
   padding: 40px 50px;
   justify-content: center;
   align-items: flex-start;
+  flex-wrap: wrap;
+  animation: fadeIn 0.6s ease-out;
 }
 
 /* ==== LIST KATEGORI ==== */
 .listSide {
   padding: 25px;
+  border-radius: 12px;
+  background: #1a1a1a;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
   flex: 2;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  animation: fadeInUp 0.6s ease-out;
 }
 
 /* Title */
@@ -32,7 +38,7 @@
   text-shadow: 0 0 8px #fff615aa;
 }
 
-/* Table Wrapper: agar scroll horizontal tabel saja */
+/* Table Wrapper: scroll horizontal */
 .tableWrapper {
   overflow-x: auto;
   border-radius: 12px;
@@ -44,9 +50,10 @@
   background: #1a1a1a;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
   width: 100%;
-  min-width: 480px; /* biar scroll muncul di mobile */
+  min-width: 480px; /* scroll muncul di mobile */
   border-collapse: collapse;
   font-size: 15px;
+  animation: fadeIn 0.5s ease-out;
 }
 
 .tableKategori th {
@@ -56,6 +63,9 @@
   padding: 12px 20px;
   text-align: center;
   letter-spacing: 1px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .tableKategori td {
@@ -97,6 +107,7 @@
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
+  animation: fadeIn 0.5s ease-out 0.2s;
 }
 
 .pagination button {
@@ -108,11 +119,11 @@
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: 0.3s ease;
+  transition: 0.3s ease, transform 0.2s;
 }
 
 .pagination button:hover:not(:disabled) {
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.05);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
 }
 
@@ -137,6 +148,7 @@
   padding: 30px;
   flex: 1;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 0.6s ease-out;
 }
 
 /* Logo */
@@ -145,10 +157,10 @@
   width: 100px;
   margin: 10px auto 20px auto;
   filter: drop-shadow(0 0 4px #fff61533);
-  transition: 0.3s ease;
+  transition: 0.3s ease, transform 0.3s;
 }
 .logoForm:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 /* Input Kategori */
@@ -160,7 +172,7 @@
   background: #121212;
   color: #f5f5f5;
   margin-bottom: 15px;
-  transition: 0.3s ease;
+  transition: 0.3s ease, box-shadow 0.3s;
 }
 .kategoriInput:focus {
   outline: none;
@@ -177,31 +189,40 @@
 
 /* Button */
 .editBtn,
+.deleteBtn,
+.addBtn,
+.backBtn {
+  transition: 0.3s ease, transform 0.2s, box-shadow 0.2s;
+}
+
+.editBtn,
 .deleteBtn {
   padding: 7px 14px;
   border-radius: 10px;
   border: none;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 .editBtn {
   background: linear-gradient(90deg, #0092f4, #00c6ff);
   color: #fff;
 }
 .editBtn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
+
 .deleteBtn {
   background: linear-gradient(90deg, #ff4c4c, #ff7b7b);
   color: #fff;
 }
 .deleteBtn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
+
 .addBtn {
   width: 100%;
   margin-top: 20px;
@@ -212,13 +233,13 @@
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  transition: 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 .addBtn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.03);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
+
 .backBtn {
   margin-top: 10px;
   padding: 10px;
@@ -228,11 +249,10 @@
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
-  transition: 0.3s ease;
 }
 .backBtn:hover {
   background-color: #555;
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.02);
 }
 
 /* ===== RESPONSIVE ===== */
@@ -254,5 +274,26 @@
   .deleteBtn {
     padding: 6px 10px;
     font-size: 0.9rem;
+  }
+}
+
+/* ===== Animasi ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
