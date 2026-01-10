@@ -8,45 +8,45 @@ function TableKategori({ currentItems, startIndex, handleEdit, handleDelete, cur
     <div className={styles.listSide}>
       <h2 className={styles.title}>Daftar Kategori</h2>
 
-      <table className={styles.tableKategori}>
-        <thead>
-          <tr>
-            <th>No</th>
-            <th>Nama Kategori</th>
-            <th>Aksi</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {currentItems.length === 0 ? (
+      <div className={styles.tableWrapper}>
+        <table className={styles.tableKategori}>
+          <thead>
             <tr>
-              <td colSpan="3" className={styles.emptyMessage}>
-                Belum ada data Kategori
-              </td>
+              <th>No</th>
+              <th>Nama Kategori</th>
+              <th>Aksi</th>
             </tr>
-          ) : (
-            currentItems.map((kategori, index) => (
-              <tr key={kategori.id_kategori}>
-                <td>{startIndex + index + 1}</td>
-                <td>{kategori.nama}</td>
-
-                <td>
-                  <div className={styles.kategoriActions}>
-                    <button className={styles.editBtn} onClick={() => handleEdit(kategori)}>
-                      Ubah
-                    </button>
-                    <button className={styles.deleteBtn} onClick={() => handleDelete(kategori.id_kategori)}>
-                      Hapus
-                    </button>
-                  </div>
+          </thead>
+          <tbody>
+            {currentItems.length === 0 ? (
+              <tr>
+                <td colSpan="3" className={styles.emptyMessage}>
+                  Belum ada data Kategori
                 </td>
               </tr>
-            ))
-          )}
-        </tbody>
-      </table>
+            ) : (
+              currentItems.map((kategori, index) => (
+                <tr key={kategori.id_kategori}>
+                  <td>{startIndex + index + 1}</td>
+                  <td>{kategori.nama}</td>
+                  <td>
+                    <div className={styles.kategoriActions}>
+                      <button className={styles.editBtn} onClick={() => handleEdit(kategori)}>
+                        Ubah
+                      </button>
+                      <button className={styles.deleteBtn} onClick={() => handleDelete(kategori.id_kategori)}>
+                        Hapus
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
 
-      {/* Pagination */}
+      {/* Pagination di luar scrollable table */}
       <div className={styles.pagination}>
         <button onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))} disabled={currentPage === 1}>
           Previous
