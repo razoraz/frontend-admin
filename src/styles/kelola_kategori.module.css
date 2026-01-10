@@ -46,9 +46,6 @@
 
 /* ===== TABEL ===== */
 .tableKategori {
-  border-radius: 12px;
-  background: #1a1a1a;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
   width: 100%;
   min-width: 480px; /* scroll muncul di mobile */
   border-collapse: collapse;
