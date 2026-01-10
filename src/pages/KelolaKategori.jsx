@@ -13,11 +13,10 @@ import useBlockBack from '../hooks/BlockBack';
 import styles from '../styles/kelola_kategori.module.css';
 
 // API URL
-const API_URL = 'https://backend-production-8cf7.up.railway.app/api/kategori';
+const API_URL = 'https://backend-production-8cf7.up.railway.app/api/kategori/kategori-list';
 
 // Pagination Items Per Page
 const ITEMS_PER_PAGE = 5;
-
 
 function KelolaKategori() {
   useBlockBack();
