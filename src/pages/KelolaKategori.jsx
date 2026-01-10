@@ -28,8 +28,8 @@ function KelolaKategori() {
   const [modal, setModal] = useState({ isOpen: false, type: '', title: '', message: '', onConfirm: null });
   const [currentPage, setCurrentPage] = useState(1);
 
-  const showModal = (type, title, message, onConfirm = null) => {
-    setModal({ isOpen: true, type, title, message, onConfirm });
+  const showModal = (type, title, message, onConfirm = null, confirmLabel = 'Ya', cancelLabel = 'Batal') => {
+    setModal({ isOpen: true, type, title, message, onConfirm, confirmLabel, cancelLabel });
   };
   const closeModal = () => setModal({ ...modal, isOpen: false });
 
@@ -74,40 +74,47 @@ function KelolaKategori() {
         return;
       }
 
-      showModal('question', 'Tambah Kategori', 'Apakah anda yakin ingin menambah data kategori ini?', async () => {
-        closeModal();
+      showModal(
+        'question',
+        'Tambah Kategori',
+        'Apakah anda yakin ingin menambah data kategori ini?',
+        async () => {
+          closeModal();
 
-        try {
-          const res = await fetch(API_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              nama_kategori: kategoriInput,
-            }),
-          });
+          try {
+            const res = await fetch(API_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                nama_kategori: kategoriInput,
+              }),
+            });
 
-          const data = await res.json();
+            const data = await res.json();
 
-          if (!res.ok) {
-            throw new Error(data.message || 'Gagal menambahkan kategori');
+            if (!res.ok) {
+              throw new Error(data.message || 'Gagal menambahkan kategori');
+            }
+
+            setKategoriList((prev) => [
+              ...prev,
+              {
+                id_kategori: data.id_kategori,
+                nama: data.nama_kategori,
+              },
+            ]);
+
+            showModal('success', 'Penambahan Berhasil', 'Data berhasil ditambahkan.');
+
+            setKategoriInput('');
+          } catch (err) {
+            showModal('error', 'Penambahan Gagal', err.message);
+            console.log(err);
           }
-
-          setKategoriList((prev) => [
-            ...prev,
-            {
-              id_kategori: data.id_kategori,
-              nama: data.nama_kategori,
-            },
-          ]);
-
-          showModal('success', 'Penambahan Berhasil', 'Data berhasil ditambahkan.');
-
-          setKategoriInput('');
-        } catch (err) {
-          showModal('error', 'Penambahan Gagal', err.message);
-          console.log(err);
-        }
-      });
+        },
+        'Tambah',
+        'Batal'
+      );
     } else {
       // UPDATE
       if (!kategoriInput) {
@@ -115,39 +122,53 @@ function KelolaKategori() {
         return;
       }
       const updatedKategori = { nama_kategori: kategoriInput };
-      showModal('question', 'Simpan Perubahan', 'Apakah anda yakin ingin merubah data kategori menu ini?', async () => {
-        closeModal();
-        try {
-          await fetch(`${API_URL}/${editingId}`, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(updatedKategori),
-          });
-          setKategoriList((prev) => prev.map((m) => (m.id_kategori === editingId ? { ...m, nama: updatedKategori.nama_kategori } : m)));
-          showModal('success', 'Perubahan Berhasil', 'Data kategori menu berhasil diubah.');
-          setEditingId(null);
-          setKategoriInput('');
-        } catch (err) {
-          showModal('error', 'Error', 'Gagal mengubah kategori!');
-          console.log(err);
-        }
-      });
+      showModal(
+        'question',
+        'Simpan Perubahan',
+        'Apakah anda yakin ingin merubah data kategori menu ini?',
+        async () => {
+          closeModal();
+          try {
+            await fetch(`${API_URL}/${editingId}`, {
+              method: 'PUT',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(updatedKategori),
+            });
+            setKategoriList((prev) => prev.map((m) => (m.id_kategori === editingId ? { ...m, nama: updatedKategori.nama_kategori } : m)));
+            showModal('success', 'Perubahan Berhasil', 'Data kategori menu berhasil diubah.');
+            setEditingId(null);
+            setKategoriInput('');
+          } catch (err) {
+            showModal('error', 'Error', 'Gagal mengubah kategori!');
+            console.log(err);
+          }
+        },
+        'Ubah',
+        'Batal'
+      );
     }
   };
 
   // HANDLER DELETE
   const handleDelete = (id_kategori) => {
-    showModal('question', 'Hapus Kategori', 'Apakah anda yakin ingin menghapus data kategori menu ini?', async () => {
-      closeModal(); // tutup modal konfirmasi dulu
-      try {
-        await fetch(`${API_URL}/${id_kategori}`, { method: 'DELETE' });
-        setKategoriList((prev) => prev.filter((m) => m.id_kategori !== id_kategori));
-        showModal('success', 'Berhasil Dihapus', 'Data kategori menu berhasil dihapus.');
-      } catch (err) {
-        showModal('error', 'Error', 'Gagal menghapus kategori!');
-        console.log(err);
-      }
-    });
+    showModal(
+      'question',
+      'Hapus Kategori',
+      'Apakah anda yakin ingin menghapus data kategori menu ini?',
+      async () => {
+        closeModal(); // tutup modal konfirmasi dulu
+        try {
+          await fetch(`${API_URL}/${id_kategori}`, { method: 'DELETE' });
+          setKategoriList((prev) => prev.filter((m) => m.id_kategori !== id_kategori));
+          showModal('success', 'Berhasil Dihapus', 'Data kategori menu berhasil dihapus.');
+        } catch (err) {
+          showModal('error', 'Error', 'Gagal menghapus kategori!');
+          console.log(err);
+        }
+      },
+      'Hapus',
+      'Batal'
+    );
   };
 
   // Pagination
@@ -182,7 +203,7 @@ function KelolaKategori() {
       {/* FOOTER */}
       <FooterPage />
       {/* MODAL */}
-      <Modal isOpen={modal.isOpen} type={modal.type} title={modal.title} message={modal.message} onClose={closeModal} onConfirm={modal.onConfirm} />
+      <Modal isOpen={modal.isOpen} type={modal.type} title={modal.title} message={modal.message} onClose={closeModal} onConfirm={modal.onConfirm} confirmLabel={modal.confirmLabel} cancelLabel={modal.cancelLabel} />
     </div>
   );
 }
