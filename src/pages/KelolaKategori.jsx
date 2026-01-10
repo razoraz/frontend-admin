@@ -18,6 +18,7 @@ const API_URL = 'https://backend-production-8cf7.up.railway.app/api/kategori';
 // Pagination Items Per Page
 const ITEMS_PER_PAGE = 5;
 
+
 function KelolaKategori() {
   useBlockBack();
 
