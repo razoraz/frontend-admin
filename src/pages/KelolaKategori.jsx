@@ -124,7 +124,7 @@ function KelolaKategori() {
             body: JSON.stringify(updatedKategori),
           });
           setKategoriList((prev) => prev.map((m) => (m.id_kategori === editingId ? { ...m, nama: updatedKategori.nama_kategori } : m)));
-          showModal('success', 'Perubahan Berhasil', 'Data Kategori berhasil diubah.');
+          showModal('success', 'Perubahan Berhasil', 'Data kategori berhasil diubah.');
           setEditingId(null);
           setKategoriInput('');
         } catch (err) {
