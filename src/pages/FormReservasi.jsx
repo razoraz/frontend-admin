@@ -86,7 +86,7 @@ function FormReservasi() {
 
   return (
     <>
-      <HeaderPagePelanggan title="Reservasi Meja" subtitle="Amankan meja favoritmu sebelum datang" bg_video="/background_video/navVideo.mp4" />
+      <HeaderPagePelanggan title="Reservasi Meja" subtitle="Pesan meja favoritmu sekarang! Reservasi hanya berlaku 1 hari ke depan." bg_video="/background_video/navVideo.mp4" />
 
       <div className={styles.centerWrapper}>
         <div className={styles.reservasiCard}>
