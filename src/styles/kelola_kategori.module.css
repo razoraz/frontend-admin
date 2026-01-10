@@ -118,9 +118,9 @@
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: 0.3s ease, transform 0.2s;
-  padding: 10px 20px;      /* lebih besar */
-  min-width: 90px;         /* ukuran minimum proporsional */
-  font-size: 1rem;         /* nyaman dibaca di mobile */
+  padding: 10px 20px;
+  width: 80px;         
+  font-size: 1rem;         
 }
 
 .pagination button:hover:not(:disabled) {
