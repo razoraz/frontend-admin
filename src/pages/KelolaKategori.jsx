@@ -148,9 +148,12 @@ function KelolaKategori() {
   const currentItems = kategoriList.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   return (
+    <div>
+       <HeaderPage title="KELOLA KATEGORI" />
+    // MAIN CONTAINER
     <div className={styles.kelolaContainer}>
       {/* HEADER */}
-      <HeaderPage title="KELOLA KATEGORI" />
+     
 
       {/* CONTENT */}
       <div className={styles.centerWrapper}>
@@ -176,11 +179,10 @@ function KelolaKategori() {
           }}
         />
       </div>
-
+    </div>
       {/* FOOTER */}
       <FooterPage />
-
-      {/* MODAL */}
+       {/* MODAL */}
       <Modal isOpen={modal.isOpen} type={modal.type} title={modal.title} message={modal.message} onClose={closeModal} onConfirm={modal.onConfirm} />
     </div>
   );
