@@ -3,6 +3,7 @@
 /* Konten */
 .kelolaContainer {
   min-height: 100vh;
+  padding-bottom: 40px; /* space bawah */
 }
 .centerWrapper {
   display: flex;
@@ -16,15 +17,25 @@
 .listSide {
   padding: 25px;
   flex: 2;
-  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
+
+/* Title */
 .title {
   text-align: center;
   font-size: 1.7rem;
   font-weight: 700;
   color: #fff615;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   text-shadow: 0 0 8px #fff615aa;
+}
+
+/* Table Wrapper: agar scroll horizontal tabel saja */
+.tableWrapper {
+  overflow-x: auto;
+  border-radius: 12px;
 }
 
 /* ===== TABEL ===== */
@@ -33,9 +44,11 @@
   background: #1a1a1a;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
   width: 100%;
+  min-width: 480px; /* biar scroll muncul di mobile */
   border-collapse: collapse;
   font-size: 15px;
 }
+
 .tableKategori th {
   background: linear-gradient(#fff615, #fff98c);
   color: #000;
@@ -44,12 +57,14 @@
   text-align: center;
   letter-spacing: 1px;
 }
+
 .tableKategori td {
   text-align: center;
   padding: 12px 10px;
   border-bottom: 1px solid #444;
-  transition: transform 0.2s;
+  transition: transform 0.2s, background 0.2s;
 }
+
 .tableKategori tr:hover td {
   transform: scale(1.02);
   background: rgba(255, 246, 21, 0.15);
@@ -76,15 +91,14 @@
 
 /* ===== PAGINATION TABLE ===== */
 .pagination {
-  border-radius: 12px;
-  background: #1a1a1a;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
   margin-top: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 12px;
+  flex-wrap: wrap;
 }
+
 .pagination button {
   background: linear-gradient(90deg, #fff615, #fff98c);
   color: #000;
@@ -96,16 +110,19 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: 0.3s ease;
 }
+
 .pagination button:hover:not(:disabled) {
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
 }
+
 .pagination button:disabled {
   background: #555;
   color: #bbb;
   cursor: not-allowed;
   box-shadow: none;
 }
+
 .pageInfo {
   color: #fff615;
   font-weight: 700;
