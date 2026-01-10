@@ -116,7 +116,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: 0.3s ease, transform 0.2s;
   padding: 10px 20px;
-  width: 100%;         
+  min-width: 90px;         
   font-size: 1rem;         
 }
 
@@ -282,7 +282,6 @@
     border-width: 1px;
   }
   .pagination button {
-    width: 70px;
     padding: 8px 12px;
     font-size: 0.9rem;
   }
