@@ -268,17 +268,6 @@
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
 }
-.fadeUp {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.fadeUp.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 
 /* Animasi khusus untuk timeline */
 @keyframes fadeInUp {
@@ -337,11 +326,7 @@
 .ctaSection {
   padding: 100px 0;
   text-align: center;
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 246, 21, 0.15),
-    rgba(10, 10, 10, 1) 70%
-  );
+  background: radial-gradient(circle at center, rgba(255, 246, 21, 0.15), rgba(10, 10, 10, 1) 70%);
 }
 .ctaTitle {
   font-size: 2.4rem;
@@ -352,34 +337,10 @@
   max-width: 600px;
   margin: 0 auto 3rem;
 }
-.ctaButton {
-  margin-top: 30px;
-  padding: 16px 38px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  border-radius: 40px;
-  border: none;
-  background: #fff615;
-  color: #111;
-  cursor: pointer;
-  box-shadow: 0 0 25px rgba(255, 246, 21, 0.6);
-  animation: pulse 2.5s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 15px rgba(255, 246, 21, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(255, 246, 21, 0.9);
-  }
-  100% {
-    box-shadow: 0 0 15px rgba(255, 246, 21, 0.4);
-  }
-}
-
-.ctaButton:hover {
-  transform: scale(1.07);
+.ctaButtons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
 }
 
 /* ================================
@@ -394,8 +355,8 @@
   transition: all 0.3s ease;
 }
 .primaryBtn {
-  background: linear-gradient(45deg, #fff615, #c7b900);
-  color: #111;
+  background: linear-gradient(45deg, #6f4e37, #4b3621);
+  color: #fff;
 }
 .primaryBtn:hover {
   transform: translateY(-3px);
@@ -421,6 +382,16 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+.fadeUp {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fadeUp.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ================================
