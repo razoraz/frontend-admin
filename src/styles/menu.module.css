@@ -36,6 +36,9 @@
   padding: 20px;
 }
 .menuSectionTitle {
+  margin: 0.6rem auto 2rem auto;
+  text-align: center;
+  position: relative;
   font-size: 24px;
   font-weight: bold;
   margin: 20px 0 10px;
@@ -358,4 +361,3 @@
     margin-bottom: 1.5rem;
   }
 }
-
