@@ -48,7 +48,7 @@ function MenuCategory({ title, icon, items, cart, addToCart, updateQty }) {
               {!isHabis &&
                 (qty === 0 ? (
                   <button className={styles.addBtn} onClick={() => addToCart(item.id_menu)}>
-                    <img src="/photo/plus.png" alt="Tambah" />
+                    <img src="/photo/plus(1).png" alt="Tambah" />
                   </button>
                 ) : (
                   <div className={styles.menuQuantity}>
