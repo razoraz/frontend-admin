@@ -16,13 +16,13 @@ function FooterPage() {
           </div>
           <div className={styles.socialLinks}>
             <Link to="#">
-              <i className="fa-solid fa-location-dot"></i>Jl. Mastrip Jember
+              <i className="fa-solid fa-location-dot"></i>Jl. Mastrip, Kec. Sumbersari, Kabupaten Jember, Jawa Timur 68121
             </Link>
             <Link to="#">
-              <i className="fa-solid fa-phone"></i>(+62) xxxxxxxxx
+              <i className="fa-solid fa-phone"></i>(+62)852-3315-6241
             </Link>
             <Link to="#">
-              <i className="fa-solid fa-envelope"></i>xxxxxxxxxxxx
+              <i className="fa-solid fa-envelope"></i> gakun8458@gmail.com
             </Link>
           </div>
         </div>
@@ -32,10 +32,11 @@ function FooterPage() {
             <h4>Kontak Kami</h4>
             <ul>
               <li>
-                <Link to="https://wa.me/6281337142265" target="_blank">
+                <Link to="https://wa.me/628980454405?text=Halo%20saya%20ingin%20memesan%20menu%20di%20Basecamp%20Kopi%20☕" target="_blank" rel="noopener noreferrer">
                   <i className="ph ph-whatsapp-logo"></i> WhatsApp
                 </Link>
               </li>
+
               <li>
                 <a href="https://www.instagram.com/basecampkopi?igsh=MXNzazgxOHhqNXZoNQ==" target="_blank" rel="noopener noreferrer">
                   <i className="ph ph-instagram-logo"></i> Instagram
