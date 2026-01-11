@@ -1,7 +1,7 @@
 import MenuCategory from './MenuCategory2';
 import styles from '../../styles/menu_pelanggan.module.css';
 
-function MenuList({ filteredMenu}) {
+function MenuList({ filteredMenu }) {
   // Mengelompokkan menu berdasarkan kategori
   const menusByCategory = filteredMenu.reduce((acc, item) => {
     const cat = item.nama_kategori || 'Lainnya';
@@ -13,42 +13,34 @@ function MenuList({ filteredMenu}) {
   const categories = Object.keys(menusByCategory);
   const noData = filteredMenu.length === 0;
 
-  // Opsional: mapping kategori ke icon
+  // Mapping kategori ke icon (sudah dinormalisasi)
   const kategoriIcons = {
-    Makanan: '🥗',
-    Minuman: '🥤',
-    Snack: '🍩',
-    Dessert: '🍰',
-    Promo: '🔥',
+    food: '🍽️',
+    snack: '🍟',
+    teabased: '🍵',
+    squash: '🥤',
+    icecoffe: '☕',
+    milkbased: '🥛',
+    specialhot: '🔥',
   };
 
   // Pastikan "Makanan" paling atas
   categories.sort((a, b) => {
-    if (a.toLowerCase() === 'makanan') return -1; // makanan dulu
-    if (b.toLowerCase() === 'makanan') return 1;
+    if (a.toLowerCase() === 'food') return -1; // makanan dulu
+    if (b.toLowerCase() === 'food') return 1;
     return 0; // kategori lain urut sesuai munculnya
   });
 
   return (
     <div>
-      {categories.map((cat) =>
-        menusByCategory[cat].length > 0 && (
-          <MenuCategory
-            key={cat}
-            title={cat}
-            icon={kategoriIcons[cat] || '🥤'}
-            items={menusByCategory[cat]}
-          />
-        )
-      )}
+      {categories.map((cat) => {
+        const normalizeCat = cat.toLowerCase().replace(/\s+/g, '');
+        menusByCategory[cat].length > 0 && <MenuCategory key={cat} title={cat} icon={kategoriIcons[normalizeCat] || '🍽️'} items={menusByCategory[cat]} />;
+      })}
 
       {noData && (
         <div className={styles.emptyContainer}>
-          <img
-            src="/photo/empty-foto.png"
-            alt="Gambar Tidak Ada Menu"
-            className={styles.emptyImage}
-          />
+          <img src="/photo/empty-foto.png" alt="Gambar Tidak Ada Menu" className={styles.emptyImage} />
           <p className={styles.noMenuText}>Tidak ada menu ditemukan.</p>
         </div>
       )}
