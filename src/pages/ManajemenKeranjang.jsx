@@ -232,7 +232,7 @@ const Keranjang = () => {
               {/* TOMBOL TAMBAH & HAPUS CATATAN */}
               <div className={styles.noteButtons}>
                 <button className={styles.addNoteBtn} onClick={() => toggleNoteForm(item.id)}>
-                  + Tambah Catatan
+                  Tambah Catatan
                 </button>
 
                 {item.notes.length > 0 && (
