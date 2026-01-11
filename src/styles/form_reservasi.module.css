@@ -15,13 +15,13 @@
   max-width: 950px;
   width: 100%;
   overflow: hidden;
-  box-shadow: 0 0 25px rgba(255,246,21,0.15);
+  box-shadow: 0 0 25px rgba(255, 246, 21, 0.15);
   position: relative;
-  transition: .3s;
+  transition: 0.3s;
 }
 .reservasiCard:hover {
   transform: scale(1.01);
-  box-shadow: 0 0 40px rgba(255,246,21,0.25);
+  box-shadow: 0 0 40px rgba(255, 246, 21, 0.25);
 }
 
 /* HEADER */
@@ -31,7 +31,7 @@
 }
 .reservasiHeader img {
   width: 90px;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 .reservasiHeader h2 {
   color: #fff615;
@@ -47,7 +47,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(.9);
+  filter: brightness(0.9);
 }
 
 /* SISI FORM */
@@ -66,8 +66,8 @@
 }
 .inputGroup label {
   color: #fff615;
-  font-size: .85rem;
-  margin-bottom: .4rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
   text-transform: uppercase;
 }
 .inputGroup input,
@@ -83,7 +83,7 @@
 .inputGroup select:focus {
   outline: none;
   border-color: #fff615;
-  box-shadow: 0 0 10px rgba(255,246,21,.3);
+  box-shadow: 0 0 10px rgba(255, 246, 21, 0.3);
 }
 .inputDisabled {
   background: #141414;
@@ -91,16 +91,16 @@
 }
 
 /* Icon kalender & jam */
-.inputGroup input[type="date"]::-webkit-calendar-picker-indicator,
-.inputGroup input[type="time"]::-webkit-calendar-picker-indicator {
+.inputGroup input[type='date']::-webkit-calendar-picker-indicator,
+.inputGroup input[type='time']::-webkit-calendar-picker-indicator {
   filter: invert(1);
   opacity: 0.8;
   cursor: pointer;
 }
 
 /* Hover effect biar konsisten */
-.inputGroup input[type="date"]::-webkit-calendar-picker-indicator:hover,
-.inputGroup input[type="time"]::-webkit-calendar-picker-indicator:hover {
+.inputGroup input[type='date']::-webkit-calendar-picker-indicator:hover,
+.inputGroup input[type='time']::-webkit-calendar-picker-indicator:hover {
   opacity: 1;
 }
 
@@ -123,15 +123,10 @@
   overflow: hidden;
 }
 .reservasiButton::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,246,21,0.4),
-    transparent
-  );
+  background: linear-gradient(120deg, transparent, rgba(255, 246, 21, 0.4), transparent);
   animation: shine 2.5s infinite;
 }
 .reservasiButton:hover {
@@ -142,8 +137,12 @@
 
 /* Animation */
 @keyframes shine {
-  0% { transform: translateX(-130%); }
-  100% { transform: translateX(130%); }
+  0% {
+    transform: translateX(-130%);
+  }
+  100% {
+    transform: translateX(130%);
+  }
 }
 @keyframes fadeUp {
   from {
@@ -165,11 +164,15 @@
     height: 220px;
   }
 }
+
 @media (max-width: 480px) {
-  .inputGroup input[type="date"],
-  .inputGroup input[type="time"] {
-    -webkit-appearance: auto;
-    appearance: auto;
+  /* FIX input date & time agar konsisten di mobile */
+  .inputGroup input[type='date'],
+  .inputGroup input[type='time'] {
+    -webkit-appearance: noe;
+    appearance: none;
+    width: 100%;
+    min-height: 48px;
+    font-size: 1rem;
   }
 }
-
