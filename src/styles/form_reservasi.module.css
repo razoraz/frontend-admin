@@ -139,17 +139,6 @@
   transform: scale(1.03);
   box-shadow: 0 0 35px rgba(255, 246, 21, 0.5);
 }
-/* FIX input date & time agar konsisten di mobile */
-.inputGroup input[type="date"],
-.inputGroup input[type="time"] {
-  -webkit-appearance: auto;
-  appearance: auto;
-  width: 100%;
-  min-height: 48px;
-  font-size: 1rem;
-  background-color: #0b0b0b;
-}
-
 
 /* Animation */
 @keyframes shine {
