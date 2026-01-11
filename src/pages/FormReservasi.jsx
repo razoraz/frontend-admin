@@ -73,6 +73,7 @@ function FormReservasi() {
 
     // SIMPAN KE SESSION STORAGE
     sessionStorage.removeItem('cartPemesanan');
+    sessionStorage.removeItem('cartNotes')
     sessionStorage.removeItem('konteksPemesanan');
     sessionStorage.removeItem('formPemesanan');
     sessionStorage.setItem('reservasi', JSON.stringify(formData));
