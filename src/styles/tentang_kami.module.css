@@ -264,7 +264,7 @@
 /* Hover effect */
 .timelineContent:hover {
   transform: translateY(-5px);
-  border-color: rgba(139, 107, 79, 0.5);
+  border-color: rgba(255, 246, 21, 0.3);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
 }
