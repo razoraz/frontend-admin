@@ -85,8 +85,8 @@
   border-color: #fff615;
   box-shadow: 0 0 10px rgba(255, 246, 21, 0.3);
 }
-.inputDisabled {
-  background: #141414;
+.inputGroup .inputDisabled {
+  background: #1a1a1a;
   color: #aaa;
 }
 
