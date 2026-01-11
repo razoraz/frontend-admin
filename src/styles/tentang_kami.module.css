@@ -251,7 +251,7 @@
   border-color: transparent rgba(255, 255, 255, 0.04) transparent transparent;
 }
 .timelineContent h3 {
-  color: #8b6b4f;
+  color: #fff615;
   margin-bottom: 15px;
   font-size: 1.4rem;
 }
@@ -302,7 +302,7 @@
   transition: all 0.3s ease;
 }
 .valueItem:hover {
-  background: rgba(111, 78, 55, 0.12);
+  background: rgba(255, 246, 21, 0.08);
   transform: scale(1.05);
 }
 .valueIcon {
@@ -356,7 +356,7 @@
 }
 .primaryBtn {
   background: linear-gradient(45deg, #fffd63, #fff615);
-  color: #fff;
+  color: #111;
 }
 .primaryBtn:hover {
   transform: translateY(-3px);
@@ -367,7 +367,7 @@
   color: #fff615;
 }
 .secondaryBtn:hover {
-  background: rgba(111, 78, 55, 0.15);
+  background: rgba(255, 246, 21, 0.2);
 }
 
 /* ================================
