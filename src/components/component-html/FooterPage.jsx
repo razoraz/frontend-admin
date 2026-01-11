@@ -32,7 +32,7 @@ function FooterPage() {
             <h4>Kontak Kami</h4>
             <ul>
               <li>
-                <Link to="https://wa.me/628980454405?text=Halo%20saya%20ingin%20memesan%20menu%20di%20Basecamp%20Kopi%20☕" target="_blank" rel="noopener noreferrer">
+                <Link to="https://wa.me/6285604917694?text=Halo%20min%20,%20memesan%20menu%20di%20Basecamp%20Kopi" target="_blank" rel="noopener noreferrer">
                   <i className="ph ph-whatsapp-logo"></i> WhatsApp
                 </Link>
               </li>
