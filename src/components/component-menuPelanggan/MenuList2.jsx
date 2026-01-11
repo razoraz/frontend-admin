@@ -35,7 +35,17 @@ function MenuList({ filteredMenu }) {
     <div>
       {categories.map((cat) => {
         const normalizeCat = cat.toLowerCase().replace(/\s+/g, '');
-        menusByCategory[cat].length > 0 && <MenuCategory key={cat} title={cat} icon={kategoriIcons[normalizeCat] || '🍽️'} items={menusByCategory[cat]} />;
+        return (
+          menusByCategory[cat].length > 0 && (
+            <MenuCategory
+              key={cat}
+              title={cat}
+              icon={kategoriIcons[normalizeCat] || '🍽️'}
+              items={menusByCategory[cat]}
+            />
+          )
+        );
+
       })}
 
       {noData && (
