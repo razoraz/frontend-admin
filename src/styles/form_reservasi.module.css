@@ -168,10 +168,15 @@
 @media (max-width: 480px) {
   .inputGroup input[type='date'],
   .inputGroup input[type='time'] {
-    -webkit-appearance: noe;
-    appearance: none;
+    -webkit-appearance: auto;
+    appearance: auto;
     width: 100%;
     min-height: 48px;
     font-size: 1rem;
+  }
+  .inputGroup .inputDisabled[type='date'],
+  .inputGroup .inputDisabled[type='time'] {
+    -webkit-appearance: none;
+    appearance: none;
   }
 }
