@@ -94,11 +94,11 @@
   margin-top: 40px;
 }
 .philosophyCard {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.03);
   border-radius: 18px;
   padding: 40px 30px;
   text-align: center;
-  border: 1px solid rgba(111, 78, 55, 0.25);
+  border: 1px solid rgba(255, 246, 21, 0.2);
   transition: all 0.3s ease;
 }
 .philosophyCard:hover {
@@ -108,13 +108,13 @@
 }
 .cardIcon {
   font-size: 3rem;
-  color: #8b6b4f;
+  color: #fff615;
   margin-bottom: 1.5rem;
 }
 .philosophyCard h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #8b6b4f;
+  color: #fff615;
 }
 .philosophyCard p {
   color: #ccc;
@@ -143,7 +143,7 @@
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(to bottom, transparent, #6f4e37 20%, #8b6b4f 50%, #6f4e37 80%, transparent);
+  background: linear-gradient(to bottom, transparent, #fffd63 20%, #fffd63 50%, #fffd63 80%, transparent);
   transform: translateX(-50%);
 }
 
@@ -155,10 +155,10 @@
   top: 0;
   width: 15px;
   height: 15px;
-  background: #8b6b4f;
+  background: #fff615;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 0 4px rgba(139, 107, 79, 0.3), 0 0 20px rgba(139, 107, 79, 0.5);
+  box-shadow: 0 0 15px rgba(255, 246, 21, 0.6);
 }
 .timelineItem {
   position: relative;
@@ -215,7 +215,7 @@
   border-radius: 16px;
   position: relative;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(111, 78, 55, 0.3);
+  border: 1px solid rgba(255, 246, 21, 0.3);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
@@ -355,7 +355,7 @@
   transition: all 0.3s ease;
 }
 .primaryBtn {
-  background: linear-gradient(45deg, #6f4e37, #4b3621);
+  background: linear-gradient(45deg, #fffd63, #fff615);
   color: #fff;
 }
 .primaryBtn:hover {
@@ -363,8 +363,8 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
 }
 .secondaryBtn {
-  border: 2px solid #8b6b4f;
-  color: #8b6b4f;
+  border: 2px solid #fff615;
+  color: #fff615;
 }
 .secondaryBtn:hover {
   background: rgba(111, 78, 55, 0.15);
@@ -382,16 +382,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-.fadeUp {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.fadeUp.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* ================================
@@ -446,7 +436,7 @@
   .timelineContent {
     width: 100%;
     margin-top: 20px;
-    border-left: 3px solid #6f4e37;
+    border-left: 3px solid #fffd63;
   }
   .ctaButtons {
     flex-direction: column;
