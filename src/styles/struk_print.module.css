@@ -104,7 +104,6 @@
   text-align: center;
   border-bottom: 1px dashed black;
   padding-bottom: 6px;
-  margin-bottom: 6px;
 }
 
 .strukTitle {
@@ -119,13 +118,13 @@
 
 .logoBlack {
   display: block !important;
-  width: 45px;
+  width: 60px;
   margin: 6px auto;
 }
 
 /* 🔥 LOGO JADI HITAM PUTIH */
 .strukLogo {
-  width: 45px;
+  width: 60px;
   margin-top: -10px;
   margin: 6px auto;
   display: block;
