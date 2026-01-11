@@ -82,22 +82,27 @@ function MenuList({ filteredMenu, cart, addToCart, updateQty }) {
   const categories = Object.keys(menusByCategory);
   const noData = filteredMenu.length === 0;
   const kategoriIcons = {
-    Makanan: '🥗',
-    Minuman: '🥤',
-    Snack: '🍩',
-    Dessert: '🍰',
-    Promo: '🔥',
+    food: '🍽️',
+    snack: '🍟',
+    teabased: '🍵',
+    squash: '🥤',
+    icecoffe: '☕',
+    milkbased: '🥛',
+    specialhot: '🔥',
   };
-  // Pastikan "Makanan" paling atas
+  // Pastikan "Food" paling atas
   categories.sort((a, b) => {
-    if (a.toLowerCase() === 'makanan') return -1; // makanan dulu
-    if (b.toLowerCase() === 'makanan') return 1;
+    if (a.toLowerCase() === 'food') return -1; // food dulu
+    if (b.toLowerCase() === 'food') return 1;
     return 0; // kategori lain urut sesuai munculnya
   });
 
   return (
     <div>
-      {categories.map((cat) => menusByCategory[cat].length > 0 && <MenuCategory key={cat} title={cat} icon={kategoriIcons[cat] || '🥤'} items={menusByCategory[cat]} cart={cart} addToCart={addToCart} updateQty={updateQty} />)}
+      {categories.map((cat) => {
+        const normalizeCat = cat.toLowerCase().replace(/\s+/g, '');
+        menusByCategory[cat].length > 0 && <MenuCategory key={cat} title={cat} icon={kategoriIcons[normalizeCat] || '🍵'} items={menusByCategory[cat]} cart={cart} addToCart={addToCart} updateQty={updateQty} />;
+      })}
 
       {noData && (
         <div className={styles.emptyContainer}>
@@ -208,8 +213,8 @@ function PemesananPelanggan() {
   const kategoriList = Array.from(new Set(menu.map((item) => item.nama_kategori).filter(Boolean)));
 
   kategoriList.sort((a, b) => {
-    if (a.toLowerCase() === 'makanan') return -1;
-    if (b.toLowerCase() === 'makanan') return 1;
+    if (a.toLowerCase() === 'food') return -1;
+    if (b.toLowerCase() === 'food') return 1;
     return a.localeCompare(b);
   });
 
