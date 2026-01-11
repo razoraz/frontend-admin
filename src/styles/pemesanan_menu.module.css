@@ -5,6 +5,10 @@
 
 /* Judul Menu */
 .menuSectionTitle {
+  margin: 0.6rem auto 2rem auto;
+  text-align: center;
+  position: relative;
+
   font-size: 24px;
   font-weight: bold;
   margin: 20px 0 10px;
@@ -95,12 +99,37 @@
   margin: 12px auto;
   border-radius: 2px;
 }
+/* Garis */
 .decorativeLine2 {
-  background-color: #fff615;
-  margin-left: 40px;
-  margin-bottom: 20px;
-  width: 100px;
+  width: 120px;
   height: 4px;
+  margin: 0.6rem auto 2rem auto;
+  border-radius: 10px;
+  background: linear-gradient(90deg, transparent, #fff615, transparent);
+  position: relative;
+  animation: pulseLine 2.5s ease-in-out infinite;
+}
+@keyframes pulseLine {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* Glow effect */
+.decorativeLine2::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #fff615;
+  filter: blur(8px);
+  opacity: 0.4;
+  z-index: -1;
 }
 
 /* Card menu */
