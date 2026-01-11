@@ -197,27 +197,34 @@
   flex: 1;
   padding: 10px 0px;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
   text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .menuActions button i {
   margin-right: 3px;
 }
 .ubahBtn {
+  transition: 0.3s ease, transform 0.2s, box-shadow 0.2s;
   background: #0092f4;
   color: #fff;
 }
 .ubahBtn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   background: #007acc;
   color: #fff;
 }
 .deleteBtn {
+  transition: 0.3s ease, transform 0.2s, box-shadow 0.2s;
   background: #ff0000;
   color: #fff;
 }
 .deleteBtn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   background: #cc0000;
   color: #fff;
 }
