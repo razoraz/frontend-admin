@@ -166,7 +166,6 @@
 }
 
 @media (max-width: 480px) {
-  /* FIX input date & time agar konsisten di mobile */
   .inputGroup input[type='date'],
   .inputGroup input[type='time'] {
     -webkit-appearance: noe;
