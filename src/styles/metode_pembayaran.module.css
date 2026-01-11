@@ -102,7 +102,6 @@
 /* Responsive */
 @media (max-width: 768px) {
   .container {
-    margin: 30px 10px;
     padding: 20px;
   }
   .option span {
@@ -120,3 +119,29 @@
     font-size: 14px;
   }
 }
+@media (max-width: 480px) {
+  .container {
+    margin: 20px 8px 120px;
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .option {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .option input[type='radio'] {
+    width: 18px;
+    height: 18px;
+  }
+
+  .option span {
+    font-size: 0.95rem;
+  }
+}
+
