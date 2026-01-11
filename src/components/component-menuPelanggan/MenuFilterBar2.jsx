@@ -4,10 +4,10 @@ function MenuFilterBar({ menu, kategori, setKategori, search, setSearch}) {
   // Ambil semua kategori dari data menu
   let kategoriList = Array.from(new Set(menu.map((m) => m.nama_kategori))).filter(Boolean);
 
-  // Pastikan "Makanan" selalu di atas
+  // Pastikan "Food" selalu di atas
   kategoriList.sort((a, b) => {
-    if (a.toLowerCase() === 'makanan') return -1;
-    if (b.toLowerCase() === 'makanan') return 1;
+    if (a.toLowerCase() === 'food') return -1;
+    if (b.toLowerCase() === 'food') return 1;
     return a.localeCompare(b); // sisanya urut abjad
   });
 
