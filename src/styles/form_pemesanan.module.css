@@ -26,22 +26,17 @@
   transform: scale(1.01);
 }
 .pemesananCard::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: -2px;
   border-radius: 16px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 246, 21, 0.6),
-    rgba(255, 246, 21, 0.1),
-    rgba(255, 246, 21, 0.6)
-  );
+  background: linear-gradient(135deg, rgba(255, 246, 21, 0.6), rgba(255, 246, 21, 0.1), rgba(255, 246, 21, 0.6));
   z-index: -1;
   filter: blur(18px);
   opacity: 0.35;
 }
 .pemesananCard::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 70px;
   height: 70px;
@@ -85,7 +80,7 @@
   transition: 0.4s;
 }
 .imageSide::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
@@ -107,25 +102,25 @@
   animation: fadeUp 1.2s ease forwards;
 }
 .formSide::before {
-  content: "";
+  content: '';
   position: absolute;
   top: -40px;
   right: -40px;
   width: 140px;
   height: 140px;
-  background: radial-gradient(circle, rgba(255,246,21,0.4), transparent 70%);
+  background: radial-gradient(circle, rgba(255, 246, 21, 0.4), transparent 70%);
   filter: blur(25px);
   opacity: 0.4;
   animation: floatGlow 6s infinite ease-in-out alternate;
 }
 .formSide::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -40px;
   left: -40px;
   width: 120px;
   height: 120px;
-  background: radial-gradient(circle, rgba(255,246,21,0.3), transparent 70%);
+  background: radial-gradient(circle, rgba(255, 246, 21, 0.3), transparent 70%);
   filter: blur(20px);
   opacity: 0.35;
   animation: floatGlow 5s infinite ease-in-out alternate-reverse;
@@ -133,8 +128,12 @@
 
 /* Animation */
 @keyframes floatGlow {
-  from { transform: translateY(0); }
-  to   { transform: translateY(15px); }
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(15px);
+  }
 }
 
 /* Input Group */
@@ -202,15 +201,10 @@
   overflow: hidden;
 }
 .pemesananButton::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,246,21,0.4),
-    transparent
-  );
+  background: linear-gradient(120deg, transparent, rgba(255, 246, 21, 0.4), transparent);
   animation: shine 2.5s infinite;
 }
 .pemesananButton:hover {
@@ -221,8 +215,12 @@
 
 /* Animation */
 @keyframes shine {
-  0% { transform: translateX(-130%); }
-  100% { transform: translateX(130%); }
+  0% {
+    transform: translateX(-130%);
+  }
+  100% {
+    transform: translateX(130%);
+  }
 }
 @keyframes fadeUp {
   from {
@@ -246,5 +244,20 @@
   .formSide {
     border-left: none;
     border-top: 2px solid rgba(255, 246, 21, 0.2);
+  }
+}
+@media (max-width: 480px) {
+  .inputGroup input[type='date'],
+  .inputGroup input[type='time'] {
+    -webkit-appearance: auto;
+    appearance: auto;
+    width: 100%;
+    min-height: 48px;
+    font-size: 1rem;
+  }
+  .inputGroup .inputDisabled[type='date'],
+  .inputGroup .inputDisabled[type='time'] {
+    -webkit-appearance: none;
+    appearance: none;
   }
 }
