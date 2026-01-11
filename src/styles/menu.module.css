@@ -1,10 +1,34 @@
 /* Garis */
 .decorativeLine2 {
-  background-color: #fff615;
-  margin-left: 40px;
-  margin-bottom: 20px;
-  width: 100px;
+  width: 120px;
   height: 4px;
+  margin: 0.6rem auto 2rem auto;
+  border-radius: 10px;
+  background: linear-gradient(90deg, transparent, #fff615, transparent);
+  position: relative;
+  animation: pulseLine 2.5s ease-in-out infinite;
+}
+@keyframes pulseLine {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* Glow effect */
+.decorativeLine2::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #fff615;
+  filter: blur(8px);
+  opacity: 0.4;
+  z-index: -1;
 }
 
 /* Konten */
@@ -301,8 +325,8 @@
   .menuActions {
     flex-direction: column;
     gap: 8px;
-    width: 100%; 
-    align-items: stretch; 
+    width: 100%;
+    align-items: stretch;
   }
   .menuActions button {
     width: 100%;
@@ -328,4 +352,10 @@
   .menuActions button {
     width: 100%;
   }
+  .decorativeLine2 {
+    width: 80px;
+    height: 3px;
+    margin-bottom: 1.5rem;
+  }
 }
+
