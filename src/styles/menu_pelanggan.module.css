@@ -40,7 +40,10 @@
   font-size: 24px;
   font-weight: bold;
   margin: 0.6rem auto 2rem auto;
-  color: linear-gradient(45deg, #fff615, #c7b900);
+  color: #fff615;
+  text-shadow: 0 0 12px rgba(255, 246, 21, 0.35);
+  text-align: center;
+  position: relative;
 }
 
 /* Header filter + search + add button */
