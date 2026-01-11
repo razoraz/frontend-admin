@@ -1,9 +1,7 @@
-/* Garis */
 .decorativeLine2 {
   width: 120px;
   height: 4px;
-  margin-left: 30px;
-  margin-bottom: 20px;
+  margin: 0.6rem auto 2rem auto;
   border-radius: 10px;
   background: linear-gradient(90deg, transparent, #fff615, transparent);
   position: relative;
@@ -41,8 +39,8 @@
 .menuSectionTitle {
   font-size: 24px;
   font-weight: bold;
-  margin: 20px 0 10px;
-  color: #ffd633;
+  margin: 0.6rem auto 2rem auto;
+  color: linear-gradient(45deg, #fff615, #c7b900);
 }
 
 /* Header filter + search + add button */
