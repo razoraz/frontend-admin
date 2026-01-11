@@ -4,7 +4,6 @@
 .scannerSection {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 100%);
   color: #fff;
   display: flex;
   justify-content: center;
