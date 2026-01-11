@@ -101,7 +101,19 @@ function MenuList({ filteredMenu, cart, addToCart, updateQty }) {
     <div>
       {categories.map((cat) => {
         const normalizeCat = cat.toLowerCase().replace(/\s+/g, '');
-        menusByCategory[cat].length > 0 && <MenuCategory key={cat} title={cat} icon={kategoriIcons[normalizeCat] || '🍵'} items={menusByCategory[cat]} cart={cart} addToCart={addToCart} updateQty={updateQty} />;
+        return (
+          menusByCategory[cat].length > 0 && (
+            <MenuCategory
+              key={cat}
+              title={cat}
+              icon={kategoriIcons[normalizeCat] || '🍽️'}
+              items={menusByCategory[cat]}
+              cart={cart}
+              addToCart={addToCart}
+              updateQty={updateQty}
+            />
+          )
+        );
       })}
 
       {noData && (
