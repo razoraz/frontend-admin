@@ -10,6 +10,25 @@ function TentangKamiPage() {
     document.title = 'Tentang Kami - Basecamp Kopi';
     window.scrollTo(0, 0);
   }, []);
+  useEffect(() => {
+  const elements = document.querySelectorAll('.fadeUp');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  elements.forEach((el) => observer.observe(el));
+
+  return () => observer.disconnect();
+}, []);
+
   return (
     <div className={styles.pageWrapper}>
       <HeaderPagePelanggan title="Tentang Basecamp Kopi" subtitle="Lebih dari sekadar kopi, sebuah pengalaman yang menginspirasi." bg_video="/background_video/navVideo.mp4" />
@@ -17,16 +36,16 @@ function TentangKamiPage() {
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>
+          <h1 className={styles.heroTitle + ' fadeUp'}>
             Kisah <span className={styles.highlight}>Rasa</span> yang <span className={styles.highlight}>Menginspirasi</span>
           </h1>
-          <p className={styles.heroSubtitle}>Di setiap cangkir, kami menyajikan cerita, dedikasi, dan cinta pada kopi terbaik Jember.</p>
+          <p className={styles.heroSubtitle + ' fadeUp'}>Di setiap cangkir, kami menyajikan cerita, dedikasi, dan cinta pada kopi terbaik Jember.</p>
         </div>
         <div className={styles.heroOverlay}></div>
       </section>
 
       {/* Philosophy Section */}
-      <section className={styles.philosophy}>
+      <section className={styles.philosophy + ' fadeUp'}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>
@@ -35,7 +54,7 @@ function TentangKamiPage() {
             <p className={styles.sectionSubtitle}>Tiga pilar yang menjadi fondasi setiap sajian kami</p>
           </div>
 
-          <div className={styles.philosophyCards}>
+          <div className={styles.philosophyCards + ' fadeUp'}>
             <div className={styles.philosophyCard}>
               <div className={styles.cardIcon}>
                 <FaLeaf />
@@ -44,7 +63,7 @@ function TentangKamiPage() {
               <p>Kami menggunakan biji kopi pilihan langsung dari perkebunan lokal Jember, dipanggang dengan teknik tradisional untuk menjaga karakter asli setiap rasa.</p>
             </div>
 
-            <div className={styles.philosophyCard}>
+            <div className={styles.philosophyCard + ' fadeUp'}>
               <div className={styles.cardIcon}>
                 <FaHeart />
               </div>
@@ -52,7 +71,7 @@ function TentangKamiPage() {
               <p>Setiap cangkir dibuat dengan perhatian penuh, dari pemilihan biji hingga penyajian terakhir, karena kami percaya kopi terbaik dibuat dengan cinta.</p>
             </div>
 
-            <div className={styles.philosophyCard}>
+            <div className={styles.philosophyCard + ' fadeUp'}>
               <div className={styles.cardIcon}>
                 <FaUsers />
               </div>
@@ -64,7 +83,7 @@ function TentangKamiPage() {
       </section>
 
       {/* Journey Section */}
-      <section className={styles.journey}>
+      <section className={styles.journey + ' fadeUp'}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>
@@ -72,7 +91,7 @@ function TentangKamiPage() {
             </h2>
           </div>
 
-          <div className={styles.timeline}>
+          <div className={styles.timeline + ' fadeUp'}>
             <div className={styles.timelineItem}>
               <div className={styles.timelineYear}>2020</div>
               <div className={styles.timelineContent}>
@@ -81,7 +100,7 @@ function TentangKamiPage() {
               </div>
             </div>
 
-            <div className={styles.timelineItem}>
+            <div className={styles.timelineItem + ' fadeUp'}>
               <div className={styles.timelineYear}>2022</div>
               <div className={styles.timelineContent}>
                 <h3>Pengakuan Lokal</h3>
@@ -89,7 +108,7 @@ function TentangKamiPage() {
               </div>
             </div>
 
-            <div className={styles.timelineItem}>
+            <div className={styles.timelineItem + ' fadeUp'}>
               <div className={styles.timelineYear}>2024</div>
               <div className={styles.timelineContent}>
                 <h3>Ekspansi dan Inovasi</h3>
@@ -101,7 +120,7 @@ function TentangKamiPage() {
       </section>
 
       {/* Values Section */}
-      <section className={styles.values}>
+      <section className={styles.values + ' fadeUp'}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>
@@ -138,7 +157,7 @@ function TentangKamiPage() {
       </section>
 
       {/* CTA Section */}
-      <section className={styles.ctaSection}>
+      <section className={styles.ctaSection + ' fadeUp'}>
         <div className={styles.container}>
           <h2 className={styles.ctaTitle}>Siap Menikmati Pengalaman Kopi yang Berbeda?</h2>
           <p className={styles.ctaText}>Kunjungi Basecamp Kopi hari ini dan temukan mengapa kami lebih dari sekadar coffee shop biasa.</p>
