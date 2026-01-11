@@ -1,7 +1,7 @@
 import MenuCategory from './MenuCategory';
 import styles from '../../styles/menu.module.css';
 
-function MenuList({ filteredMenu, onDelete}) {
+function MenuList({ filteredMenu, onDelete }) {
   // Mengelompokkan menu berdasarkan kategori
   const menusByCategory = filteredMenu.reduce((acc, item) => {
     const cat = item.nama_kategori || 'Lainnya';
@@ -13,35 +13,41 @@ function MenuList({ filteredMenu, onDelete}) {
   const categories = Object.keys(menusByCategory);
   const noData = filteredMenu.length === 0;
 
-  // Opsional: mapping kategori ke icon
+  // Mapping kategori ke icon (sudah dinormalisasi)
   const kategoriIcons = {
-    Makanan: '🥗',
-    Minuman: '🥤',
-    Snack: '🍩',
-    Dessert: '🍰',
-    Promo: '🔥',
+    food: '🍽️',
+    snack: '🍟',
+    teabased: '🍵',
+    squash: '🥤',
+    icecoffe: '☕',
+    milkbased: '🥛',
+    specialhot: '🔥',
   };
 
-  // Pastikan "Makanan" paling atas
+  // Pastikan "Food" paling atas
   categories.sort((a, b) => {
-    if (a.toLowerCase() === 'makanan') return -1; // makanan dulu
-    if (b.toLowerCase() === 'makanan') return 1;
-    return 0; // kategori lain urut sesuai munculnya
+    if (a.toLowerCase() === 'food') return -1;
+    if (b.toLowerCase() === 'food') return 1;
+    return 0;
   });
 
   return (
     <div>
-      {categories.map((cat) =>
-        menusByCategory[cat].length > 0 && (
-          <MenuCategory
-            key={cat}
-            title={cat}
-            icon={kategoriIcons[cat] || '🥤'}
-            items={menusByCategory[cat]}
-            onDelete={onDelete}
-          />
-        )
-      )}
+      {categories.map((cat) => {
+        const normalizeCat = cat.toLowerCase().replace(/\s+/g, '');
+
+        return (
+          menusByCategory[cat].length > 0 && (
+            <MenuCategory
+              key={cat}
+              title={cat}
+              icon={kategoriIcons[normalizeCat] || '🍽️'}
+              items={menusByCategory[cat]}
+              onDelete={onDelete}
+            />
+          )
+        );
+      })}
 
       {noData && (
         <div className={styles.emptyContainer}>
