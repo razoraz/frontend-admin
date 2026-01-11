@@ -142,8 +142,8 @@
 /* FIX input date & time agar konsisten di mobile */
 .inputGroup input[type="date"],
 .inputGroup input[type="time"] {
-  -webkit-appearance: none;
-  appearance: none;
+  -webkit-appearance: auto;
+  appearance: auto;
   width: 100%;
   min-height: 48px;
   font-size: 1rem;
