@@ -131,7 +131,7 @@
   cursor: pointer;
   font-size: 15px;
 }
-.statusOptions input[type="radio"] {
+.statusOptions input[type='radio'] {
   appearance: none;
   width: 18px;
   height: 18px;
@@ -141,7 +141,7 @@
   cursor: pointer;
   transition: 0.3s;
 }
-.statusOptions input[type="radio"]:checked {
+.statusOptions input[type='radio']:checked {
   background: #ffeb4d;
   box-shadow: 0 0 6px rgba(255, 230, 80, 0.8);
 }
@@ -186,4 +186,48 @@
 }
 .btnSubmit:hover {
   background: #25b864;
+}
+
+/* ================================
+   📱 RESPONSIVE - MOBILE
+================================ */
+@media (max-width: 768px) {
+  .formContainer {
+    padding: 20px 12px;
+  }
+  .reservasiForm {
+    padding: 20px;
+    margin-top: 0;
+  }
+  .rowGroup {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .formGroup input,
+  .formGroup select,
+  .formGroup textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .tableItems {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .tableItems th,
+  .tableItems td {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  /* Button */
+  .formButtons {
+    flex-direction: column;
+  }
+  .btnSubmit {
+    width: 100%;
+  }
+  .btnBack {
+    margin-bottom: 10px;
+  }
 }
