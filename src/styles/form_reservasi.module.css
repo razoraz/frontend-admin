@@ -165,3 +165,11 @@
     height: 220px;
   }
 }
+@media (max-width: 480px) {
+  .inputGroup input[type="date"],
+  .inputGroup input[type="time"] {
+    -webkit-appearance: auto;
+    appearance: auto;
+  }
+}
+
