@@ -138,7 +138,7 @@ function FormReservasi() {
 
               <div className={styles.inputGroup}>
                 <label>Tanggal Dibuat</label>
-                <input type="date" value={formData.tanggal_dibuat} placeholder="Masukkan tanggal reservasi" readOnly className={styles.inputDisabled } />
+                <input type="date" value={formData.tanggal_dibuat} readOnly className={styles.inputDisabled } />
               </div>
 
               <button type="submit" className={styles.reservasiButton}>
