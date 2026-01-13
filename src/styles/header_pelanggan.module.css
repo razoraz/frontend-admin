@@ -60,9 +60,6 @@
   box-shadow: 0 0 10px var(--neon-yellow);
   margin-bottom: 20px;
   text-transform: uppercase;
-  background: linear-gradient(to right, #ffffff, #fff615);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 20px rgba(255, 246, 21, 0.3));
 }
 
