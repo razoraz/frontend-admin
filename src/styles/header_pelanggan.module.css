@@ -73,7 +73,7 @@
   position: relative;
   padding: 12px 24px;
   border-radius: 12px;
-  text-shadow: 0 0 12px rgba(255, 246, 21, 0.4);
+  text-shadow: 0 0 12px #fff615;
 
   filter: drop-shadow(0 0 20px rgba(255, 246, 21, 0.4));
 }
