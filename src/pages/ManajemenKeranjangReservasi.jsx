@@ -195,6 +195,14 @@ const Keranjang = () => {
 
   const total = keranjang.reduce((acc, item) => acc + item.harga * item.qty, 0);
 
+  useEffect(() => {
+    const cartPemesanan = sessionStorage.getItem('cartPemesanan');
+
+    // ❌ Jika tidak lewat form dan tidak lewat reservasi
+    if (!cartPemesanan) {
+      navigate('/form-reservasi', { replace: true });
+    }
+  }, [navigate]);
 
   return (
     <div className={styles.page}>
