@@ -68,7 +68,7 @@ function ScannerPage() {
 
   return (
     <div>
-      <HeaderPagePelanggan title="Nikmati Harimu dengan Secangkir Kebahagiaan" subtitle="Rasakan cita rasa kopi yang menemani langkahmu" bg_video="/background_video/navVideo.mp4" />
+      <HeaderPagePelanggan title="PESAN LEBIH MUDAH TANPA ANTRE" subtitle="Cukup scan QR Code di mejamu dan nikmati sajian pilihan" bg_video="/background_video/navVideo.mp4" />
 
       <section className={styles.scannerSection}>
         <div className={styles.container}>
