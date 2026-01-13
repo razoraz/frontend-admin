@@ -22,7 +22,7 @@ function MenuCard({ image, name, desc, price, status }) {
       </div>
 
       {/* Decorative Line */}
-      <div className={styles.decorativeLine2}></div>
+      <div className={styles.decorativeLine}></div>
 
       {/* Deskripsi */}
       <p className={styles.menuDesc}>{desc}</p>
