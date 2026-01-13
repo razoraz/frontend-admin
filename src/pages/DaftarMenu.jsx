@@ -10,7 +10,6 @@ import FooterPage from '../components/component-html/FooterPagePelanggan';
 import MenuFilterBar from '../components/component-menuPelanggan/MenuFilterBar2';
 import MenuList from '../components/component-menuPelanggan/MenuList2';
 
-
 // Import Style
 import styles from '../styles/menu_pelanggan.module.css';
 
@@ -30,7 +29,6 @@ function DaftarMenu() {
       .catch((err) => console.error('Gagal ambil menu:', err));
   }, []);
 
-
   // Filter menu berdasarkan kategori dan pencarian
   const filteredMenu = menu.filter((item) => {
     const cocokKategori = kategori === '' || item.nama_kategori?.toLowerCase() === kategori.toLowerCase();
@@ -41,7 +39,7 @@ function DaftarMenu() {
   return (
     <div>
       {/* Navbar */}
-      <HeaderPagePelanggan title="Nikmati Harimu dengan Secangkir Kebahagaian" subtitle="Rasakan cita rasa kopi yang menemani langkahmi" bg_video="/background_video/navVideo.mp4" />
+      <HeaderPagePelanggan title="SETIAP MENU PUNYA CERITA" subtitle="Racikan rasa yang diciptakan untuk menemani setiap momenmu" bg_video="/background_video/navVideo2.mp4" />
 
       {/* Main Content */}
       <main className={styles.container}>
@@ -55,7 +53,7 @@ function DaftarMenu() {
         />
 
         {/* List Menu */}
-        <MenuList filteredMenu={filteredMenu}/>
+        <MenuList filteredMenu={filteredMenu} />
       </main>
 
       {/* Footer */}
