@@ -1,4 +1,4 @@
-import styles from '../../styles/menu.module.css';
+import styles from '../../styles/menu_pelanggan.module.css';
 
 function MenuFilterBar({ menu, kategori, setKategori, search, setSearch}) {
   // Ambil semua kategori dari data menu
