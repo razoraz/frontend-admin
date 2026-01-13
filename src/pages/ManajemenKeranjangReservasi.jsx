@@ -169,14 +169,6 @@ const Keranjang = () => {
       })
     );
   };
-  const handleBayar = () => {
-    if (keranjang.length === 0) {
-      setEmptyCartModal(true);
-      return;
-    }
-
-    navigate('/metode-pembayaran');
-  };
 
   // Hapus semua catatan
   const clearNotes = (id) => {
@@ -194,6 +186,15 @@ const Keranjang = () => {
   };
 
   const total = keranjang.reduce((acc, item) => acc + item.harga * item.qty, 0);
+
+  const handleBayar = () => {
+    if (keranjang.length === 0) {
+      setEmptyCartModal(true);
+      return;
+    }
+
+    navigate('/metode-pembayaran');
+  };
 
   useEffect(() => {
     const cartPemesanan = sessionStorage.getItem('cartPemesanan');
