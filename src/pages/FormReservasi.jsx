@@ -106,7 +106,7 @@ function FormReservasi() {
             <form onSubmit={handleSubmit}>
               <div className={styles.inputGroup}>
                 <label>Nama Lengkap</label>
-                <input type="text" name="nama_pelanggan" value={formData.nama_pelanggan} onChange={handleChange} placeholder="Masukkan nama lengkap Anda" />
+                <input type="text" name="nama_pelanggan" value={formData.nama_pelanggan} onChange={handleChange} placeholder="Masukkan nama lengkap anda" />
               </div>
 
               <div className={styles.inputGroup}>
