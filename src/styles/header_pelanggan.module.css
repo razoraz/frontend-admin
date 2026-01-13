@@ -57,19 +57,10 @@
   line-height: 1.1;
   text-transform: uppercase;
   margin-bottom: 20px;
-
   /* Gradient text */
-  background: linear-gradient(
-    90deg,
-    #ffffff 0%,
-    #ffffff 40%,
-    #fff615 70%,
-    #ffd700 100%
-  );
+  background: linear-gradient(90deg, #ffffff 0%, #ffffff 40%, #fff615 70%, #ffd700 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  /* Neon border glow */
   position: relative;
   padding: 12px 24px;
   border-radius: 12px;
