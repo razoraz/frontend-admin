@@ -55,12 +55,26 @@
   font-weight: 900;
   letter-spacing: -2px;
   line-height: 1.1;
-  color: white;
-  border-color: var(--neon-yellow);
-  box-shadow: 0 0 10px var(--neon-yellow);
-  margin-bottom: 20px;
   text-transform: uppercase;
-  filter: drop-shadow(0 0 20px rgba(255, 246, 21, 0.3));
+  margin-bottom: 20px;
+
+  /* Gradient text */
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #fff3a0 40%,
+    #fff615 70%,
+    #ffd700 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Neon border glow */
+  position: relative;
+  padding: 12px 24px;
+  border-radius: 12px;
+
+  filter: drop-shadow(0 0 20px rgba(255, 246, 21, 0.4));
 }
 
 .motivasiTengah p {
