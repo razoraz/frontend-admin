@@ -197,14 +197,11 @@ const Keranjang = () => {
 
   useEffect(() => {
     const reservasi = JSON.parse(sessionStorage.getItem('reservasi'));
-    const cart = JSON.parse(sessionStorage.getItem('cartPemesanan'));
 
     const isReservasiValid = reservasi && reservasi.nama_pelanggan && reservasi.no_meja && reservasi.tanggal_reservasi && reservasi.jam_reservasi;
 
-    const isCartValid = cart && Object.keys(cart).length > 0;
-
-    if (!isReservasiValid || !isCartValid) {
-      navigate('/scanner', { replace: true });
+    if (!isReservasiValid) {
+      navigate('/form-reservasi', { replace: true });
     }
   }, [navigate]);
 
