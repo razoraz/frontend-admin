@@ -77,6 +77,41 @@
 
   filter: drop-shadow(0 0 20px rgba(255, 246, 21, 0.4));
 }
+.motivasiTengah h1::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 3px;
+  border-radius: 12px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #fff615,
+    #ffd700,
+    transparent
+  );
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  filter: blur(4px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+.motivasiTengah h1::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #fff615, #ffd700);
+  filter: blur(18px);
+  opacity: 0.35;
+  z-index: -1;
+}
 
 .motivasiTengah p {
   font-size: 1.3rem;
