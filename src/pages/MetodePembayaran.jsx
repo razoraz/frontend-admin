@@ -148,11 +148,10 @@ const MetodePembayaran = () => {
   };
 
   useEffect(() => {
-    const formPemesanan = sessionStorage.getItem('formPemesanan');
-    const reservasi = sessionStorage.getItem('reservasi');
+    const cartPemesanan = sessionStorage.getItem('cartPemesanan');
 
     // ❌ Jika tidak lewat form dan tidak lewat reservasi
-    if (!formPemesanan && !reservasi) {
+    if (!cartPemesanan) {
       navigate('/scanner', { replace: true });
     }
   }, [navigate]);
