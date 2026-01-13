@@ -19,6 +19,7 @@ const Keranjang = () => {
   const [tanggal_reservasi, setTanggalReservasi] = useState('');
   const [jam_reservasi, setJamReservasi] = useState('');
   const [nomor_whatsapp, setNoWhatsapp] = useState('');
+  const [emptyCartModal, setEmptyCartModal] = useState(false);
 
   const navigate = useNavigate();
 
@@ -168,6 +169,14 @@ const Keranjang = () => {
       })
     );
   };
+  const handleBayar = () => {
+    if (keranjang.length === 0) {
+      setEmptyCartModal(true);
+      return;
+    }
+
+    navigate('/metode-pembayaran');
+  };
 
   // Hapus semua catatan
   const clearNotes = (id) => {
@@ -187,11 +196,14 @@ const Keranjang = () => {
   const total = keranjang.reduce((acc, item) => acc + item.harga * item.qty, 0);
 
   useEffect(() => {
-    const formPemesanan = sessionStorage.getItem('formPemesanan');
-    const reservasi = sessionStorage.getItem('reservasi');
+    const reservasi = JSON.parse(sessionStorage.getItem('reservasi'));
+    const cart = JSON.parse(sessionStorage.getItem('cartPemesanan'));
 
-    // ❌ Jika tidak lewat form dan tidak lewat reservasi
-    if (!formPemesanan && !reservasi) {
+    const isReservasiValid = reservasi && reservasi.nama_pelanggan && reservasi.no_meja && reservasi.tanggal_reservasi && reservasi.jam_reservasi;
+
+    const isCartValid = cart && Object.keys(cart).length > 0;
+
+    if (!isReservasiValid || !isCartValid) {
       navigate('/scanner', { replace: true });
     }
   }, [navigate]);
@@ -293,7 +305,7 @@ const Keranjang = () => {
           <p>Total:</p>
           <h3>Rp {total.toLocaleString()}</h3>
         </div>
-        <button className={styles.payBtn} onClick={() => navigate('/metode-pembayaran')}>
+        <button className={styles.payBtn} onClick={handleBayar}>
           Bayar
         </button>
       </div>
@@ -308,6 +320,17 @@ const Keranjang = () => {
         message="Apakah Anda yakin ingin menghapus menu ini dari keranjang?"
         confirmLabel="Ya"
         cancelLabel="Tidak"
+      />
+      <Modal
+        isOpen={emptyCartModal}
+        onClose={() => {
+          setEmptyCartModal(false);
+          navigate('/pemesanan-menu');
+        }}
+        type="warning"
+        title="Keranjang Kosong"
+        message="Anda belum memilih menu. Silakan pilih menu terlebih dahulu."
+        confirmLabel="Pilih Menu"
       />
     </div>
   );
