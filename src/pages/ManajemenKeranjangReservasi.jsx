@@ -195,15 +195,6 @@ const Keranjang = () => {
 
   const total = keranjang.reduce((acc, item) => acc + item.harga * item.qty, 0);
 
-  useEffect(() => {
-    const reservasi = JSON.parse(sessionStorage.getItem('reservasi'));
-
-    const isReservasiValid = reservasi && reservasi.nama_pelanggan && reservasi.no_meja && reservasi.tanggal_reservasi && reservasi.jam_reservasi;
-
-    if (!isReservasiValid) {
-      navigate('/form-reservasi', { replace: true });
-    }
-  }, [navigate]);
 
   return (
     <div className={styles.page}>
