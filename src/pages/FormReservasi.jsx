@@ -24,15 +24,13 @@ function FormReservasi() {
     no_meja: '',
     tanggal_reservasi: '',
     jam_reservasi: '',
-    tanggal_dibuat: new Date().toISOString().split('T')[0],
+    tanggal_dibuat: new Date().toLocaleDateString('sv-SE'),
   });
-  // Hitung tanggal besok
   const today = new Date();
   const besok = new Date(today);
   besok.setDate(today.getDate() + 1);
 
-  // Format YYYY-MM-DD
-  const formatDate = (date) => date.toISOString().split('T')[0];
+  const formatDate = (date) => date.toLocaleDateString('sv-SE');
   const maxTanggal = formatDate(besok);
 
   useEffect(() => {
@@ -73,7 +71,7 @@ function FormReservasi() {
 
     // SIMPAN KE SESSION STORAGE
     sessionStorage.removeItem('cartPemesanan');
-    sessionStorage.removeItem('cartNotes')
+    sessionStorage.removeItem('cartNotes');
     sessionStorage.removeItem('konteksPemesanan');
     sessionStorage.removeItem('formPemesanan');
     sessionStorage.setItem('reservasi', JSON.stringify(formData));
@@ -118,7 +116,7 @@ function FormReservasi() {
                 <select name="no_meja" value={formData.no_meja} onChange={handleChange}>
                   <option value="">-- Pilih Meja --</option>
                   {mejaList
-                    .filter((meja) => meja.status_meja === 'tersedia') 
+                    .filter((meja) => meja.status_meja === 'tersedia')
                     .map((meja) => (
                       <option key={meja.id_meja} value={meja.no_meja}>
                         Meja {meja.no_meja} - {meja.kapasitas} Orang
@@ -139,7 +137,7 @@ function FormReservasi() {
 
               <div className={styles.inputGroup}>
                 <label>Tanggal Dibuat</label>
-                <input type="date" value={formData.tanggal_dibuat} readOnly className={styles.inputDisabled } />
+                <input type="date" value={formData.tanggal_dibuat} readOnly className={styles.inputDisabled} />
               </div>
 
               <button type="submit" className={styles.reservasiButton}>
