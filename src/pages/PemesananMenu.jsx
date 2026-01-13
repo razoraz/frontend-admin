@@ -248,7 +248,7 @@ function PemesananPelanggan() {
 
   return (
     <div className={styles.wrapper}>
-      <HeaderPagePelanggan title={`Halo kak ${namaPelanggan}👋👋`} subtitle="Mau pesan apa hari ini? 😊" bg_video="/background_video/navVideo5.mp4" />
+      <HeaderPagePelanggan title={`Halo kak ${namaPelanggan}👋👋`} subtitle="Mau pesan apa hari ini? 😊" bg_video="/background_video/navVideo4.mp4" />
 
       <main className={styles.container}>
         <div className={styles.menuHeader}>
