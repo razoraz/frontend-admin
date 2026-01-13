@@ -48,8 +48,6 @@
   }
 }
 
-
-
 /* Konten */
 .container {
   padding: 20px;
@@ -76,8 +74,8 @@
   background: #1e1e1e;
   padding: 12px 16px;
   border-radius: 8px;
-  border-color: #fff615;
-  box-shadow: 0 0 10px #fff615;
+  border-color: #ffffff;
+  box-shadow: 0 0 10px #ffffff;
 }
 .menuFilter {
   padding: 8px;
@@ -165,24 +163,11 @@
 .menuName {
   font-size: 18px;
   font-weight: 700;
-  color: #fff615;
+  color: #ffffff;
   margin-bottom: 4px;
   text-shadow: 0 0 8px rgba(255, 246, 21, 0.4);
 }
 
-.menuInfo {
-  display: flex;
-  flex: 1;
-  min-width: 0;
-  text-align: center;
-  flex-direction: column;
-}
-.menuInfo h3 {
-  margin: 0 0 5px 0;
-  font-size: 18px;
-  color: #ffd633;
-  word-break: break-word;
-}
 .menuDesc {
   font-size: 14px;
   color: #cfcfcf;
@@ -208,10 +193,9 @@
 .menuPrice {
   font-size: 18px;
   font-weight: bold;
-  color: #ffd633;
+  color: #ffffff;
   margin-top: 8px;
 }
-
 
 /* Menu tidak tersedia */
 .emptyContainer {
