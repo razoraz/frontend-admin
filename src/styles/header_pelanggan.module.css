@@ -102,16 +102,7 @@
   opacity: 0.9;
   pointer-events: none;
 }
-.motivasiTengah h1::after {
-  content: '';
-  position: absolute;
-  inset: -6px;
-  border-radius: 14px;
-  background: linear-gradient(90deg, #fff615, #ffd700);
-  filter: blur(18px);
-  opacity: 0.35;
-  z-index: -1;
-}
+
 
 .motivasiTengah p {
   font-size: 1.3rem;
