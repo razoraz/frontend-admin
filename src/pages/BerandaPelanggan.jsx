@@ -102,9 +102,9 @@ function BerandaPage() {
             {feedback.length > 0 ? (
               feedback.map((fb, index) => (
                 <div key={index} className={styles.feedbackCard}>
-                  <p>"{fb.feedback}"</p>
-                  <img src={fb.gambar_feedback} alt={fb.nama_pelanggan} />
                   <strong>{fb.nama_pelanggan}</strong>
+                  <img src={fb.gambar_feedback} alt={fb.nama_pelanggan} />
+                  <p>"{fb.feedback}"</p>
                   <span>⭐ {fb.rating}/5</span>
                 </div>
               ))
@@ -126,7 +126,7 @@ function BerandaPage() {
               <div className={styles.eventCard}>
                 <div className={styles.eventImageWrapper}>
                   <img src={event.gambar_event} alt={event.judul} className={styles.eventImage} />
-                  <div className={styles.eventBadge}>Promo</div>
+                  <div className={styles.eventBadge}>Event</div>
                 </div>
                 <div className={styles.eventContent}>
                   <h4 className={styles.eventTitle}>{event.judul}</h4>
