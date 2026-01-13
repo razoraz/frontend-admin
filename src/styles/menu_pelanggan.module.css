@@ -184,7 +184,7 @@
   height: 120px;
   object-fit: cover;
   border-radius: 14px;
-  box-shadow: 0 0 12px rgba(255, 246, 21, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease;
 }
 .menuCard:hover .menuImage {
