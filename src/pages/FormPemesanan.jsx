@@ -57,7 +57,7 @@ function FormPemesanan() {
     }
     sessionStorage.removeItem('cartPemesanan');
     sessionStorage.removeItem('konteksPemesanan');
-    sessionStorage.removeItem('cartNotes')
+    sessionStorage.removeItem('cartNotes');
     sessionStorage.removeItem('reservasi');
     sessionStorage.setItem('formPemesanan', JSON.stringify(formData));
     navigate('/pemesanan-menu');
@@ -91,7 +91,7 @@ function FormPemesanan() {
   return (
     <>
       {/* Header */}
-      <HeaderPagePelanggan title="Isi Form Pemesanan" subtitle="Lengkapi data sebelum mulai memesan menu" bg_video="/background_video/navVideo.mp4" />
+      <HeaderPagePelanggan title="Satu Langkah Sebelum Memesan" subtitle="Lengkapi data diri untuk melanjutkan pemesanan" bg_video="/background_video/navVideo6.mp4" />
       {/* Form Pemesanan */}
       <div className={styles.centerWrapper}>
         <div className={styles.pemesananCard}>
