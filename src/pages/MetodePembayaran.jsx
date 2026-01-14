@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from '../styles/metode_pembayaran.module.css';
 import HeaderPagePelanggan from '../components/component-html/HeaderPagePelanggan';
+import Modal from '../components/modal-notifikasi/ModalNotifikasi';
 import axios from 'axios';
 
 const MetodePembayaran = () => {
   const [metode, setMetode] = useState('');
+  const [errorModal, setErrorModal] = useState(false);
   const [keranjang, setKeranjang] = useState([]);
   const [menuData, setMenuData] = useState([]);
   const [metodeList, setMetodeList] = useState([]);
@@ -63,7 +65,7 @@ const MetodePembayaran = () => {
 
   const handleBayar = async () => {
     if (!metode) {
-      alert('Pilih metode pembayaran terlebih dahulu!');
+      setErrorModal(true);
       return;
     }
 
@@ -178,10 +180,11 @@ const MetodePembayaran = () => {
           <p>Total:</p>
           <h3>Rp {total.toLocaleString()}</h3>
         </div>
-        <button className={styles.payBtn} onClick={handleBayar} disabled={loading || !metode}>
+        <button className={styles.payBtn} onClick={handleBayar} disabled={loading}>
           {loading ? 'Memproses...' : 'Bayar'}
         </button>
       </div>
+      <Modal isOpen={errorModal} onClose={() => setErrorModal(false)} type="error" title="Metode Pembayaran" message="Anda belum memilih metode pembayaran. Silakan pilih terlebih dahulu." confirmLabel="Oke" />
     </div>
   );
 };
