@@ -19,7 +19,6 @@ const Keranjang = () => {
   const [tanggal_reservasi, setTanggalReservasi] = useState('');
   const [jam_reservasi, setJamReservasi] = useState('');
   const [nomor_whatsapp, setNoWhatsapp] = useState('');
-  const [emptyCartModal, setEmptyCartModal] = useState(false);
 
   const navigate = useNavigate();
 
@@ -28,8 +27,7 @@ const Keranjang = () => {
   };
 
   // MODAL KONFIRMASI HAPUS
-  const [modalOpen, setModalOpen] = useState(false);
-  const [itemToDelete, setItemToDelete] = useState(null);
+  const [successModalOpen, setSuccessModalOpen] = useState(false);
 
   // Ambil menu dari backend
   useEffect(() => {
@@ -93,52 +91,42 @@ const Keranjang = () => {
       })
     );
   }, [menuData]);
+  const handleSuccessClose = () => {
+    setSuccessModalOpen(false);
+    navigate('/pemesanan-menu');
+  };
 
-  // UPDATE QTY + MODAL
   const updateQty = (id, type) => {
     const item = keranjang.find((i) => i.id === id);
 
+    // 🔴 JIKA QTY = 1 DAN DIKURANGI → HAPUS LANGSUNG
     if (type === 'minus' && item.qty === 1) {
-      setItemToDelete(id);
-      setModalOpen(true);
+      const updated = keranjang.filter((i) => i.id !== id);
+      setKeranjang(updated);
+
+      // Update cartPemesanan
+      const cartObj = {};
+      updated.forEach((i) => (cartObj[i.id] = i.qty));
+      sessionStorage.setItem('cartPemesanan', JSON.stringify(cartObj));
+
+      // Hapus catatan
+      const notesStorage = JSON.parse(sessionStorage.getItem('cartNotes')) || {};
+      delete notesStorage[id];
+      sessionStorage.setItem('cartNotes', JSON.stringify(notesStorage));
+
+      // 🔔 Modal sukses
+      setSuccessModalOpen(true);
       return;
     }
 
-    const updated = keranjang.map((item) => {
-      if (item.id === id) {
-        return {
-          ...item,
-          qty: type === 'plus' ? item.qty + 1 : Math.max(1, item.qty - 1),
-        };
-      }
-      return item;
-    });
+    // Normal plus / minus
+    const updated = keranjang.map((item) => (item.id === id ? { ...item, qty: type === 'plus' ? item.qty + 1 : item.qty - 1 } : item));
 
     setKeranjang(updated);
 
-    // Update cartPemesanan
     const cartObj = {};
     updated.forEach((i) => (cartObj[i.id] = i.qty));
     sessionStorage.setItem('cartPemesanan', JSON.stringify(cartObj));
-  };
-
-  // Hapus item setelah konfirmasi modal
-  const confirmDeleteItem = () => {
-    const updated = keranjang.filter((item) => item.id !== itemToDelete);
-    setKeranjang(updated);
-
-    // Update cartPemesanan
-    const cartObj = {};
-    updated.forEach((i) => (cartObj[i.id] = i.qty));
-    sessionStorage.setItem('cartPemesanan', JSON.stringify(cartObj));
-
-    // Hapus catatan dari cartNotes
-    const notesStorage = JSON.parse(sessionStorage.getItem('cartNotes')) || {};
-    delete notesStorage[itemToDelete];
-    sessionStorage.setItem('cartNotes', JSON.stringify(notesStorage));
-
-    setModalOpen(false);
-    setItemToDelete(null);
   };
 
   // Toggle form catatan
@@ -186,15 +174,6 @@ const Keranjang = () => {
   };
 
   const total = keranjang.reduce((acc, item) => acc + item.harga * item.qty, 0);
-
-  const handleBayar = () => {
-    if (keranjang.length === 0) {
-      setEmptyCartModal(true);
-      return;
-    }
-
-    navigate('/metode-pembayaran');
-  };
 
   useEffect(() => {
     const cartPemesanan = sessionStorage.getItem('cartPemesanan');
@@ -302,33 +281,13 @@ const Keranjang = () => {
           <p>Total:</p>
           <h3>Rp {total.toLocaleString()}</h3>
         </div>
-        <button className={styles.payBtn} onClick={handleBayar}>
+        <button className={styles.payBtn} onClick={() => navigate('/metode-pembayaran')}>
           Bayar
         </button>
       </div>
 
       {/* MODAL KONFIRMASI */}
-      <Modal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        onConfirm={confirmDeleteItem}
-        type="question"
-        title="Hapus Pesanan?"
-        message="Apakah Anda yakin ingin menghapus menu ini dari keranjang?"
-        confirmLabel="Ya"
-        cancelLabel="Tidak"
-      />
-      <Modal
-        isOpen={emptyCartModal}
-        onClose={() => {
-          setEmptyCartModal(false);
-          navigate('/pemesanan-menu');
-        }}
-        type="warning"
-        title="Keranjang Kosong"
-        message="Anda belum memilih menu. Silakan pilih menu terlebih dahulu."
-        confirmLabel="Pilih Menu"
-      />
+      <Modal isOpen={successModalOpen} onClose={handleSuccessClose} type="success" title="Pesanan Dihapus" message="Menu berhasil dihapus dari keranjang. Silakan pilih menu kembali." confirmLabel="OK" />
     </div>
   );
 };
