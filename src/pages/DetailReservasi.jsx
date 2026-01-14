@@ -204,6 +204,7 @@ function DetailReservasi() {
                 <td>{it.jumlah}</td>
                 <td>Rp {it.harga}</td>
                 <td>Rp {it.subtotal}</td>
+                <td>{it.catatan || '-'}</td>
               </tr>
             ))}
           </tbody>
