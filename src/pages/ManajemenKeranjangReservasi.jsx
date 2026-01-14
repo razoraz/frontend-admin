@@ -107,15 +107,23 @@ const Keranjang = () => {
       // Update cartPemesanan
       const cartObj = {};
       updated.forEach((i) => (cartObj[i.id] = i.qty));
-      sessionStorage.setItem('cartPemesanan', JSON.stringify(cartObj));
 
-      // Hapus catatan
+      if (updated.length === 0) {
+        sessionStorage.removeItem('cartPemesanan');
+      } else {
+        sessionStorage.setItem('cartPemesanan', JSON.stringify(cartObj));
+      }
+
+      // Hapus catatan item
       const notesStorage = JSON.parse(sessionStorage.getItem('cartNotes')) || {};
       delete notesStorage[id];
       sessionStorage.setItem('cartNotes', JSON.stringify(notesStorage));
 
-      // 🔔 Modal sukses
-      setSuccessModalOpen(true);
+      // ✅ MODAL HANYA JIKA KERANJANG KOSONG
+      if (updated.length === 0) {
+        setSuccessModalOpen(true);
+      }
+
       return;
     }
 
