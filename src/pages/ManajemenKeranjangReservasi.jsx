@@ -295,7 +295,7 @@ const Keranjang = () => {
       </div>
 
       {/* MODAL KONFIRMASI */}
-      <Modal isOpen={successModalOpen} onClose={handleSuccessClose} type="success" title="Pesanan Dihapus" message="Maaf menu yang yang dipilih telah terhapus. Mohon pesan ulang pesanan anda." confirmLabel="Oke" />
+      <Modal isOpen={successModalOpen} onClose={handleSuccessClose} type="warning" title="Pesanan Dihapus" message="Maaf menu yang yang dipilih telah terhapus. Mohon pesan ulang pesanan anda." confirmLabel="Oke" />
     </div>
   );
 };
