@@ -31,6 +31,7 @@ function FormReservasi() {
   besok.setDate(today.getDate() + 1);
 
   const formatDate = (date) => date.toLocaleDateString('sv-SE');
+  const minTanggal = formatDate(today);
   const maxTanggal = formatDate(besok);
 
   useEffect(() => {
@@ -127,7 +128,7 @@ function FormReservasi() {
 
               <div className={styles.inputGroup}>
                 <label>Tanggal Reservasi</label>
-                <input type="date" name="tanggal_reservasi" value={formData.tanggal_reservasi} onChange={handleChange} max={maxTanggal} />
+                <input type="date" name="tanggal_reservasi" value={formData.tanggal_reservasi} onChange={handleChange} max={maxTanggal} min={minTanggal} />
               </div>
 
               <div className={styles.inputGroup}>
