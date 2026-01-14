@@ -64,8 +64,8 @@ function FormReservasi() {
     if (!nama_pelanggan || !nomor_whatsapp || !no_meja || !tanggal_reservasi || !jam_reservasi) {
       setModal({
         isOpen: true,
-        title: 'Data Tidak Lengkap',
-        message: 'Semua field wajib diisi',
+        title: 'Reservasi Gagal',
+        message: 'Data yang anda isi tidak sesuai. Silahkan periksa kembali.',
       });
       return;
     }
