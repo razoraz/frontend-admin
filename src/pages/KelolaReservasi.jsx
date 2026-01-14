@@ -144,7 +144,7 @@ function KelolaReservasi() {
                 isOpen: true,
                 type: 'success',
                 title: 'Berhasil!',
-                message: 'Reservasi berhasil dihapus.',
+                message: 'Data reservasi berhasil dihapus.',
                 onConfirm: () => setModal((prev) => ({ ...prev, isOpen: false })),
               });
             }, 100);
