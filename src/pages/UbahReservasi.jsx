@@ -72,7 +72,7 @@ function UbahReservasi() {
     // Modal question
     setModalType('question');
     setModalTitle('Simpan Perubahan?');
-    setModalMessage('Apakah Anda yakin ingin menyimpan perubahan ini?');
+    setModalMessage('Apakah anda yakin ingin merubah data reservasi ini?');
     setOnConfirmAction(() => handleConfirmUpdate);
     setModalOpen(true);
   };
@@ -221,7 +221,7 @@ function UbahReservasi() {
         message={modalMessage}
         onClose={handleCloseModal}
         onConfirm={onConfirmAction}
-        confirmLabel="Ya"
+        confirmLabel="Ubah"
         cancelLabel="Batal"
       />
     </div>
