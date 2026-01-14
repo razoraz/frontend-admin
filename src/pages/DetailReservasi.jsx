@@ -194,6 +194,7 @@ function DetailReservasi() {
               <th>Jumlah</th>
               <th>Harga</th>
               <th>Total</th>
+              <th>Catatan</th>
             </tr>
           </thead>
 
