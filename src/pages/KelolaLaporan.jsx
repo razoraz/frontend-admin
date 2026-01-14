@@ -34,7 +34,7 @@ function LaporanPage() {
     }
   };
   useEffect(() => {
-    document.title = 'Beranda Admin - Basecamp Kopi';
+    document.title = 'Unduh Laporan - Basecamp Kopi';
   }, []);
 
   return (
