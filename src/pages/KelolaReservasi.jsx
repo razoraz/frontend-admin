@@ -133,7 +133,7 @@ function KelolaReservasi() {
         isOpen: true,
         type: 'question',
         title: 'Hapus Reservasi?',
-        message: 'Apakah Anda yakin ingin menghapus reservasi ini?',
+        message: 'Apakah anda yakin ingin menghapus data reservasi ini?',
         onConfirm: async () => {
           try {
             await axios.delete(`https://backend-production-8cf7.up.railway.app/api/reservasi/delete-reservasi/${id_reservasi}`);
@@ -370,7 +370,16 @@ function KelolaReservasi() {
       )}
       <FooterPage />
 
-      <Modal isOpen={modal.isOpen} type={modal.type} title={modal.title} message={modal.message} onClose={() => setModal((prev) => ({ ...prev, isOpen: false }))} onConfirm={() => modal.onConfirm && modal.onConfirm()} />
+      <Modal
+        isOpen={modal.isOpen}
+        type={modal.type}
+        title={modal.title}
+        message={modal.message}
+        confirmLabel="Hapus"
+        cancelLabel="Batal"
+        onClose={() => setModal((prev) => ({ ...prev, isOpen: false }))}
+        onConfirm={() => modal.onConfirm && modal.onConfirm()}
+      />
     </div>
   );
 }
