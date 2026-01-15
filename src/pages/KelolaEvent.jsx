@@ -96,10 +96,10 @@ function KelolaEvent() {
       </div>
 
       {/* Modal Konfirmasi Hapus */}
-      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} onConfirm={handleDelete} title="Hapus Event" message="Apakah kamu yakin ingin menghapus event ini?" type="question" confirmLabel="Ya, Hapus" cancelLabel="Batal" />
+      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} onConfirm={handleDelete} title="Hapus Event" message="Apakah anda yakin ingin menghapus data event ini?" type="question" confirmLabel="Hapus" cancelLabel="Batal" />
 
       {/* Modal Success */}
-      <Modal isOpen={modalSuccessOpen} onClose={() => setModalSuccessOpen(false)} title="Sukses" message="Event berhasil dihapus!" type="success" />
+      <Modal isOpen={modalSuccessOpen} onClose={() => setModalSuccessOpen(false)} title="Berhasil Dihapus" message="Data event berhasil dihapus." type="success" />
 
       <FooterPage />
     </div>
