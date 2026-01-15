@@ -47,7 +47,7 @@ function DetailPemesanan() {
       open: true,
       type: 'question',
       title: 'Hapus Pemesanan',
-      message: 'Apakah Anda yakin ingin menghapus pemesanan ini?',
+      message: 'Apakah Anda yakin ingin menghapus data pemesanan ini?',
       onConfirm: handleDelete,
     });
   };
@@ -65,8 +65,8 @@ function DetailPemesanan() {
         setModal({
           open: true,
           type: 'success',
-          title: 'Berhasil!',
-          message: 'Pemesanan berhasil dihapus.',
+          title: 'Berhasil Dihapus',
+          message: 'Data pemesanan berhasil dihapus.',
           onConfirm: () => {
             setModal({ open: false });
             navigate('/pemesanan');
@@ -220,8 +220,8 @@ function DetailPemesanan() {
           setModal({ open: false });
         }}
         onConfirm={modal.onConfirm}
-        confirmLabel="Ya"
-        cancelLabel="Tidak"
+        confirmLabel="Hapus"
+        cancelLabel="Batal"
       />
     </div>
   );
