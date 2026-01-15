@@ -184,7 +184,7 @@ const MetodePembayaran = () => {
           {loading ? 'Memproses...' : 'Bayar'}
         </button>
       </div>
-      <Modal isOpen={errorModal} onClose={() => setErrorModal(false)} type="error" title="Metode Pembayaran" message="Anda belum memilih metode pembayaran. Silakan pilih terlebih dahulu." confirmLabel="Oke" />
+      <Modal isOpen={errorModal} onClose={() => setErrorModal(false)} type="error" title="Pilih Metode" message="Anda belum memilih metode pembayaran. Silakan pilih terlebih dahulu." confirmLabel="Oke" />
     </div>
   );
 };
