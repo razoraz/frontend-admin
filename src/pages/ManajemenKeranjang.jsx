@@ -188,7 +188,7 @@ const Keranjang = () => {
 
   return (
     <div className={styles.page}>
-      <HeaderPagePelanggan title="Keranjang Kamu" subtitle="Periksa kembali pesananmu" bg_video="/background_video/navVideo.mp4" />
+      <HeaderPagePelanggan title="Keranjang Pemesanan Kamu" subtitle="Tinjau kembali informasi pemesanan dan pesanan sebelum proses pembayaran." bg_video="/background_video/navVideo7.mp4" />
 
       <div className={styles.container}>
         <h2 className={styles.title}>Pesanan Anda</h2>
