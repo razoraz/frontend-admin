@@ -62,8 +62,8 @@ function KelolaFeedback() {
       setModal({
         isOpen: true,
         type: 'question',
-        title: 'Hapus Feedback?',
-        message: 'Apakah Anda yakin ingin menghapus feedback ini?',
+        title: 'Hapus Feedback',
+        message: 'Apakah nda yakin ingin menghapus data feedback ini?',
         onConfirm: async () => {
           try {
             await axios.delete(`https://backend-production-8cf7.up.railway.app/api/feedback/${id_feedback}`);
@@ -75,8 +75,8 @@ function KelolaFeedback() {
             setModal({
               isOpen: true,
               type: 'success',
-              title: 'Berhasil!',
-              message: 'Feedback berhasil dihapus.',
+              title: 'Berhasil Dihapus',
+              message: 'Data feedback berhasil dihapus.',
               onConfirm: () => setModal((prev) => ({ ...prev, isOpen: false })),
             });
           } catch (err) {
@@ -242,7 +242,7 @@ function KelolaFeedback() {
 
       <FooterPage />
 
-      <Modal isOpen={modal.isOpen} type={modal.type} title={modal.title} message={modal.message} onConfirm={modal.onConfirm} onClose={() => setModal((prev) => ({ ...prev, isOpen: false }))} />
+      <Modal isOpen={modal.isOpen} type={modal.type} title={modal.title} message={modal.message} confirmLabel='Hapus' cancelLabel='Batal' onConfirm={modal.onConfirm} onClose={() => setModal((prev) => ({ ...prev, isOpen: false }))} />
     </div>
   );
 }
