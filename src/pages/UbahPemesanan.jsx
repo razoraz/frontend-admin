@@ -60,8 +60,8 @@ function UbahPemesanan() {
 
     // Modal question
     setModalType('question');
-    setModalTitle('Simpan Perubahan?');
-    setModalMessage('Apakah Anda yakin ingin menyimpan perubahan ini?');
+    setModalTitle('Simpan Perubahan');
+    setModalMessage('Apakah anda yakin ingin merubah data pemesanan ini?');
     setOnConfirmAction(() => handleConfirmUpdate);
     setModalOpen(true);
   };
@@ -91,8 +91,8 @@ const handleConfirmUpdate = async () => {
 
     // Modal success
     setModalType('success');
-    setModalTitle('Berhasil!');
-    setModalMessage('Pemesanan berhasil diperbarui.');
+    setModalTitle('Perubahan Berhasil');
+    setModalMessage('Data pemesanan berhasil diubah.');
     setOnConfirmAction(() => () => {
       setModalOpen(false);
       navigate('/pemesanan');
@@ -102,8 +102,8 @@ const handleConfirmUpdate = async () => {
     console.error(err);
     // Modal error
     setModalType('error');
-    setModalTitle('Gagal!');
-    setModalMessage('Terjadi kesalahan saat menyimpan pemesanan.');
+    setModalTitle('Perubahan Gagal');
+    setModalMessage('Data yang anda input tidak sesuai. Silahkan periksa kembali.');
     setOnConfirmAction(() => () => setModalOpen(false));
     setModalOpen(true);
   }
@@ -193,7 +193,7 @@ const handleConfirmUpdate = async () => {
       <FooterPage />
 
       {/* Modal Notifikasi */}
-      <Modal isOpen={modalOpen} type={modalType} title={modalTitle} message={modalMessage} onClose={handleCloseModal} onConfirm={onConfirmAction} confirmLabel="Ya" cancelLabel="Batal" />
+      <Modal isOpen={modalOpen} type={modalType} title={modalTitle} message={modalMessage} onClose={handleCloseModal} onConfirm={onConfirmAction} confirmLabel="Ubah" cancelLabel="Batal" />
     </div>
   );
 }
