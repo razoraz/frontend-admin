@@ -135,7 +135,7 @@ const TambahFeedback = ({ idPemesanan: propId }) => {
             {/* Email */}
             <div className={styles.formGroup}>
               <label className={styles.label}>Email</label>
-              <input type="email" className={styles.input} placeholder="contoh@email.com" value={email} onChange={(e) => setEmail(e.target.value)} required />
+              <input type="email" className={styles.input} placeholder="contoh@email.com" value={email} onChange={(e) => setEmail(e.target.value)}/>
             </div>
 
             {/* Upload */}
@@ -152,7 +152,7 @@ const TambahFeedback = ({ idPemesanan: propId }) => {
             {/* Pesan */}
             <div className={styles.formGroup}>
               <label className={styles.label}>Pesan Feedback</label>
-              <textarea className={styles.textarea} placeholder="Tulis feedback Anda..." value={pesan} onChange={(e) => setPesan(e.target.value)} required />
+              <textarea className={styles.textarea} placeholder="Tulis feedback Anda..." value={pesan} onChange={(e) => setPesan(e.target.value)}/>
             </div>
 
             <button className={styles.submitBtn} type="submit" disabled={loading}>
