@@ -224,7 +224,7 @@ function KelolaMeja() {
       <FooterPage />
 
       {/* MODAL */}
-      <Modal isOpen={modal.isOpen} type={modal.type} title={modal.title} message={modal.message} onClose={closeModal} onConfirm={modal.onConfirm} />
+      <Modal isOpen={modal.isOpen} type={modal.type} title={modal.title} message={modal.message} confirmLabel={modal.confirmLabel} cancelLabel={modal.cancelLabel} onClose={closeModal} onConfirm={modal.onConfirm} />
     </div>
   );
 }
