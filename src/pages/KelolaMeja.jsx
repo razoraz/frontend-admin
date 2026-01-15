@@ -77,7 +77,7 @@ function KelolaMeja() {
     if (!editingId) {
       // ADD
       if (!mejaInput || !kapasitasInput) {
-        showModal('error', 'Penambahan Gagal', 'Silahkan isi semua kolom!');
+        showModal('error', 'Penambahan Gagal', 'Data yang anda isi tidak sesuai. Silahkan periksa kembali.');
         return;
       }
       showModal('question', 'Tambah Meja', 'Apakah anda yakin ingin menambah data meja ini?', async () => {
@@ -101,18 +101,21 @@ function KelolaMeja() {
             },
           ]);
 
-          showModal('success', 'Penambahan Berhasil', 'Data Meja berhasil ditambahkan');
+          showModal('success', 'Penambahan Berhasil', 'Data berhasil ditambahkan');
           setMejaInput('');
           setKapasitasInput('');
         } catch (err) {
           showModal('error', 'Error', 'Gagal menambahkan meja!');
           console.log(err);
         }
-      });
+      },
+      'Tambah',
+      'Batal'
+    );
     } else {
       // UPDATE
       if (!mejaInput || !kapasitasInput) {
-        showModal('error', 'Perubahan Gagal', 'Silahkan isi semua kolom!');
+        showModal('error', 'Perubahan Gagal', 'Data yang anda isi tidak sesuai. Silahkan periksa kembali.');
         return;
       }
       const updatedMeja = { no_meja: mejaInput, kapasitas: kapasitasInput };
@@ -125,7 +128,7 @@ function KelolaMeja() {
             body: JSON.stringify(updatedMeja),
           });
           setMejaList((prev) => prev.map((m) => (m.id_meja === editingId ? { ...m, nama: updatedMeja.no_meja, kapasitas: updatedMeja.kapasitas } : m)));
-          showModal('success', 'Perubahan Berhasil', 'Data Meja berhasil diubah.');
+          showModal('success', 'Perubahan Berhasil', 'Data meja berhasil diubah.');
           setEditingId(null);
           setMejaInput('');
           setKapasitasInput('');
@@ -133,7 +136,10 @@ function KelolaMeja() {
           showModal('error', 'Error', 'Gagal mengubah meja!');
           console.log(err);
         }
-      });
+      },
+      'Ubah',
+      'Batal'
+    );
     }
   };
 
@@ -149,7 +155,10 @@ function KelolaMeja() {
         showModal('error', 'Error', 'Gagal menghapus meja!');
         console.log(err);
       }
-    });
+    },
+    'Hapus',
+    'Batal'
+  );
   };
 
   // DOWNLOAD QR
