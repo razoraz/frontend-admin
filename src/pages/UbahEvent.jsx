@@ -112,10 +112,10 @@ function UbahEvent() {
         isOpen={modalQuestionOpen}
         onClose={() => setModalQuestionOpen(false)}
         onConfirm={handleSubmit}
-        title="Update Event"
-        message="Apakah kamu yakin ingin menyimpan perubahan event ini?"
+        title="Simpan Perubahan"
+        message="Apakah anda yakin ingin merubah data event ini?"
         type="question"
-        confirmLabel="Ya, Simpan"
+        confirmLabel="Ubah"
         cancelLabel="Batal"
       />
 
@@ -126,8 +126,8 @@ function UbahEvent() {
           setModalSuccessOpen(false);
           navigate('/kelola-event'); // arahkan ke kelola event
         }}
-        title="Sukses"
-        message="Event berhasil diperbarui!"
+        title="Perubahan Berhasil"
+        message="Data event berhasil diubah."
         type="success"
       />
 
