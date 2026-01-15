@@ -140,7 +140,7 @@ const TambahFeedback = ({ idPemesanan: propId }) => {
       <FooterPagePelanggan />
 
       {/* === MODAL QUESTION (KONFIRMASI) === */}
-      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} onConfirm={submitFeedback} type="question" title="Kirim Feedback?" message="Apakah Anda yakin ingin mengirimkan feedback ini?" confirmLabel="Kirim" cancelLabel="Batal" />
+      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} onConfirm={submitFeedback} type="question" title="Kirim Feedback?" message="Apakah anda yakin ingin mengirimkan feedback ini?" confirmLabel="Kirim" cancelLabel="Batal" />
 
       {/* === MODAL SUCCESS === */}
       <Modal
@@ -150,7 +150,7 @@ const TambahFeedback = ({ idPemesanan: propId }) => {
           navigate('/feedback-pelanggan');
         }}
         type="success"
-        title="Berhasil!"
+        title="Berhasil Dikirim"
         message="Feedback Anda berhasil dikirim. Terima kasih!"
       />
     </div>
