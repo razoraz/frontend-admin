@@ -12,7 +12,7 @@ function TentangKamiPage() {
   }, []);
   return (
     <div className={styles.pageWrapper}>
-      <HeaderPagePelanggan title="Tentang Basecamp Kopi" subtitle="Lebih dari sekadar kopi, sebuah pengalaman yang menginspirasi." bg_video="/background_video/navVideo.mp4" />
+      <HeaderPagePelanggan title="Basecamp Kopi" subtitle="Lebih dari sekadar kopi, sebuah pengalaman yang menginspirasi." bg_video="/background_video/navVideo10.mp4" />
 
       {/* Hero Section */}
       <section className={styles.hero}>
