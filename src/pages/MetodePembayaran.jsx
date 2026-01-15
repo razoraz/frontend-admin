@@ -3,9 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import styles from '../styles/metode_pembayaran.module.css';
 import HeaderPagePelanggan from '../components/component-html/HeaderPagePelanggan';
 import Modal from '../components/modal-notifikasi/ModalNotifikasi';
+import useBlockBack from '../hooks/BlockBack';
 import axios from 'axios';
 
 const MetodePembayaran = () => {
+  useBlockBack();
   const [metode, setMetode] = useState('');
   const [errorModal, setErrorModal] = useState(false);
   const [keranjang, setKeranjang] = useState([]);
