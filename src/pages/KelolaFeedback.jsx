@@ -63,7 +63,7 @@ function KelolaFeedback() {
         isOpen: true,
         type: 'question',
         title: 'Hapus Feedback',
-        message: 'Apakah anda yakin ingin menghapus data feedback ini?',
+        message: 'Apakah anda yakin ingin menghapus data feedback pelanggan ini?',
         onConfirm: async () => {
           try {
             await axios.delete(`https://backend-production-8cf7.up.railway.app/api/feedback/${id_feedback}`);
@@ -76,7 +76,7 @@ function KelolaFeedback() {
               isOpen: true,
               type: 'success',
               title: 'Berhasil Dihapus',
-              message: 'Data feedback berhasil dihapus.',
+              message: 'Data feedback pelanggan berhasil dihapus.',
               onConfirm: () => setModal((prev) => ({ ...prev, isOpen: false })),
             });
           } catch (err) {
