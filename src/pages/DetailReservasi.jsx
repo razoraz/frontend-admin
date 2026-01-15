@@ -70,7 +70,7 @@ function DetailReservasi() {
       open: true,
       type: 'question',
       title: 'Hapus Reservasi',
-      message: 'Apakah Anda yakin ingin menghapus reservasi ini?',
+      message: 'Apakah Anda yakin ingin menghapus data reservasi ini?',
       onConfirm: handleDelete,
     });
   };
@@ -88,8 +88,8 @@ function DetailReservasi() {
         setModal({
           open: true,
           type: 'success',
-          title: 'Berhasil!',
-          message: 'Reservasi berhasil dihapus.',
+          title: 'Berhasil Dihapus',
+          message: 'Data reservasi berhasil dihapus.',
           onConfirm: () => {
             setModal({ open: false });
             navigate('/reservasi');
@@ -235,8 +235,8 @@ function DetailReservasi() {
           setModal({ open: false });
         }}
         onConfirm={modal.onConfirm}
-        confirmLabel="Ya"
-        cancelLabel="Tidak"
+        confirmLabel="Hapus"
+        cancelLabel="Batal"
       />
     </div>
   );
