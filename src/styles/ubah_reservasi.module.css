@@ -186,16 +186,16 @@
   background: #25b864;
 }
 /* Icon kalender & jam */
-.inputGroup input[type='date']::-webkit-calendar-picker-indicator,
-.inputGroup input[type='time']::-webkit-calendar-picker-indicator {
+.formGroup input[type='date']::-webkit-calendar-picker-indicator,
+.formGroup input[type='time']::-webkit-calendar-picker-indicator {
   filter: invert(1);
   opacity: 0.8;
   cursor: pointer;
 }
 
 /* Hover effect biar konsisten */
-.inputGroup input[type='date']::-webkit-calendar-picker-indicator:hover,
-.inputGroup input[type='time']::-webkit-calendar-picker-indicator:hover {
+.formGroup input[type='date']::-webkit-calendar-picker-indicator:hover,
+.formGroup input[type='time']::-webkit-calendar-picker-indicator:hover {
   opacity: 1;
 }
 /* ================================
