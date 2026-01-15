@@ -25,6 +25,11 @@ const TambahFeedback = ({ idPemesanan: propId }) => {
   // === Modal States ===
   const [modalOpen, setModalOpen] = useState(false);
   const [modalSuccess, setModalSuccess] = useState(false);
+  const [modalError, setModalError] = useState({
+    isOpen: false,
+    title: '',
+    message: '',
+  });
 
   useEffect(() => {
     document.title = 'Tambah Feedback - Basecamp Kopi';
@@ -86,12 +91,32 @@ const TambahFeedback = ({ idPemesanan: propId }) => {
   // === KETIKA TOMBOL KIRIM DIKLIK ===
   const handleSubmitClick = (e) => {
     e.preventDefault();
-    setModalOpen(true); // buka modal konfirmasi
+
+    if (rating === 0) {
+      setModalError({
+        isOpen: true,
+        title: 'Feedback Gagal',
+        message: 'Feedback anda tidak sesuai ketentuan.',
+      });
+      return;
+    }
+
+    if (!email || !email.includes('@')) {
+      setModalError({
+        isOpen: true,
+        title: 'Feedback Gagal',
+        message: 'Feedback anda tidak sesuai ketentuan.',
+      });
+      return;
+    }
+
+    // Jika lolos validasi → buka modal konfirmasi
+    setModalOpen(true);
   };
 
   return (
     <div>
-      <HeaderPagePelanggan bg_video="/video/feedback.mp4" title="Feedback" subtitle="Beri penilaian dan komentar untuk meningkatkan kualitas pelayanan kami." />
+      <HeaderPagePelanggan bg_video="/background_video/navVideo8.mp4" title="Tambah Feedback" subtitle="Beri penilaian dan komentar untuk meningkatkan kualitas pelayanan kami." />
 
       <div className={styles.page}>
         <div className={styles.card}>
@@ -141,6 +166,7 @@ const TambahFeedback = ({ idPemesanan: propId }) => {
 
       {/* === MODAL QUESTION (KONFIRMASI) === */}
       <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} onConfirm={submitFeedback} type="question" title="Kirim Feedback?" message="Apakah anda yakin ingin mengirimkan feedback ini?" confirmLabel="Kirim" cancelLabel="Batal" />
+      <Modal isOpen={modalError.isOpen} onClose={() => setModalError({ ...modalError, isOpen: false })} type="error" title={modalError.title} message={modalError.message} />
 
       {/* === MODAL SUCCESS === */}
       <Modal
