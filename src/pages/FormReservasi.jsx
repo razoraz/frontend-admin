@@ -69,6 +69,20 @@ function FormReservasi() {
       });
       return;
     }
+    const now = new Date();
+
+    // Gabungkan tanggal + jam reservasi
+    const selectedDateTime = new Date(`${tanggal_reservasi}T${jam_reservasi}`);
+
+    // Jika waktu reservasi sudah lewat dari sekarang
+    if (selectedDateTime <= now) {
+      setModal({
+        isOpen: true,
+        title: 'Reservasi Gagal',
+        message: 'Tanggal atau jam reservasi sudah melewati waktu yang ditentukan.',
+      });
+      return;
+    }
 
     // SIMPAN KE SESSION STORAGE
     sessionStorage.removeItem('cartPemesanan');
