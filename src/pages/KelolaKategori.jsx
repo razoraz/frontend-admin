@@ -118,7 +118,7 @@ function KelolaKategori() {
     } else {
       // UPDATE
       if (!kategoriInput) {
-        showModal('error', 'Perubahan Gagal', 'Silahkan isi semua kolom!');
+        showModal('error', 'Perubahan Gagal', 'Data input tidak sesuai. Silahkan periksa kembali.');
         return;
       }
       const updatedKategori = { nama_kategori: kategoriInput };
