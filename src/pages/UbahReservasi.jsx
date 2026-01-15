@@ -71,7 +71,7 @@ function UbahReservasi() {
 
     // Modal question
     setModalType('question');
-    setModalTitle('Simpan Perubahan?');
+    setModalTitle('Simpan Perubahan');
     setModalMessage('Apakah anda yakin ingin merubah data reservasi ini?');
     setOnConfirmAction(() => handleConfirmUpdate);
     setModalOpen(true);
@@ -97,8 +97,8 @@ function UbahReservasi() {
 
       // Modal success
       setModalType('success');
-      setModalTitle('Berhasil!');
-      setModalMessage('Reservasi berhasil diperbarui.');
+      setModalTitle('Perubahan Berhasil');
+      setModalMessage('Data reservasi berhasil diubah.');
       setOnConfirmAction(() => () => {
         setModalOpen(false);
         navigate('/reservasi'); // redirect setelah klik Oke
@@ -108,8 +108,8 @@ function UbahReservasi() {
       console.error(err);
       // Modal error
       setModalType('error');
-      setModalTitle('Gagal!');
-      setModalMessage('Terjadi kesalahan saat menyimpan reservasi.');
+      setModalTitle('Perubahan Gagal');
+      setModalMessage('Data yang anda input tidak sesuai. Silahkan periksa kembali.');
       setOnConfirmAction(() => () => setModalOpen(false));
       setModalOpen(true);
     }
