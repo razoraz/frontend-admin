@@ -120,10 +120,10 @@ function TambahEvent() {
         isOpen={modalQuestionOpen}
         onClose={() => setModalQuestionOpen(false)}
         onConfirm={handleSubmit}
-        title="Simpan Event"
-        message="Apakah kamu yakin ingin menyimpan event ini?"
+        title="Tambah Event"
+        message="Apakah anda yakin ingin menambahkan data event ini?"
         type="question"
-        confirmLabel="Ya, Simpan"
+        confirmLabel="Tambah"
         cancelLabel="Batal"
       />
 
@@ -134,8 +134,8 @@ function TambahEvent() {
           setModalSuccessOpen(false);
           navigate('/kelola-event'); // arahkan ke kelola event
         }}
-        title="Sukses"
-        message="Event berhasil disimpan!"
+        title="Penambahan Berhasil"
+        message="Data berhasil ditambahkan."
         type="success"
       />
 
