@@ -31,8 +31,8 @@ function KelolaMeja() {
 
   const FRONTEND_URL = window.location.origin;
 
-  const showModal = (type, title, message, onConfirm = null) => {
-    setModal({ isOpen: true, type, title, message, onConfirm });
+  const showModal = (type, title, message, onConfirm = null, confirmLabel = 'Ya', cancelLabel = 'Batal') => {
+    setModal({ isOpen: true, type, title, message, onConfirm, confirmLabel, cancelLabel });
   };
   const closeModal = () => setModal({ ...modal, isOpen: false });
 
