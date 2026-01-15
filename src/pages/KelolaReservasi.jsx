@@ -132,7 +132,7 @@ function KelolaReservasi() {
       setModal({
         isOpen: true,
         type: 'question',
-        title: 'Hapus Reservasi?',
+        title: 'Hapus Reservasi',
         message: 'Apakah anda yakin ingin menghapus data reservasi ini?',
         onConfirm: async () => {
           try {
@@ -143,7 +143,7 @@ function KelolaReservasi() {
               setModal({
                 isOpen: true,
                 type: 'success',
-                title: 'Berhasil!',
+                title: 'Berhasil Dihapus',
                 message: 'Data reservasi berhasil dihapus.',
                 onConfirm: () => setModal((prev) => ({ ...prev, isOpen: false })),
               });
