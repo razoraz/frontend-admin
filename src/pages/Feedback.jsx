@@ -120,7 +120,7 @@ function FeedbackPage() {
   return (
     <div>
       {/* Navbar */}
-      <HeaderPagePelanggan title="Nikmati Harimu dengan Secangkir Kebahagiaan" subtitle="Rasakan cita rasa kopi yang menemani langkahmu" bg_video="../../public/background_video/navVideo.mp4" />
+      <HeaderPagePelanggan title="Apa Kata Mereka?" subtitle="Cerita dan kesan pelanggan setelah berkunjung ke Basecamp Kopi" bg_video="/background_video/navVideo9.mp4" />
 
       {/* Konten Feedback */}
       <section className={styles.feedbackContainer}>
