@@ -52,7 +52,7 @@ function FormPemesanan() {
     e.preventDefault();
     const { nama_pelanggan, tanggal, no_meja } = formData;
     if (!nama_pelanggan || !tanggal || !no_meja) {
-      showModal('error', 'Data Tidak Lengkap', 'Data yang anda isi tidak sesuai. Silahkan periksa kembali.');
+      showModal('error', 'Pemesanan Gagal', 'Data yang anda isi tidak sesuai. Silahkan periksa kembali.');
       return;
     }
     sessionStorage.removeItem('cartPemesanan');
