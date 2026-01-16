@@ -61,8 +61,8 @@ const Struk = () => {
           <img src="/logo_kafe/Logo.PNG" alt="Basecamp Kopi Logo" className={`${styles.brandLogo} ${styles.logoColor}`} />
           <img src="/logo_kafe/Logo-hitam.png" alt="Basecamp Kopi Logo" className={`${styles.brandLogo} ${styles.logoBlack}`} />
 
-          <p className={styles.brandInfo}>Jl. Kaliurang No. 23, Jember</p>
-          <p className={styles.brandInfo}>Telp: 0812-3456-7890</p>
+          <p className={styles.brandInfo}>Jl. Mastrip, Kec. Sumbersari, Kabupaten Jember, Jawa Timur 68121</p>
+          <p className={styles.brandInfo}>Telp: 0852-3315-6241</p>
           <p className={styles.brandInfo}>IG: @basecampkopi</p>
         </div>
 
