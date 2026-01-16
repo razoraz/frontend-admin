@@ -156,7 +156,7 @@ const TambahFeedback = ({ idPemesanan: propId }) => {
             </div>
 
             <button className={styles.submitBtn} type="submit" disabled={loading}>
-              {loading ? 'Mengirim...' : 'Kirim Feedback'}
+              {loading ? 'Mengirim...' : 'Kirim'}
             </button>
           </form>
         </div>
