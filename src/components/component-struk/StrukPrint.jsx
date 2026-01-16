@@ -29,8 +29,8 @@ const StrukPrint = ({ pemesanan }) => {
         <img src="/logo_kafe/Logo.PNG" className={`${styles.strukLogo} ${styles.logoColor}`} />
         <img src="/logo_kafe/Logo-hitam.png" className={`${styles.strukLogo} ${styles.logoBlack}`} />
 
-        <p className={styles.strukBrandInfo}>Jl. Kaliurang No. 23, Jember</p>
-        <p className={styles.strukBrandInfo}>Telp: 0812-3456-7890</p>
+        <p className={styles.strukBrandInfo}>Jl. Mastrip, Kec. Sumbersari, Kabupaten Jember, Jawa Timur 68121</p>
+        <p className={styles.strukBrandInfo}>Telp: 0852-3315-6241</p>
         <p className={styles.strukBrandInfo}>IG: @basecampkopi</p>
       </div>
 
