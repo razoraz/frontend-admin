@@ -47,9 +47,9 @@ const Struk = () => {
   return (
     <div>
       <HeaderPagePelanggan 
-        title="Nikmati Harimu dengan Secangkir Kebahagiaan" 
-        subtitle="Rasakan cita rasa kopi yang menemani langkahmu" 
-        bg_video="/background_video/navVideo.mp4" 
+        title="Struk Anda" 
+        subtitle="Berikut ringkasan pesanan dan detail pembayaran Anda" 
+        bg_video="/background_video/navVideo13.mp4" 
       />
 
       {/* Wrapping konten struk */}
