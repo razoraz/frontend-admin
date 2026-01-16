@@ -95,7 +95,7 @@ const TambahFeedback = ({ idPemesanan: propId }) => {
     if (rating === 0) {
       setModalError({
         isOpen: true,
-        title: 'Feedback Gagal',
+        title: 'Pengirimanan Gagal',
         message: 'Feedback anda tidak sesuai ketentuan.',
       });
       return;
@@ -104,7 +104,7 @@ const TambahFeedback = ({ idPemesanan: propId }) => {
     if (!email || !email.includes('@')) {
       setModalError({
         isOpen: true,
-        title: 'Feedback Gagal',
+        title: 'Pengiriman Gagal',
         message: 'Feedback anda tidak sesuai ketentuan.',
       });
       return;
@@ -165,7 +165,7 @@ const TambahFeedback = ({ idPemesanan: propId }) => {
       <FooterPagePelanggan />
 
       {/* === MODAL QUESTION (KONFIRMASI) === */}
-      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} onConfirm={submitFeedback} type="question" title="Kirim Feedback?" message="Apakah anda yakin ingin mengirimkan feedback ini?" confirmLabel="Kirim" cancelLabel="Batal" />
+      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} onConfirm={submitFeedback} type="question" title="Kirim Feedback" message="Apakah anda yakin ingin mengirimkan feedback ini?" confirmLabel="Kirim" cancelLabel="Batal" />
       <Modal isOpen={modalError.isOpen} onClose={() => setModalError({ ...modalError, isOpen: false })} type="error" title={modalError.title} message={modalError.message} />
 
       {/* === MODAL SUCCESS === */}
