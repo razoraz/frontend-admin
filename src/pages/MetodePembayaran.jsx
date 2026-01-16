@@ -162,7 +162,7 @@ const MetodePembayaran = () => {
 
   return (
     <div className={styles.page}>
-      <HeaderPagePelanggan title="Metode Pembayaran" subtitle="Pilih metode pembayaran yang kamu inginkan" bg_video="/background_video/navVideo.mp4" />
+      <HeaderPagePelanggan title="Metode Pembayaran" subtitle="Pilih metode pembayaran yang kamu inginkan" bg_video="/background_video/navVideo11.mp4" />
 
       <div className={styles.container}>
         <h2 className={styles.title}>Pilih Metode Pembayaran</h2>
