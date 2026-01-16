@@ -202,7 +202,7 @@ const Keranjang = () => {
         {/* FORM PELANGGAN */}
         <div className={styles.formBox}>
           <div className={styles.row}>
-            <label>Nama Pemesanan:</label>
+            <label>Nama Pelanggan:</label>
             <input value={namaPemesanan} onChange={(e) => setNamaPemesanan(e.target.value)} className={styles.inputFormBox} readOnly />
           </div>
 
