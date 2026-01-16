@@ -174,7 +174,7 @@ const Struk = () => {
               <tr key={idx}>
                 <td>{item.nama_menu}</td>
                 <td>{item.jumlah}</td>
-                <td>Rp {item.subtotal.toLocaleString()}</td>
+                <td>Rp {new Intl.NumberFormat('id-ID').format(item.subtotal)}</td>
                 <td>{item.catatan || '-'}</td>
               </tr>
             ))}
@@ -186,7 +186,7 @@ const Struk = () => {
         <div className={styles.totalSection}>
           <div className={styles.totalRow}>
             <span className={styles.totalLabel}>Total:</span>
-            <span className={styles.totalValue}>Rp {pemesanan.total_harga.toLocaleString()}</span>
+            <span className={styles.totalValue}>Rp {new Intl.NumberFormat('id-ID').format(pemesanan.total_harga)}</span>
           </div>
           <div className={styles.totalNote}>
             Terima kasih telah berkunjung ke Basecamp Kopi!
