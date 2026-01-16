@@ -100,7 +100,7 @@ const Struk = () => {
             <span className={styles.value}>{pemesanan.metode_pembayaran || '-'}</span>
           </div>
 
-          <div className={`${styles.row} ${styles.statusRow}`}>
+          <div className={styles.row}>
             <span className={styles.label}>Status Pembayaran</span>
             <span className={styles.colon}>:</span>
             <span className={`${styles.statusText} ${isPaid ? styles.paid : styles.unpaid}`}>
