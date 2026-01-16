@@ -116,7 +116,7 @@ const TambahFeedback = ({ idPemesanan: propId }) => {
 
   return (
     <div>
-      <HeaderPagePelanggan bg_video="/background_video/navVideo8.mp4" title="Tambah Feedback" subtitle="Beri penilaian dan komentar untuk meningkatkan kualitas pelayanan kami." />
+      <HeaderPagePelanggan bg_video="/background_video/navVideo8.mp4" title="Pendapatmu Sangat Berarti" subtitle="Sampaikan penilaian dan komentar sebagai bahan evaluasi peningkatan kualitas pelayanan." />
 
       <div className={styles.page}>
         <div className={styles.card}>
