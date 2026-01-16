@@ -76,13 +76,13 @@ const MenungguPembayaranKasir = () => {
 
   return (
     <div>
-      <HeaderPagePelanggan title="Metode Pembayaran" subtitle="Silakan lakukan pembayaran langsung di kasir" bg_video="/background_video/navVideo.mp4" />
+      <HeaderPagePelanggan title="Pembayaran Lewat Kasir" subtitle="Silakan lakukan pembayaran langsung di kasir" bg_video="/background_video/navVideo12.mp4" />
 
       <div className={styles.container}>
         <div className={styles.card}>
           <div className={styles.icon}>💵</div>
 
-          <h1 className={styles.title}>Menunggu Pembayaran</h1>
+          <h1 className={styles.title}>Pembayaran</h1>
           <p className={styles.subtitle}>Tunjukkan ID pemesanan atau reservasi Anda kepada kasir untuk menyelesaikan pembayaran</p>
 
           <div className={styles.infoBox}>
