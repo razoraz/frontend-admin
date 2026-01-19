@@ -116,7 +116,7 @@ function BerandaPage() {
 
         {/* Promo / Event */}
         <section className={styles.eventSection}>
-          <h3 className={styles.sectionTitle}>🎁 Event & Promo</h3>
+          <h3 className={styles.sectionTitle}>🎁 Event Basecamp Kopi</h3>
 
           {event && (
             <div className={styles.eventGrid}>
