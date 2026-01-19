@@ -39,7 +39,7 @@ function MenuCategory({ title, icon, items, cart, addToCart, updateQty }) {
 
               <div className={styles.menuInfo}>
                 <h3 className={styles.menuName}>{item.nama_menu}</h3>
-                <p className={styles.menuPrice}>Rp {item.harga.toLocaleString()}</p>
+                <p className={styles.menuPrice}>Rp {item.harga.toLocaleString('id-ID', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
 
                 {isHabis && <p className={styles.habisText}>Habis</p>}
               </div>
@@ -101,19 +101,7 @@ function MenuList({ filteredMenu, cart, addToCart, updateQty }) {
     <div>
       {categories.map((cat) => {
         const normalizeCat = cat.toLowerCase().replace(/\s+/g, '');
-        return (
-          menusByCategory[cat].length > 0 && (
-            <MenuCategory
-              key={cat}
-              title={cat}
-              icon={kategoriIcons[normalizeCat] || '🍽️'}
-              items={menusByCategory[cat]}
-              cart={cart}
-              addToCart={addToCart}
-              updateQty={updateQty}
-            />
-          )
-        );
+        return menusByCategory[cat].length > 0 && <MenuCategory key={cat} title={cat} icon={kategoriIcons[normalizeCat] || '🍽️'} items={menusByCategory[cat]} cart={cart} addToCart={addToCart} updateQty={updateQty} />;
       })}
 
       {noData && (
@@ -161,14 +149,14 @@ function PemesananPelanggan() {
         'konteksPemesanan',
         JSON.stringify({
           tipe: 'reservasi',
-        })
+        }),
       );
     } else if (formPemesanan) {
       sessionStorage.setItem(
         'konteksPemesanan',
         JSON.stringify({
           tipe: 'langsung',
-        })
+        }),
       );
     }
   }, [reservasi, formPemesanan]);
