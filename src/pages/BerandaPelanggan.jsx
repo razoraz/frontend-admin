@@ -115,9 +115,6 @@ function BerandaPage() {
         </section>
 
         {/* Promo / Event */}
-        {/* ======================
-    EVENT / PROMO
-====================== */}
         <section className={styles.eventSection}>
           <h3 className={styles.sectionTitle}>🎁 Event & Promo</h3>
 
@@ -125,7 +122,12 @@ function BerandaPage() {
             <div className={styles.eventGrid}>
               <div className={styles.eventCard}>
                 <div className={styles.eventImageWrapper}>
-                  <img src={event.gambar_event} alt={event.judul} className={styles.eventImage} />
+                  <img
+                    src={event.gambar_event}
+                    alt={event.judul}
+                    className={styles.eventImage}
+                    // atau className={`${styles.eventImage} ${styles.noCrop}`} untuk tanpa crop
+                  />
                   <div className={styles.eventBadge}>Event</div>
                 </div>
                 <div className={styles.eventContent}>
