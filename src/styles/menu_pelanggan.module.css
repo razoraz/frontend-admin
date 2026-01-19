@@ -194,7 +194,9 @@
   font-size: 18px;
   font-weight: bold;
   color: #ffffff;
-  margin-top: 8px;
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* Menu tidak tersedia */
