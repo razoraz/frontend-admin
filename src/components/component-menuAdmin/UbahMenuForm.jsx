@@ -34,6 +34,15 @@ function UbahMenuForm({ menu, setMenu, kategoriList, setGambarBaru, onSubmit }) 
           ))}
         </select>
       </div>
+      {/* Status Menu */}
+      <div className={styles.formGroup}>
+        <label htmlFor="status_tersedia">Status Menu</label>
+        <select id="status_tersedia" name="status_tersedia" value={menu.status_tersedia} onChange={handleChange}>
+          <option value="">-- Pilih Status --</option>
+          <option value="tersedia">Tersedia</option>
+          <option value="habis">Habis</option>
+        </select>
+      </div>
       {/* Harga Menu */}
       <div className={styles.formGroup}>
         <label htmlFor="harga">Harga</label>
@@ -65,15 +74,6 @@ function UbahMenuForm({ menu, setMenu, kategoriList, setGambarBaru, onSubmit }) 
       <div className={styles.formGroup}>
         <label htmlFor="deskripsi">Deskripsi</label>
         <textarea id="deskripsi" name="deskripsi" value={menu.deskripsi} onChange={handleChange}></textarea>
-      </div>
-      {/* Status Menu */}
-      <div className={styles.formGroup}>
-        <label htmlFor="status_tersedia">Status Menu</label>
-        <select id="status_tersedia" name="status_tersedia" value={menu.status_tersedia} onChange={handleChange}>
-          <option value="">-- Pilih Status --</option>
-          <option value="tersedia">Tersedia</option>
-          <option value="habis">Habis</option>
-        </select>
       </div>
       {/* Tombol Simpan */}
       <div className={styles.formButtons}>
