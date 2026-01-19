@@ -39,7 +39,7 @@ function MenuCategory({ title, icon, items, cart, addToCart, updateQty }) {
 
               <div className={styles.menuInfo}>
                 <h3 className={styles.menuName}>{item.nama_menu}</h3>
-                <p className={styles.menuPrice}>Rp {item.harga.toLocaleString('id-ID', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
+                <p className={styles.menuPrice}>Rp {Number(item.harga).toLocaleString('id-ID')}</p>
 
                 {isHabis && <p className={styles.habisText}>Habis</p>}
               </div>
