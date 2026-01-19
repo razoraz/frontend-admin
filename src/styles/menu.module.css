@@ -134,7 +134,7 @@
 }
 .menuCardContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   margin-bottom: 40px;
   align-items: stretch;
@@ -148,6 +148,7 @@
   border-radius: 12px;
   overflow: hidden;
   gap: 15px;
+  min-height: 180px;
 }
 .menuInfo {
   display: flex;
@@ -155,6 +156,7 @@
   min-width: 0;
   text-align: center;
   flex-direction: column;
+  justify-content: space-between;
 }
 .menuInfo h3 {
   margin: 0 0 5px 0;
@@ -207,7 +209,10 @@
   margin-right: 3px;
 }
 .ubahBtn {
-  transition: 0.3s ease, transform 0.2s, box-shadow 0.2s;
+  transition:
+    0.3s ease,
+    transform 0.2s,
+    box-shadow 0.2s;
   background: #0092f4;
   color: #fff;
 }
@@ -218,7 +223,10 @@
   color: #fff;
 }
 .deleteBtn {
-  transition: 0.3s ease, transform 0.2s, box-shadow 0.2s;
+  transition:
+    0.3s ease,
+    transform 0.2s,
+    box-shadow 0.2s;
   background: #ff0000;
   color: #fff;
 }
@@ -344,6 +352,9 @@
 }
 
 @media (max-width: 480px) {
+  .menuCardContainer {
+    grid-template-columns: 1fr;
+  }
   .menuCard {
     flex-direction: column;
     text-align: center;
