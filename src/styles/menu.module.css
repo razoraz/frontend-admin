@@ -149,6 +149,9 @@
   overflow: hidden;
   gap: 15px;
   min-height: 180px;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 .menuInfo {
   display: flex;
