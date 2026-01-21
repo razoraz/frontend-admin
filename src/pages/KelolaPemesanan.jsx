@@ -158,7 +158,7 @@ function KelolaPemesanan() {
         },
       });
     },
-    [dataPemesanan]
+    [dataPemesanan],
   );
   const handleDownloadStruk = async (id_pemesanan) => {
     try {
@@ -203,7 +203,13 @@ function KelolaPemesanan() {
       { Header: 'Total Harga', accessor: (row) => `Rp ${Number(row.total_harga).toLocaleString()}` },
       { Header: 'Metode Pembayaran', accessor: (row) => row.metode_pembayaran || '-' },
       { Header: 'Status Pemesanan', accessor: (row) => getStatusPemesananText(row.status_pemesanan) },
-      { Header: 'Status Pembayaran', accessor: (row) => getStatusPembayaranText(row.status_pembayaran) },
+      {
+        Header: 'Status Pembayaran',
+        Cell: ({ row }) => {
+          const status = row.original.status_pembayaran;
+          return <span className={`${styles.statusChip} ${styles[`status-${status}`]}`}>{getStatusPembayaranText(status)}</span>;
+        },
+      },
       {
         Header: 'Aksi',
         accessor: 'aksi',
@@ -225,7 +231,7 @@ function KelolaPemesanan() {
         ),
       },
     ],
-    [dataPemesanan, navigate, handleDelete]
+    [dataPemesanan, navigate, handleDelete],
   );
 
   const {
@@ -246,7 +252,7 @@ function KelolaPemesanan() {
       data: filteredData,
       initialState: { pageSize: 10 },
     },
-    usePagination
+    usePagination,
   );
 
   return (
@@ -365,7 +371,16 @@ function KelolaPemesanan() {
 
       <FooterPage />
 
-      <Modal isOpen={modal.isOpen} type={modal.type} title={modal.title} message={modal.message} confirmLabel='Hapus' cancelLabel='Batal' onClose={() => setModal((prev) => ({ ...prev, isOpen: false }))} onConfirm={() => modal.onConfirm && modal.onConfirm()} />
+      <Modal
+        isOpen={modal.isOpen}
+        type={modal.type}
+        title={modal.title}
+        message={modal.message}
+        confirmLabel="Hapus"
+        cancelLabel="Batal"
+        onClose={() => setModal((prev) => ({ ...prev, isOpen: false }))}
+        onConfirm={() => modal.onConfirm && modal.onConfirm()}
+      />
     </div>
   );
 }
