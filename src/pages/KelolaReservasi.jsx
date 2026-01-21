@@ -165,7 +165,7 @@ function KelolaReservasi() {
         },
       });
     },
-    [dataReservasi]
+    [dataReservasi],
   );
 
   const handleDownloadStruk = async (id_pemesanan) => {
@@ -209,8 +209,21 @@ function KelolaReservasi() {
       { Header: 'Nomor Meja', accessor: 'no_meja' },
       { Header: 'Total Harga', accessor: (row) => `Rp ${Number(row.total_harga).toLocaleString()}` },
       { Header: 'Metode Pembayaran', accessor: (row) => row.metode_pembayaran || '-' },
-      { Header: 'Status Reservasi', accessor: (row) => getStatusReservasiText(row.status_reservasi) },
-      { Header: 'Status Pembayaran', accessor: (row) => getStatusPembayaranText(row.status_pembayaran) },
+      {
+        Header: 'Status Reservasi',
+        Cell: ({ row }) => {
+          const status = row.original.status_reservasi;
+          return <span className={`${styles.statusChip} ${styles[`status-${status}`]}`}>{getStatusReservasiText(status)}</span>;
+        },
+      },
+      {
+        Header: 'Status Pembayaran',
+        Cell: ({ row }) => {
+          const status = row.original.status_pembayaran;
+          return <span className={`${styles.statusChip} ${styles[`status-${status}`]}`}>{getStatusPembayaranText(status)}</span>;
+        },
+      },
+
       {
         Header: 'Aksi',
         accessor: 'aksi',
@@ -232,7 +245,7 @@ function KelolaReservasi() {
         ),
       },
     ],
-    [dataReservasi, navigate, handleDelete]
+    [dataReservasi, navigate, handleDelete],
   );
   const {
     getTableProps,
@@ -252,7 +265,7 @@ function KelolaReservasi() {
       data: filteredData,
       initialState: { pageSize: 10 },
     },
-    usePagination
+    usePagination,
   );
 
   return (
