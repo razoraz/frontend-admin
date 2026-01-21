@@ -156,20 +156,7 @@
   font-size: 0.9rem;
 }
 
-.status-belum_bayar {
-  background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%);
-  color: white;
-}
 
-.status-sudah_bayar {
-  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
-  color: white;
-}
-
-.status-dibatalkan {
-  background: linear-gradient(135deg, #f44336 0%, #ff6b6b 100%);
-  color: white;
-}
 
 
 /* Button */
@@ -231,37 +218,24 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .status-menunggu_pembayaran {
-  background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%);
-  color: white;
-  border-color: #ff9800 !important;
+  color: #ff9800;
 }
 .status-dikonfirmasi {
-  background: linear-gradient(135deg, #2196f3 0%, #4dabf7 100%);
-  color: white;
-  border-color: #2196f3 !important;
+  color: #00b374;
 }
 .status-selesai {
-  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
-  color: white;
-  border-color: #4caf50 !important;
+  color: #4caf50;
 }
 .status-dibatalkan {
-  background: linear-gradient(135deg, #f44336 0%, #ff6b6b 100%);
-  color: white;
-  border-color: #f44336 !important;
+  color: #f44336;
 }
 .status-belum_bayar {
-  background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%);
-  color: white;
-  border-color: #ff9800 !important;
+  color: #ff9800;
 }
 .status-sudah_bayar {
-  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
-  color: white;
-  border-color: #4caf50 !important;
+  color:#4caf50 ;
 }
 
 /* Pagination */
