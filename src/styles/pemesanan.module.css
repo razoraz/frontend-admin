@@ -156,6 +156,22 @@
   font-size: 0.9rem;
 }
 
+.status-belum_bayar {
+  background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%);
+  color: white;
+}
+
+.status-sudah_bayar {
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+  color: white;
+}
+
+.status-dibatalkan {
+  background: linear-gradient(135deg, #f44336 0%, #ff6b6b 100%);
+  color: white;
+}
+
+
 /* Button */
 .detailBtn {
   background: linear-gradient(135deg, #009c63 0%, #00c480 100%);
