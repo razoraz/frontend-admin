@@ -202,7 +202,14 @@ function KelolaPemesanan() {
       { Header: 'Nomor Meja', accessor: 'no_meja' },
       { Header: 'Total Harga', accessor: (row) => `Rp ${Number(row.total_harga).toLocaleString()}` },
       { Header: 'Metode Pembayaran', accessor: (row) => row.metode_pembayaran || '-' },
-      { Header: 'Status Pemesanan', accessor: (row) => getStatusPemesananText(row.status_pemesanan) },
+      {
+        Header: 'Status Pemesanan',
+        Cell: ({ row }) => {
+          const status = row.original.status_pemesanan;
+          return <span className={`${styles.statusChip} ${styles[`status-${status}`]}`}>{getStatusPemesananText(status)}</span>;
+        },
+      },
+
       {
         Header: 'Status Pembayaran',
         Cell: ({ row }) => {
